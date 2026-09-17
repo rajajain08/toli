@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #FAF9F5; color: #141413; -webkit-font-smoothing: antialiased; }
+    a { color: #141413; } a:hover { color: #D97757; }
+    button, input { font-family: inherit; }
+    button { cursor: pointer; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 960px; box-sizing: border-box; background: radial-gradient(120% 55% at 50% 0%, rgba(217,119,87,0.13), rgba(250,249,245,0) 60%), #FAF9F5; display: flex; flex-direction: column;">
+
+  <div style="padding: 56px 24px 0; display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <h1 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 500; font-size: 28px; line-height: 1.12; letter-spacing: -0.01em;">Who has this card?</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5E5D59;">Searches your groups and people who share with you.</p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1.5px solid #D97757; border-radius: 12px; box-shadow: 0 0 0 4px rgba(217,119,87,0.16), 0 6px 16px -8px rgba(20,20,19,0.2); height: 50px; padding: 0 14px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5E5D59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <label for="find" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Search for a card</label>
+      <input id="find" type="search" value="Axis Atlas" style="flex-grow: 1; border: 0; outline: 0; font-size: 16px; font-weight: 500; background: transparent; color: #141413;">
+      <button type="button" aria-label="Clear search" style="width: 32px; height: 32px; border: 0; border-radius: 16px; background: #F0EEE6; color: #5E5D59; display: flex; align-items: center; justify-content: center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 16px 24px 0; display: flex; flex-direction: column; gap: 16px;">
+
+    <div style="display: flex; background: #E8E6DC; border-radius: 12px; padding: 3px; gap: 2px;">
+      <button type="button" aria-pressed="true" style="flex-grow: 1; height: 36px; border: 0; border-radius: 9px; background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 600; box-shadow: 0 1px 2px rgba(20,20,19,0.08);">Everyone</button>
+      <button type="button" aria-pressed="false" style="flex-grow: 1; height: 36px; border: 0; border-radius: 9px; background: transparent; color: #5E5D59; font-size: 14px; font-weight: 500;">Groups</button>
+      <button type="button" aria-pressed="false" style="flex-grow: 1; height: 36px; border: 0; border-radius: 9px; background: transparent; color: #5E5D59; font-size: 14px; font-weight: 500;">People</button>
+    </div>
+
+    <div style="background: #141413; background-image: radial-gradient(90% 70% at 20% 0%, rgba(217,119,87,0.28), rgba(20,20,19,0) 60%); border-radius: 22px; box-shadow: 0 24px 44px -18px rgba(20,20,19,0.55); padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div style="width: 84px; height: 54px; border-radius: 9px; background: #262624; background-image: linear-gradient(135deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.06) 42%, rgba(20,20,19,0.24) 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 3px 8px rgba(20,20,19,0.20); flex-shrink: 0; box-sizing: border-box; padding: 9px 10px; display: flex; flex-direction: column; justify-content: space-between;"><div style="width: 16px; height: 11px; border-radius: 3px; background: #E3DACC;"></div><div style="color: #FFFFFF; font-size: 9px; font-weight: 600; letter-spacing: 0.05em;">ATLAS</div></div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 19px; font-weight: 500; color: #FAF9F5;">Axis Atlas</div>
+          <div style="font-size: 13px; color: #B0AEA5;">Axis Bank · Travel · Lounge access</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 12px; background: rgba(250,249,245,0.10); border: 0.5px solid rgba(250,249,245,0.18); color: #FAF9F5; font-size: 14px; font-weight: 600;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>3 people you know have it</span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.10); border-radius: 16px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22); padding: 12px 14px;">
+        <div style="width: 40px; height: 40px; border-radius: 20px; background: #558A42; color: #FFFFFF; display: flex; box-shadow: 0 2px 6px rgba(20,20,19,0.20); align-items: center; justify-content: center; font-size: 15px; font-weight: 600;">R</div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-size: 15px; font-weight: 600;">Rahul</div>
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #5E5D59;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Weekend Crew</span>
+          </div>
+        </div>
+        <button type="button" style="height: 36px; padding: 0 14px; border-radius: 18px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 600;">Ask</button>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.10); border-radius: 16px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22); padding: 12px 14px;">
+        <div style="width: 40px; height: 40px; border-radius: 20px; background: #6B4D9E; color: #FFFFFF; display: flex; box-shadow: 0 2px 6px rgba(20,20,19,0.20); align-items: center; justify-content: center; font-size: 15px; font-weight: 600;">M</div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-size: 15px; font-weight: 600;">Meera</div>
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #5E5D59;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Shares with you directly</span>
+          </div>
+        </div>
+        <button type="button" style="height: 36px; padding: 0 14px; border-radius: 18px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 600;">Ask</button>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.10); border-radius: 16px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22); padding: 12px 14px;">
+        <div style="width: 40px; height: 40px; border-radius: 20px; background: #2E9191; color: #FFFFFF; display: flex; box-shadow: 0 2px 6px rgba(20,20,19,0.20); align-items: center; justify-content: center; font-size: 15px; font-weight: 600;">K</div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-size: 15px; font-weight: 600;">Karan</div>
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #5E5D59;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>Office lunch</span>
+          </div>
+        </div>
+        <button type="button" style="height: 36px; padding: 0 14px; border-radius: 18px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 600;">Ask</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="font-size: 12px; font-weight: 600; color: #5E5D59; text-transform: uppercase; letter-spacing: 0.08em;">Or find by perk</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <button type="button" style="height: 38px; padding: 0 14px; border-radius: 19px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 500;">Lounge access</button>
+        <button type="button" style="height: 38px; padding: 0 14px; border-radius: 19px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 500;">Dining</button>
+        <button type="button" style="height: 38px; padding: 0 14px; border-radius: 19px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 500;">Fuel</button>
+        <button type="button" style="height: 38px; padding: 0 14px; border-radius: 19px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 500;">Movies</button>
+        <button type="button" style="height: 38px; padding: 0 14px; border-radius: 19px; border: 0.5px solid rgba(31,30,29,0.3); background: #FFFFFF; color: #141413; font-size: 14px; font-weight: 500;">Online shopping</button>
+      </div>
+    </div>
+
+  </div>
+
+  <nav style="display: flex; gap: 8px; padding: 10px 24px 24px; background: rgba(255,255,255,0.78); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-top: 0.5px solid rgba(31,30,29,0.08); box-shadow: 0 -10px 30px -18px rgba(20,20,19,0.25);">
+    <a href="Groups.dc.html" style="flex-grow: 1; min-height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #5E5D59; font-size: 12px; font-weight: 500;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      <span>Groups</span>
+    </a>
+    <a href="Search.dc.html" style="flex-grow: 1; min-height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: {{accent}}; font-size: 12px; font-weight: 600;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <span>Find</span>
+    
+      <span style="width: 4px; height: 4px; border-radius: 2px; background: #D97757; display: block; margin-top: -2px;"></span>
+    </a>
+    <a href="MyCards.dc.html" style="flex-grow: 1; min-height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #5E5D59; font-size: 12px; font-weight: 500;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+      <span>My cards</span>
+    </a>
+  </nav>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#141413","options":["#141413","#D97757","#2A78D6","#558A42"]},"$preview":{"width":390,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#141413' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build
+.next/
+out/
+dist/
+lib/
+.turbo/
+coverage/
+
+# firebase
+.firebase/
+*-debug.log
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebaserc.local
+functions/.env*
+!functions/.env.example
+
+# env
+.env
+.env.*
+!.env.example
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

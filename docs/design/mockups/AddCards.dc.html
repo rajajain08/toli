@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #FAF9F5; color: #141413; -webkit-font-smoothing: antialiased; }
+    a { color: #141413; } a:hover { color: #D97757; }
+    button, input { font-family: inherit; }
+    button { cursor: pointer; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 900px; box-sizing: border-box; background: radial-gradient(120% 55% at 50% 0%, rgba(217,119,87,0.13), rgba(250,249,245,0) 60%), #FAF9F5; display: flex; flex-direction: column;">
+
+  <div style="padding: 52px 24px 0; display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <a href="Main.dc.html" aria-label="Back" style="width: 44px; height: 44px; margin-left: -12px; display: flex; align-items: center; justify-content: center; color: #141413;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </a>
+      <div style="display: flex; gap: 6px; align-items: center;">
+        <span style="width: 22px; height: 4px; border-radius: 2px; background: {{accent}}; display: block;"></span>
+        <span style="width: 22px; height: 4px; border-radius: 2px; background: {{accent}}; display: block;"></span>
+      </div>
+      <div style="font-size: 13px; color: #5E5D59;">Step 2 of 2</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <h1 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 500; font-size: 28px; line-height: 1.12;">Which cards do you carry?</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5E5D59;">Start with your bank, then tap the card. The name is printed on the front of the card — we never ask for the number.</p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.22); border-radius: 12px; height: 48px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), inset 0 1px 0 rgba(255,255,255,0.8); padding: 0 14px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5E5D59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <label for="search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Search cards</label>
+      <input id="search" type="search" placeholder="Search by bank or card name" style="flex-grow: 1; border: 0; outline: 0; font-size: 15px; background: transparent; color: #141413;">
+    </div>
+    <div style="display: flex; gap: 8px; overflow: hidden; margin-right: -24px;">
+      <sc-for list="{{ banks }}" as="b" hint-placeholder-count="6">
+        <button type="button" onClick="{{ b.pick }}" aria-pressed="{{ b.selected }}" style="{{ b.style }}">{{ b.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 20px 24px 0; display: flex; flex-direction: column; gap: 18px;">
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="font-size: 12px; font-weight: 600; color: #5E5D59; text-transform: uppercase; letter-spacing: 0.08em;">Your cards</div>
+        <div style="font-size: 12px; font-weight: 600; color: #FFFFFF; background: {{accent}}; border-radius: 9px; padding: 1px 7px;">{{ count }}</div>
+      </div>
+      <sc-if value="{{ hasNone }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size: 14px; color: #9C9A92; padding: 6px 0;">Nothing added yet — tap a card below.</div>
+      </sc-if>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <sc-for list="{{ tray }}" as="t" hint-placeholder-count="2">
+          <div style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 6px; border-radius: 20px; background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.3); box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 8px 18px -12px rgba(20,20,19,0.22);">
+            <div style="{{ t.swatchStyle }}"></div>
+            <span style="font-size: 14px; font-weight: 500;">{{ t.name }}</span>
+            <button type="button" onClick="{{ t.remove }}" aria-label="{{ t.aria }}" style="width: 28px; height: 28px; border: 0; border-radius: 14px; background: #F0EEE6; color: #5E5D59; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="font-size: 12px; font-weight: 600; color: #5E5D59; text-transform: uppercase; letter-spacing: 0.08em;">{{ listTitle }}</div>
+        <button type="button" style="height: 28px; padding: 0 4px; border: 0; background: transparent; color: #9C4A31; font-size: 13px; font-weight: 600;">Can't find yours?</button>
+      </div>
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="5">
+        <div style="{{ r.rowStyle }}">
+          <div style="{{ r.cardStyle }}"><div style="width: 11px; height: 8px; border-radius: 2px; background: #E3DACC;"></div><div style="height: 3px; width: 26px; border-radius: 2px; background: rgba(255,255,255,0.55);"></div></div>
+          <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 15px; font-weight: 600;">{{ r.name }}</div>
+            <div style="font-size: 13px; color: #5E5D59;">{{ r.sub }}</div>
+          </div>
+          <button type="button" onClick="{{ r.toggle }}" aria-pressed="{{ r.selected }}" aria-label="{{ r.aria }}" style="{{ r.btnStyle }}">
+            <sc-if value="{{ r.selected }}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></sc-if>
+            <sc-if value="{{ r.unselected }}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></sc-if>
+          </button>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding: 12px 24px 32px; background: rgba(250,249,245,0.80); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-top: 0.5px solid rgba(31,30,29,0.08);">
+    <a href="Group.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 26px; background: {{accent}}; color: #FFFFFF; box-shadow: 0 10px 22px -10px rgba(20,20,19,0.55); font-size: 16px; font-weight: 600; text-decoration: none;">{{ doneLabel }}</a>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#141413","options":["#141413","#D97757","#2A78D6","#558A42"]},"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { selected: ['sbi-cashback', 'flipkart-axis'], bank: 'all' };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#141413';
+    const catalogue = [
+      { id: 'hdfc-millennia', name: 'HDFC Millennia', issuer: 'HDFC Bank', bank: 'hdfc', color: '#6B4D9E', hint: '5% online' },
+      { id: 'axis-atlas', name: 'Axis Atlas', issuer: 'Axis Bank', bank: 'axis', color: '#262624', hint: 'Travel, lounges' },
+      { id: 'amazon-icici', name: 'Amazon Pay ICICI', issuer: 'ICICI Bank', bank: 'icici', color: '#2E9191', hint: '5% on Amazon' },
+      { id: 'hdfc-regalia', name: 'HDFC Regalia Gold', issuer: 'HDFC Bank', bank: 'hdfc', color: '#C9A82D', hint: 'Dining, lounges' },
+      { id: 'sbi-cashback', name: 'SBI Cashback', issuer: 'SBI Card', bank: 'sbi', color: '#558A42', hint: '5% online' },
+      { id: 'flipkart-axis', name: 'Flipkart Axis', issuer: 'Axis Bank', bank: 'axis', color: '#C46686', hint: 'Flipkart, dining' },
+      { id: 'sbi-simplyclick', name: 'SBI SimplyCLICK', issuer: 'SBI Card', bank: 'sbi', color: '#6A9BCC', hint: 'Online shopping' },
+      { id: 'amex-mrcc', name: 'Amex Membership Rewards', issuer: 'American Express', bank: 'amex', color: '#3D3D3A', hint: 'Points, milestones' }
+    ];
+    const bankList = [
+      { id: 'all', label: 'All banks' }, { id: 'hdfc', label: 'HDFC' }, { id: 'axis', label: 'Axis' },
+      { id: 'sbi', label: 'SBI' }, { id: 'icici', label: 'ICICI' }, { id: 'amex', label: 'Amex' }
+    ];
+    const { selected, bank } = this.state;
+    const toggle = (id) => this.setState({ selected: selected.includes(id) ? selected.filter((x) => x !== id) : [...selected, id] });
+    const banks = bankList.map((b) => ({
+      ...b, selected: b.id === bank,
+      style: b.id === bank
+        ? 'height:36px;padding:0 14px;border-radius:18px;border:0.5px solid #141413;background:#141413;color:#FFFFFF;font-size:13px;font-weight:500;white-space:nowrap;box-shadow:0 8px 18px -10px rgba(20,20,19,0.55);'
+        : 'height:36px;padding:0 14px;border-radius:18px;border:0.5px solid rgba(31,30,29,0.3);background:#FFFFFF;color:#141413;font-size:13px;font-weight:500;white-space:nowrap;',
+      pick: () => this.setState({ bank: b.id })
+    }));
+    const tray = selected.map((id) => catalogue.find((c) => c.id === id)).filter(Boolean).map((c) => ({
+      ...c, aria: `Remove ${c.name}`,
+      swatchStyle: `width:30px;height:20px;border-radius:4px;background:${c.color};background-image:linear-gradient(135deg,rgba(255,255,255,0.36) 0%,rgba(255,255,255,0.06) 42%,rgba(20,20,19,0.24) 100%);`,
+      remove: () => toggle(c.id)
+    }));
+    const rows = catalogue.filter((c) => bank === 'all' || c.bank === bank).map((c) => {
+      const sel = selected.includes(c.id);
+      return {
+        ...c, selected: sel, unselected: !sel,
+        sub: `${c.issuer} · ${c.hint}`,
+        aria: sel ? `Remove ${c.name}` : `Add ${c.name}`,
+        rowStyle: `display:flex;align-items:center;gap:12px;background:${sel ? 'rgba(217,119,87,0.08)' : '#FFFFFF'};border:0.5px solid ${sel ? 'rgba(217,119,87,0.5)' : 'rgba(31,30,29,0.10)'};border-radius:16px;box-shadow:0 1px 2px rgba(20,20,19,0.04),0 12px 28px -16px rgba(20,20,19,0.22);padding:10px 8px 10px 12px;`,
+        cardStyle: `width:56px;height:36px;border-radius:6px;background:${c.color};background-image:linear-gradient(135deg,rgba(255,255,255,0.36) 0%,rgba(255,255,255,0.06) 42%,rgba(20,20,19,0.24) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.28),0 3px 8px rgba(20,20,19,0.20);flex-shrink:0;box-sizing:border-box;padding:6px 7px;display:flex;flex-direction:column;justify-content:space-between;`,
+        btnStyle: sel
+          ? `width:44px;height:44px;border:0;background:${accent};color:#FFFFFF;display:flex;align-items:center;justify-content:center;border-radius:22px;box-shadow:0 6px 14px -6px rgba(20,20,19,0.5);`
+          : 'width:44px;height:44px;border:0.5px solid rgba(31,30,29,0.3);background:#FFFFFF;color:#141413;display:flex;align-items:center;justify-content:center;border-radius:22px;',
+        toggle: () => toggle(c.id)
+      };
+    });
+    const n = selected.length;
+    const bankLabel = (bankList.find((b) => b.id === bank) || {}).label;
+    return {
+      accent, banks, tray, rows,
+      count: String(n), hasNone: n === 0,
+      listTitle: bank === 'all' ? 'Popular with your friends' : `${bankLabel} cards`,
+      doneLabel: n === 0 ? 'Skip for now' : `Done · ${n} card${n === 1 ? '' : 's'}`
+    };
+  }
+}
+</script>
+</body>
+</html>

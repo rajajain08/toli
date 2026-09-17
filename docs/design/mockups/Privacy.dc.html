@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body { margin: 0; font-family: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #FAF9F5; color: #141413; -webkit-font-smoothing: antialiased; }
+    a { color: #141413; } a:hover { color: #D97757; }
+    button { font-family: inherit; cursor: pointer; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: radial-gradient(120% 55% at 50% 0%, rgba(217,119,87,0.13), rgba(250,249,245,0) 60%), #FAF9F5; display: flex; flex-direction: column;">
+
+  <div style="padding: 52px 24px 0; display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center;">
+      <a href="MyCards.dc.html" aria-label="Back" style="width: 44px; height: 44px; margin-left: -12px; display: flex; align-items: center; justify-content: center; color: #141413;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </a>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <h1 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 500; font-size: 28px; line-height: 1.15;">What friends can see</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #5E5D59;">This is the whole list. There's nothing else stored to leak.</p>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; overflow: hidden; padding: 20px 24px 0; display: flex; flex-direction: column; gap: 14px;">
+
+    <div style="background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.10); border-radius: 18px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22); padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 28px; height: 28px; border-radius: 14px; background: rgba(85,138,66,0.15); color: #3E6B30; display: flex; align-items: center; justify-content: center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <div style="font-size: 15px; font-weight: 600;">They see</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; background: #F5F4ED; border-radius: 14px; padding: 12px;">
+        <div style="width: 56px; height: 36px; border-radius: 6px; background: #558A42; background-image: linear-gradient(135deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.06) 42%, rgba(20,20,19,0.24) 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 3px 8px rgba(20,20,19,0.20); flex-shrink: 0; box-sizing: border-box; padding: 6px 7px; display: flex; flex-direction: column; justify-content: space-between;"><div style="width: 11px; height: 8px; border-radius: 2px; background: #E3DACC;"></div><div style="height: 3px; width: 26px; border-radius: 2px; background: rgba(255,255,255,0.55);"></div></div>
+        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 6px;">
+          <div style="font-size: 15px; font-weight: 600;">SBI Cashback</div>
+          <div style="display: flex; gap: 6px;">
+            <span style="font-size: 12px; font-weight: 500; padding: 3px 8px; border-radius: 8px; background: #FFFFFF; color: #3D3D3A;">Shopping</span>
+            <span style="font-size: 12px; font-weight: 500; padding: 3px 8px; border-radius: 8px; background: #FFFFFF; color: #3D3D3A;">5% online</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size: 14px; color: #5E5D59; line-height: 1.5;">The card's name, the bank, and the perks we know about it from public info. That's it — exactly what's above.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.10); border-radius: 18px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22); padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 28px; height: 28px; border-radius: 14px; background: rgba(217,119,87,0.15); color: #9C4A31; display: flex; align-items: center; justify-content: center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+        <div style="font-size: 15px; font-weight: 600;">They never see</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+        <div style="padding: 10px 12px; border-radius: 10px; background: #F5F4ED; font-size: 14px; font-weight: 500; text-decoration: line-through; color: #73726C;">Card number</div>
+        <div style="padding: 10px 12px; border-radius: 10px; background: #F5F4ED; font-size: 14px; font-weight: 500; text-decoration: line-through; color: #73726C;">Expiry &amp; CVV</div>
+        <div style="padding: 10px 12px; border-radius: 10px; background: #F5F4ED; font-size: 14px; font-weight: 500; text-decoration: line-through; color: #73726C;">Credit limit</div>
+        <div style="padding: 10px 12px; border-radius: 10px; background: #F5F4ED; font-size: 14px; font-weight: 500; text-decoration: line-through; color: #73726C;">What you spend</div>
+        <div style="padding: 10px 12px; border-radius: 10px; background: #F5F4ED; font-size: 14px; font-weight: 500; text-decoration: line-through; color: #73726C;">Statements</div>
+        <div style="padding: 10px 12px; border-radius: 10px; background: #F5F4ED; font-size: 14px; font-weight: 500; text-decoration: line-through; color: #73726C;">Points balance</div>
+      </div>
+      <div style="font-size: 14px; color: #5E5D59; line-height: 1.5;">We never ask for these, so we can't store them — there's no field for them anywhere in the app.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.10); border-radius: 16px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5E5D59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <div style="flex-grow: 1; font-size: 14px; line-height: 1.4;">Only people you've added — a group or a person — can see a card. Hide it from any of them, anytime.</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: #FFFFFF; border: 0.5px solid rgba(31,30,29,0.10); border-radius: 16px; box-shadow: 0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5E5D59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg>
+        <div style="flex-grow: 1; font-size: 14px; line-height: 1.4;">Delete your account and every card you added goes with it, immediately.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding: 12px 24px 32px;">
+    <a href="MyCards.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 26px; background: {{accent}}; color: #FFFFFF; box-shadow: 0 10px 22px -10px rgba(20,20,19,0.55); font-size: 16px; font-weight: 600; text-decoration: none;">Got it</a>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#141413","options":["#141413","#D97757","#2A78D6","#558A42"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#141413' };
+  }
+}
+</script>
+</body>
+</html>

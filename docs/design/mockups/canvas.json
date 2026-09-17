@@ -1,0 +1,26 @@
+{
+  "v": 3,
+  "attachments": {},
+  "createdOnFiles": { "v": 1, "at": "2026-09-17T09:00:00Z" },
+  "title": "Toli — MVP mockups",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 390, "h": 900, "title": "1 · Invite link landing", "is_interactive": true },
+    "AddCards.dc.html": { "x": 470, "y": 0, "w": 390, "h": 900, "title": "2 · Add your cards", "is_interactive": true },
+    "Group.dc.html": { "x": 940, "y": 0, "w": 390, "h": 1060, "title": "3 · Group (scrolls)", "is_interactive": true },
+    "Groups.dc.html": { "x": 0, "y": 1500, "w": 390, "h": 844, "title": "4 · Groups home", "is_interactive": true },
+    "Search.dc.html": { "x": 470, "y": 1500, "w": 390, "h": 960, "title": "5 · Find a card", "is_interactive": true },
+    "MyCards.dc.html": { "x": 940, "y": 1500, "w": 390, "h": 1060, "title": "6 · My cards + who sees what", "is_interactive": true },
+    "Share.dc.html": { "x": 1410, "y": 1500, "w": 390, "h": 844, "title": "7 · Share with a person", "is_interactive": true },
+    "GroupsEmpty.dc.html": { "x": 1880, "y": 1500, "w": 390, "h": 844, "title": "4b · Groups (first run)", "is_interactive": true },
+    "Privacy.dc.html": { "x": 0, "y": 2900, "w": 390, "h": 844, "title": "8 · What friends can see", "is_interactive": true }
+  },
+  "order": ["Main.dc.html", "AddCards.dc.html", "Group.dc.html", "Groups.dc.html", "Search.dc.html", "MyCards.dc.html", "Share.dc.html", "GroupsEmpty.dc.html", "Privacy.dc.html"],
+  "notes": {
+    "flow-title": { "x": 0, "y": -300, "text": "Invited friend flow", "kind": "title1", "maxW": 1330 },
+    "tabs-title": { "x": 0, "y": 1200, "text": "Home tabs, search, 1:1 sharing and first run", "kind": "title1", "maxW": 2270 },
+    "decision-title": { "x": 0, "y": 2600, "text": "The trust screen", "kind": "title1", "maxW": 390 }
+  },
+  "designSystems": []
+}

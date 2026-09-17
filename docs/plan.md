@@ -23,20 +23,22 @@ Done when a PR runs all four test tiers green.
 - [x] Functions emulator test: `ping` callable answers
 - [x] Playwright golden-path skeleton: app boots against emulators, renders the shell
 - [x] `.github/workflows/ci.yml`: install, lint, typecheck, unit, rules, functions, e2e; size-limit budget 180 KB gz on the web bundle
-- [ ] PR opened, CI green, merged
+- [x] PR opened, CI green, merged (#1)
 
 ## Milestone 2 — Identity (`m2-identity`)
 
-Done when a fresh phone signs up on the dev URL. Needs `toli-dev` Firebase project, phone auth enabled, App Check reCAPTCHA Enterprise key, HMAC secret in Secret Manager.
+Done when a fresh phone signs up on the dev URL. The project id `toli-dev` was taken, so dev is `toli-app-dev` (created 2026-09-18, Firestore in `asia-south1`, web app registered, rules deployed). Still needed in the console: Blaze billing, Phone sign-in provider, App Check reCAPTCHA Enterprise key, `PHONE_HASH_SECRET` in Secret Manager, App Hosting backend with rootDir `apps/web`.
 
-- [ ] `CreateUserProfile` use case: name, consent timestamp, phoneHash; test with in-memory ports
-- [ ] `onUserCreate` callable `completeSignup` writes `users/{uid}` (server computes the HMAC; client never sees the secret)
-- [ ] Web: `/auth` route, lazy-loaded Auth + reCAPTCHA, OTP form, name + consent screen (from `Main.dc.html` copy)
-- [ ] App Check enforced on Firestore and callables; emulator debug token locally
-- [ ] Auth guard in the shell; redirect to `/auth` when signed out
-- [ ] Rules test: `users/{uid}` write allowed for self, denied for others; `phoneHash` cannot be written by the client
-- [ ] GA4 events `otp_completed`
-- [ ] Dev deploy from `main` via App Hosting
+- [x] `CompleteSignup` use case: name, consent timestamp, phoneHash via a `PhoneHasher` port; 4 tests with in-memory ports; `parsePhone` value object in domain
+- [x] Callable `completeSignup` writes `users/{uid}`; phone read from the ID token, HMAC-SHA256 with `PHONE_HASH_SECRET`; emulator test covers consent, hash, idempotency, unauthenticated
+- [x] Web: `/auth` route with phone, code and profile steps; Auth, reCAPTCHA, Firestore and Functions all behind one lazy `loadFirebase()` gateway so every route stays under the 180 KB budget (about 110 KB gz)
+- [x] App Check wired (`startAppCheck`, reCAPTCHA Enterprise, debug token env); callables enforce it outside the emulator. Firestore-side enforcement is switched on in the console once the key exists
+- [x] `RequireAuth` in the shell: signed out or no profile → `/auth?next=…` and back
+- [x] Rules: client never creates `users/{uid}`, may only rename itself (1–40 chars); `phoneHash`, `consentAt`, `createdAt` untouchable. 19 rules tests
+- [x] `track()` helper (no-op without a measurement id); `otp_completed` fired after OTP
+- [x] `deploy-dev.yml` deploys rules and functions on merge when `DEPLOY_DEV=true` and the service-account secret exist; `apps/web/apphosting.yaml` for App Hosting
+- [x] Playwright golden path: fresh phone, OTP from the Auth emulator, name, consent, lands on `/groups`; wrong code and bad phone stay in place
+- [ ] Console steps above, then a real phone signs up on the dev URL
 
 ## Milestone 3 — My cards (`m3-my-cards`)
 
@@ -84,7 +86,7 @@ Done when the friend group is on it.
 
 ## Open items needing Raja
 
-- Firebase projects `toli-dev` and `toli-prod` (create in console, billing on Blaze for functions)
+- `toli-app-dev` exists. Blaze billing on it (2nd gen functions need it), Phone provider on, App Check key. `toli-prod` waits for milestone 6
 - reCAPTCHA Enterprise site key for App Check
 - Production font choice for the serif display and sans body
 - Card catalogue review before M3 ships

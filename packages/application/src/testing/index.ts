@@ -17,6 +17,7 @@ import type {
   GroupCardRow,
   IdGenerator,
   InviteRepository,
+  PhoneHasher,
   RateLimiter,
   UserCardRepository,
   UserRepository,
@@ -157,5 +158,14 @@ export class InMemoryGroupCardReadModel implements GroupCardReadModel {
   }
   async unproject(refs: readonly { audienceId: GroupId; userCardId: UserCardId }[]): Promise<void> {
     for (const r of refs) this.rows.delete(this.key(r.audienceId, r.userCardId));
+  }
+}
+
+export class FakePhoneHasher implements PhoneHasher {
+  static hashOf(phone: string): string {
+    return `hash:${phone.replace(/\d/g, (d) => 'abcdefghij'[Number(d)] ?? 'x')}`.padEnd(64, 'z');
+  }
+  hash(phone: string): string {
+    return FakePhoneHasher.hashOf(phone);
   }
 }

@@ -83,14 +83,23 @@ describe('users/{uid}', () => {
     await assertFails(getDoc(doc(as(BOB), 'users/alice')));
     await assertFails(updateDoc(doc(as(BOB), 'users/alice'), { name: 'Mallory' }));
   });
-  it('the client cannot set phoneHash', async () => {
-    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { phoneHash: 'forged' }));
+  it('the client cannot create a profile; only completeSignup does', async () => {
+    await assertFails(
+      setDoc(doc(as('carol'), 'users/carol'), { name: 'Carol', consentAt: new Date() }),
+    );
     await assertFails(
       setDoc(doc(as('carol'), 'users/carol'), { name: 'Carol', phoneHash: 'forged' }),
     );
-    await assertSucceeds(
-      setDoc(doc(as('carol'), 'users/carol'), { name: 'Carol', consentAt: new Date() }),
-    );
+  });
+  it('the client cannot change phoneHash, consentAt or createdAt', async () => {
+    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { phoneHash: 'forged' }));
+    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { consentAt: new Date(0) }));
+    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { createdAt: new Date(0) }));
+  });
+  it('a rename must be a name of 1 to 40 characters', async () => {
+    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { name: '' }));
+    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { name: 'x'.repeat(41) }));
+    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { name: 42 }));
   });
   it('nobody deletes a user from the client', async () => {
     await assertFails(deleteDoc(doc(as(ALICE), 'users/alice')));

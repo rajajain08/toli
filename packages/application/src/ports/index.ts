@@ -75,3 +75,8 @@ export interface GroupCardReadModel {
   project(rows: readonly GroupCardRow[]): Promise<void>;
   unproject(refs: readonly { audienceId: GroupId; userCardId: UserCardId }[]): Promise<void>;
 }
+
+/** HMAC-SHA256 of an E.164 phone with a server-side secret. Only the server holds the secret. */
+export interface PhoneHasher {
+  hash(phone: string): string;
+}

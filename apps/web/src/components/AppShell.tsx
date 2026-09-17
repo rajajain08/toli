@@ -2,6 +2,7 @@
 import { TabBar, type TabItem } from '@toli/ui';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { RequireAuth } from './RequireAuth';
 
 const icon = (d: ReactNode) => (
   <svg
@@ -77,7 +78,7 @@ export function AppShell({
       <main
         style={{ flexGrow: 1, padding: '52px 24px 24px', backgroundImage: 'var(--toli-hero-glow)' }}
       >
-        {children}
+        <RequireAuth>{children}</RequireAuth>
       </main>
       <div style={{ position: 'sticky', bottom: 0 }}>
         <TabBar

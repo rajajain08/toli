@@ -25,8 +25,14 @@ service cloud.firestore {
 
     match /users/{uid} {
       allow read: if isSelf(uid);
-      // Profile: name and consent only. phoneHash is written by the completeSignup callable.
-      allow create, update: if isSelf(uid) && untouched(['phoneHash'].toSet());
+      // The completeSignup callable creates the profile with the server-computed phoneHash and the
+      // consent timestamp. The client may only rename itself afterwards.
+      allow create: if false;
+      allow update: if isSelf(uid)
+        && untouched(['phoneHash', 'consentAt', 'createdAt'].toSet())
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 1
+        && request.resource.data.name.size() <= 40;
       // Only DeleteAccount deletes a user.
       allow delete: if false;
 

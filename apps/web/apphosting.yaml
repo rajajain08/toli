@@ -1,0 +1,27 @@
+# Firebase App Hosting. rootDir is set to apps/web in the console; pnpm is detected from packageManager.
+runConfig:
+  minInstances: 0
+  maxInstances: 4
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: toli-app-dev
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: toli-app-dev.firebaseapp.com
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    secret: WEB_API_KEY
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    secret: WEB_APP_ID
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_APPCHECK_SITE_KEY
+    secret: APPCHECK_SITE_KEY
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_USE_EMULATORS
+    value: '0'
+    availability: [BUILD, RUNTIME]

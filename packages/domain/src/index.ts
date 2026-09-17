@@ -7,3 +7,4 @@ export * from './user-card';
 export * from './audience';
 export * from './membership';
 export * from './invite';
+export * from './phone';

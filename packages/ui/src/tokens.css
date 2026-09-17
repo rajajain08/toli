@@ -1,0 +1,46 @@
+:root {
+  --toli-ivory: #faf9f5;
+  --toli-slate: #141413;
+  --toli-clay: #d97757;
+  --toli-oat: #e3dacc;
+  --toli-ink-2: #3d3d3a;
+  --toli-ink-3: #5e5d59;
+  --toli-ink-4: #9c9a92;
+  --toli-ink-5: #c2c0b6;
+  --toli-panel: #f0eee6;
+  --toli-hairline: rgba(31, 30, 29, 0.1);
+  --toli-hairline-strong: rgba(31, 30, 29, 0.3);
+  --toli-font-serif: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif;
+  --toli-font-sans: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --toli-radius-row: 16px;
+  --toli-hero-glow: radial-gradient(
+    120% 55% at 50% 0%,
+    rgba(217, 119, 87, 0.13),
+    rgba(250, 249, 245, 0) 60%
+  );
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--toli-ivory);
+  color: var(--toli-slate);
+  font-family: var(--toli-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--toli-slate);
+}
+a:hover {
+  color: var(--toli-clay);
+}
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 2px solid var(--toli-clay);
+  outline-offset: 2px;
+}

@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "toli-dev",
+    "dev": "toli-dev",
+    "prod": "toli-prod"
+  }
+}

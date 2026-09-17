@@ -268,3 +268,4 @@ One row per architectural decision; add a row and an ADR file under `docs/decisi
 | 0008 | Expo over Flutter as the eventual mobile path | reuses the TypeScript logic packages |
 | 0009 | No in-app "who should pay" recommendation | the app stays a plain directory of who holds what |
 | 0010 | Phone OTP by SMS for MVP; WhatsApp OTP in phase 2 | not a Firebase provider; needs MSG91 plus custom tokens |
+| 0011 | Packages ship TypeScript source; functions bundled by esbuild | no dist/ drift, one-file functions artefact without workspace deps |

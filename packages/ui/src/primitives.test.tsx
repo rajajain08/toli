@@ -1,0 +1,99 @@
+import { fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
+import { AvatarRow } from './AvatarRow';
+import { Button } from './Button';
+import { CardTile } from './CardTile';
+import { Chip } from './Chip';
+import { TabBar } from './TabBar';
+import { Toggle } from './Toggle';
+import { avatarColorFor, color, initialOf } from './tokens';
+
+describe('tokens', () => {
+  it('assigns a stable avatar colour per id', () => {
+    expect(avatarColorFor('u1')).toBe(avatarColorFor('u1'));
+    expect(color.avatars).toContain(avatarColorFor('anything'));
+  });
+  it('takes the initial of the first name', () => {
+    expect(initialOf('raja jain')).toBe('R');
+    expect(initialOf('   ')).toBe('?');
+  });
+});
+
+describe('Chip', () => {
+  it('reflects selection via aria-pressed', () => {
+    render(<Chip selected>Dining</Chip>);
+    expect(screen.getByRole('button', { name: 'Dining' })).toHaveAttribute('aria-pressed', 'true');
+  });
+});
+
+describe('Toggle', () => {
+  it('is a switch that flips on click', () => {
+    const onChange = vi.fn();
+    render(<Toggle on={false} onChange={onChange} label="Visible to Weekend Crew" />);
+    const sw = screen.getByRole('switch', { name: 'Visible to Weekend Crew' });
+    expect(sw).toHaveAttribute('aria-checked', 'false');
+    fireEvent.click(sw);
+    expect(onChange).toHaveBeenCalledWith(true);
+  });
+});
+
+describe('CardTile', () => {
+  it('names the card by issuer and name only', () => {
+    render(<CardTile name="Millennia" issuer="HDFC" tint="#6B4D9E" />);
+    expect(screen.getByRole('img', { name: 'HDFC Millennia' })).toBeInTheDocument();
+  });
+  it('wallet variant is selectable', () => {
+    const onClick = vi.fn();
+    render(
+      <CardTile name="Millennia" issuer="HDFC" tint="#6B4D9E" variant="wallet" onClick={onClick} />,
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Select Millennia' }));
+    expect(onClick).toHaveBeenCalled();
+  });
+});
+
+describe('AvatarRow', () => {
+  it('selects a person and exposes the invite action', () => {
+    const onSelect = vi.fn();
+    const invite = vi.fn();
+    render(
+      <AvatarRow
+        people={[
+          { id: 'all', name: 'Everyone' },
+          { id: 'u1', name: 'Rahul' },
+          { id: 'u2', name: 'Arjun', empty: true },
+        ]}
+        selectedId="all"
+        onSelect={onSelect}
+        action={{ label: 'Invite', onClick: invite }}
+      />,
+    );
+    expect(screen.getByRole('button', { name: 'Everyone' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Rahul' }));
+    expect(onSelect).toHaveBeenCalledWith('u1');
+    fireEvent.click(screen.getByRole('button', { name: 'Invite' }));
+    expect(invite).toHaveBeenCalled();
+  });
+});
+
+describe('TabBar', () => {
+  const items = [
+    { id: 'groups', label: 'Groups', href: '/groups', icon: <span /> },
+    { id: 'find', label: 'Find', href: '/find', icon: <span /> },
+  ];
+  it('marks the active tab with aria-current and a dot', () => {
+    render(<TabBar items={items} activeId="find" />);
+    expect(screen.getByRole('link', { name: /Find/ })).toHaveAttribute('aria-current', 'page');
+    expect(screen.getAllByTestId('tab-dot')).toHaveLength(1);
+  });
+});
+
+describe('Button', () => {
+  it('renders a pill button', () => {
+    render(<Button>Continue</Button>);
+    expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument();
+  });
+});

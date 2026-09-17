@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "tags": [
+    "travel",
+    "dining",
+    "fuel",
+    "shopping",
+    "lounge",
+    "cashback",
+    "rewards",
+    "movies",
+    "online",
+    "premium",
+    "lifetime-free",
+    "forex"
+  ],
+  "cards": [
+    {
+      "id": "hdfc-regalia-gold",
+      "name": "Regalia Gold",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": ["Airport lounge access", "4 reward points per ₹150"],
+      "color": "#5B3A8E"
+    },
+    {
+      "id": "hdfc-millennia",
+      "name": "Millennia",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["cashback", "online", "shopping"],
+      "perks": ["5% cashback on Amazon, Flipkart, Swiggy", "1% on everything else"],
+      "color": "#2E6F8E"
+    },
+    {
+      "id": "hdfc-diners-black",
+      "name": "Diners Club Black",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["premium", "travel", "lounge", "dining"],
+      "perks": ["Unlimited lounge access", "10x points on SmartBuy", "Golf rounds"],
+      "color": "#1C1C1C"
+    },
+    {
+      "id": "hdfc-infinia",
+      "name": "Infinia Metal",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["premium", "travel", "lounge", "forex"],
+      "perks": ["Unlimited lounge for self and guest", "5 points per ₹150", "2% forex markup"],
+      "color": "#3A3A3A"
+    },
+    {
+      "id": "hdfc-tata-neu-infinity",
+      "name": "Tata Neu Infinity",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["shopping", "rewards", "online"],
+      "perks": ["5% NeuCoins on Tata brands", "1.5% elsewhere"],
+      "color": "#5E3D7A"
+    },
+    {
+      "id": "hdfc-swiggy",
+      "name": "Swiggy HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["dining", "cashback", "online"],
+      "perks": ["10% cashback on Swiggy", "5% on online spends"],
+      "color": "#E4602F"
+    },
+    {
+      "id": "hdfc-moneyback-plus",
+      "name": "MoneyBack+",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["cashback", "rewards"],
+      "perks": ["10x points on Amazon, BigBasket, Swiggy"],
+      "color": "#2F6E4E"
+    },
+    {
+      "id": "icici-amazon-pay",
+      "name": "Amazon Pay ICICI",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["cashback", "online", "shopping", "lifetime-free"],
+      "perks": ["5% back on Amazon with Prime", "2% on partner merchants", "1% elsewhere"],
+      "color": "#232F3E"
+    },
+    {
+      "id": "icici-sapphiro",
+      "name": "Sapphiro",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "lounge", "premium"],
+      "perks": ["Domestic and international lounge", "BookMyShow buy one get one"],
+      "color": "#1F3F6E"
+    },
+    {
+      "id": "icici-coral",
+      "name": "Coral",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["movies", "dining", "rewards"],
+      "perks": ["BookMyShow offers", "Culinary Treats dining discounts"],
+      "color": "#C75B4A"
+    },
+    {
+      "id": "icici-rubyx",
+      "name": "Rubyx",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": ["Lounge access", "Golf privileges"],
+      "color": "#8E2A3A"
+    },
+    {
+      "id": "icici-emeralde-private",
+      "name": "Emeralde Private Metal",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["premium", "travel", "lounge", "forex"],
+      "perks": ["Unlimited lounge access", "Low forex markup", "Concierge"],
+      "color": "#0F5C4C"
+    },
+    {
+      "id": "sbi-cashback",
+      "name": "Cashback SBI",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["cashback", "online", "shopping"],
+      "perks": ["5% cashback on online spends", "1% offline"],
+      "color": "#1C4C9A"
+    },
+    {
+      "id": "sbi-simplyclick",
+      "name": "SimplyCLICK",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["online", "shopping", "rewards"],
+      "perks": ["10x points on Amazon, BookMyShow, Cleartrip"],
+      "color": "#2C5FB0"
+    },
+    {
+      "id": "sbi-simplysave",
+      "name": "SimplySAVE",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["dining", "movies", "rewards"],
+      "perks": ["10x points on dining, movies, groceries"],
+      "color": "#3E7BC7"
+    },
+    {
+      "id": "sbi-elite",
+      "name": "SBI Card ELITE",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "lounge", "movies", "premium"],
+      "perks": ["Free movie tickets monthly", "Lounge access", "Low forex markup"],
+      "color": "#1B2A4A"
+    },
+    {
+      "id": "sbi-bpcl-octane",
+      "name": "BPCL Octane",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["fuel", "rewards"],
+      "perks": ["7.25% value back on BPCL fuel"],
+      "color": "#F2B705"
+    },
+    {
+      "id": "axis-ace",
+      "name": "ACE",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "online"],
+      "perks": ["5% cashback on bills via Google Pay", "4% on Swiggy, Zomato, Ola"],
+      "color": "#97144D"
+    },
+    {
+      "id": "axis-flipkart",
+      "name": "Flipkart Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "shopping", "online"],
+      "perks": ["5% cashback on Flipkart and Cleartrip", "4% on preferred partners"],
+      "color": "#2874F0"
+    },
+    {
+      "id": "axis-magnus",
+      "name": "Magnus",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["premium", "travel", "lounge", "forex"],
+      "perks": ["Unlimited lounge access", "Miles transfer partners", "Concierge"],
+      "color": "#5C2D91"
+    },
+    {
+      "id": "axis-atlas",
+      "name": "Atlas",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": ["EDGE Miles on travel spends", "Tiered lounge access"],
+      "color": "#1D3557"
+    },
+    {
+      "id": "axis-airtel",
+      "name": "Airtel Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "online"],
+      "perks": ["25% cashback on Airtel bills", "10% on Swiggy, Zomato, BigBasket"],
+      "color": "#E40000"
+    },
+    {
+      "id": "axis-neo",
+      "name": "Neo",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "online", "movies"],
+      "perks": ["Discounts on Zomato, Blinkit, Myntra, BookMyShow"],
+      "color": "#AE275F"
+    },
+    {
+      "id": "amex-platinum-travel",
+      "name": "Platinum Travel",
+      "issuer": "Amex",
+      "bank": "American Express",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": ["Milestone travel vouchers", "Domestic lounge access"],
+      "color": "#2D7A9E"
+    },
+    {
+      "id": "amex-mrcc",
+      "name": "Membership Rewards",
+      "issuer": "Amex",
+      "bank": "American Express",
+      "tags": ["rewards"],
+      "perks": ["1,000 bonus points on 4 transactions a month"],
+      "color": "#3E8E7E"
+    },
+    {
+      "id": "amex-gold",
+      "name": "Gold Charge",
+      "issuer": "Amex",
+      "bank": "American Express",
+      "tags": ["rewards", "dining", "premium"],
+      "perks": ["Membership Rewards points", "Dining programme"],
+      "color": "#B8963E"
+    },
+    {
+      "id": "amex-platinum-charge",
+      "name": "Platinum Charge",
+      "issuer": "Amex",
+      "bank": "American Express",
+      "tags": ["premium", "travel", "lounge", "dining"],
+      "perks": ["Global lounge collection", "Hotel elite status", "Concierge"],
+      "color": "#6B7280"
+    },
+    {
+      "id": "kotak-league-platinum",
+      "name": "League Platinum",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["rewards", "movies"],
+      "perks": ["8 points per ₹150", "PVR vouchers on milestones"],
+      "color": "#ED1C24"
+    },
+    {
+      "id": "kotak-myntra",
+      "name": "Myntra Kotak",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["shopping", "cashback", "online"],
+      "perks": ["7.5% instant discount on Myntra", "5% on Swiggy, PVR, Cleartrip"],
+      "color": "#FF3F6C"
+    },
+    {
+      "id": "kotak-white-reserve",
+      "name": "White Reserve",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["premium", "travel", "lounge"],
+      "perks": ["Unlimited lounge access", "White Pass milestone benefits"],
+      "color": "#E5E5E5"
+    },
+    {
+      "id": "indusind-legend",
+      "name": "Legend",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["lifetime-free", "rewards", "lounge"],
+      "perks": ["Lifetime free", "Weekend double rewards", "Lounge access"],
+      "color": "#7A1E3A"
+    },
+    {
+      "id": "indusind-eazydiner",
+      "name": "EazyDiner IndusInd",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["dining", "rewards"],
+      "perks": ["EazyDiner Prime membership", "Up to 50% off at partner restaurants"],
+      "color": "#C0392B"
+    },
+    {
+      "id": "idfc-first-select",
+      "name": "FIRST Select",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "rewards", "lounge"],
+      "perks": ["Lifetime free", "10x points above ₹20k spend", "Domestic lounge"],
+      "color": "#9C1F3F"
+    },
+    {
+      "id": "idfc-first-wealth",
+      "name": "FIRST Wealth",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "travel", "lounge", "forex"],
+      "perks": ["Lifetime free", "Domestic and international lounge", "1.5% forex markup"],
+      "color": "#5A1A3B"
+    },
+    {
+      "id": "hsbc-live-plus",
+      "name": "Live+",
+      "issuer": "HSBC",
+      "bank": "HSBC",
+      "tags": ["cashback", "dining", "shopping"],
+      "perks": ["10% cashback on dining, food delivery, groceries"],
+      "color": "#DB0011"
+    },
+    {
+      "id": "hsbc-travelone",
+      "name": "TravelOne",
+      "issuer": "HSBC",
+      "bank": "HSBC",
+      "tags": ["travel", "lounge", "forex"],
+      "perks": ["Points transfer to 20+ airline and hotel partners", "Lounge access"],
+      "color": "#2C3E50"
+    },
+    {
+      "id": "sc-ultimate",
+      "name": "Ultimate",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["premium", "travel", "lounge", "forex"],
+      "perks": ["Unlimited lounge access", "Golf", "Low forex markup"],
+      "color": "#0F4C81"
+    },
+    {
+      "id": "sc-smart",
+      "name": "Smart",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["cashback", "online"],
+      "perks": ["2% cashback on online spends"],
+      "color": "#38A169"
+    },
+    {
+      "id": "rbl-shoprite",
+      "name": "ShopRite",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["shopping", "movies", "fuel"],
+      "perks": ["20x points on groceries", "Movie ticket discounts", "Fuel surcharge waiver"],
+      "color": "#1E6FB0"
+    },
+    {
+      "id": "yes-marquee",
+      "name": "Marquee",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["premium", "travel", "lounge"],
+      "perks": ["Unlimited lounge access", "Low forex markup"],
+      "color": "#00204E"
+    },
+    {
+      "id": "au-zenith-plus",
+      "name": "Zenith+",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["premium", "travel", "lounge", "dining"],
+      "perks": ["Unlimited lounge access", "Dining and golf privileges"],
+      "color": "#6A0DAD"
+    },
+    {
+      "id": "au-lit",
+      "name": "LIT",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["cashback", "rewards"],
+      "perks": ["Switch on features you use, pay only for those"],
+      "color": "#FF6B35"
+    },
+    {
+      "id": "onecard-metal",
+      "name": "OneCard Metal",
+      "issuer": "OneCard",
+      "bank": "OneCard",
+      "tags": ["rewards", "lifetime-free", "online"],
+      "perks": ["Lifetime free", "5x points on top 2 categories", "Metal card"],
+      "color": "#111827"
+    },
+    {
+      "id": "federal-scapia",
+      "name": "Scapia Federal",
+      "issuer": "Federal",
+      "bank": "Federal Bank",
+      "tags": ["travel", "lounge", "forex", "lifetime-free"],
+      "perks": ["Zero forex markup", "Unlimited domestic lounge", "Lifetime free"],
+      "color": "#0EA5E9"
+    },
+    {
+      "id": "bob-eterna",
+      "name": "Eterna",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": ["15x points on travel, dining, online", "Unlimited domestic lounge"],
+      "color": "#F26522"
+    }
+  ]
+}

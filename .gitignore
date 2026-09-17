@@ -30,3 +30,17 @@ functions/.env*
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# playwright
+test-results/
+playwright-report/
+
+# functions bundle
+apps/functions/lib/
+
+# emulator export
+tests/seed/*
+!tests/seed/.gitkeep
+
+# local env (web)
+apps/web/.env.local

@@ -1,0 +1,74 @@
+rules_version = '2';
+
+// The client only ever touches its own documents. Every shared document is written by a function
+// (ADR-0003). Keep this file small enough to test every allow and deny in tests/rules.
+service cloud.firestore {
+  match /databases/{db}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function isMember(aid) {
+      return signedIn()
+        && exists(/databases/$(db)/documents/audiences/$(aid)/members/$(request.auth.uid));
+    }
+
+    // Fields the server owns. The client may never set or change them.
+    function untouched(fields) {
+      return !request.resource.data.diff(resource == null ? {} : resource.data).affectedKeys().hasAny(fields);
+    }
+
+    match /users/{uid} {
+      allow read: if isSelf(uid);
+      // Profile: name and consent only. phoneHash is written by the completeSignup callable.
+      allow create, update: if isSelf(uid) && untouched(['phoneHash'].toSet());
+      // Only DeleteAccount deletes a user.
+      allow delete: if false;
+
+      match /cards/{ucId} {
+        // Write side. visibleTo is a list of audience ids; cap matches the domain invariant.
+        allow read: if isSelf(uid);
+        allow create, update: if isSelf(uid)
+          && request.resource.data.keys().hasOnly(['cardId', 'visibleTo', 'addedAt'])
+          && request.resource.data.cardId is string
+          && request.resource.data.visibleTo is list
+          && request.resource.data.visibleTo.size() <= 50;
+        allow delete: if isSelf(uid);
+      }
+
+      match /memberships/{aid} {
+        // Maintained by functions when the user joins or leaves an audience.
+        allow read: if isSelf(uid);
+        allow write: if false;
+      }
+    }
+
+    match /audiences/{aid} {
+      allow read: if isMember(aid);
+      allow write: if false;
+
+      match /{sub=**}/{id} {
+        allow read: if isMember(aid);
+        allow write: if false;
+      }
+    }
+
+    match /invites/{code} {
+      allow read, write: if false;
+    }
+
+    match /ratelimits/{uid} {
+      allow read, write: if false;
+    }
+
+    match /catalog/{cardId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+  }
+}

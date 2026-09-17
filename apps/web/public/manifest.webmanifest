@@ -1,0 +1,10 @@
+{
+  "name": "Toli",
+  "short_name": "Toli",
+  "description": "Know whose card to use before the bill comes.",
+  "start_url": "/groups",
+  "display": "standalone",
+  "background_color": "#FAF9F5",
+  "theme_color": "#FAF9F5",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

@@ -9,7 +9,7 @@ import {
 } from 'firebase/functions';
 import { getApps as adminApps, initializeApp as adminInit } from 'firebase-admin/app';
 import { getAuth as adminAuth } from 'firebase-admin/auth';
-import { getFirestore as adminFirestore } from 'firebase-admin/firestore';
+import { FieldValue, getFirestore as adminFirestore } from 'firebase-admin/firestore';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 const PROJECT = 'demo-toli';
@@ -80,7 +80,14 @@ describe('completeSignup', () => {
     expect(data['consentAt']).toBeTruthy();
     expect(data['createdAt']).toBeTruthy();
     expect(JSON.stringify(data)).not.toContain('9876543210');
-    expect(Object.keys(data).sort()).toEqual(['consentAt', 'createdAt', 'name', 'phoneHash']);
+    expect(Object.keys(data).sort()).toEqual([
+      'consentAt',
+      'consentVersion',
+      'createdAt',
+      'name',
+      'phoneHash',
+    ]);
+    expect(data['consentVersion']).toBe(2);
   });
 
   it('keeps the verified phone in contacts/{uid}, opted out unless the box was ticked', async () => {
@@ -112,6 +119,61 @@ describe('completeSignup', () => {
     expect(res.data.name).toBe('Raja J');
     expect(after['consentAt']).toEqual(before['consentAt']);
     expect(after['createdAt']).toEqual(before['createdAt']);
+  });
+});
+
+describe('account settings', () => {
+  type Account = {
+    name: string;
+    phoneMasked?: string;
+    marketingOptIn: boolean;
+    needsConsent: boolean;
+  };
+  const getMyAccount = httpsCallable<unknown, Account>(fns, 'getMyAccount');
+  const setMarketingOptIn = httpsCallable<{ optIn: unknown }, { marketingOptIn: boolean }>(
+    fns,
+    'setMarketingOptIn',
+  );
+
+  it('shows the marketing choice and only the last two digits of the phone', async () => {
+    await completeSignup({ name: 'Raja Jain', consent: true, marketingOptIn: true });
+    const { data } = await getMyAccount({});
+    expect(data).toEqual({
+      name: 'Raja Jain',
+      phoneMasked: '••••• •••10',
+      marketingOptIn: true,
+      needsConsent: false,
+    });
+    expect(JSON.stringify(data)).not.toContain('98765432');
+  });
+
+  it('withdraws and gives marketing consent with one call, and accepts only a boolean', async () => {
+    expect((await setMarketingOptIn({ optIn: false })).data).toEqual({ marketingOptIn: false });
+    const off = (await adminFirestore(admin).doc(`contacts/${uid}`).get()).data()!;
+    expect(off['marketingOptIn']).toBe(false);
+    expect(off['marketingOptInAt']).toBeUndefined();
+    expect(off['phone']).toBe(PHONE);
+    expect(await codeOf(setMarketingOptIn({ optIn: 'yes' }))).toBe('functions/invalid-argument');
+    expect((await setMarketingOptIn({ optIn: true })).data).toEqual({ marketingOptIn: true });
+  });
+
+  it('an account from before ADR-0013 is flagged, cannot opt in without a contact record, and re-consenting fixes both', async () => {
+    await adminFirestore(admin).doc(`users/${uid}`).update({ consentVersion: FieldValue.delete() });
+    await adminFirestore(admin).doc(`contacts/${uid}`).delete();
+    expect((await getMyAccount({})).data).toMatchObject({
+      needsConsent: true,
+      marketingOptIn: false,
+    });
+    expect(await codeOf(setMarketingOptIn({ optIn: true }))).toBe('functions/not-found');
+
+    const before = (await adminFirestore(admin).doc(`users/${uid}`).get()).data()!;
+    await completeSignup({ name: 'Raja Jain', consent: true, marketingOptIn: false });
+    const after = (await adminFirestore(admin).doc(`users/${uid}`).get()).data()!;
+    expect(after['consentVersion']).toBe(2);
+    expect(after['consentAt'].toMillis()).toBeGreaterThanOrEqual(before['consentAt'].toMillis());
+    expect(after['createdAt']).toEqual(before['createdAt']);
+    expect((await adminFirestore(admin).doc(`contacts/${uid}`).get()).data()!['phone']).toBe(PHONE);
+    expect((await getMyAccount({})).data.needsConsent).toBe(false);
   });
 });
 

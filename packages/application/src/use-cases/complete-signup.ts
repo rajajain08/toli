@@ -1,4 +1,5 @@
 import {
+  CONSENT_VERSION,
   createUser,
   InvalidArgument,
   normaliseDisplayName,
@@ -34,8 +35,16 @@ export class CompleteSignup {
     const now = this.clock.now();
     const existing = await this.users.get(cmd.actor);
     const phoneHash = this.hasher.hash(cmd.phone);
+    // Someone on an older consent text is agreeing to the current one now: re-date it. Someone already
+    // current keeps their original date, so a repeat call changes nothing but the name.
     const user: User = existing
-      ? { ...existing, name: normaliseDisplayName(cmd.name), phoneHash }
+      ? {
+          ...existing,
+          name: normaliseDisplayName(cmd.name),
+          phoneHash,
+          consentAt: existing.consentVersion < CONSENT_VERSION ? now : existing.consentAt,
+          consentVersion: CONSENT_VERSION,
+        }
       : createUser({ id: cmd.actor, name: cmd.name, phoneHash, consentAt: now, now });
     const contact = upsertContact({
       existing: await this.contacts.get(cmd.actor),

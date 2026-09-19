@@ -29,7 +29,7 @@ service cloud.firestore {
       // consent timestamp. The client may only rename itself afterwards.
       allow create: if false;
       allow update: if isSelf(uid)
-        && untouched(['phoneHash', 'consentAt', 'createdAt'].toSet())
+        && untouched(['phoneHash', 'consentAt', 'consentVersion', 'createdAt'].toSet())
         && request.resource.data.name is string
         && request.resource.data.name.size() >= 1
         && request.resource.data.name.size() <= 40;

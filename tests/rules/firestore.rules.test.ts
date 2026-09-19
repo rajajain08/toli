@@ -96,10 +96,12 @@ describe('users/{uid}', () => {
       setDoc(doc(as('carol'), 'users/carol'), { name: 'Carol', phoneHash: 'forged' }),
     );
   });
-  it('the client cannot change phoneHash, consentAt or createdAt', async () => {
+  it('the client cannot change phoneHash, consentAt, consentVersion or createdAt', async () => {
     await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { phoneHash: 'forged' }));
     await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { consentAt: new Date(0) }));
     await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { createdAt: new Date(0) }));
+    // Nobody can mark themselves as having agreed to a consent text they were never shown.
+    await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { consentVersion: 99 }));
   });
   it('a rename must be a name of 1 to 40 characters', async () => {
     await assertFails(updateDoc(doc(as(ALICE), 'users/alice'), { name: '' }));

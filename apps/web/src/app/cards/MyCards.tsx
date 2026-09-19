@@ -68,6 +68,11 @@ export function MyCards() {
   };
 
   const current = cards?.[selected];
+  /** True while this exact card-and-audience switch is still on its way to the server. */
+  const saving = (audienceId: string) =>
+    setVisibility.isPending &&
+    setVisibility.variables?.cardId === current?.id &&
+    setVisibility.variables?.audienceId === audienceId;
   const info = current ? getCatalogCard(current.cardId) : undefined;
 
   return (
@@ -87,6 +92,10 @@ export function MyCards() {
             {cards === undefined ? 'Loading…' : `${count} card${count === 1 ? '' : 's'}`} ·{' '}
             <Link href="/privacy" style={{ fontWeight: 600 }}>
               what friends see
+            </Link>{' '}
+            ·{' '}
+            <Link href="/settings" style={{ fontWeight: 600 }}>
+              settings
             </Link>
           </Lede>
         </div>
@@ -211,6 +220,7 @@ export function MyCards() {
                         <ToggleRow key={g.audienceId} label={name} last={i === groups.length - 1}>
                           <Toggle
                             on={on}
+                            busy={saving(g.audienceId)}
                             label={`${on ? 'Visible to' : 'Hidden from'} ${name}`}
                             onChange={(visible) =>
                               setVisibility.mutate({
@@ -249,6 +259,7 @@ export function MyCards() {
                           <ToggleRow key={p.audienceId} label={name} last={i === people.length - 1}>
                             <Toggle
                               on={on}
+                              busy={saving(p.audienceId)}
                               label={`${on ? 'Visible to' : 'Hidden from'} ${name}`}
                               onChange={(visible) =>
                                 setVisibility.mutate({

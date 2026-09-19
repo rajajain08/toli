@@ -86,8 +86,10 @@ Done when the friend group is on it.
 ## Milestone 6 — Launch (`m6-launch`)
 
 - [ ] `DeleteAccount` cascade: memberships, read-model rows, invites created, `contacts/{uid}` (ADR-0013), auth user; only path that deletes `users/{uid}`
-- [ ] Consent versioning: store `consentVersion` on the profile and show the consent step again when it is older than the current text. Accounts created before ADR-0013 agreed to "a hash of my phone number" and have no `contacts/{uid}`; they must re-consent, not be backfilled from Auth
-- [ ] Settings toggle to withdraw the marketing opt-in; owed before any campaign is sent
+- [x] Consent versioning: `consentVersion` on the profile (missing reads as 1), the gate sends anyone on an older text back through the consent step with the reason, and `CompleteSignup` re-dates consent and captures the phone. Rules stop a client from bumping its own version
+- [x] Settings screen: name, last two digits of the phone, one switch for marketing messages (`getMyAccount`, `setMarketingOptIn`), privacy link, sign out. Switches show when a change is saved, not just flipped
+- [x] The auth gate opens from a local profile snapshot and refreshes from Firestore in the background, so a reload no longer waits on the IndexedDB lease
+- [x] E2E runs against a production build, not `next dev`
 - [ ] Marketing export job: `contacts where marketingOptIn == true` joined to name and cards, Admin SDK or BigQuery only
 - [ ] Privacy page with grievance contact; DPDP consent copy
 - [ ] PWA install prompt, icons, offline fallback

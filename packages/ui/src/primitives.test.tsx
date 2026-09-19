@@ -49,6 +49,15 @@ describe('Toggle', () => {
   });
 });
 
+describe('Toggle busy state', () => {
+  it('says when a change has not been saved yet', () => {
+    const { rerender } = render(<Toggle on onChange={() => {}} label="Visible to Crew" busy />);
+    expect(screen.getByRole('switch')).toHaveAttribute('aria-busy', 'true');
+    rerender(<Toggle on onChange={() => {}} label="Visible to Crew" />);
+    expect(screen.getByRole('switch')).not.toHaveAttribute('aria-busy');
+  });
+});
+
 describe('CardTile', () => {
   it('names the card by issuer and name only', () => {
     render(<CardTile name="Millennia" issuer="HDFC" tint="#6B4D9E" />);

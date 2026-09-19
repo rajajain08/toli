@@ -90,3 +90,35 @@ export async function swipe(
   await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
   await cdp.detach();
 }
+
+const FIRESTORE = 'http://127.0.0.1:8080/v1/projects/demo-toli/databases/(default)/documents';
+/** The emulators treat "Bearer owner" as an admin: rules are bypassed, exactly like the Admin SDK. */
+const ADMIN = { Authorization: 'Bearer owner' };
+
+export async function uidForPhone(request: APIRequestContext, e164: string): Promise<string> {
+  const res = await request.get(
+    `${AUTH}/identitytoolkit.googleapis.com/v1/projects/${PROJECT}/accounts:batchGet?maxResults=1000`,
+    { headers: ADMIN },
+  );
+  const body = (await res.json()) as { users?: { localId: string; phoneNumber?: string }[] };
+  const user = (body.users ?? []).find((u) => u.phoneNumber === e164);
+  if (!user) throw new Error(`no auth user for ${e164}`);
+  return user.localId;
+}
+
+/**
+ * Turns a fresh account into one from before ADR-0013: no consentVersion on the profile and no contact
+ * record, which is what accounts created under the first consent text look like.
+ */
+export async function makeLegacyAccount(request: APIRequestContext, uid: string): Promise<void> {
+  const patched = await request.patch(
+    `${FIRESTORE}/users/${uid}?updateMask.fieldPaths=consentVersion`,
+    { headers: ADMIN, data: { fields: {} } },
+  );
+  if (!patched.ok()) throw new Error(`could not strip consentVersion: ${patched.status()}`);
+  await request.delete(`${FIRESTORE}/contacts/${uid}`, { headers: ADMIN });
+}
+
+export async function contactExists(request: APIRequestContext, uid: string): Promise<boolean> {
+  return (await request.get(`${FIRESTORE}/contacts/${uid}`, { headers: ADMIN })).ok();
+}

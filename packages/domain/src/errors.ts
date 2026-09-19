@@ -64,3 +64,11 @@ export class InvalidArgument extends DomainError {
     super(message);
   }
 }
+
+/** The two people share no group, so one cannot open a 1:1 share with the other. */
+export class NotConnected extends DomainError {
+  readonly code = 'not-connected';
+  constructor() {
+    super('you can only share with someone who is in one of your groups');
+  }
+}

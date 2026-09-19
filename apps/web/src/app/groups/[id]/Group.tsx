@@ -17,6 +17,8 @@ import { track } from '@/lib/analytics';
 import { callableMessage, callCreateInvite } from '@/lib/api';
 import { useAudience, useAudienceCards, useAudienceMembers, useUid } from '@/lib/useGroups';
 
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
 const label = (tag: string) => tag.charAt(0).toUpperCase() + tag.slice(1).replace(/-/g, ' ');
 
 export function Group({ id }: { id: string }) {
@@ -37,6 +39,11 @@ export function Group({ id }: { id: string }) {
     if (audience) void track('group_joined', { members: audience.memberCount });
     // once per group view
   }, [audience?.id]);
+
+  const isDirect = audience?.type === 'direct';
+  const peer = isDirect ? (members ?? []).find((m) => m.userId !== uid) : undefined;
+  const title = isDirect ? (peer?.name ?? ' ') : (audience?.name ?? ' ');
+  const shareHref = isDirect && peer ? `/share?with=${peer.userId}` : `/groups/${id}/share`;
 
   const tags = useMemo(
     () => [...new Set((cards ?? []).flatMap((c) => c.tags))].slice(0, 6),
@@ -102,12 +109,14 @@ export function Group({ id }: { id: string }) {
           </IconCircle>
         </Link>
         <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: 2, minWidth: 0 }}>
-          <Heading size="title">{audience?.name ?? ' '}</Heading>
+          <Heading size="title">{title}</Heading>
           <div style={{ fontSize: 14, color: 'var(--toli-ink-3)' }}>
             {audience === undefined
               ? ' '
               : person === 'all' && !tag
-                ? `${audience.memberCount} member${audience.memberCount === 1 ? '' : 's'} · ${total} card${total === 1 ? '' : 's'}`
+                ? isDirect
+                  ? `Just the two of you · ${plural(total, 'card')}`
+                  : `${plural(audience.memberCount, 'member')} · ${plural(total, 'card')}`
                 : `Showing ${shown.length} of ${total} cards`}
           </div>
         </div>
@@ -145,7 +154,7 @@ export function Group({ id }: { id: string }) {
         ]}
         selectedId={person}
         onSelect={setPerson}
-        action={{ label: 'Invite', onClick: share }}
+        action={isDirect ? undefined : { label: 'Invite', onClick: share }}
       />
 
       {tags.length > 0 ? (
@@ -169,7 +178,7 @@ export function Group({ id }: { id: string }) {
         <Panel>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ flexGrow: 1 }}>You’re not sharing any cards here yet.</div>
-            <Link href={`/groups/${id}/share`} style={{ textDecoration: 'none' }}>
+            <Link href={shareHref} style={{ textDecoration: 'none' }}>
               <Button size="small" tabIndex={-1}>
                 Choose cards
               </Button>

@@ -4,6 +4,7 @@ import {
   InvalidInvite,
   LimitExceeded,
   NotAMember,
+  NotConnected,
   NotFound,
   NotOwner,
   RateLimited,
@@ -18,7 +19,7 @@ export function toHttpsError(err: unknown, useCase: string): HttpsError {
     const code =
       err instanceof NotFound
         ? 'not-found'
-        : err instanceof NotAMember || err instanceof NotOwner
+        : err instanceof NotAMember || err instanceof NotOwner || err instanceof NotConnected
           ? 'permission-denied'
           : err instanceof InvalidArgument || err instanceof InvalidInvite
             ? 'invalid-argument'

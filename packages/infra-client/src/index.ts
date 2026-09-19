@@ -7,3 +7,5 @@ export * from './user-repository';
 export * from './system';
 export * from './queries';
 export * from './audience-reader';
+export * from './group-card-reader';
+export * from './peers';

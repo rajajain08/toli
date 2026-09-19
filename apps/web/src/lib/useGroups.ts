@@ -1,8 +1,8 @@
 'use client';
 import type { GroupCardRow } from '@toli/application';
 import { GroupId, UserId, type UserCard, type UserCardId } from '@toli/domain';
-import type { AudienceSummary, MemberRow, MembershipRow } from '@toli/infra-client';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import type { AudienceSummary, MemberRow, MembershipRow, Peer } from '@toli/infra-client';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { track } from './analytics';
 import { useAuth } from './auth';
 import { getContainer } from './container';
@@ -50,5 +50,19 @@ export function useSetVisibility() {
     },
     onError: (_e, _i, ctx) => client.setQueryData(key, ctx?.previous),
     onSuccess: (_c, input) => void track('visibility_changed', { visible: input.visible }),
+  });
+}
+
+/** People in your groups, for the "share with a person" picker. One-shot, refreshed when the screen opens. */
+export function usePeers() {
+  const uid = useUid();
+  return useQuery<Peer[]>({
+    queryKey: ['peers', uid ?? '-'],
+    enabled: uid !== undefined,
+    staleTime: 0,
+    queryFn: async () => {
+      const c = await getContainer();
+      return c.infra.listPeers(c.db, UserId(uid!));
+    },
   });
 }

@@ -41,12 +41,23 @@ export interface UserCardRepository {
   remove(ownerId: UserId, id: UserCardId): Promise<void>;
 }
 
+export interface DirectMember {
+  membership: Membership;
+  name: string;
+  peerName: string;
+}
+
 export interface AudienceRepository {
   get(id: GroupId): Promise<Audience | undefined>;
   /** Creates the audience with its first member. `ownerName` is denormalised onto the member row. */
   create(audience: Audience, owner: Membership, ownerName: string): Promise<void>;
   /** Idempotent. Must enforce the member cap atomically and keep `memberCount` and the user's membership list in step. */
   addMember(membership: Membership, memberName: string): Promise<void>;
+  /**
+   * Creates a 1:1 audience with both people in it, atomically, and is a no-op if it already exists.
+   * Each person's own membership entry is named after the other person, which is how their list shows it.
+   */
+  createDirect(audience: Audience, members: readonly [DirectMember, DirectMember]): Promise<void>;
   removeMember(audienceId: GroupId, userId: UserId): Promise<void>;
   isMember(audienceId: GroupId, userId: UserId): Promise<boolean>;
   listForUser(userId: UserId): Promise<Audience[]>;
@@ -81,6 +92,8 @@ export interface GroupCardRow {
 export interface GroupCardReadModel {
   listByAudience(audienceId: GroupId): Promise<GroupCardRow[]>;
   findHolders(audienceIds: readonly GroupId[], cardId: CardId): Promise<GroupCardRow[]>;
+  /** Rows carrying a catalogue tag such as "lounge" or "fuel". */
+  findByTag(audienceIds: readonly GroupId[], tag: string): Promise<GroupCardRow[]>;
   project(rows: readonly GroupCardRow[]): Promise<void>;
   unproject(refs: readonly { audienceId: GroupId; userCardId: UserCardId }[]): Promise<void>;
 }

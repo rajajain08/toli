@@ -11,3 +11,5 @@ export * from './use-cases/get-invite-preview';
 export * from './use-cases/project-user-card';
 export * from './use-cases/list-audience-cards';
 export * from './use-cases/sync-catalog-mirror';
+export * from './use-cases/share-with';
+export * from './use-cases/find-card-holders';

@@ -4,6 +4,7 @@ import { Button, GroupTile, Heading, Lede, Panel, SectionLabel, TextField } from
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, type FormEvent } from 'react';
+import { useFlag } from '@/lib/flags';
 import { useAudience, useMyGroups } from '@/lib/useGroups';
 
 /** Accepts a whole invite link or just the code. */
@@ -17,11 +18,14 @@ const codeFrom = (raw: string): string => {
   return Invite.parseCode(tail);
 };
 
-function GroupLink({ id, name }: { id: string; name: string }) {
+function GroupLink({ id, name, direct = false }: { id: string; name: string; direct?: boolean }) {
   const { data: audience } = useAudience(id);
-  const summary = audience
-    ? `${audience.memberCount} member${audience.memberCount === 1 ? '' : 's'} · ${audience.cardCount} card${audience.cardCount === 1 ? '' : 's'}`
-    : ' ';
+  const summary =
+    audience && direct
+      ? `${audience.cardCount} card${audience.cardCount === 1 ? '' : 's'} between you`
+      : audience
+        ? `${audience.memberCount} member${audience.memberCount === 1 ? '' : 's'} · ${audience.cardCount} card${audience.cardCount === 1 ? '' : 's'}`
+        : ' ';
   return (
     <Link href={`/groups/${id}`} style={{ textDecoration: 'none' }}>
       <GroupTile name={name} summary={summary} />
@@ -36,6 +40,8 @@ export function Groups() {
   const [error, setError] = useState<string | undefined>();
 
   const groups = (memberships ?? []).filter((m) => m.type === 'group');
+  const people = (memberships ?? []).filter((m) => m.type === 'direct');
+  const directShares = useFlag('directSharesEnabled');
 
   const openInvite = (e: FormEvent) => {
     e.preventDefault();
@@ -115,6 +121,33 @@ export function Groups() {
               <GroupLink key={g.audienceId} id={g.audienceId} name={g.name ?? 'Group'} />
             ))}
           </section>
+          {directShares ? (
+            <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <SectionLabel
+                action={
+                  <Link href="/share" style={{ fontSize: 13, fontWeight: 600 }}>
+                    Add person
+                  </Link>
+                }
+              >
+                Shared with you
+              </SectionLabel>
+              {people.length === 0 ? (
+                <Panel dashed>
+                  Nobody yet. Share a card with one person and they show up here.
+                </Panel>
+              ) : (
+                people.map((p) => (
+                  <GroupLink
+                    key={p.audienceId}
+                    id={p.audienceId}
+                    name={p.name ?? 'Someone'}
+                    direct
+                  />
+                ))
+              )}
+            </section>
+          ) : null}
           <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <SectionLabel>Got an invite?</SectionLabel>
             {paste}

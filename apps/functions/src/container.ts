@@ -5,6 +5,7 @@ import {
   GetInvitePreview,
   JoinByInvite,
   ProjectUserCard,
+  ShareWith,
   type CardCatalogReader,
 } from '@toli/application';
 import { getCatalogCard } from '@toli/catalog';
@@ -49,6 +50,7 @@ export function buildCore() {
     joinByInvite: new JoinByInvite(audiences, invites, users, limiter, clock),
     getInvitePreview: new GetInvitePreview(invites, audiences, users, clock),
     projectUserCard: new ProjectUserCard(readModel, audiences, users, catalog),
+    shareWith: new ShareWith(audiences, users, limiter, clock),
   };
 }
 

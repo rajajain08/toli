@@ -75,15 +75,13 @@ describe('joinByInvite', () => {
   });
 
   it('refuses an expired invite', async () => {
-    await db
-      .doc('invites/EXP1RED0')
-      .set({
-        audienceId: group.audienceId,
-        createdAt: Timestamp.now(),
-        expiresAt: Timestamp.fromMillis(Date.now() - 1000),
-        uses: 0,
-        maxUses: 50,
-      });
+    await db.doc('invites/EXP1RED0').set({
+      audienceId: group.audienceId,
+      createdAt: Timestamp.now(),
+      expiresAt: Timestamp.fromMillis(Date.now() - 1000),
+      uses: 0,
+      maxUses: 50,
+    });
     expect(await codeOf(stranger.call('joinByInvite', { code: 'EXP1RED0' }))).toBe(
       'functions/invalid-argument',
     );
@@ -190,13 +188,11 @@ describe('onUserCardWritten (projection)', () => {
     const theirs = await stranger.call<{ name: string }, Created>('createAudience', {
       name: 'Strangers only',
     });
-    await db
-      .doc(`users/${rahul.uid}/cards/uc-sneaky`)
-      .set({
-        cardId: 'hdfc-millennia',
-        visibleTo: [theirs.audienceId, group.audienceId],
-        addedAt: Timestamp.now(),
-      });
+    await db.doc(`users/${rahul.uid}/cards/uc-sneaky`).set({
+      cardId: 'hdfc-millennia',
+      visibleTo: [theirs.audienceId, group.audienceId],
+      addedAt: Timestamp.now(),
+    });
     // The legitimate audience gets the row, which also proves the trigger has run.
     await eventually(
       () => db.doc(`audiences/${group.audienceId}/cards/uc-sneaky`).get(),

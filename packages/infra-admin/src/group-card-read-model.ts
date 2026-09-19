@@ -1,5 +1,5 @@
 import type { GroupCardReadModel, GroupCardRow } from '@toli/application';
-import { CardId, GroupId, UserCardId, UserId } from '@toli/domain';
+import { CardId, UserCardId, UserId, type GroupId } from '@toli/domain';
 import { FieldValue, Timestamp, type DocumentData, type Firestore } from 'firebase-admin/firestore';
 import { paths } from './paths';
 

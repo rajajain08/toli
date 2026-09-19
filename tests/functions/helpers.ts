@@ -28,14 +28,12 @@ let seq = 0;
 export async function person(name: string): Promise<TestUser> {
   const uid = `${name.toLowerCase()}-${Date.now()}-${seq++}`;
   await adminAuth(admin).createUser({ uid });
-  await db
-    .doc(`users/${uid}`)
-    .set({
-      name,
-      phoneHash: 'h'.repeat(64),
-      consentAt: Timestamp.now(),
-      createdAt: Timestamp.now(),
-    });
+  await db.doc(`users/${uid}`).set({
+    name,
+    phoneHash: 'h'.repeat(64),
+    consentAt: Timestamp.now(),
+    createdAt: Timestamp.now(),
+  });
   const app = initializeApp(
     { projectId: PROJECT, apiKey: 'demo', appId: 'demo', authDomain: `${PROJECT}.firebaseapp.com` },
     uid,

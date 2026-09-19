@@ -62,7 +62,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let unsub = () => {};
     let cancelled = false;
-    void loadFirebase()
+    // After the first paint, not during it: the SDK is large, and on a slow phone it would compete with
+    // the HTML, CSS and font the person is actually waiting for. Idle fires within milliseconds on a fast one.
+    const whenIdle: (cb: () => void) => void =
+      'requestIdleCallback' in window ? (cb) => window.requestIdleCallback(cb, { timeout: 1200 }) : (cb) => window.setTimeout(cb, 1);
+    void new Promise<void>((resolve) => whenIdle(resolve))
+      .then(() => loadFirebase())
       .then(({ infra }) => infra.loadAuth())
       .then((auth) => {
       if (cancelled) return;

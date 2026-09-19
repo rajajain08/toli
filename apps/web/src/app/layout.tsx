@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import type { ReactNode } from 'react';
 import '@toli/ui/tokens.css';
 import { Providers } from '@/components/Providers';
+import { ServiceWorker } from '@/components/ServiceWorker';
 
 // Display face: one static Fraunces instance, subset to Latin (docs/design/brand/build-font.py).
 const display = localFont({
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={display.variable}>
       <body>
         <Providers>{children}</Providers>
+        <ServiceWorker />
       </body>
     </html>
   );

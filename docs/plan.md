@@ -93,9 +93,9 @@ Done when the friend group is on it.
 - [ ] Marketing export job: `contacts where marketingOptIn == true` joined to name and cards, Admin SDK or BigQuery only
 - [x] Privacy page links to delete, says the phone goes too, and shows the grievance contact from `NEXT_PUBLIC_GRIEVANCE_EMAIL`
 - [ ] Raja: choose the grievance officer email and set it for dev and prod
-- [ ] PWA install prompt, icons, offline fallback
-- [ ] Performance Monitoring, Error Reporting, structured logs per use case
-- [ ] Lighthouse CI budgets (LCP 2.5 s, CLS 0)
+- [x] PWA: hand-written service worker (build assets cache-first, navigations network-first with a cached copy, then `/offline.html`), install prompt on Groups (Android event, iOS hint, "Not now" for a month); icons were already in place. E2E opens the app with the network off
+- [x] Firebase Performance Monitoring, loaded lazily and never on the emulators; every use case already writes one structured log line and errors reach Error Reporting through the functions logger
+- [x] Lighthouse CI on `/auth` and `/privacy`, applied slow-4G and 4x CPU throttling, median of three: LCP <= 2.5 s, CLS <= 0.01. It found `/auth` at 2.5 s because `useSearchParams` made the whole form wait for JavaScript; the form is now in the server HTML (1.97 s) and the auth provider loads Firebase after first paint
 - [ ] `toli-prod` project, tag-based deploy, rules and functions in the same release
 
 ## Open items needing Raja

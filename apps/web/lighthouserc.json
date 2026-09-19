@@ -1,0 +1,30 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "pnpm --filter @toli/web start",
+      "startServerReadyPattern": "Ready in|started server|Local:",
+      "startServerReadyTimeout": 60000,
+      "url": ["http://127.0.0.1:3000/auth", "http://127.0.0.1:3000/privacy"],
+      "numberOfRuns": 3,
+      "settings": {
+        "chromeFlags": "--headless=new --no-sandbox",
+        "onlyCategories": ["performance"],
+        "throttlingMethod": "devtools"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "largest-contentful-paint": [
+          "error",
+          { "maxNumericValue": 2500, "aggregationMethod": "median" }
+        ],
+        "cumulative-layout-shift": [
+          "error",
+          { "maxNumericValue": 0.01, "aggregationMethod": "median" }
+        ],
+        "total-blocking-time": ["warn", { "maxNumericValue": 300, "aggregationMethod": "median" }]
+      }
+    },
+    "upload": { "target": "filesystem", "outputDir": ".lighthouseci" }
+  }
+}

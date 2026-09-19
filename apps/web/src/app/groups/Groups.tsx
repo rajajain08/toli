@@ -4,6 +4,7 @@ import { Button, GroupTile, Heading, Lede, Panel, SectionLabel, TextField } from
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, type FormEvent } from 'react';
+import { InstallPrompt } from '@/components/InstallPrompt';
 import { useFlag } from '@/lib/flags';
 import { useAudience, useMyGroups } from '@/lib/useGroups';
 
@@ -86,6 +87,8 @@ export function Groups() {
         <Heading size="title">Groups</Heading>
         <Lede>The people you split bills with, and the cards they carry.</Lede>
       </div>
+
+      <InstallPrompt />
 
       {memberships === undefined ? (
         <div

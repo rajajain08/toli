@@ -76,11 +76,12 @@ Done when the friend group is on it.
 
 ## Milestone 5 — Direct shares and Find (`m5-share-find`)
 
-- [ ] `ShareWith` use case: deterministic `direct_<min>_<max>`, both memberships, cards visible
-- [ ] `FindCardHolders` use case; MVP adapter = parallel per-membership queries
-- [ ] Screens: Share (`Share.dc.html`), Find (`Search.dc.html`)
-- [ ] Remote Config flag `directSharesEnabled`
-- [ ] GA4 `find_used`
+- [x] `ShareWith` use case: deterministic `direct_<min>_<max>`, both memberships in one transaction, idempotent from either side, rate limited, and only with someone already in one of your groups. It creates the audience only; card visibility stays the owner's own write, as for a group
+- [x] `FindCardHolders` (by card and by perk); MVP adapter = parallel per-membership single-field queries, tested through the real rules. Your own cards are never an answer; a person appears once however many ways you know them
+- [x] Screens: Share (people come from your groups, since the web cannot read phone contacts; nothing ticked to begin with), Find (Everyone / Groups / People, "Ask" through the share sheet so no number is exposed, find by perk), "Shared with you" on Groups, 1:1 switches on My cards, the group screen titled with the other person for a 1:1
+- [x] Remote Config flag `directSharesEnabled` (default on; defaults apply offline and on the emulators)
+- [x] GA4 `find_used`
+- [x] The catalogue loads lazily in the web container, so sign-in and the invite landing page no longer carry it (133 → 117 KB and 131 → 115 KB gz)
 
 ## Milestone 6 — Launch (`m6-launch`)
 

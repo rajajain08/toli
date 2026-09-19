@@ -1,4 +1,5 @@
 'use client';
+import type { UserCard } from '@toli/domain';
 import { getCatalogCard } from '@toli/catalog';
 import {
   Button,
@@ -15,6 +16,7 @@ import {
 } from '@toli/ui';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useFlag } from '@/lib/flags';
 import { useMyGroups, useSetVisibility } from '@/lib/useGroups';
 import { useMyCards, useRemoveCard } from '@/lib/useMyCards';
 
@@ -27,6 +29,8 @@ export function MyCards() {
   const { data: memberships } = useMyGroups();
   const setVisibility = useSetVisibility();
   const groups = (memberships ?? []).filter((g) => g.type === 'group');
+  const people = (memberships ?? []).filter((g) => g.type === 'direct');
+  const directShares = useFlag('directSharesEnabled');
   const [selected, setSelected] = useState(0);
   // A native scroll-snap track: a finger swipe scrolls it, the browser snaps it, and the selected card
   // is whichever one the scroll position has settled on. Taps and dots just scroll the track.
@@ -50,6 +54,18 @@ export function MyCards() {
     if (selected > Math.max(0, count - 1)) setSelected(Math.max(0, count - 1));
     setConfirming(false);
   }, [count, selected]);
+
+  const describe = (c: UserCard) => {
+    const g = groups.filter((x) => c.isVisibleTo(x.audienceId)).length;
+    const p = people.filter((x) => c.isVisibleTo(x.audienceId)).length;
+    if (g + p === 0)
+      return c.visibleTo.size === 0 ? 'Private — only you' : `Visible to ${c.visibleTo.size}`;
+    const parts = [
+      g ? `${g} group${g === 1 ? '' : 's'}` : '',
+      p ? `${p} ${p === 1 ? 'person' : 'people'}` : '',
+    ].filter(Boolean);
+    return `Visible to ${g + p} · ${parts.join(', ')}`;
+  };
 
   const current = cards?.[selected];
   const info = current ? getCatalogCard(current.cardId) : undefined;
@@ -147,11 +163,7 @@ export function MyCards() {
                         tint={cat?.color ?? '#3D3D3A'}
                         selected={i === selected}
                         onClick={() => goTo(i)}
-                        footer={
-                          c.visibleTo.size === 0
-                            ? 'Private — only you'
-                            : `Visible to ${c.visibleTo.size} group${c.visibleTo.size === 1 ? '' : 's'}`
-                        }
+                        footer={describe(c)}
                       />
                     </div>
                   );
@@ -214,6 +226,45 @@ export function MyCards() {
                   </Panel>
                 )}
               </section>
+
+              {directShares ? (
+                <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  <SectionLabel
+                    action={
+                      <Link href="/share" style={{ fontSize: 13, fontWeight: 600 }}>
+                        Add person
+                      </Link>
+                    }
+                  >
+                    People you share with
+                  </SectionLabel>
+                  {people.length === 0 ? (
+                    <Panel>Share this card with just one person, without a group.</Panel>
+                  ) : (
+                    <Panel>
+                      {people.map((p, i) => {
+                        const on = current.isVisibleTo(p.audienceId);
+                        const name = p.name ?? 'Someone';
+                        return (
+                          <ToggleRow key={p.audienceId} label={name} last={i === people.length - 1}>
+                            <Toggle
+                              on={on}
+                              label={`${on ? 'Visible to' : 'Hidden from'} ${name}`}
+                              onChange={(visible) =>
+                                setVisibility.mutate({
+                                  cardId: current.id,
+                                  audienceId: p.audienceId,
+                                  visible,
+                                })
+                              }
+                            />
+                          </ToggleRow>
+                        );
+                      })}
+                    </Panel>
+                  )}
+                </section>
+              ) : null}
 
               <div>
                 {confirming ? (

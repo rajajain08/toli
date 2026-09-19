@@ -123,3 +123,11 @@ export const audienceCardsQuery = (
     };
   },
 });
+
+/** Someone you could open a 1:1 share with: a member of one of your groups. */
+export interface Peer {
+  userId: UserId;
+  name: string;
+  /** Names of the groups you share with them. */
+  groups: string[];
+}

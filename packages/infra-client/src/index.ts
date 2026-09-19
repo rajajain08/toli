@@ -10,3 +10,4 @@ export * from './audience-reader';
 export * from './group-card-reader';
 export * from './peers';
 export * from './wipe';
+export * from './prod-guard';

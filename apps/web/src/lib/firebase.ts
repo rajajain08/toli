@@ -33,9 +33,12 @@ let loading: Promise<Loaded> | undefined;
 export function loadFirebase(): Promise<Loaded> {
   return (loading ??= (async () => {
     const useEmulators = usingEmulators();
-    if (PUBLIC.projectId === 'toli-prod' && useEmulators)
-      throw new Error('never point local code at toli-prod');
     const infra = await import('@toli/infra-client');
+    infra.assertNotLocalProd({
+      projectId: PUBLIC.projectId,
+      useEmulators,
+      hostname: typeof window === 'undefined' ? undefined : window.location.hostname,
+    });
     const fb = infra.initFirebase(
       {
         apiKey: PUBLIC.apiKey,

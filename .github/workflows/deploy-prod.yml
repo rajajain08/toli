@@ -1,0 +1,44 @@
+name: deploy prod
+
+# A version tag (v1.2.3) deploys rules, indexes, functions and the App Hosting backend to toli-app-prod,
+# together, so they cannot drift. Enable by setting the repository variable DEPLOY_PROD=true and the secret
+# FIREBASE_SERVICE_ACCOUNT_PROD (Firebase Admin, Cloud Functions Developer, Secret Manager Secret Accessor,
+# Firebase App Hosting Admin). Put the "prod" environment behind required reviewers in repository settings.
+
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+
+jobs:
+  deploy:
+    if: ${{ vars.DEPLOY_PROD == 'true' }}
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: only release what is on main
+        run: |
+          git fetch origin main
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "::error::$GITHUB_REF_NAME is not on main"; exit 1; }
+      - name: only release what CI passed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          conclusion=$(gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/check-runs" --jq '[.check_runs[] | select(.app.slug == "github-actions" and (.name | test("deploy") | not)) | .conclusion] | if length == 0 then "none" elif all(. == "success") then "success" else "failed" end')
+          [ "$conclusion" = "success" ] || { echo "::error::CI for $GITHUB_SHA is '$conclusion', not success"; exit 1; }
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: write credentials
+        run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PROD }}' > "$RUNNER_TEMP/sa.json"
+      - run: pnpm exec firebase deploy --only firestore,functions,apphosting --project toli-app-prod --non-interactive --force
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json
+      - run: pnpm catalog:sync --project toli-app-prod --write --yes-prod
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json

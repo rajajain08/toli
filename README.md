@@ -47,7 +47,7 @@ pnpm test:functions                        # callables and triggers on the emula
 pnpm test:e2e                              # Playwright against the dev server and the emulators
 ```
 
-`pnpm test:all` runs everything. Never point local code at `toli-prod`.
+`pnpm test:all` runs everything. Never point local code at `toli-app-prod`.
 
 ## Marketing list
 

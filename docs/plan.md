@@ -61,7 +61,7 @@ Done when the friend group is on it.
 
 - [x] Use cases `CreateAudience`, `CreateInvite`, `JoinByInvite` (rate limited before any lookup, idempotent), `GetInvitePreview`, `ListAudienceCards`, `ProjectUserCard`; 18 in-memory tests incl. redelivery, the 50-member cap and refusing a group id the owner is not in
 - [x] Admin adapters: `AdminAudienceRepository` (cap enforced in a transaction), `AdminInviteRepository`, `AdminGroupCardReadModel` (owns `cardCount`, so redelivery never double counts), `FirestoreRateLimiter`
-- [x] Callables `createAudience` (returns the first invite too), `joinByInvite`, `createInvite`; `minInstances: 1` on the first two in `toli-prod` only, since a warm instance costs money
+- [x] Callables `createAudience` (returns the first invite too), `joinByInvite`, `createInvite`; `minInstances: 1` on the first two in `toli-app-prod` only, since a warm instance costs money
 - [x] Trigger `onUserCardWritten` → `ProjectUserCard`; one small transaction per row instead of one batch, which is what makes the counters safe under redelivery
 - [x] `/join/[code]` server component with real OG tags via `GetInvitePreview`; shows group name, who started it and two counts, never members or cards
 - [x] Screens: Groups home + first run with paste-an-invite, Start a group, Group (people and category filters, live), visibility switches on My cards (optimistic with rollback)
@@ -96,11 +96,15 @@ Done when the friend group is on it.
 - [x] PWA: hand-written service worker (build assets cache-first, navigations network-first with a cached copy, then `/offline.html`), install prompt on Groups (Android event, iOS hint, "Not now" for a month); icons were already in place. E2E opens the app with the network off
 - [x] Firebase Performance Monitoring, loaded lazily and never on the emulators; every use case already writes one structured log line and errors reach Error Reporting through the functions logger
 - [x] Lighthouse CI on `/auth` and `/privacy`, applied slow-4G and 4x CPU throttling, median of three: LCP <= 2.5 s, CLS <= 0.01. It found `/auth` at 2.5 s because `useSearchParams` made the whole form wait for JavaScript; the form is now in the server HTML (1.97 s) and the auth provider loads Firebase after first paint
-- [ ] `toli-prod` project, tag-based deploy, rules and functions in the same release
+- [x] `toli-app-prod` created 2026-09-19: Firestore in `asia-south1` with rules and indexes, web app registered, App Check key registered, `apphosting.prod.yaml`, `prod` alias
+- [x] `deploy-prod.yml`: a `vX.Y.Z` tag deploys rules, indexes, functions and App Hosting together, only if the tag is on `main` and CI passed for that commit, then syncs the catalogue mirror
+- [ ] Raja: link Blaze billing to `toli-app-prod` (phone auth cannot even be initialised without it)
+- [ ] After billing: initialise Auth with the phone provider and India-only SMS, `PHONE_HASH_SECRET` (a new value, not dev's), first functions deploy, App Hosting backend `toli-web` with environment name `prod`, enforce App Check on Firestore
+- [ ] Raja: repository variable `DEPLOY_PROD=true`, secret `FIREBASE_SERVICE_ACCOUNT_PROD`, required reviewers on the `prod` environment
 
 ## Open items needing Raja
 
-- `toli-app-dev` fully provisioned. `toli-prod` waits for milestone 6
+- `toli-app-dev` fully provisioned. `toli-app-prod` exists; it needs billing before sign-in can be set up
 - reCAPTCHA Enterprise site key for App Check
 - Production font choice for the serif display and sans body
 - Card catalogue review before M3 ships: spot-check the 49 `confidence: medium` rows in `sources.json` (YES Bank and AU block automated reads), and decide on the existing cards whose products have moved on: `kotak-myntra` (co-brand ended July 2025), `hdfc-swiggy` (closed to new; Swiggy Ornge and BLCK added), `hdfc-diners-black` / `hdfc-infinia` (now sold as Metal Edition). Ids stay either way

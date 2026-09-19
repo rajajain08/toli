@@ -21,6 +21,9 @@ export const color = {
   ink4: '#8C8BA3',
   ink5: '#BBBBCD',
   panel: '#ECEDF7',
+  /** Tonal button fill: a step below `panel`, so a quiet action still reads as a button on Frost and on white. */
+  tonal: '#E3E5F3',
+  dangerRing: 'rgba(196,43,75,0.40)',
   hairline: 'rgba(15,14,28,0.10)',
   hairlineStrong: 'rgba(15,14,28,0.30)',
   accentTint: 'rgba(91,77,255,0.12)',

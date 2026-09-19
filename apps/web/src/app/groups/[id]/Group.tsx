@@ -13,6 +13,7 @@ import {
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
+import { ButtonLink } from '@/components/ButtonLink';
 import { track } from '@/lib/analytics';
 import { callableMessage, callCreateInvite } from '@/lib/api';
 import { useAudience, useAudienceCards, useAudienceMembers, useUid } from '@/lib/useGroups';
@@ -74,7 +75,9 @@ export function Group({ id }: { id: string }) {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
         <Heading size="title">Group not found</Heading>
         <Lede>You may have left it, or the link is wrong.</Lede>
-        <Link href="/groups">Back to groups</Link>
+        <ButtonLink href="/groups" variant="secondary" full>
+          Back to groups
+        </ButtonLink>
       </div>
     );
 
@@ -178,11 +181,9 @@ export function Group({ id }: { id: string }) {
         <Panel>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ flexGrow: 1 }}>You’re not sharing any cards here yet.</div>
-            <Link href={shareHref} style={{ textDecoration: 'none' }}>
-              <Button size="small" tabIndex={-1}>
-                Choose cards
-              </Button>
-            </Link>
+            <ButtonLink href={shareHref} size="small">
+              Choose cards
+            </ButtonLink>
           </div>
         </Panel>
       ) : null}
@@ -211,7 +212,7 @@ export function Group({ id }: { id: string }) {
                 <Panel dashed>
                   {m.userId === uid
                     ? 'Switch a card on for this group from My cards.'
-                    : 'Hasn’t added any cards yet'}
+                    : 'Hasn’t added any cards yet.'}
                 </Panel>
               ) : visible.length === 0 ? (
                 <div style={{ fontSize: 14, color: 'var(--toli-ink-4)', padding: '4px 2px' }}>

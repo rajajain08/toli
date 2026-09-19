@@ -68,7 +68,10 @@ describe('SearchField', () => {
 describe('SectionLabel', () => {
   it('shows a count badge', () => {
     render(<SectionLabel count={2}>Your cards</SectionLabel>);
-    expect(screen.getByRole('heading', { name: 'Your cards' })).toBeInTheDocument();
+    const heading = screen.getByRole('heading', { name: 'Your cards' });
+    expect(heading).toBeInTheDocument();
+    // Sentence case as written: the label never shouts.
+    expect(heading.style.textTransform).toBe('');
     expect(screen.getByLabelText('2 selected')).toHaveTextContent('2');
   });
 });

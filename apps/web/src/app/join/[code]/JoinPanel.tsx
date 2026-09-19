@@ -1,8 +1,8 @@
 'use client';
 import { Button } from '@toli/ui';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { ButtonLink } from '@/components/ButtonLink';
 import { track } from '@/lib/analytics';
 import { callableMessage, callJoinByInvite } from '@/lib/api';
 import { isReady, useAuth } from '@/lib/auth';
@@ -42,14 +42,9 @@ export function JoinPanel({ code, groupName }: { code: string; groupName: string
           {busy ? 'Joining…' : `Join ${groupName}`}
         </Button>
       ) : (
-        <Link
-          href={`/auth?next=${encodeURIComponent(`/join/${code}`)}`}
-          style={{ textDecoration: 'none' }}
-        >
-          <Button full tabIndex={-1}>
-            Sign in to join
-          </Button>
-        </Link>
+        <ButtonLink href={`/auth?next=${encodeURIComponent(`/join/${code}`)}`} full>
+          Sign in to join
+        </ButtonLink>
       )}
       {error ? (
         <div

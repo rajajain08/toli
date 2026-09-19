@@ -4,6 +4,7 @@ import { Button, GroupTile, Heading, Lede, Panel, SectionLabel, TextField } from
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, type FormEvent } from 'react';
+import { ButtonLink } from '@/components/ButtonLink';
 import { InstallPrompt } from '@/components/InstallPrompt';
 import { useFlag } from '@/lib/flags';
 import { useAudience, useMyGroups } from '@/lib/useGroups';
@@ -61,7 +62,7 @@ export function Groups() {
         id="invite"
         label="Paste an invite link"
         placeholder="toli.app/join/ABCD2345"
-        autoCapitalize="characters"
+        autoCapitalize="none"
         autoCorrect="off"
         value={pasted}
         onChange={(e) => {
@@ -102,20 +103,18 @@ export function Groups() {
             WhatsApp.
           </Panel>
           {paste}
-          <Link href="/groups/new" style={{ textDecoration: 'none' }}>
-            <Button variant="secondary" full tabIndex={-1}>
-              Start a group
-            </Button>
-          </Link>
+          <ButtonLink href="/groups/new" variant="secondary" full>
+            Start a group
+          </ButtonLink>
         </>
       ) : (
         <>
           <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <SectionLabel
               action={
-                <Link href="/groups/new" style={{ fontSize: 13, fontWeight: 600 }}>
+                <ButtonLink href="/groups/new" variant="secondary" size="small">
                   New group
-                </Link>
+                </ButtonLink>
               }
             >
               Your groups

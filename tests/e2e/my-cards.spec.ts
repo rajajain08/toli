@@ -80,6 +80,6 @@ test('single-player: add two cards, see them in My cards, remove one, survive a 
 test('the privacy screen lists what is never stored', async ({ page }) => {
   await page.goto('/privacy');
   await expect(page.getByRole('heading', { name: 'What friends can see' })).toBeVisible();
-  for (const item of ['Card number', 'Expiry & CVV', 'Credit limit', 'What you spend'])
+  for (const item of ['Card number', 'Expiry and CVV', 'Credit limit', 'What you spend'])
     await expect(page.getByText(item, { exact: true })).toBeVisible();
 });

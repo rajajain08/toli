@@ -178,7 +178,7 @@ export function Find() {
                   {[picked.bank, ...picked.tags.slice(0, 2).map(label)].join(' · ')}
                 </div>
               </div>
-              <Button variant="ghost" size="small" onClick={clear}>
+              <Button variant="tonal" size="small" onClick={clear}>
                 Clear
               </Button>
             </div>

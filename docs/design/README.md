@@ -35,7 +35,8 @@ Toli is टोली: your gang, the people you split bills with. The brand is s
 - Type: serif display over sans body. Display is Fraunces (see Brand); body is the platform sans (`system-ui`), which costs no bytes and feels native on Android and iOS. The mockups still name Anthropic Serif / Anthropic Sans; read those as Fraunces / system-ui.
 - Cards are drawn as objects: issuer-tinted rectangle, Steel chip, light-to-shade gradient, hairline top highlight. No bank logos, no card numbers, ever.
 - Elevation: three levels (row, panel, hero). Frosted tab bar and sticky action bars (`backdrop-filter`), with a solid fallback for low-end Android.
-- Pill primary buttons, 16 px row radius, 8 pt spacing grid.
+- Pill buttons, 16 px row radius, 8 pt spacing grid. Four variants, each with a visible surface: Midnight `primary`, white outlined `secondary`, tinted `tonal` for the quiet way out ("Not now"), and `danger` for removal. Anything that does something is a button (`Button`, or `ButtonLink` when it navigates); an underlined link only ever sits inside a sentence.
+- Sentence case everywhere: headings, section labels, buttons, field labels and hints. Nothing is set in capitals except the issuer mark on a drawn card.
 
 ## Product rules the design encodes
 

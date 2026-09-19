@@ -19,7 +19,7 @@ packages/ui            tokens and primitives from the mockups  imports react
 packages/infra-client  Firebase client adapters                implements ports
 packages/infra-admin   Firebase Admin adapters                 implements ports
 apps/web               Next.js app, composition root
-apps/functions         Cloud Functions (asia-south1), bundled with esbuild
+apps/functions         Cloud Functions (asia-south1), bundled by esbuild into deploy/
 tests/rules            Firestore rules tests (emulator)
 tests/functions        functions integration tests (emulator)
 tests/e2e              Playwright golden path (emulator)
@@ -48,3 +48,15 @@ pnpm test:e2e                              # Playwright against the dev server a
 ```
 
 `pnpm test:all` runs everything. Never point local code at `toli-prod`.
+
+## Dev project
+
+`toli-app-dev` (the id `toli-dev` was taken). Web: https://toli-web--toli-app-dev.asia-southeast1.hosted.app
+
+Rules, indexes, functions and the App Hosting backend deploy from local source with:
+
+```sh
+pnpm exec firebase deploy --only firestore,functions,apphosting --project dev
+```
+
+Functions are bundled into `apps/functions/deploy/` first (see ADR-0011). The phone-hash secret lives in Secret Manager as `PHONE_HASH_SECRET`; the emulator reads `apps/functions/.secret.local` instead.

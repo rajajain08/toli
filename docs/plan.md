@@ -57,16 +57,17 @@ Done when usable as a single-player app.
 
 Done when the friend group is on it.
 
-- [ ] Use cases `CreateAudience`, `JoinByInvite` (rate limited), `ListAudienceCards`, `ProjectUserCard` with tests incl. redelivery idempotency and 50-member cap
-- [ ] Admin adapters: `AdminAudienceRepository`, `AdminInviteRepository`, `AdminGroupCardReadModel`
-- [ ] Callables `createAudience` (`minInstances: 1`), `joinByInvite` (`minInstances: 1`), `createInvite`
-- [ ] Trigger `onUserCardWritten` → `ProjectUserCard`, single batch, counters
-- [ ] `/join/[code]` server component with OG tags via `infra-admin` public preview
-- [ ] Screens: Groups home + empty state, Group (avatar and chip filters), visibility toggles on My cards
-- [ ] Rules tests: member read allowed, non-member denied, all writes denied, tampered `ownerId` denied
-- [ ] Functions emulator tests: projection diff, join rate limit, invite expiry, memberCount cap
-- [ ] Playwright golden path: open invite, OTP, add two cards, see them in the group
-- [ ] GA4 `invite_opened`, `group_joined`, `visibility_changed`
+- [x] Use cases `CreateAudience`, `CreateInvite`, `JoinByInvite` (rate limited before any lookup, idempotent), `GetInvitePreview`, `ListAudienceCards`, `ProjectUserCard`; 18 in-memory tests incl. redelivery, the 50-member cap and refusing a group id the owner is not in
+- [x] Admin adapters: `AdminAudienceRepository` (cap enforced in a transaction), `AdminInviteRepository`, `AdminGroupCardReadModel` (owns `cardCount`, so redelivery never double counts), `FirestoreRateLimiter`
+- [x] Callables `createAudience` (returns the first invite too), `joinByInvite`, `createInvite`; `minInstances: 1` on the first two in `toli-prod` only, since a warm instance costs money
+- [x] Trigger `onUserCardWritten` → `ProjectUserCard`; one small transaction per row instead of one batch, which is what makes the counters safe under redelivery
+- [x] `/join/[code]` server component with real OG tags via `GetInvitePreview`; shows group name, who started it and two counts, never members or cards
+- [x] Screens: Groups home + first run with paste-an-invite, Start a group, Group (people and category filters, live), visibility switches on My cards (optimistic with rollback)
+- [x] Rules tests: member read allowed, non-member denied, all writes denied, tampered `ownerId` denied (in place since milestone 1; 24 passing)
+- [x] Functions emulator tests (15): projection add, withdraw and delete with counters, stranger-group injection refused, join idempotency, expiry, rate limit, invite minting by members only. The cap is covered by the in-memory tier
+- [x] Playwright golden path in two browsers: open invite, OTP, add two cards, join, share, both people see them, Rahul’s open screen updates live, a withdrawn card disappears; suite passes 3× with retries off
+- [x] GA4 `invite_opened`, `group_joined`, `visibility_changed`
+- [ ] Not in this milestone: leave group, rename group, remove a member, the "Just look for now" signed-out peek from the mockup, Nudge
 
 ## Milestone 5 — Direct shares and Find (`m5-share-find`)
 

@@ -36,8 +36,17 @@ export async function signUp(
   request: APIRequestContext,
   name = 'Raja',
 ): Promise<{ e164: string }> {
-  const phone = freshPhone();
   await page.goto('/auth');
+  return completeSignUp(page, request, name);
+}
+
+/** Same, from wherever the sign-in screen already is (for example after "Sign in to join"). */
+export async function completeSignUp(
+  page: Page,
+  request: APIRequestContext,
+  name: string,
+): Promise<{ e164: string }> {
+  const phone = freshPhone();
   await page.getByLabel('Your phone number').fill(phone.national);
   await page.getByRole('button', { name: 'Get code by SMS' }).click();
   // Read the OTP only once the code step is on screen, so the emulator has settled the session.

@@ -128,7 +128,7 @@ export function MyCards() {
                       footer={
                         c.visibleTo.size === 0
                           ? 'Private — only you'
-                          : `Visible to ${c.visibleTo.size}`
+                          : `Visible to ${c.visibleTo.size} group${c.visibleTo.size === 1 ? '' : 's'}`
                       }
                     />
                   );

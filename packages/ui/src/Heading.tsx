@@ -17,7 +17,7 @@ export function Heading({
         fontSize: size === 'display' ? 30 : 24,
         lineHeight: 1.12,
         letterSpacing: '-0.01em',
-        color: color.slate,
+        color: color.ink,
       }}
     >
       {children}

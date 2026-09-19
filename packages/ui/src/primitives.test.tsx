@@ -6,6 +6,7 @@ import { CardTile } from './CardTile';
 import { Chip } from './Chip';
 import { TabBar } from './TabBar';
 import { Toggle } from './Toggle';
+import { Wordmark } from './Wordmark';
 import { avatarColorFor, color, initialOf } from './tokens';
 
 describe('tokens', () => {
@@ -16,6 +17,17 @@ describe('tokens', () => {
   it('takes the initial of the first name', () => {
     expect(initialOf('raja jain')).toBe('R');
     expect(initialOf('   ')).toBe('?');
+  });
+});
+
+describe('Wordmark', () => {
+  it('is an image named Toli with an Iris tittle, lifted on Midnight', () => {
+    const { rerender } = render(<Wordmark />);
+    const paths = () => [...screen.getByRole('img', { name: 'Toli' }).querySelectorAll('path')];
+    expect(paths().map((p) => p.getAttribute('fill'))).toEqual([color.ink, color.accent]);
+    rerender(<Wordmark tone="paper" height={40} />);
+    expect(paths().map((p) => p.getAttribute('fill'))).toEqual([color.paper, color.accentOnInk]);
+    expect(screen.getByRole('img', { name: 'Toli' })).toHaveAttribute('height', '40');
   });
 });
 

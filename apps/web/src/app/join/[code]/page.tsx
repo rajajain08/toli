@@ -1,3 +1,4 @@
+import { Wordmark } from '@toli/ui';
 import type { Metadata } from 'next';
 
 /**
@@ -13,7 +14,12 @@ export async function generateMetadata({
   return {
     title: 'You’re invited to a group on Toli',
     description: 'See which cards your friends hold. Names and perks only, never numbers.',
-    openGraph: { title: 'Join a group on Toli', description: `Invite ${code}`, type: 'website' },
+    openGraph: {
+      title: 'Join a group on Toli',
+      description: `Invite ${code}`,
+      type: 'website',
+      images: ['/og.png'],
+    },
   };
 }
 
@@ -21,8 +27,14 @@ export default async function JoinPage({ params }: { params: Promise<{ code: str
   const { code } = await params;
   return (
     <main style={{ padding: '52px 24px', maxWidth: 480, margin: '0 auto' }}>
+      <Wordmark height={28} />
       <h1
-        style={{ margin: 0, fontFamily: 'var(--toli-font-serif)', fontWeight: 500, fontSize: 28 }}
+        style={{
+          margin: '28px 0 0',
+          fontFamily: 'var(--toli-font-serif)',
+          fontWeight: 500,
+          fontSize: 28,
+        }}
       >
         You’re invited
       </h1>

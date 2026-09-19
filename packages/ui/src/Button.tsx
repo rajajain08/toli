@@ -7,7 +7,7 @@ export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement
   full?: boolean | undefined;
 }
 
-/** Pill buttons: Slate primary, white outlined secondary, borderless ghost. */
+/** Pill buttons: Midnight primary, white outlined secondary, borderless ghost. */
 export function Button({
   variant = 'primary',
   size = 'default',
@@ -32,14 +32,14 @@ export function Button({
   } as const;
   const look =
     variant === 'primary'
-      ? { background: color.slate, color: color.white, border: 0, boxShadow: elevation.button }
+      ? { background: color.ink, color: color.white, border: 0, boxShadow: elevation.button }
       : variant === 'secondary'
         ? {
             background: color.white,
-            color: color.slate,
+            color: color.ink,
             border: `0.5px solid ${color.hairlineStrong}`,
           }
-        : { background: 'transparent', color: color.slate, border: 0 };
+        : { background: 'transparent', color: color.ink, border: 0 };
   return (
     <button
       type="button"

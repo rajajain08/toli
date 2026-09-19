@@ -1,13 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import raw from '../cards.json' with { type: 'json' };
-import {
-  CATALOG,
-  CATALOG_BANKS,
-  FORBIDDEN_FIELD_PATTERN,
-  catalogSchema,
-  getCatalogCard,
-  searchCatalog,
-} from './index';
+import { CATALOG, CATALOG_BANKS, getCatalogCard, searchCatalog } from './index';
+import { FORBIDDEN_FIELD_PATTERN, catalogSchema } from './schema';
 
 describe('catalog', () => {
   it('validates against the schema', () => {
@@ -28,6 +22,20 @@ describe('catalog', () => {
     for (const k of keys) expect(k).not.toMatch(FORBIDDEN_FIELD_PATTERN);
     const extra = { ...raw, cards: [{ ...raw.cards[0], number: '4111' }] };
     expect(catalogSchema.safeParse(extra).success).toBe(false);
+  });
+
+  it('the hand-written type matches the schema, so the two cannot drift', () => {
+    const parsed = catalogSchema.parse(raw);
+    expect(Object.keys(parsed.cards[0]!).sort()).toEqual([
+      'bank',
+      'color',
+      'id',
+      'issuer',
+      'name',
+      'perks',
+      'tags',
+    ]);
+    expect(CATALOG).toEqual(parsed.cards);
   });
 
   it('looks up by id', () => {

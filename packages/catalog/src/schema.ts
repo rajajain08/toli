@@ -44,8 +44,5 @@ export const catalogSchema = z
     });
   });
 
-export type CatalogCardJson = z.infer<typeof catalogCardSchema>;
-export type CatalogJson = z.infer<typeof catalogSchema>;
-
 /** Forbidden fields. The catalogue must never grow a slot for these; the test enforces it. */
 export const FORBIDDEN_FIELD_PATTERN = /number|expiry|expir|cvv|cvc|limit|spend|pan\b|statement/i;

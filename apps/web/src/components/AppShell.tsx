@@ -61,9 +61,12 @@ export const TABS: readonly TabItem[] = [
 export function AppShell({
   active,
   children,
+  flush = false,
 }: {
   active: (typeof TABS)[number]['id'];
   children: ReactNode;
+  /** Screen manages its own padding (full-bleed carousels). */
+  flush?: boolean;
 }) {
   return (
     <div
@@ -76,7 +79,11 @@ export function AppShell({
       }}
     >
       <main
-        style={{ flexGrow: 1, padding: '52px 24px 24px', backgroundImage: 'var(--toli-hero-glow)' }}
+        style={{
+          flexGrow: 1,
+          padding: flush ? 0 : '52px 24px 24px',
+          backgroundImage: 'var(--toli-hero-glow)',
+        }}
       >
         <RequireAuth>{children}</RequireAuth>
       </main>

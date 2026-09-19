@@ -1,28 +1,71 @@
+import { CardRow, FactRow, Heading, Lede, Panel, SectionLabel } from '@toli/ui';
+import Link from 'next/link';
+
 export const metadata = { title: 'What friends can see · Toli' };
 
-/** Placeholder until milestone 6 fills in the DPDP copy and grievance contact from Privacy.dc.html. */
+const NEVER = [
+  'Card number',
+  'Expiry & CVV',
+  'Credit limit',
+  'What you spend',
+  'Statements',
+  'Points balance',
+];
+
+/** The trust screen from Privacy.dc.html. The DPDP grievance contact lands in milestone 6. */
 export default function PrivacyPage() {
   return (
     <main
       style={{
-        padding: '52px 24px',
+        padding: '52px 24px 32px',
         maxWidth: 480,
         margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
-        gap: 14,
+        gap: 22,
+        backgroundImage: 'var(--toli-hero-glow)',
       }}
     >
-      <h1
-        style={{ margin: 0, fontFamily: 'var(--toli-font-serif)', fontWeight: 500, fontSize: 28 }}
-      >
-        What friends can see
-      </h1>
-      <p style={{ margin: 0, color: 'var(--toli-ink-3)', fontSize: 15, lineHeight: 1.5 }}>
-        Your name and the names of the cards you choose to share, in the groups you share them with.
-        Toli keeps a hash of your phone number so friends can find you. It never stores a card
-        number, expiry, CVV, limit or spend. There is no field for them.
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <Heading size="title">What friends can see</Heading>
+        <Lede>This is the whole list. There&apos;s nothing else stored to leak.</Lede>
+      </div>
+
+      <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <SectionLabel>They see</SectionLabel>
+        <CardRow name="Cashback SBI" issuer="SBI" tint="#1C4C9A" tags={['Shopping', '5% online']} />
+        <Lede>
+          The card&apos;s name, the bank, and the perks we know about it from public info.
+          That&apos;s it — exactly what&apos;s above.
+        </Lede>
+      </section>
+
+      <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <SectionLabel>They never see</SectionLabel>
+        <Panel>
+          <ul style={{ margin: 0, padding: 0 }}>
+            {NEVER.map((item) => (
+              <FactRow key={item} tone="never">
+                {item}
+              </FactRow>
+            ))}
+          </ul>
+        </Panel>
+        <Lede>
+          We never ask for these, so we can&apos;t store them — there&apos;s no field for them
+          anywhere in the app.
+        </Lede>
+      </section>
+
+      <Lede>
+        Only people you&apos;ve added — a group or a person — can see a card. Hide it from any of
+        them, anytime.
+      </Lede>
+      <Lede>Delete your account and every card you added goes with it, immediately.</Lede>
+
+      <Link href="/cards" style={{ fontWeight: 600 }}>
+        Got it
+      </Link>
     </main>
   );
 }

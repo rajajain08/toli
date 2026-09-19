@@ -45,12 +45,16 @@ export function AuthFlow() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | undefined>();
   const confirmation = useRef<ConfirmationResult | null>(null);
+  // Set while this screen finishes a brand-new profile, so the signed-in effect below does not race
+  // the onboarding redirect to Add cards.
+  const onboarding = useRef(false);
 
   // Already signed in: finish the profile or leave.
   useEffect(() => {
     if (state.status !== 'signedIn') return;
-    if (state.profile) router.replace(next);
-    else {
+    if (state.profile) {
+      if (!onboarding.current) router.replace(next);
+    } else {
       setStep('profile');
       setBusy(false);
       setError(undefined);
@@ -111,8 +115,10 @@ export function AuthFlow() {
     setBusy(true);
     try {
       await callCompleteSignup({ name, consent });
+      onboarding.current = true;
       await refreshProfile();
-      router.replace(next);
+      // New people go straight to adding cards, then on to wherever they were headed.
+      router.replace(`/cards/add?onboarding=1&next=${encodeURIComponent(next)}`);
     } catch (err) {
       setError(messageOf(err));
       setBusy(false);

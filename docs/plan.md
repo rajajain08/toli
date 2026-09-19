@@ -44,13 +44,14 @@ Done when a fresh phone signs up on the dev URL. The project id `toli-dev` was t
 
 Done when usable as a single-player app.
 
-- [ ] Use cases `AddUserCard`, `RemoveUserCard`, `ListMyCards`, `SetCardVisibility` with tests
-- [ ] `FirestoreUserCardRepository` adapter, emulator integration test
-- [ ] Screens: Add cards (`AddCards.dc.html`), My cards (`MyCards.dc.html`), Privacy (`Privacy.dc.html`)
-- [ ] TanStack Query + `useLiveCollection`; optimistic add and remove with rollback
-- [ ] In-memory catalogue search and bank filter; works offline
-- [ ] Playwright: sign in, add two cards, remove one, reload from cache
-- [ ] GA4 `card_added`
+- [x] Use cases `AddUserCard` (idempotent per catalogue card, client-chosen id, 30-card cap), `RemoveUserCard`, `ListMyCards`, `SetCardVisibility` (hide never needs membership); 12 tests with in-memory ports
+- [x] `FirestoreUserCardRepository` exercised through the real rules on the emulator; `BrowserClock`, `BrowserIdGenerator`, `myCardsQuery`
+- [x] Screens: Add cards, My cards (wallet carousel, perks, remove with confirm), Privacy; new people go from sign-up to Add cards as step 2 of 2. Primitives: `CardRow`, `TrayChip`, `SearchField`, `SectionLabel`, `PerkChip`, `PageDots`, `Panel`, `ActionBar`, `FactRow`
+- [x] `useMyCards` on `useLiveCollection`; `useAddCard` / `useRemoveCard` optimistic with rollback
+- [x] In-memory catalogue search and bank chips; zod moved to `@toli/catalog/schema` so the validator never ships to the browser (routes 100–125 KB gz)
+- [x] Playwright: sign up, add two cards via bank chip and search, remove one, reload; suite passes 3× with retries off (test phones are random so parallel workers never share an OTP)
+- [x] GA4 `card_added`
+- [ ] Visibility toggles on My cards arrive with audiences in milestone 4 (the use case is already in)
 
 ## Milestone 4 — Audiences (`m4-audiences`)
 

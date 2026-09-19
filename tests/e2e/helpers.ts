@@ -1,3 +1,4 @@
+import { randomInt } from 'node:crypto';
 import type { APIRequestContext } from '@playwright/test';
 
 const AUTH = 'http://127.0.0.1:9099';
@@ -21,7 +22,30 @@ export async function clearAuthEmulator(request: APIRequestContext): Promise<voi
   await request.delete(`${AUTH}/emulator/v1/projects/${PROJECT}/accounts`);
 }
 
+/** Random, not clock-based: parallel workers start in the same millisecond and would share a number (and each other's OTP). */
 export const freshPhone = (): { e164: string; national: string } => {
-  const n = `9${String(Date.now()).slice(-9)}`;
+  const n = `9${String(randomInt(0, 1_000_000_000)).padStart(9, '0')}`;
   return { e164: `+91${n}`, national: n };
 };
+
+import type { Page } from '@playwright/test';
+
+/** Signs a fresh phone up through the real screens and returns after the profile step. */
+export async function signUp(
+  page: Page,
+  request: APIRequestContext,
+  name = 'Raja',
+): Promise<{ e164: string }> {
+  const phone = freshPhone();
+  await page.goto('/auth');
+  await page.getByLabel('Your phone number').fill(phone.national);
+  await page.getByRole('button', { name: 'Get code by SMS' }).click();
+  // Read the OTP only once the code step is on screen, so the emulator has settled the session.
+  await page.getByRole('heading', { name: 'Enter the code' }).waitFor();
+  await page.getByLabel('Code').fill(await latestOtp(request, phone.e164));
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.getByLabel('Your name').fill(name);
+  await page.getByLabel(/I agree that Toli stores my name/).check();
+  await page.getByRole('button', { name: 'Continue' }).click();
+  return phone;
+}

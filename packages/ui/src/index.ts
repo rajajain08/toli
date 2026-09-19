@@ -9,3 +9,8 @@ export * from './TextField';
 export * from './Checkbox';
 export * from './Notice';
 export * from './Heading';
+export * from './SearchField';
+export * from './SectionLabel';
+export * from './CardRow';
+export * from './TrayChip';
+export * from './Bits';

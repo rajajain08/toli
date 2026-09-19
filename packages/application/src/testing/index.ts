@@ -21,7 +21,9 @@ import type {
   GroupCardReadModel,
   GroupCardRow,
   IdGenerator,
+  IdentityGateway,
   InviteRepository,
+  PersonalDataPurger,
   PhoneHasher,
   RateLimiter,
   UserCardRepository,
@@ -81,6 +83,9 @@ export class InMemoryUserRepository implements UserRepository {
   }
   async upsert(user: User): Promise<void> {
     this.users.set(user.id, user);
+  }
+  async remove(id: UserId): Promise<void> {
+    this.users.delete(id);
   }
 }
 
@@ -147,6 +152,11 @@ export class InMemoryAudienceRepository implements AudienceRepository {
   }
   async isMember(audienceId: GroupId, userId: UserId): Promise<boolean> {
     return this.members.get(audienceId)?.has(userId) ?? false;
+  }
+  async deleteAudience(id: GroupId): Promise<void> {
+    for (const uid of this.members.get(id)?.keys() ?? []) this.labels.delete(`${uid}/${id}`);
+    this.audiences.delete(id);
+    this.members.delete(id);
   }
   async listForUser(userId: UserId): Promise<Audience[]> {
     return [...this.members.entries()]
@@ -237,5 +247,19 @@ export class InMemoryCatalogMirror implements CatalogMirror {
       this.docs.set(c.id, c);
       this.writes += 1;
     }
+  }
+}
+
+export class InMemoryIdentityGateway implements IdentityGateway {
+  readonly deleted: UserId[] = [];
+  async deleteIdentity(id: UserId): Promise<void> {
+    this.deleted.push(id);
+  }
+}
+
+export class InMemoryPurger implements PersonalDataPurger {
+  readonly purged: UserId[] = [];
+  async purge(id: UserId): Promise<void> {
+    this.purged.push(id);
   }
 }

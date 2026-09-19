@@ -24,6 +24,11 @@ export class AdminUserRepository implements UserRepository {
     };
   }
 
+  /** The profile and everything nested under it (cards, memberships). Only DeleteAccount calls this. */
+  async remove(id: UserId): Promise<void> {
+    await this.db.recursiveDelete(this.db.doc(paths.user(id)));
+  }
+
   async upsert(user: User): Promise<void> {
     await this.db.doc(paths.user(user.id)).set(
       {

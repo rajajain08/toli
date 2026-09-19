@@ -32,6 +32,8 @@ export interface RateLimiter {
 export interface UserRepository {
   get(id: UserId): Promise<User | undefined>;
   upsert(user: User): Promise<void>;
+  /** Server only, and only DeleteAccount calls it. Removes the profile and everything nested under it. */
+  remove(id: UserId): Promise<void>;
 }
 
 export interface UserCardRepository {
@@ -61,6 +63,8 @@ export interface AudienceRepository {
   removeMember(audienceId: GroupId, userId: UserId): Promise<void>;
   isMember(audienceId: GroupId, userId: UserId): Promise<boolean>;
   listForUser(userId: UserId): Promise<Audience[]>;
+  /** Removes an audience outright: members, read-model rows, each member's own entry, and its invites. Idempotent. */
+  deleteAudience(id: GroupId): Promise<void>;
 }
 
 export interface InviteRepository {
@@ -125,4 +129,14 @@ export interface CardCatalogReader {
 export interface CatalogMirror {
   list(): Promise<CatalogCard[]>;
   upsert(cards: readonly CatalogCard[]): Promise<void>;
+}
+
+/** The sign-in identity itself (Firebase Auth). Deleting it is the last step of DeleteAccount. */
+export interface IdentityGateway {
+  deleteIdentity(id: UserId): Promise<void>;
+}
+
+/** Anything keyed by the person that is not a domain entity (rate-limit windows). */
+export interface PersonalDataPurger {
+  purge(id: UserId): Promise<void>;
 }

@@ -148,6 +148,16 @@ export function Settings() {
         </Link>
       </section>
 
+      <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <SectionLabel>Account</SectionLabel>
+        <Link
+          href="/settings/delete"
+          style={{ fontWeight: 600, color: 'var(--toli-danger, #C42B4B)' }}
+        >
+          Delete my account
+        </Link>
+      </section>
+
       <Button
         variant="secondary"
         full

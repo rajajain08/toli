@@ -1,4 +1,4 @@
-import { CardId, GroupId, parsePhone, UserCardId, UserId } from '@toli/domain';
+import { CardId, GroupId, isRecentSignIn, parsePhone, UserCardId, UserId } from '@toli/domain';
 import type { UserCardSnapshot } from '@toli/application';
 import { Timestamp } from 'firebase-admin/firestore';
 import { logger, setGlobalOptions } from 'firebase-functions/v2';
@@ -160,6 +160,24 @@ export const setMarketingOptIn = onCall({ enforceAppCheck }, async (request) => 
     return res;
   } catch (err) {
     throw toHttpsError(err, 'setMarketingOptIn');
+  }
+});
+
+/** Irreversible, so it asks for two things a stolen session is unlikely to have: the typed word, and a sign-in in the last ten minutes. */
+export const deleteAccount = onCall({ enforceAppCheck, timeoutSeconds: 120 }, async (request) => {
+  const uid = requireUid(request);
+  if (body(request)['confirm'] !== 'DELETE')
+    throw new HttpsError('invalid-argument', 'confirmation missing');
+  if (!isRecentSignIn(request.auth?.token['auth_time'], new Date()))
+    throw new HttpsError('failed-precondition', 'sign in again to delete your account', {
+      code: 'recent-sign-in-required',
+    });
+  try {
+    const res = await c().deleteAccount.execute({ actor: uid });
+    logger.info('deleteAccount', { uid, ...res });
+    return { ok: true, ...res };
+  } catch (err) {
+    throw toHttpsError(err, 'deleteAccount');
   }
 });
 

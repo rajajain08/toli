@@ -42,6 +42,7 @@ export class FirestoreAudienceReader implements AudienceRepository {
 
   create = readOnly;
   createDirect = readOnly;
+  deleteAudience = readOnly;
   addMember = readOnly;
   removeMember = readOnly;
 }

@@ -2,9 +2,11 @@ import {
   CompleteSignup,
   CreateAudience,
   CreateInvite,
+  GetMyAccount,
   GetInvitePreview,
   JoinByInvite,
   ProjectUserCard,
+  SetMarketingOptIn,
   ShareWith,
   type CardCatalogReader,
 } from '@toli/application';
@@ -37,6 +39,7 @@ export function buildCore() {
   const invites = new AdminInviteRepository(db);
   const readModel = new AdminGroupCardReadModel(db);
   const limiter = new FirestoreRateLimiter(db, clock);
+  const contacts = new AdminContactRepository(db);
   return {
     db,
     clock,
@@ -51,6 +54,8 @@ export function buildCore() {
     getInvitePreview: new GetInvitePreview(invites, audiences, users, clock),
     projectUserCard: new ProjectUserCard(readModel, audiences, users, catalog),
     shareWith: new ShareWith(audiences, users, limiter, clock),
+    getMyAccount: new GetMyAccount(users, contacts),
+    setMarketingOptIn: new SetMarketingOptIn(contacts, clock),
   };
 }
 

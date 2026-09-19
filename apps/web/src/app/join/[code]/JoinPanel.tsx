@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { track } from '@/lib/analytics';
 import { callableMessage, callJoinByInvite } from '@/lib/api';
-import { useAuth } from '@/lib/auth';
+import { isReady, useAuth } from '@/lib/auth';
 
 /** Signed in: one tap joins. Otherwise: sign in, and come straight back to this invite. */
 export function JoinPanel({ code, groupName }: { code: string; groupName: string }) {
@@ -16,7 +16,7 @@ export function JoinPanel({ code, groupName }: { code: string; groupName: string
 
   useEffect(() => void track('invite_opened'), []);
 
-  const ready = state.status === 'signedIn' && state.profile !== null;
+  const ready = isReady(state);
 
   const join = async () => {
     setBusy(true);

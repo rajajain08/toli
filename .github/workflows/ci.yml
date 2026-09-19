@@ -82,19 +82,14 @@ jobs:
           distribution: temurin
           java-version: '21'
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @toli/web build
-        env:
-          NEXT_PUBLIC_FIREBASE_PROJECT_ID: demo-toli
-          NEXT_PUBLIC_FIREBASE_API_KEY: demo-key
-          NEXT_PUBLIC_FIREBASE_APP_ID: 1:demo:web:demo
-          NEXT_PUBLIC_USE_EMULATORS: '1'
-      - run: pnpm --filter @toli/web size
       - run: pnpm exec playwright install --with-deps chromium
       - uses: actions/cache@v4
         with:
           path: ~/.cache/firebase/emulators
           key: firebase-emulators-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
-      - run: pnpm --filter @toli/functions build
+      # Builds the web app with the emulator configuration, serves it and drives it.
       - run: pnpm test:e2e
+      # Same build: every route's initial JS against the 180 KB budget.
+      - run: pnpm --filter @toli/web size
         env:
           CI: 'true'

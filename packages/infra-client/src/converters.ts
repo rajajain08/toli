@@ -31,5 +31,6 @@ export const userFromDoc = (id: string, d: DocumentData): User => ({
   name: String(d['name'] ?? ''),
   phoneHash: String(d['phoneHash'] ?? ''),
   consentAt: toDate(d['consentAt']),
+  consentVersion: typeof d['consentVersion'] === 'number' ? d['consentVersion'] : 1,
   createdAt: toDate(d['createdAt']),
 });

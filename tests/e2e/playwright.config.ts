@@ -12,10 +12,12 @@ export default defineConfig({
   use: { baseURL: 'http://127.0.0.1:3000', trace: 'retain-on-failure' },
   projects: [{ name: 'android', use: { ...devices['Pixel 7'] } }],
   webServer: {
-    command: 'pnpm --filter @toli/web dev',
+    // A production build, not `next dev`: it is what people actually get, and the dev server compiling
+    // routes on demand under several parallel workers made first hits slow enough to time out.
+    command: 'pnpm --filter @toli/web build && pnpm --filter @toli/web start',
     url: 'http://127.0.0.1:3000/groups',
     reuseExistingServer: !process.env['CI'],
-    timeout: 120_000,
+    timeout: 240_000,
     env: {
       NEXT_PUBLIC_FIREBASE_API_KEY: 'demo-key',
       NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: 'demo-toli.firebaseapp.com',

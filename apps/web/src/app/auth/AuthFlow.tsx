@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { track } from '@/lib/analytics';
 import { callCompleteSignup } from '@/lib/api';
-import { useAuth } from '@/lib/auth';
+import { isReady, useAuth } from '@/lib/auth';
 import { loadFirebase, usingEmulators } from '@/lib/firebase';
 
 type Step = 'phone' | 'code' | 'profile';
@@ -61,13 +61,20 @@ export function AuthFlow() {
   // Set while this screen finishes a brand-new profile, so the signed-in effect below does not race
   // the onboarding redirect to Add cards.
   const onboarding = useRef(false);
+  // Someone who already has a profile but agreed to an older consent text: same form, different words,
+  // and no detour through Add cards afterwards.
+  const [reconsent, setReconsent] = useState(false);
 
   // Already signed in: finish the profile or leave.
   useEffect(() => {
     if (state.status !== 'signedIn') return;
-    if (state.profile) {
+    if (isReady(state)) {
       if (!onboarding.current) router.replace(next);
     } else {
+      if (state.profile) {
+        setReconsent(true);
+        setName((n) => n || state.profile!.name);
+      }
       setStep('profile');
       setBusy(false);
       setError(undefined);
@@ -132,7 +139,7 @@ export function AuthFlow() {
       onboarding.current = true;
       await refreshProfile();
       // New people go straight to adding cards, then on to wherever they were headed.
-      router.replace(`/cards/add?onboarding=1&next=${encodeURIComponent(next)}`);
+      router.replace(reconsent ? next : `/cards/add?onboarding=1&next=${encodeURIComponent(next)}`);
     } catch (err) {
       setError(messageOf(err));
       setBusy(false);
@@ -226,8 +233,21 @@ export function AuthFlow() {
       {step === 'profile' ? (
         <form onSubmit={saveProfile} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <Heading>What should friends call you?</Heading>
-            <Lede>Your name shows next to your cards in every group you join.</Lede>
+            {reconsent ? (
+              <>
+                <Heading>We’ve updated what Toli stores</Heading>
+                <Lede>
+                  Toli now keeps your phone number, not just a scrambled copy of it, so we can reach
+                  you about your account. Friends never see it. Please read the box below and agree
+                  to carry on.
+                </Lede>
+              </>
+            ) : (
+              <>
+                <Heading>What should friends call you?</Heading>
+                <Lede>Your name shows next to your cards in every group you join.</Lede>
+              </>
+            )}
           </div>
           <TextField
             id="name"

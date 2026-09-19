@@ -105,6 +105,11 @@ test('a friend opens an invite, signs up, adds two cards and both people see the
   await expect(priya.getByText('5% cashback on online spends')).toBeVisible();
   await priya.getByRole('switch', { name: 'Hidden from Weekend Crew' }).click();
   await expect(priya.getByRole('switch', { name: 'Visible to Weekend Crew' })).toBeVisible();
+  // Saved, not just flipped: leaving the page mid-write would drop the request.
+  await expect(priya.getByRole('switch', { name: 'Visible to Weekend Crew' })).not.toHaveAttribute(
+    'aria-busy',
+    'true',
+  );
   await priya.goto(groupUrl);
   await expect(priyasOwn.getByText('Millennia')).toBeVisible();
   await expect(priyasOwn.getByText('Cashback SBI')).toBeVisible();

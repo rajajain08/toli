@@ -1,7 +1,7 @@
 'use client';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, type ReactNode } from 'react';
-import { useAuth } from '@/lib/auth';
+import { isReady, useAuth } from '@/lib/auth';
 
 /** Gate for authenticated routes. Signed out, or signed in without a profile, goes to /auth and comes back. */
 export function RequireAuth({ children }: { children: ReactNode }) {
@@ -9,7 +9,7 @@ export function RequireAuth({ children }: { children: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
 
-  const ready = state.status === 'signedIn' && state.profile !== null;
+  const ready = isReady(state);
 
   useEffect(() => {
     if (state.status === 'loading' || ready) return;

@@ -5,16 +5,26 @@ export interface ToggleProps {
   onChange: (next: boolean) => void;
   label: string;
   disabled?: boolean | undefined;
+  /** The change is on its way to the server. The switch already shows the new value; this says it is not saved yet. */
+  busy?: boolean | undefined;
   accent?: string | undefined;
 }
 
-export function Toggle({ on, onChange, label, disabled = false, accent = color.ink }: ToggleProps) {
+export function Toggle({
+  on,
+  onChange,
+  label,
+  disabled = false,
+  accent = color.ink,
+  busy = false,
+}: ToggleProps) {
   return (
     <button
       type="button"
       role="switch"
       aria-checked={on}
       aria-label={label}
+      aria-busy={busy ? true : undefined}
       disabled={disabled}
       onClick={() => onChange(!on)}
       style={{
@@ -28,7 +38,7 @@ export function Toggle({ on, onChange, label, disabled = false, accent = color.i
         justifyContent: on ? 'flex-end' : 'flex-start',
         alignItems: 'center',
         transition: 'background 200ms ease',
-        opacity: disabled ? 0.5 : 1,
+        opacity: disabled ? 0.5 : busy ? 0.7 : 1,
         flexShrink: 0,
       }}
     >

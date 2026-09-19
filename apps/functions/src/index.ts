@@ -138,6 +138,31 @@ export const shareWith = onCall({ enforceAppCheck }, async (request) => {
   }
 });
 
+/** The Settings screen's only window onto contacts/{uid}: the marketing choice and the last two digits. */
+export const getMyAccount = onCall({ enforceAppCheck }, async (request) => {
+  const uid = requireUid(request);
+  try {
+    return await c().getMyAccount.execute({ actor: uid });
+  } catch (err) {
+    throw toHttpsError(err, 'getMyAccount');
+  }
+});
+
+/** Withdrawing marketing consent is one switch, effective at once. Only a literal boolean is accepted. */
+export const setMarketingOptIn = onCall({ enforceAppCheck }, async (request) => {
+  const uid = requireUid(request);
+  const optIn = body(request)['optIn'];
+  if (typeof optIn !== 'boolean')
+    throw new HttpsError('invalid-argument', 'optIn must be true or false');
+  try {
+    const res = await c().setMarketingOptIn.execute({ actor: uid, optIn });
+    logger.info('setMarketingOptIn', { uid, optIn: res.marketingOptIn });
+    return res;
+  } catch (err) {
+    throw toHttpsError(err, 'setMarketingOptIn');
+  }
+});
+
 const snapshotOf = (
   data: FirebaseFirestore.DocumentData | undefined,
 ): UserCardSnapshot | undefined =>

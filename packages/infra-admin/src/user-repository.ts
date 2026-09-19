@@ -18,6 +18,8 @@ export class AdminUserRepository implements UserRepository {
       name: String(d['name'] ?? ''),
       phoneHash: String(d['phoneHash'] ?? ''),
       consentAt: toDate(d['consentAt']),
+      // Written from ADR-0013 onwards; a profile without it agreed to the first consent text.
+      consentVersion: typeof d['consentVersion'] === 'number' ? d['consentVersion'] : 1,
       createdAt: toDate(d['createdAt']),
     };
   }
@@ -28,6 +30,7 @@ export class AdminUserRepository implements UserRepository {
         name: user.name,
         phoneHash: user.phoneHash,
         consentAt: Timestamp.fromDate(user.consentAt),
+        consentVersion: user.consentVersion,
         createdAt: Timestamp.fromDate(user.createdAt),
       },
       { merge: true },

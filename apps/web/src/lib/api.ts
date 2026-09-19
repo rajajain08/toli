@@ -23,6 +23,17 @@ export const callJoinByInvite = (input: { code: string }) =>
 export const callShareWith = (input: { userId: string }) =>
   call<typeof input, { audienceId: string; created: boolean }>('shareWith', input);
 
+export interface MyAccount {
+  name: string;
+  phoneMasked?: string;
+  marketingOptIn: boolean;
+  needsConsent: boolean;
+}
+export const callGetMyAccount = () => call<Record<string, never>, MyAccount>('getMyAccount', {});
+
+export const callSetMarketingOptIn = (input: { optIn: boolean }) =>
+  call<typeof input, { marketingOptIn: boolean }>('setMarketingOptIn', input);
+
 /** Callable errors carry a Firebase code like "functions/resource-exhausted"; turn them into one plain line. */
 export const callableMessage = (err: unknown): string => {
   const code = err && typeof err === 'object' && 'code' in err ? String((err as { code: unknown }).code) : '';

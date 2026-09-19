@@ -8,7 +8,7 @@ export interface CheckboxProps {
   children: ReactNode;
 }
 
-/** Consent-style checkbox: 22 px box with a Clay fill when checked, label wraps beside it. */
+/** Consent-style checkbox: 22 px box with an Iris fill when checked, label wraps beside it. */
 export function Checkbox({ id, checked, onChange, children }: CheckboxProps) {
   return (
     <label
@@ -41,8 +41,8 @@ export function Checkbox({ id, checked, onChange, children }: CheckboxProps) {
             height: 22,
             borderRadius: 6,
             boxSizing: 'border-box',
-            border: checked ? `1px solid ${color.clay}` : `1px solid ${color.hairlineStrong}`,
-            background: checked ? color.clay : color.white,
+            border: checked ? `1px solid ${color.accent}` : `1px solid ${color.hairlineStrong}`,
+            background: checked ? color.accent : color.white,
             transition: 'background 150ms ease',
           }}
         >

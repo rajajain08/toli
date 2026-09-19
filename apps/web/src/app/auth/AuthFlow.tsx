@@ -1,6 +1,6 @@
 'use client';
 import { DomainError, maskPhone, parsePhone, type PhoneNumber } from '@toli/domain';
-import { Button, Checkbox, Heading, Lede, Notice, TextField } from '@toli/ui';
+import { Button, Checkbox, Heading, Lede, Notice, TextField, Wordmark } from '@toli/ui';
 import type { ConfirmationResult } from 'firebase/auth';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -138,37 +138,7 @@ export function AuthFlow() {
         backgroundImage: 'var(--toli-hero-glow)',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <div
-          style={{
-            width: 28,
-            height: 28,
-            borderRadius: 8,
-            background: 'var(--toli-clay)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#FAF9F5"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
-            <rect x="2" y="5" width="20" height="14" rx="3" />
-            <line x1="2" y1="10" x2="22" y2="10" />
-          </svg>
-        </div>
-        <span style={{ fontFamily: 'var(--toli-font-serif)', fontWeight: 500, fontSize: 16 }}>
-          Toli
-        </span>
-      </div>
+      <Wordmark height={28} />
 
       {step === 'phone' ? (
         <form onSubmit={sendCode} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>

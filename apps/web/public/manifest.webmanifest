@@ -4,7 +4,17 @@
   "description": "Know whose card to use before the bill comes.",
   "start_url": "/groups",
   "display": "standalone",
-  "background_color": "#FAF9F5",
-  "theme_color": "#FAF9F5",
-  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+  "background_color": "#F5F6FC",
+  "theme_color": "#F5F6FC",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
 }

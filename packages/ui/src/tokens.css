@@ -1,46 +1,51 @@
 :root {
-  --toli-ivory: #faf9f5;
-  --toli-slate: #141413;
-  --toli-clay: #d97757;
-  --toli-oat: #e3dacc;
-  --toli-ink-2: #3d3d3a;
-  --toli-ink-3: #5e5d59;
-  --toli-ink-4: #9c9a92;
-  --toli-ink-5: #c2c0b6;
-  --toli-panel: #f0eee6;
-  --toli-hairline: rgba(31, 30, 29, 0.1);
-  --toli-hairline-strong: rgba(31, 30, 29, 0.3);
-  --toli-font-serif: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif;
-  --toli-font-sans: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --toli-paper: #f5f6fc;
+  --toli-ink: #0f0e1c;
+  --toli-accent: #5b4dff;
+  --toli-chip: #d3d7e6;
+  /* Deprecated first-palette names, kept so in-flight branches render. */
+  --toli-ivory: var(--toli-paper);
+  --toli-slate: var(--toli-ink);
+  --toli-clay: var(--toli-accent);
+  --toli-oat: var(--toli-chip);
+  --toli-ink-2: #2b2a3d;
+  --toli-ink-3: #55546b;
+  --toli-ink-4: #8c8ba3;
+  --toli-ink-5: #bbbbcd;
+  --toli-panel: #ecedf7;
+  --toli-hairline: rgba(15, 14, 28, 0.1);
+  --toli-hairline-strong: rgba(15, 14, 28, 0.3);
+  /* --toli-face-display is set by the app that loads Fraunces (apps/web layout); Georgia until then. */
+  --toli-font-serif: var(--toli-face-display, Georgia), Georgia, 'Times New Roman', Times, serif;
+  --toli-font-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --toli-radius-row: 16px;
-  --toli-hero-glow: radial-gradient(
-    120% 55% at 50% 0%,
-    rgba(217, 119, 87, 0.13),
-    rgba(250, 249, 245, 0) 60%
-  );
+  /* Aurora: Iris from the top left, a breath of cyan from the right. */
+  --toli-hero-glow:
+    radial-gradient(90% 45% at 20% 0%, rgba(91, 77, 255, 0.16), rgba(245, 246, 252, 0) 65%),
+    radial-gradient(70% 38% at 95% 4%, rgba(40, 200, 235, 0.13), rgba(245, 246, 252, 0) 70%);
 }
 
 html,
 body {
   margin: 0;
-  background: var(--toli-ivory);
-  color: var(--toli-slate);
+  background: var(--toli-paper);
+  color: var(--toli-ink);
   font-family: var(--toli-font-sans);
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
 
 a {
-  color: var(--toli-slate);
+  color: var(--toli-ink);
 }
 a:hover {
-  color: var(--toli-clay);
+  color: var(--toli-accent);
 }
 button {
   font-family: inherit;
   cursor: pointer;
 }
 :focus-visible {
-  outline: 2px solid var(--toli-clay);
+  outline: 2px solid var(--toli-accent);
   outline-offset: 2px;
 }

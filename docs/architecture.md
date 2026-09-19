@@ -189,7 +189,7 @@ Everything behind auth is a client-rendered shell over a local cache; the one se
 - Firestore `persistentLocalCache` with multi-tab support: second launch renders from IndexedDB before the network answers.
 - The catalogue is not a Firestore read. `packages/catalog/cards.json` (~40 cards, ~10 KB) ships in the bundle; Add cards search and bank filters run in memory and work offline.
 - Firebase modular imports only; Auth and reCAPTCHA load lazily on the OTP route; the Functions client loads lazily.
-- `packages/ui` holds the tokens (Ivory, Slate, Clay, type scale, card gradient, three elevation levels) and the primitives from the canvas: `CardTile`, `Chip`, `Toggle`, `AvatarRow`, `TabBar`. Screens compose these; nothing styles itself ad hoc.
+- `packages/ui` holds the tokens (role-named palette: paper, ink, accent; type scale, card gradient, three elevation levels) and the primitives from the canvas: `CardTile`, `Chip`, `Toggle`, `AvatarRow`, `TabBar`. Screens compose these; nothing styles itself ad hoc.
 - `joinByInvite` and `createAudience` sit on the user's critical path, so they run with `minInstances: 1` in prod; projection and delete can cold-start.
 
 **Budgets, enforced in CI**
@@ -269,3 +269,4 @@ One row per architectural decision; add a row and an ADR file under `docs/decisi
 | 0009 | No in-app "who should pay" recommendation | the app stays a plain directory of who holds what |
 | 0010 | Phone OTP by SMS for MVP; WhatsApp OTP in phase 2 | not a Firebase provider; needs MSG91 plus custom tokens |
 | 0011 | Packages ship TypeScript source; functions bundled by esbuild | no dist/ drift, one-file functions artefact without workspace deps |
+| 0012 | Cool palette (Frost, Midnight, Iris) with role-named tokens; Fraunces display face | the app gets its own character; the next repaint is a one-file change |

@@ -16,7 +16,7 @@ export interface TabBarProps {
     ((item: TabItem, children: ReactNode, style: React.CSSProperties) => ReactNode) | undefined;
 }
 
-/** Frosted bottom tab bar with a Clay dot under the active tab. Solid fallback where backdrop-filter is unsupported. */
+/** Frosted bottom tab bar with an Iris dot under the active tab. Solid fallback where backdrop-filter is unsupported. */
 export function TabBar({ items, activeId, renderLink }: TabBarProps) {
   return (
     <nav
@@ -28,8 +28,8 @@ export function TabBar({ items, activeId, renderLink }: TabBarProps) {
         background: 'rgba(255,255,255,0.78)',
         backdropFilter: 'blur(18px)',
         WebkitBackdropFilter: 'blur(18px)',
-        borderTop: `0.5px solid rgba(31,30,29,0.08)`,
-        boxShadow: '0 -10px 30px -18px rgba(20,20,19,0.25)',
+        borderTop: `0.5px solid rgba(15,14,28,0.08)`,
+        boxShadow: '0 -10px 30px -18px rgba(15,14,28,0.25)',
       }}
     >
       {items.map((item) => {
@@ -43,7 +43,7 @@ export function TabBar({ items, activeId, renderLink }: TabBarProps) {
           justifyContent: 'center',
           gap: 4,
           textDecoration: 'none',
-          color: active ? color.slate : color.ink3,
+          color: active ? color.ink : color.ink3,
           fontFamily: font.sans,
           fontSize: 12,
           fontWeight: active ? 600 : 500,
@@ -59,7 +59,7 @@ export function TabBar({ items, activeId, renderLink }: TabBarProps) {
                   width: 4,
                   height: 4,
                   borderRadius: 2,
-                  background: color.clay,
+                  background: color.accent,
                   display: 'block',
                   marginTop: -2,
                 }}

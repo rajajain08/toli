@@ -47,7 +47,7 @@ export function PageDots({
             borderRadius: 3,
             border: 0,
             padding: 0,
-            background: i === active ? color.slate : color.ink5,
+            background: i === active ? color.ink : color.ink5,
             transition: 'width 200ms ease',
           }}
         />
@@ -91,10 +91,10 @@ export function ActionBar({ children }: { children: ReactNode }) {
         position: 'sticky',
         bottom: 0,
         padding: '12px 24px calc(20px + env(safe-area-inset-bottom))',
-        background: 'rgba(250,249,245,0.86)',
+        background: 'rgba(245,246,252,0.86)',
         backdropFilter: 'blur(18px)',
         WebkitBackdropFilter: 'blur(18px)',
-        borderTop: '0.5px solid rgba(31,30,29,0.08)',
+        borderTop: '0.5px solid rgba(15,14,28,0.08)',
       }}
     >
       {children}
@@ -124,11 +124,11 @@ export function IconCircle({
         flexShrink: 0,
         ...(filled
           ? {
-              background: color.slate,
+              background: color.ink,
               color: color.white,
-              boxShadow: '0 10px 22px -10px rgba(20,20,19,0.55)',
+              boxShadow: '0 10px 22px -10px rgba(15,14,28,0.55)',
             }
-          : { color: color.slate }),
+          : { color: color.ink }),
       }}
     >
       {children}
@@ -147,7 +147,7 @@ export function FactRow({ children, tone }: { children: ReactNode; tone: 'never'
         minHeight: 36,
         fontFamily: font.sans,
         fontSize: 15,
-        color: tone === 'never' ? color.ink3 : color.slate,
+        color: tone === 'never' ? color.ink3 : color.ink,
         listStyle: 'none',
       }}
     >
@@ -160,8 +160,8 @@ export function FactRow({ children, tone }: { children: ReactNode; tone: 'never'
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: tone === 'never' ? color.panel : color.clayTint,
-          color: tone === 'never' ? color.ink4 : color.clay,
+          background: tone === 'never' ? color.panel : color.accentTint,
+          color: tone === 'never' ? color.ink4 : color.accent,
           flexShrink: 0,
         }}
       >

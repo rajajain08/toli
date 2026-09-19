@@ -40,7 +40,7 @@ export function CardTile({
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ width: 11, height: 8, borderRadius: 2, background: color.oat }} />
+        <div style={{ width: 11, height: 8, borderRadius: 2, background: color.chip }} />
         <div
           style={{ height: 3, width: 26, borderRadius: 2, background: 'rgba(255,255,255,0.55)' }}
         />
@@ -76,7 +76,7 @@ export function CardTile({
           width: '100%',
         }}
       >
-        <div style={{ width: 38, height: 28, borderRadius: 6, background: color.oat }} />
+        <div style={{ width: 38, height: 28, borderRadius: 6, background: color.chip }} />
         <div
           style={{
             fontFamily: font.sans,

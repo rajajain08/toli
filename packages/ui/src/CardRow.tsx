@@ -31,8 +31,8 @@ export function CardRow({
         display: 'flex',
         alignItems: 'center',
         gap: 12,
-        background: selected ? 'rgba(217,119,87,0.08)' : color.white,
-        border: `0.5px solid ${selected ? 'rgba(217,119,87,0.5)' : color.hairline}`,
+        background: selected ? 'rgba(91,77,255,0.08)' : color.white,
+        border: `0.5px solid ${selected ? 'rgba(91,77,255,0.5)' : color.hairline}`,
         borderRadius: radius.row,
         boxShadow: elevation.row,
         padding: onToggle ? '10px 8px 10px 12px' : 12,
@@ -48,7 +48,7 @@ export function CardRow({
           minWidth: 0,
         }}
       >
-        <div style={{ fontFamily: font.sans, fontSize: 15, fontWeight: 600, color: color.slate }}>
+        <div style={{ fontFamily: font.sans, fontSize: 15, fontWeight: 600, color: color.ink }}>
           {name}
         </div>
         {sub ? (
@@ -104,14 +104,14 @@ export function CardRow({
             ...(selected
               ? {
                   border: 0,
-                  background: color.slate,
+                  background: color.ink,
                   color: color.white,
-                  boxShadow: '0 6px 14px -6px rgba(20,20,19,0.5)',
+                  boxShadow: '0 6px 14px -6px rgba(15,14,28,0.5)',
                 }
               : {
                   border: `0.5px solid ${color.hairlineStrong}`,
                   background: color.white,
-                  color: color.slate,
+                  color: color.ink,
                 }),
           }}
         >

@@ -18,10 +18,10 @@ export function SearchField({ id, label, ...rest }: SearchFieldProps) {
         alignItems: 'center',
         gap: 10,
         background: color.white,
-        border: '0.5px solid rgba(31,30,29,0.22)',
+        border: '0.5px solid rgba(15,14,28,0.22)',
         borderRadius: 12,
         height: 48,
-        boxShadow: '0 1px 2px rgba(20,20,19,0.04), inset 0 1px 0 rgba(255,255,255,0.8)',
+        boxShadow: '0 1px 2px rgba(15,14,28,0.04), inset 0 1px 0 rgba(255,255,255,0.8)',
         padding: '0 14px',
       }}
     >
@@ -61,7 +61,7 @@ export function SearchField({ id, label, ...rest }: SearchFieldProps) {
           fontFamily: font.sans,
           fontSize: 15,
           background: 'transparent',
-          color: color.slate,
+          color: color.ink,
           minWidth: 0,
         }}
         {...rest}

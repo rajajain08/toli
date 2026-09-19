@@ -21,13 +21,13 @@ export function TrayChip({
         borderRadius: 20,
         background: color.white,
         border: `0.5px solid ${color.hairlineStrong}`,
-        boxShadow: '0 1px 2px rgba(20,20,19,0.04), 0 8px 18px -12px rgba(20,20,19,0.22)',
+        boxShadow: '0 1px 2px rgba(15,14,28,0.04), 0 8px 18px -12px rgba(15,14,28,0.22)',
       }}
     >
       <div
         style={{ width: 30, height: 20, borderRadius: 4, ...cardSurface(tint), boxShadow: 'none' }}
       />
-      <span style={{ fontFamily: font.sans, fontSize: 14, fontWeight: 500, color: color.slate }}>
+      <span style={{ fontFamily: font.sans, fontSize: 14, fontWeight: 500, color: color.ink }}>
         {name}
       </span>
       <button

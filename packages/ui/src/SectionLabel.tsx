@@ -35,7 +35,7 @@ export function SectionLabel({
               fontSize: 12,
               fontWeight: 600,
               color: color.white,
-              background: color.slate,
+              background: color.ink,
               borderRadius: 9,
               padding: '1px 7px',
             }}

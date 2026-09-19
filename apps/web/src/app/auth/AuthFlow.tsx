@@ -54,6 +54,9 @@ export function AuthFlow() {
   const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | undefined>();
+  // Consent has its own message in its own reserved slot: it is not an error in the name field, and a
+  // message that appears from nothing above the button makes the button jump.
+  const [consentError, setConsentError] = useState(false);
   const confirmation = useRef<ConfirmationResult | null>(null);
   // Set while this screen finishes a brand-new profile, so the signed-in effect below does not race
   // the onboarding redirect to Add cards.
@@ -122,10 +125,7 @@ export function AuthFlow() {
   const saveProfile = async (e: FormEvent) => {
     e.preventDefault();
     setError(undefined);
-    if (!consent)
-      return setError(
-        'Tick the first box to continue. Toli stores your name, your phone number and the names of your cards.',
-      );
+    if (!consent) return setConsentError(true);
     setBusy(true);
     try {
       await callCompleteSignup({ name, consent, marketingOptIn });
@@ -241,7 +241,16 @@ export function AuthFlow() {
             error={error}
             autoFocus
           />
-          <Checkbox id="consent" checked={consent} onChange={setConsent}>
+          <Checkbox
+            id="consent"
+            checked={consent}
+            onChange={(v) => {
+              setConsent(v);
+              if (v) setConsentError(false);
+            }}
+            invalid={consentError}
+            describedBy={consentError ? 'consent-error' : undefined}
+          >
             I agree that Toli stores my name, my phone number and the names of cards I add, and
             shares card names with the groups I choose. Friends never see my number.{' '}
             <Link href="/privacy" style={{ fontWeight: 600 }}>
@@ -252,9 +261,25 @@ export function AuthFlow() {
             Optional: send me occasional updates and offers from Toli on this number. I can turn
             this off anytime.
           </Checkbox>
-          <Button type="submit" full disabled={busy || name.trim().length === 0}>
-            {busy ? 'Saving…' : 'Continue'}
-          </Button>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div
+              style={{
+                minHeight: 18,
+                fontSize: 13,
+                lineHeight: '18px',
+                color: 'var(--toli-danger, #C42B4B)',
+              }}
+            >
+              {consentError ? (
+                <span id="consent-error" role="alert">
+                  Tick the first box to continue.
+                </span>
+              ) : null}
+            </div>
+            <Button type="submit" full disabled={busy || name.trim().length === 0}>
+              {busy ? 'Saving…' : 'Continue'}
+            </Button>
+          </div>
         </form>
       ) : null}
     </main>

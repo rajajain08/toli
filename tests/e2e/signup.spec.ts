@@ -18,8 +18,17 @@ test('a fresh phone signs up with OTP, a name and consent, then lands in the app
 
   await expect(page.getByRole('heading', { name: 'What should friends call you?' })).toBeVisible();
   await page.getByLabel('Your name').fill('Raja');
-  await page.getByRole('button', { name: 'Continue' }).click();
-  await expect(page.locator('#name-error')).toContainText('Tick the first box');
+  // No consent yet: the message shows by the consent box, and the button must not move a pixel.
+  const button = page.getByRole('button', { name: 'Continue' });
+  const before = await button.boundingBox();
+  await button.click();
+  await expect(page.locator('#consent-error')).toContainText('Tick the first box');
+  await expect(page.getByLabel(/I agree that Toli stores my name/)).toHaveAttribute(
+    'aria-invalid',
+    'true',
+  );
+  expect(await button.boundingBox()).toEqual(before);
+  await expect(page.locator('#name-error')).toHaveCount(0);
 
   // Marketing consent is separate and never pre-ticked.
   await expect(page.getByLabel(/Optional: send me occasional updates/)).not.toBeChecked();
@@ -52,6 +61,9 @@ test('a wrong code is rejected in place', async ({ page }) => {
 test('a bad phone number never leaves the page', async ({ page }) => {
   await page.goto('/auth');
   await page.getByLabel('Your phone number').fill('12345');
-  await page.getByRole('button', { name: 'Get code by SMS' }).click();
+  const send = page.getByRole('button', { name: 'Get code by SMS' });
+  const before = await send.boundingBox();
+  await send.click();
   await expect(page.locator('#phone-error')).toContainText('valid phone number');
+  expect(await send.boundingBox()).toEqual(before);
 });

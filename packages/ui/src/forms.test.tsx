@@ -16,7 +16,27 @@ describe('TextField', () => {
   });
 });
 
+describe('TextField layout', () => {
+  it('reserves the message line whether or not there is a message', () => {
+    const { container, rerender } = render(<TextField id="n" label="Name" />);
+    const slot = () =>
+      container.querySelector('label')!.parentElement!.lastElementChild as HTMLElement;
+    expect(slot().style.minHeight).toBe('18px');
+    rerender(<TextField id="n" label="Name" error="required" />);
+    expect(slot().style.minHeight).toBe('18px');
+  });
+});
+
 describe('Checkbox', () => {
+  it('can be marked invalid and described', () => {
+    render(
+      <Checkbox id="c" checked={false} onChange={() => {}} invalid describedBy="c-error">
+        I agree
+      </Checkbox>,
+    );
+    expect(screen.getByLabelText('I agree')).toHaveAttribute('aria-invalid', 'true');
+    expect(screen.getByLabelText('I agree')).toHaveAttribute('aria-describedby', 'c-error');
+  });
   it('toggles through the label', () => {
     const onChange = vi.fn();
     render(

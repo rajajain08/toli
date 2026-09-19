@@ -49,6 +49,16 @@ pnpm test:e2e                              # Playwright against the dev server a
 
 `pnpm test:all` runs everything. Never point local code at `toli-prod`.
 
+## Marketing list
+
+ADR-0013: the verified phone number lives in the server-only `contacts` collection, with a separate, optional opt-in. The list is people who opted in, and nobody else:
+
+```sh
+pnpm marketing:export --project toli-app-dev --out ~/toli-dev.marketing.csv
+```
+
+Columns: `name, phone, opted_in_at, cards`. The file is created readable by you alone and the command prints counts, never rows. Delete it when the campaign is sent. Messaging anyone who is not in it is a compliance breach.
+
 ## Dev project
 
 `toli-app-dev` (the id `toli-dev` was taken). Web: https://toli-web--toli-app-dev.asia-southeast1.hosted.app

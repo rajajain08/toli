@@ -21,6 +21,9 @@ env:
   - variable: NEXT_PUBLIC_FIREBASE_APP_ID
     value: '1:319596181148:web:de29d2c6283055e5145f59'
     availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_APPCHECK_SITE_KEY
+    value: 6Ldy0MMtAAAAAI15G67XYLO0zqGsuTSw2Nv67WdA
+    availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_USE_EMULATORS
     value: '0'
     availability: [BUILD, RUNTIME]

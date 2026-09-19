@@ -9,3 +9,5 @@ export * from './invite-repository';
 export * from './group-card-read-model';
 export * from './rate-limiter';
 export * from './catalog-mirror';
+export * from './user-card-repository';
+export * from './identity';

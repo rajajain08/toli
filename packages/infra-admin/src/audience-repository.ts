@@ -9,7 +9,7 @@ import {
   type Membership,
 } from '@toli/domain';
 import { FieldValue, Timestamp, type DocumentData, type Firestore } from 'firebase-admin/firestore';
-import { paths } from './paths';
+import { adminPaths, paths } from './paths';
 
 const toDate = (v: unknown): Date => (v instanceof Timestamp ? v.toDate() : new Date(0));
 
@@ -129,6 +129,25 @@ export class AdminAudienceRepository implements AudienceRepository {
       tx.delete(this.db.doc(paths.membership(userId, audienceId)));
       tx.update(audienceRef, { memberCount: FieldValue.increment(-1) });
     });
+  }
+
+  async deleteAudience(id: GroupId): Promise<void> {
+    const members = await this.db.collection(paths.audienceMembers(id)).get();
+    const batch = this.db.batch();
+    for (const m of members.docs) {
+      // Each member's own list, and any of their cards still pointing at an audience that no longer exists.
+      batch.delete(this.db.doc(paths.membership(m.id, id)));
+      const stale = await this.db
+        .collection(paths.userCards(m.id))
+        .where('visibleTo', 'array-contains', id)
+        .get();
+      for (const c of stale.docs) batch.update(c.ref, { visibleTo: FieldValue.arrayRemove(id) });
+    }
+    const invites = await this.db.collection('invites').where('audienceId', '==', id).get();
+    for (const i of invites.docs) batch.delete(this.db.doc(adminPaths.invite(i.id)));
+    await batch.commit();
+    // The audience document with its members and read-model rows.
+    await this.db.recursiveDelete(this.db.doc(paths.audience(id)));
   }
 
   async isMember(audienceId: GroupId, userId: UserId): Promise<boolean> {

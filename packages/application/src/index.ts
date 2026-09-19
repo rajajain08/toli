@@ -14,3 +14,4 @@ export * from './use-cases/sync-catalog-mirror';
 export * from './use-cases/share-with';
 export * from './use-cases/find-card-holders';
 export * from './use-cases/account';
+export * from './use-cases/delete-account';

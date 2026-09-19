@@ -9,3 +9,4 @@ export * from './membership';
 export * from './invite';
 export * from './phone';
 export * from './contact';
+export * from './recent-sign-in';

@@ -13,6 +13,11 @@ export class FirestoreUserRepository implements UserRepository {
     return snap.exists() ? userFromDoc(snap.id, snap.data()) : undefined;
   }
 
+  /** Rules deny it: only the deleteAccount function removes a profile. */
+  remove(): Promise<void> {
+    return Promise.reject(new Error('a profile is only deleted by the deleteAccount function'));
+  }
+
   async upsert(user: User): Promise<void> {
     await setDoc(
       doc(this.db, paths.user(user.id)),

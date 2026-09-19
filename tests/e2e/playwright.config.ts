@@ -4,6 +4,9 @@ export default defineConfig({
   testDir: '.',
   testMatch: /.*\.spec\.ts/,
   timeout: 30_000,
+  // The dev server compiles routes and the lazy Firebase chunk on first hit; 5 s is too tight when
+  // several workers arrive cold at once.
+  expect: { timeout: 10_000 },
   retries: process.env['CI'] ? 1 : 0,
   reporter: process.env['CI'] ? 'github' : 'list',
   use: { baseURL: 'http://127.0.0.1:3000', trace: 'retain-on-failure' },

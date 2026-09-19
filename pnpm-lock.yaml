@@ -14,6 +14,15 @@ importers:
       '@playwright/test':
         specifier: ^1.63.0
         version: 1.63.0
+      '@toli/application':
+        specifier: workspace:*
+        version: link:packages/application
+      '@toli/domain':
+        specifier: workspace:*
+        version: link:packages/domain
+      '@toli/infra-client':
+        specifier: workspace:*
+        version: link:packages/infra-client
       '@types/node':
         specifier: ^24.0.0
         version: 24.13.5

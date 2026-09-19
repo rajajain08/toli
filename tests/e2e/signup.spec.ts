@@ -24,6 +24,10 @@ test('a fresh phone signs up with OTP, a name and consent, then lands in the app
   await page.getByLabel(/I agree that Toli stores my name/).check();
   await page.getByRole('button', { name: 'Continue' }).click();
 
+  // New people land on Add cards (step 2 of 2), then continue to where they were headed.
+  await expect(page).toHaveURL(/\/cards\/add\?onboarding=1/);
+  await expect(page.getByRole('heading', { name: 'Which cards do you carry?' })).toBeVisible();
+  await page.getByRole('button', { name: 'Skip for now' }).click();
   await expect(page).toHaveURL(/\/groups$/);
   await expect(page.getByRole('heading', { name: 'Groups' })).toBeVisible();
 

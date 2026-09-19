@@ -120,6 +120,24 @@ export const joinByInvite = onCall(criticalPath, async (request) => {
   }
 });
 
+/**
+ * Opens (or finds) the 1:1 share between the caller and someone in one of their groups. It creates only the
+ * two-member audience; which cards are visible in it stays the owner's own write, exactly as for a group.
+ */
+export const shareWith = onCall({ enforceAppCheck }, async (request) => {
+  const uid = requireUid(request);
+  try {
+    const res = await c().shareWith.execute({
+      actor: uid,
+      target: UserId(str(body(request)['userId']) || '-'),
+    });
+    logger.info('shareWith', { uid, audienceId: res.audience.id, created: res.created });
+    return { audienceId: res.audience.id, created: res.created };
+  } catch (err) {
+    throw toHttpsError(err, 'shareWith');
+  }
+});
+
 const snapshotOf = (
   data: FirebaseFirestore.DocumentData | undefined,
 ): UserCardSnapshot | undefined =>

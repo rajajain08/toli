@@ -1,4 +1,4 @@
-import type { AudienceRepository } from '@toli/application';
+import type { AudienceRepository, DirectMember } from '@toli/application';
 import {
   Audience,
   AudienceFull,
@@ -58,6 +58,38 @@ export class AdminAudienceRepository implements AudienceRepository {
       joinedAt: Timestamp.fromDate(owner.joinedAt),
     });
     await batch.commit();
+  }
+
+  async createDirect(
+    audience: Audience,
+    members: readonly [DirectMember, DirectMember],
+  ): Promise<void> {
+    const audienceRef = this.db.doc(paths.audience(audience.id));
+    await this.db.runTransaction(async (tx) => {
+      // The id is deterministic, so two people opening the same share at once race to one document.
+      if ((await tx.get(audienceRef)).exists) return;
+      tx.set(audienceRef, {
+        type: 'direct',
+        createdBy: audience.createdBy,
+        memberCount: 2,
+        cardCount: 0,
+        createdAt: Timestamp.fromDate(audience.createdAt),
+      });
+      for (const m of members) {
+        const joinedAt = Timestamp.fromDate(m.membership.joinedAt);
+        tx.set(this.db.doc(paths.audienceMember(audience.id, m.membership.userId)), {
+          joinedAt,
+          role: m.membership.role,
+          name: m.name,
+        });
+        // Each person's own list names the share after the other person.
+        tx.set(this.db.doc(paths.membership(m.membership.userId, audience.id)), {
+          type: 'direct',
+          name: m.peerName,
+          joinedAt,
+        });
+      }
+    });
   }
 
   async addMember(membership: Membership, memberName: string): Promise<void> {

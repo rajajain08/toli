@@ -13,6 +13,7 @@ import {
   doc,
   orderBy,
   query,
+  type CollectionReference,
   type DocumentData,
   type DocumentReference,
   type DocumentSnapshot,
@@ -99,8 +100,12 @@ export const audienceMembersQuery = (db: Firestore, aid: GroupId): LiveQuery<Mem
   }),
 });
 
-/** The read side: one query draws the whole group screen. */
-export const audienceCardsQuery = (db: Firestore, aid: GroupId): LiveQuery<GroupCardRow> => ({
+/** The read side: one query draws the whole group screen. `collection` is the same rows, unordered, for Find. */
+export const audienceCardsQuery = (
+  db: Firestore,
+  aid: GroupId,
+): LiveQuery<GroupCardRow> & { collection: CollectionReference<DocumentData> } => ({
+  collection: collection(db, paths.audienceCards(aid)),
   query: query(collection(db, paths.audienceCards(aid)), orderBy('addedAt', 'desc')),
   convert: (d) => {
     const x = d.data();

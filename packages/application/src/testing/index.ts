@@ -14,6 +14,7 @@ import type {
 } from '@toli/domain';
 import type {
   AudienceRepository,
+  DirectMember,
   CatalogMirror,
   Clock,
   ContactRepository,
@@ -123,6 +124,20 @@ export class InMemoryAudienceRepository implements AudienceRepository {
     m.set(membership.userId, { ...membership, name: memberName });
     this.audiences.set(a.id, a.withCounts({ memberCount: m.size }));
   }
+  /** What each person's own membership list calls this audience (the peer's name for a 1:1). */
+  readonly labels = new Map<string, string>();
+  async createDirect(
+    audience: Audience,
+    members: readonly [DirectMember, DirectMember],
+  ): Promise<void> {
+    if (this.audiences.has(audience.id)) return;
+    this.audiences.set(audience.id, audience.withCounts({ memberCount: 2 }));
+    this.members.set(
+      audience.id,
+      new Map(members.map((m) => [m.membership.userId, { ...m.membership, name: m.name }])),
+    );
+    for (const m of members) this.labels.set(`${m.membership.userId}/${audience.id}`, m.peerName);
+  }
   async removeMember(audienceId: GroupId, userId: UserId): Promise<void> {
     const m = this.members.get(audienceId);
     const a = this.audiences.get(audienceId);
@@ -170,6 +185,10 @@ export class InMemoryGroupCardReadModel implements GroupCardReadModel {
   async findHolders(audienceIds: readonly GroupId[], cardId: CardId): Promise<GroupCardRow[]> {
     const set = new Set(audienceIds);
     return [...this.rows.values()].filter((r) => set.has(r.audienceId) && r.cardId === cardId);
+  }
+  async findByTag(audienceIds: readonly GroupId[], tag: string): Promise<GroupCardRow[]> {
+    const set = new Set(audienceIds);
+    return [...this.rows.values()].filter((r) => set.has(r.audienceId) && r.tags.includes(tag));
   }
   async project(rows: readonly GroupCardRow[]): Promise<void> {
     for (const r of rows) {

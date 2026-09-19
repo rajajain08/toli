@@ -41,6 +41,19 @@ export class AdminGroupCardReadModel implements GroupCardReadModel {
     return perAudience.flat();
   }
 
+  async findByTag(audienceIds: readonly GroupId[], tag: string): Promise<GroupCardRow[]> {
+    const perAudience = await Promise.all(
+      audienceIds.map(async (aid) => {
+        const snap = await this.db
+          .collection(paths.audienceCards(aid))
+          .where('tags', 'array-contains', tag)
+          .get();
+        return snap.docs.map((d) => rowFromDoc(aid, d.id, d.data()));
+      }),
+    );
+    return perAudience.flat();
+  }
+
   async project(rows: readonly GroupCardRow[]): Promise<void> {
     await Promise.all(
       rows.map((row) =>

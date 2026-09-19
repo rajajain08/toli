@@ -8,13 +8,7 @@ export interface ToggleProps {
   accent?: string | undefined;
 }
 
-export function Toggle({
-  on,
-  onChange,
-  label,
-  disabled = false,
-  accent = color.slate,
-}: ToggleProps) {
+export function Toggle({ on, onChange, label, disabled = false, accent = color.ink }: ToggleProps) {
   return (
     <button
       type="button"
@@ -45,7 +39,7 @@ export function Toggle({
           borderRadius: 12,
           background: color.white,
           display: 'block',
-          boxShadow: '0 1px 3px rgba(20,20,19,0.25)',
+          boxShadow: '0 1px 3px rgba(15,14,28,0.25)',
         }}
       />
     </button>

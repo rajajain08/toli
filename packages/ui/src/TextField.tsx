@@ -26,10 +26,10 @@ export function TextField({ id, label, prefix, hint, error, ...rest }: TextField
           display: 'flex',
           alignItems: 'center',
           background: color.white,
-          border: `0.5px solid ${error ? color.clay : 'rgba(31,30,29,0.22)'}`,
+          border: `0.5px solid ${error ? color.danger : 'rgba(15,14,28,0.22)'}`,
           borderRadius: 12,
           height: 52,
-          boxShadow: '0 1px 2px rgba(20,20,19,0.04), inset 0 1px 0 rgba(255,255,255,0.8)',
+          boxShadow: '0 1px 2px rgba(15,14,28,0.04), inset 0 1px 0 rgba(255,255,255,0.8)',
           overflow: 'hidden',
         }}
       >
@@ -41,7 +41,7 @@ export function TextField({ id, label, prefix, hint, error, ...rest }: TextField
               fontSize: 16,
               fontWeight: 500,
               color: color.ink3,
-              borderRight: '0.5px solid rgba(31,30,29,0.15)',
+              borderRight: '0.5px solid rgba(15,14,28,0.15)',
               height: '100%',
               display: 'flex',
               alignItems: 'center',
@@ -63,7 +63,7 @@ export function TextField({ id, label, prefix, hint, error, ...rest }: TextField
             fontFamily: font.sans,
             fontSize: 16,
             background: 'transparent',
-            color: color.slate,
+            color: color.ink,
             minWidth: 0,
           }}
           {...rest}
@@ -73,7 +73,7 @@ export function TextField({ id, label, prefix, hint, error, ...rest }: TextField
         <div
           id={`${id}-error`}
           role="alert"
-          style={{ fontFamily: font.sans, fontSize: 13, color: color.clay }}
+          style={{ fontFamily: font.sans, fontSize: 13, color: color.danger }}
         >
           {error}
         </div>

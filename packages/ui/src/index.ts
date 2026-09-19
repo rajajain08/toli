@@ -9,3 +9,4 @@ export * from './TextField';
 export * from './Checkbox';
 export * from './Notice';
 export * from './Heading';
+export * from './Wordmark';

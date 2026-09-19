@@ -11,7 +11,7 @@ export interface ChipProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>,
 export function Chip({
   selected = false,
   size = 'default',
-  accent = color.slate,
+  accent = color.ink,
   children,
   ...rest
 }: ChipProps) {
@@ -46,7 +46,7 @@ export function Chip({
             : {
                 border: `0.5px solid ${color.hairlineStrong}`,
                 background: color.white,
-                color: color.slate,
+                color: color.ink,
                 fontWeight: 500,
               }),
         };

@@ -24,6 +24,9 @@ env:
   - variable: NEXT_PUBLIC_APPCHECK_SITE_KEY
     value: 6Ldy0MMtAAAAAI15G67XYLO0zqGsuTSw2Nv67WdA
     availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://toli-web--toli-app-dev.asia-southeast1.hosted.app
+    availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_USE_EMULATORS
     value: '0'
     availability: [BUILD, RUNTIME]

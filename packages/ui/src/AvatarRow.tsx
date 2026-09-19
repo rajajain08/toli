@@ -16,12 +16,12 @@ export interface AvatarProps {
 
 export function Avatar({ person, size = 48, selected = false, label }: AvatarProps) {
   const isAll = person.id === 'all';
-  const bg = isAll ? color.slate : person.empty ? color.panel : avatarColorFor(person.id);
+  const bg = isAll ? color.ink : person.empty ? color.panel : avatarColorFor(person.id);
   const border = selected
-    ? `2px solid ${color.slate}`
+    ? `2px solid ${color.ink}`
     : person.empty
       ? `2px dashed ${color.hairlineStrong}`
-      : `2px solid ${color.ivory}`;
+      : `2px solid ${color.paper}`;
   return (
     <div
       aria-hidden
@@ -38,7 +38,9 @@ export function Avatar({ person, size = 48, selected = false, label }: AvatarPro
         fontSize: isAll ? size * 0.27 : size * 0.35,
         fontWeight: 600,
         border,
-        boxShadow: selected ? `0 0 0 3px ${color.clayRing}, ${elevation.avatar}` : elevation.avatar,
+        boxShadow: selected
+          ? `0 0 0 3px ${color.accentRing}, ${elevation.avatar}`
+          : elevation.avatar,
         boxSizing: 'border-box',
         flexShrink: 0,
       }}
@@ -91,7 +93,7 @@ export function AvatarRow({ people, selectedId, onSelect, action }: AvatarRowPro
                 fontFamily: font.sans,
                 fontSize: 12,
                 fontWeight: selected ? 600 : 500,
-                color: selected ? color.slate : p.empty ? color.ink4 : color.ink3,
+                color: selected ? color.ink : p.empty ? color.ink4 : color.ink3,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -126,12 +128,12 @@ export function AvatarRow({ people, selectedId, onSelect, action }: AvatarRowPro
               height: 48,
               borderRadius: 24,
               background: color.white,
-              color: color.slate,
+              color: color.ink,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               border: `0.5px solid ${color.hairlineStrong}`,
-              boxShadow: '0 2px 6px rgba(20,20,19,0.12)',
+              boxShadow: '0 2px 6px rgba(15,14,28,0.12)',
               fontSize: 22,
               lineHeight: 1,
             }}

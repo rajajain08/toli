@@ -3,27 +3,48 @@
  * the palette; tokens.css mirrors them as CSS variables for global styles.
  */
 export const color = {
-  ivory: '#FAF9F5',
-  slate: '#141413',
-  clay: '#D97757',
-  oat: '#E3DACC',
+  /** Frost: the cool paper every screen sits on. */
+  paper: '#F5F6FC',
+  /** Midnight: text, primary buttons, the icon tile. */
+  ink: '#0F0E1C',
+  /** Iris: the single accent (the wordmark dot, focus rings, selected tints, active-tab dot). */
+  accent: '#5B4DFF',
+  /** Iris lifted for Midnight grounds, where the base accent goes dim. */
+  accentOnInk: '#8E84FF',
+  /** Steel: the chip on a drawn card. */
+  chip: '#D3D7E6',
+  /** Errors only. The accent never signals a problem. */
+  danger: '#C42B4B',
   white: '#FFFFFF',
-  ink2: '#3D3D3A',
-  ink3: '#5E5D59',
-  ink4: '#9C9A92',
-  ink5: '#C2C0B6',
-  panel: '#F0EEE6',
-  hairline: 'rgba(31,30,29,0.10)',
-  hairlineStrong: 'rgba(31,30,29,0.30)',
-  clayTint: 'rgba(217,119,87,0.13)',
-  clayRing: 'rgba(217,119,87,0.40)',
+  ink2: '#2B2A3D',
+  ink3: '#55546B',
+  ink4: '#8C8BA3',
+  ink5: '#BBBBCD',
+  panel: '#ECEDF7',
+  hairline: 'rgba(15,14,28,0.10)',
+  hairlineStrong: 'rgba(15,14,28,0.30)',
+  accentTint: 'rgba(91,77,255,0.12)',
+  accentRing: 'rgba(91,77,255,0.40)',
+  /** @deprecated First-palette names, kept so in-flight branches compile. Use the role names above. */
+  ivory: '#F5F6FC',
+  /** @deprecated Use `ink`. */
+  slate: '#0F0E1C',
+  /** @deprecated Use `accent`. */
+  clay: '#5B4DFF',
+  /** @deprecated Use `chip`. */
+  oat: '#D3D7E6',
+  /** @deprecated Use `accentTint`. */
+  clayTint: 'rgba(91,77,255,0.12)',
+  /** @deprecated Use `accentRing`. */
+  clayRing: 'rgba(91,77,255,0.40)',
   /** Avatar colours, assigned by hashing the user id so a person keeps their colour across screens. */
-  avatars: ['#558A42', '#D97757', '#6B4D9E', '#2E9191', '#C46686', '#C9A82D', '#2A78D6'],
+  avatars: ['#2E9A6B', '#E0654F', '#7A4DDB', '#1F9BB5', '#D1578F', '#C9A82D', '#2A78D6'],
 } as const;
 
+/** Display is Fraunces, loaded by the app as --toli-face-display; body is the platform sans, zero bytes. */
 export const font = {
-  serif: "'Anthropic Serif', Georgia, 'Times New Roman', Times, serif",
-  sans: "'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+  serif: "var(--toli-face-display, Georgia), Georgia, 'Times New Roman', Times, serif",
+  sans: "system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
 } as const;
 
 export const type = {
@@ -44,19 +65,19 @@ export const radius = { tag: 8, row: 16, panel: 18, pill: 999, cardThumb: 6 } as
 
 /** Three elevation levels: row, panel, hero. */
 export const elevation = {
-  row: '0 1px 2px rgba(20,20,19,0.04), 0 12px 28px -16px rgba(20,20,19,0.22)',
-  panel: '0 8px 20px -12px rgba(20,20,19,0.25)',
-  hero: '0 16px 36px -12px rgba(20,20,19,0.35)',
-  button: '0 8px 18px -10px rgba(20,20,19,0.55)',
-  avatar: '0 2px 6px rgba(20,20,19,0.20)',
+  row: '0 1px 2px rgba(15,14,28,0.04), 0 12px 28px -16px rgba(15,14,28,0.22)',
+  panel: '0 8px 20px -12px rgba(15,14,28,0.25)',
+  hero: '0 16px 36px -12px rgba(15,14,28,0.35)',
+  button: '0 8px 18px -10px rgba(15,14,28,0.55)',
+  avatar: '0 2px 6px rgba(15,14,28,0.20)',
 } as const;
 
 /** Card object: issuer-tinted rectangle, light-to-shade gradient, hairline top highlight. */
 export const cardSurface = (tint: string) => ({
   background: tint,
   backgroundImage:
-    'linear-gradient(135deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.06) 42%, rgba(20,20,19,0.24) 100%)',
-  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.28), 0 3px 8px rgba(20,20,19,0.20)',
+    'linear-gradient(135deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.06) 42%, rgba(15,14,28,0.24) 100%)',
+  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.28), 0 3px 8px rgba(15,14,28,0.20)',
 });
 
 export const avatarColorFor = (key: string): string => {

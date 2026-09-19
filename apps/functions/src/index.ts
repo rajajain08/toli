@@ -18,7 +18,7 @@ const enforceAppCheck = !isEmulator;
 /** joinByInvite and createAudience sit on the critical path; they stay warm in prod only (it costs money). */
 const criticalPath = {
   enforceAppCheck,
-  minInstances: process.env['GCLOUD_PROJECT'] === 'toli-prod' ? 1 : 0,
+  minInstances: process.env['GCLOUD_PROJECT'] === 'toli-app-prod' ? 1 : 0,
 };
 
 let core: Core | undefined;

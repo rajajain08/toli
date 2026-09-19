@@ -223,7 +223,7 @@ Two Firebase projects, one pipeline, and rules and functions always deploy with 
 
 | Item | Choice |
 | --- | --- |
-| Projects | `toli-dev`, `toli-prod`; local work on emulators with seeded data |
+| Projects | `toli-app-dev`, `toli-app-prod` (the shorter ids were taken); local work on emulators with seeded data |
 | Hosting | Firebase App Hosting for the Next.js app |
 | CI/CD | GitHub Actions: PR runs all four test tiers; merge to `main` deploys dev; a tag deploys prod |
 | Flags | Remote Config, e.g. `directSharesEnabled`, so features ship dark and switch on per cohort |
@@ -255,7 +255,7 @@ Milestone 4 is the MVP. If the friend group does not use it after that, 5 and 6 
 | 3 | My cards: catalogue package, Add cards, My cards with optimistic add and remove | usable as a single-player app |
 | 4 | Audiences: CreateAudience, `/join/[code]` with OG tags, JoinByInvite, projection, Group screen live, visibility toggles | the friend group is on it |
 | 5 | Direct shares and Find | a card can be shared 1:1 and found across audiences |
-| 6 | Privacy page, delete account, PWA install prompt, analytics, prod deploy | live on `toli-prod` |
+| 6 | Privacy page, delete account, PWA install prompt, analytics, prod deploy | live on `toli-app-prod` |
 
 ## Decision log
 

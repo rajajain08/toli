@@ -14,4 +14,4 @@ Read `docs/architecture.md` before writing any code. It is the spec; if a change
 
 - One milestone per branch, PRs against green CI.
 - Screens come from `docs/design/` and compose primitives from `packages/ui`; do not style ad hoc.
-- Prefer the Firebase Emulator Suite for everything local; never point local code at `toli-prod`.
+- Prefer the Firebase Emulator Suite for everything local; never point local code at `toli-app-prod`.

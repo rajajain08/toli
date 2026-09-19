@@ -2,6 +2,6 @@
   "projects": {
     "default": "toli-app-dev",
     "dev": "toli-app-dev",
-    "prod": "toli-prod"
+    "prod": "toli-app-prod"
   }
 }

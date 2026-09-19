@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "tags": [
     "travel",
     "dining",
@@ -79,6 +79,331 @@
       "color": "#2F6E4E"
     },
     {
+      "id": "hdfc-freedom",
+      "name": "Freedom",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "dining", "movies"],
+      "perks": [
+        "10X CashPoints at partner merchants such as Swiggy, BookMyShow and Uber",
+        "Reward points on all other everyday spends"
+      ],
+      "color": "#2B2E4A"
+    },
+    {
+      "id": "hdfc-phonepe-uno",
+      "name": "PhonePe HDFC Uno",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "online"],
+      "perks": [
+        "Reward points on PhonePe recharges, bill payments and travel",
+        "Rewards on UPI Scan & Pay and select online brands",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#5F259F"
+    },
+    {
+      "id": "hdfc-phonepe-ultimo",
+      "name": "PhonePe HDFC Ultimo",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "online", "lounge"],
+      "perks": [
+        "10% reward points on select PhonePe categories",
+        "5% reward points on select online brands",
+        "Domestic airport lounge access on meeting spend criteria"
+      ],
+      "color": "#1A1A2E"
+    },
+    {
+      "id": "hdfc-pixel-play",
+      "name": "PIXEL Play",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["cashback", "online", "shopping", "dining"],
+      "perks": [
+        "5% cashback on two merchant packs of your choice",
+        "3% cashback on a chosen e-commerce merchant",
+        "Fully digital card managed in the PayZapp app"
+      ],
+      "color": "#5B4FE9"
+    },
+    {
+      "id": "hdfc-pixel-go",
+      "name": "PIXEL Go",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["cashback", "online"],
+      "perks": [
+        "1% cashback on eligible spends, including UPI",
+        "5% cashback on SmartBuy purchases",
+        "Fully digital card managed in the PayZapp app"
+      ],
+      "color": "#B38E2C"
+    },
+    {
+      "id": "hdfc-upi-rupay",
+      "name": "UPI RuPay",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "cashback", "dining"],
+      "perks": [
+        "CashPoints on UPI payments made with a credit card",
+        "3% CashPoints on groceries, dining and PayZapp spends",
+        "2% CashPoints on utility bills"
+      ],
+      "color": "#1E3A8A"
+    },
+    {
+      "id": "hdfc-diners-privilege",
+      "name": "Diners Club Privilege",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["travel", "lounge", "dining", "movies", "rewards"],
+      "perks": [
+        "5X reward points on Swiggy and Zomato",
+        "Airport lounge vouchers on meeting quarterly spends",
+        "Buy-one-get-one weekend movie tickets",
+        "Quarterly milestone vouchers"
+      ],
+      "color": "#2B2B2F"
+    },
+    {
+      "id": "hdfc-tata-neu-plus",
+      "name": "Tata Neu Plus",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["shopping", "rewards", "online", "lounge"],
+      "perks": [
+        "2% back as NeuCoins on Tata Neu and partner Tata brands",
+        "1% back as NeuCoins on other spends",
+        "Domestic airport lounge access"
+      ],
+      "color": "#1F2A60"
+    },
+    {
+      "id": "hdfc-swiggy-ornge",
+      "name": "Swiggy Ornge HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["dining", "cashback", "online"],
+      "perks": [
+        "5% cashback on Swiggy and select online merchants",
+        "1% cashback on other eligible spends",
+        "Swiggy One membership as a welcome benefit"
+      ],
+      "color": "#E77517"
+    },
+    {
+      "id": "hdfc-swiggy-blck",
+      "name": "Swiggy BLCK HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["dining", "cashback", "online"],
+      "perks": [
+        "10% cashback on Swiggy food, Instamart and Dineout",
+        "5% cashback on select online merchants",
+        "Swiggy BLCK membership as a welcome benefit",
+        "Mastercard golf benefits"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "hdfc-marriott-bonvoy",
+      "name": "Marriott Bonvoy HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["travel", "rewards", "premium", "dining"],
+      "perks": [
+        "Marriott Bonvoy points on every spend, accelerated at Marriott hotels",
+        "Free Night Awards on joining and on annual spend milestones",
+        "Bonus points on travel, dining and entertainment"
+      ],
+      "color": "#30302F"
+    },
+    {
+      "id": "hdfc-indianoil",
+      "name": "IndianOil HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["fuel", "rewards"],
+      "perks": [
+        "5% of spends back as Fuel Points at IndianOil outlets",
+        "5% Fuel Points on groceries and bill payments",
+        "IndianOil XTRAREWARDS programme membership"
+      ],
+      "color": "#E8622A"
+    },
+    {
+      "id": "hdfc-irctc",
+      "name": "IRCTC HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["travel", "rewards"],
+      "perks": [
+        "5X reward points on IRCTC train ticket bookings",
+        "Extra cashback on train bookings made via SmartBuy",
+        "Quarterly milestone gift vouchers"
+      ],
+      "color": "#1D4E9E"
+    },
+    {
+      "id": "hdfc-shoppers-stop",
+      "name": "Shoppers Stop HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["shopping", "rewards"],
+      "perks": [
+        "3% reward points on Shoppers Stop purchases",
+        "Shoppers Stop Silver Edge membership",
+        "Welcome voucher for Shoppers Stop"
+      ],
+      "color": "#939393"
+    },
+    {
+      "id": "hdfc-shoppers-stop-black",
+      "name": "Shoppers Stop Black HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["shopping", "rewards", "lounge", "premium"],
+      "perks": [
+        "7% reward points on Shoppers Stop purchases",
+        "Shoppers Stop Black membership",
+        "Domestic and international airport lounge access"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "hdfc-paytm",
+      "name": "Paytm HDFC",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["cashback", "online"],
+      "perks": [
+        "3% cashback on Paytm recharges, bills, movies and Mini Apps",
+        "2% cashback on other Paytm spends, 1% elsewhere",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#0A2A66"
+    },
+    {
+      "id": "hdfc-paytm-select",
+      "name": "Paytm HDFC Select",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["cashback", "online", "lounge"],
+      "perks": [
+        "5% CashPoints on Paytm recharges, bills, travel and movies",
+        "3% CashPoints on Swiggy, AJIO, BigBasket and Uber",
+        "Domestic airport lounge access"
+      ],
+      "color": "#14213D"
+    },
+    {
+      "id": "hdfc-harley-davidson-diners",
+      "name": "Harley-Davidson Diners Club",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "lounge", "dining", "travel"],
+      "perks": [
+        "5X reward points on Swiggy and Zomato",
+        "Airport lounge access worldwide",
+        "Up to 10X reward points on SmartBuy travel bookings"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "hdfc-platinum-times",
+      "name": "Platinum Times",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["movies", "dining", "rewards"],
+      "perks": [
+        "Discounted movie tickets via BookMyShow",
+        "Bonus reward points on weekday dining",
+        "Times Prime membership benefits"
+      ],
+      "color": "#3A3A3C"
+    },
+    {
+      "id": "hdfc-regalia",
+      "name": "Regalia",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["travel", "lounge", "rewards", "dining"],
+      "perks": [
+        "Domestic lounge access and Priority Pass for international lounges",
+        "4 reward points per ₹200, more on SmartBuy travel bookings",
+        "Dining discounts via Swiggy Dineout"
+      ],
+      "color": "#1F2A44"
+    },
+    {
+      "id": "hdfc-regalia-first",
+      "name": "Regalia First",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "dining", "travel"],
+      "perks": [
+        "Reward points on all retail spends",
+        "Bonus reward points on annual spend milestones",
+        "Dining savings via Swiggy Dineout"
+      ],
+      "color": "#2C3E6B"
+    },
+    {
+      "id": "hdfc-moneyback",
+      "name": "MoneyBack",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "online", "cashback"],
+      "perks": [
+        "2X reward points on online spends",
+        "Quarterly milestone gift vouchers",
+        "Reward points redeemable as cashback"
+      ],
+      "color": "#23395B"
+    },
+    {
+      "id": "hdfc-diners-clubmiles",
+      "name": "Diners ClubMiles",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["travel", "lounge", "rewards", "dining"],
+      "perks": [
+        "Reward points convertible to air miles, 1 point = 1 mile",
+        "Airport lounge access worldwide",
+        "Dining discounts at premium restaurants"
+      ],
+      "color": "#1C3F6E"
+    },
+    {
+      "id": "hdfc-diners-rewardz",
+      "name": "Diners Club Rewardz",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["rewards", "dining"],
+      "perks": [
+        "Reward points on retail spends",
+        "Bonus reward points on card activation and renewal"
+      ],
+      "color": "#5A5F6B"
+    },
+    {
+      "id": "hdfc-bharat",
+      "name": "Bharat",
+      "issuer": "HDFC",
+      "bank": "HDFC Bank",
+      "tags": ["cashback", "fuel"],
+      "perks": [
+        "5% cashback on fuel, groceries, bill payments and recharges",
+        "5% cashback on IRCTC train bookings",
+        "5% cashback on PayZapp, EasyEMI and SmartBuy spends"
+      ],
+      "color": "#D96B1E"
+    },
+    {
       "id": "icici-amazon-pay",
       "name": "Amazon Pay ICICI",
       "issuer": "ICICI",
@@ -124,6 +449,272 @@
       "color": "#0F5C4C"
     },
     {
+      "id": "icici-times-black",
+      "name": "Times Black",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["premium", "travel", "lounge", "dining"],
+      "perks": [
+        "Domestic and international airport lounge access",
+        "Zomato Gold membership and curated lifestyle privileges",
+        "Milestone benefits unlocked through the Times Black app",
+        "Reward points on every spend"
+      ],
+      "color": "#0B0B0B"
+    },
+    {
+      "id": "icici-emeralde",
+      "name": "Emeralde",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["premium", "lounge", "travel"],
+      "perks": [
+        "Unlimited domestic and international airport lounge access",
+        "Complimentary golf rounds based on monthly spends",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#0F5B4F"
+    },
+    {
+      "id": "icici-platinum-chip",
+      "name": "Platinum Chip",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["lifetime-free", "rewards", "fuel"],
+      "perks": [
+        "No joining or annual fee",
+        "Reward points on everyday purchases",
+        "Fuel surcharge waiver at HPCL pumps"
+      ],
+      "color": "#8A8D91"
+    },
+    {
+      "id": "icici-adani-one-signature",
+      "name": "Adani One Signature",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": [
+        "Adani Reward Points credited to the Adani One app",
+        "Domestic and international airport lounge access",
+        "Premium lounge upgrades and airport privileges at Adani airports",
+        "Welcome flight and hotel vouchers"
+      ],
+      "color": "#1B1B3A"
+    },
+    {
+      "id": "icici-adani-one-platinum",
+      "name": "Adani One Platinum",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "lounge", "rewards", "movies"],
+      "perks": [
+        "Adani Reward Points credited to the Adani One app",
+        "Domestic airport lounge access and premium lounge upgrades",
+        "Movie ticket discounts on BookMyShow"
+      ],
+      "color": "#2E5AAC"
+    },
+    {
+      "id": "icici-makemytrip",
+      "name": "MakeMyTrip ICICI",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "forex", "lounge", "movies", "rewards"],
+      "perks": [
+        "Unlimited myCash rewards that never expire",
+        "MMTBLACK Gold membership",
+        "0.99% forex markup on international spends",
+        "Domestic and international airport lounge access"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "icici-makemytrip-signature",
+      "name": "MakeMyTrip Signature",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": [
+        "myCash on every spend, accelerated on MakeMyTrip",
+        "MMTBLACK membership and MakeMyTrip holiday voucher",
+        "Airport and railway lounge access"
+      ],
+      "color": "#B3202A"
+    },
+    {
+      "id": "icici-makemytrip-platinum",
+      "name": "MakeMyTrip Platinum",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": [
+        "myCash on every spend, accelerated on MakeMyTrip",
+        "MakeMyTrip holiday voucher on joining",
+        "Domestic airport and railway lounge access"
+      ],
+      "color": "#8D9093"
+    },
+    {
+      "id": "icici-emirates-skywards-emeralde",
+      "name": "Emirates Skywards Emeralde",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "premium", "lounge", "rewards"],
+      "perks": [
+        "Skywards Miles on every spend",
+        "Emirates Skywards Silver tier, upgradable to Gold on spends",
+        "Unlimited domestic and international airport lounge access"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "icici-emirates-skywards-sapphiro",
+      "name": "Emirates Skywards Sapphiro",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "lounge", "rewards", "movies"],
+      "perks": [
+        "Skywards Miles on every spend",
+        "Emirates Skywards Silver tier membership",
+        "Domestic and international airport lounge access",
+        "Buy-one-get-one movie ticket offer on BookMyShow"
+      ],
+      "color": "#2B2D42"
+    },
+    {
+      "id": "icici-emirates-skywards-rubyx",
+      "name": "Emirates Skywards Rubyx",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["travel", "rewards", "lounge", "movies"],
+      "perks": [
+        "Skywards Miles on every spend",
+        "Domestic airport lounge access on meeting quarterly spends",
+        "Movie ticket discounts on BookMyShow and INOX"
+      ],
+      "color": "#B0122A"
+    },
+    {
+      "id": "icici-hpcl-super-saver",
+      "name": "HPCL Super Saver",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["fuel", "cashback", "movies", "lounge"],
+      "perks": [
+        "5% savings on fuel at HPCL pumps and on the HP Pay app",
+        "Cashback on utility and departmental store spends",
+        "Movie ticket discounts on BookMyShow and INOX",
+        "Domestic airport lounge access"
+      ],
+      "color": "#12326B"
+    },
+    {
+      "id": "icici-hpcl-coral",
+      "name": "HPCL Coral",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["fuel", "movies", "rewards"],
+      "perks": [
+        "Savings on fuel transactions at HPCL pumps",
+        "Movie ticket discounts on BookMyShow",
+        "Reward points on non-fuel spends"
+      ],
+      "color": "#C0392B"
+    },
+    {
+      "id": "icici-expressions",
+      "name": "Expressions",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["rewards", "movies", "lounge"],
+      "perks": [
+        "Personalise the card face with your own image",
+        "Movie ticket discounts on BookMyShow and INOX",
+        "Domestic airport lounge access on meeting spends"
+      ],
+      "color": "#7B2D8E"
+    },
+    {
+      "id": "icici-csk",
+      "name": "Chennai Super Kings ICICI",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["rewards", "lounge"],
+      "perks": [
+        "Bonus reward points on CSK match days",
+        "Chance to win CSK home match tickets and fan experiences",
+        "Domestic airport lounge access on meeting spends"
+      ],
+      "color": "#BB880C"
+    },
+    {
+      "id": "icici-parakram",
+      "name": "Parakram",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["rewards", "lounge", "fuel"],
+      "perks": [
+        "For defence and paramilitary personnel",
+        "5X reward points at CSD canteens, grocery and department stores",
+        "Domestic airport lounge access",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#3D4A2F"
+    },
+    {
+      "id": "icici-parakram-select",
+      "name": "Parakram Select",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["rewards", "lounge", "travel"],
+      "perks": [
+        "For defence and paramilitary personnel",
+        "Accelerated reward points on CSD and grocery spends",
+        "Domestic and international airport lounge access",
+        "Complimentary golf round on meeting monthly spends"
+      ],
+      "color": "#1E2A1E"
+    },
+    {
+      "id": "icici-instant-platinum",
+      "name": "Instant Platinum",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["rewards"],
+      "perks": [
+        "Secured card issued against an ICICI Bank fixed deposit",
+        "Reward points on everyday spends"
+      ],
+      "color": "#7D8085"
+    },
+    {
+      "id": "icici-manchester-united-signature",
+      "name": "Manchester United Signature",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["rewards", "lounge", "movies"],
+      "perks": [
+        "Bonus reward points on Manchester United match days",
+        "Manchester United merchandise and top-spender fan experiences",
+        "Domestic airport lounge access on meeting spends"
+      ],
+      "color": "#C70101"
+    },
+    {
+      "id": "icici-manchester-united-platinum",
+      "name": "Manchester United Platinum",
+      "issuer": "ICICI",
+      "bank": "ICICI Bank",
+      "tags": ["rewards", "movies"],
+      "perks": [
+        "Bonus reward points on Manchester United match days",
+        "Manchester United branded welcome gift",
+        "Movie ticket discounts on BookMyShow and INOX"
+      ],
+      "color": "#8E0B0B"
+    },
+    {
       "id": "sbi-cashback",
       "name": "Cashback SBI",
       "issuer": "SBI",
@@ -167,6 +758,490 @@
       "tags": ["fuel", "rewards"],
       "perks": ["7.25% value back on BPCL fuel"],
       "color": "#F2B705"
+    },
+    {
+      "id": "sbi-prime",
+      "name": "SBI Card PRIME",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "lounge", "dining", "premium"],
+      "perks": [
+        "Domestic lounge access and Priority Pass membership",
+        "Accelerated reward points on birthday spends and utility bills",
+        "Quarterly milestone vouchers",
+        "Club ITC Silver tier membership"
+      ],
+      "color": "#2A2F45"
+    },
+    {
+      "id": "sbi-aurum",
+      "name": "AURUM",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["premium", "lounge", "travel", "movies"],
+      "perks": [
+        "Club Marriott membership and premium news subscriptions",
+        "Complimentary golf rounds and lessons",
+        "AURUM reward points on joining and on spends"
+      ],
+      "color": "#0A0A0A"
+    },
+    {
+      "id": "sbi-pulse",
+      "name": "SBI Card PULSE",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "dining", "movies"],
+      "perks": [
+        "Smartwatch as a welcome gift",
+        "FITPASS PRO and Netmeds First memberships every year",
+        "10 reward points per ₹100 on pharmacy, sports, dining and movies"
+      ],
+      "color": "#101820"
+    },
+    {
+      "id": "sbi-miles",
+      "name": "SBI Card MILES",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": [
+        "Travel Credits on every spend, more on travel",
+        "Priority Pass membership",
+        "Extra domestic lounge visits unlocked by spends"
+      ],
+      "color": "#1E4FA3"
+    },
+    {
+      "id": "sbi-miles-prime",
+      "name": "SBI Card MILES PRIME",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": [
+        "Travel Credits convertible to airline miles and hotel points",
+        "Priority Pass membership",
+        "Welcome Travel Credits on meeting initial spends"
+      ],
+      "color": "#2B2B6B"
+    },
+    {
+      "id": "sbi-miles-elite",
+      "name": "SBI Card MILES ELITE",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "lounge", "rewards", "premium"],
+      "perks": [
+        "Highest Travel Credit earn rate in the MILES range",
+        "Priority Pass membership with international lounge visits",
+        "Welcome Travel Credits and milestone fee reversal"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "sbi-irctc-platinum",
+      "name": "IRCTC SBI Platinum",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards"],
+      "perks": [
+        "Up to 10% value back as reward points on IRCTC AC tickets",
+        "Railway lounge access",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#8D9093"
+    },
+    {
+      "id": "sbi-irctc-premier",
+      "name": "IRCTC SBI Premier",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards", "dining"],
+      "perks": [
+        "Up to 10% value back as reward points on IRCTC AC tickets",
+        "Bonus reward points on dining and utility standing instructions",
+        "Reward points on annual travel spend milestones"
+      ],
+      "color": "#1C1C1C"
+    },
+    {
+      "id": "sbi-reliance",
+      "name": "Reliance SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards", "online"],
+      "perks": [
+        "10 reward points per ₹100 on AJIO and JioMart",
+        "Reliance Retail vouchers on joining and on annual spends",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#2D4FA1"
+    },
+    {
+      "id": "sbi-reliance-prime",
+      "name": "Reliance SBI Card PRIME",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards", "lounge", "movies"],
+      "perks": [
+        "Reliance Retail vouchers on joining and on annual spends",
+        "Domestic and international airport lounge access",
+        "Accelerated reward points at Reliance Retail stores"
+      ],
+      "color": "#15172B"
+    },
+    {
+      "id": "sbi-titan",
+      "name": "Titan SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards", "premium"],
+      "perks": [
+        "Value back as gift vouchers on Tanishq spends",
+        "5% cashback at Mia, CaratLane and Zoya",
+        "6 reward points per ₹100 on non-Titan spends"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "sbi-bpcl",
+      "name": "BPCL SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["fuel", "rewards"],
+      "perks": [
+        "4.25% value back on fuel at BPCL pumps",
+        "Bonus reward points as a welcome gift",
+        "Accelerated reward points on groceries, dining and movies"
+      ],
+      "color": "#0B6B3A"
+    },
+    {
+      "id": "sbi-tata-neu-plus",
+      "name": "Tata Neu Plus SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards", "lounge", "online"],
+      "perks": [
+        "2% NeuCoins on Tata Neu and partner Tata brand spends",
+        "Domestic airport lounge access",
+        "Annual fee reversal on meeting spends"
+      ],
+      "color": "#3C2A7A"
+    },
+    {
+      "id": "sbi-tata-neu-infinity",
+      "name": "Tata Neu Infinity SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards", "lounge", "forex", "online"],
+      "perks": [
+        "5% NeuCoins on Tata Neu and partner Tata brand spends",
+        "Domestic and international airport lounge access",
+        "1.99% forex markup on international spends"
+      ],
+      "color": "#121212"
+    },
+    {
+      "id": "sbi-phonepe-purple",
+      "name": "PhonePe SBI Card PURPLE",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "online"],
+      "perks": [
+        "3 reward points per ₹100 on PhonePe spends",
+        "2 reward points per ₹100 on online spends",
+        "Travel voucher on annual spend milestone"
+      ],
+      "color": "#6739B7"
+    },
+    {
+      "id": "sbi-phonepe-select-black",
+      "name": "PhonePe SBI Card SELECT BLACK",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "online", "lounge", "premium"],
+      "perks": [
+        "10 reward points per ₹100 on PhonePe spends",
+        "Priority Pass membership",
+        "PhonePe gift card as a welcome benefit"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "sbi-flipkart",
+      "name": "Flipkart SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["cashback", "shopping", "online"],
+      "perks": [
+        "5% cashback on Flipkart",
+        "7.5% cashback on Myntra",
+        "4% cashback on preferred merchants, 1% elsewhere",
+        "Discount on Cleartrip bookings"
+      ],
+      "color": "#1F3FBF"
+    },
+    {
+      "id": "sbi-indigo",
+      "name": "IndiGo SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "IndiGo BluChips on every spend",
+        "Welcome and milestone BluChips",
+        "Domestic airport lounge access"
+      ],
+      "color": "#001B94"
+    },
+    {
+      "id": "sbi-indigo-elite",
+      "name": "IndiGo SBI Card ELITE",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards", "lounge", "premium"],
+      "perks": [
+        "Accelerated IndiGo BluChips on IndiGo bookings",
+        "Welcome BluChips and 6E Eats voucher",
+        "Domestic and international airport lounge access"
+      ],
+      "color": "#0A0F3C"
+    },
+    {
+      "id": "sbi-krisflyer",
+      "name": "KrisFlyer SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "KrisFlyer miles on every spend",
+        "Bonus miles on joining and on annual spend milestones",
+        "Upgrade to KrisFlyer Elite Silver on Singapore Airlines spends"
+      ],
+      "color": "#2F5DA8"
+    },
+    {
+      "id": "sbi-krisflyer-apex",
+      "name": "KrisFlyer SBI Card Apex",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards", "lounge", "premium"],
+      "perks": [
+        "Accelerated KrisFlyer miles on Singapore Airlines spends",
+        "Bonus miles on joining and on annual spend milestones",
+        "Upgrade to KrisFlyer Elite Gold on Singapore Airlines spends"
+      ],
+      "color": "#0E1B3D"
+    },
+    {
+      "id": "sbi-landmark-rewards",
+      "name": "Landmark Rewards SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards"],
+      "perks": [
+        "10 reward points per ₹100 at Lifestyle, Max, Home Centre and Spar",
+        "Welcome reward points on fee payment",
+        "Bonus reward points on annual spend milestones"
+      ],
+      "color": "#E85D2A"
+    },
+    {
+      "id": "sbi-landmark-rewards-select",
+      "name": "Landmark Rewards SBI Card SELECT",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards"],
+      "perks": [
+        "15 reward points per ₹100 at Landmark Group stores",
+        "Welcome reward points on fee payment",
+        "Bonus reward points on annual spend milestones"
+      ],
+      "color": "#6B2D8B"
+    },
+    {
+      "id": "sbi-landmark-rewards-prime",
+      "name": "Landmark Rewards SBI Card PRIME",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards", "lounge", "premium"],
+      "perks": [
+        "Highest reward rate at Landmark Group stores",
+        "Domestic lounge access and Priority Pass membership",
+        "Welcome reward points on fee payment"
+      ],
+      "color": "#1B1B1B"
+    },
+    {
+      "id": "sbi-apollo",
+      "name": "Apollo SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards"],
+      "perks": [
+        "3X reward points on Apollo services",
+        "Apollo Gold tier membership",
+        "Instant discounts at select Apollo services",
+        "Welcome reward points"
+      ],
+      "color": "#00A3AD"
+    },
+    {
+      "id": "sbi-apollo-select",
+      "name": "Apollo SBI Card SELECT",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "dining", "movies"],
+      "perks": [
+        "10 reward points per ₹100 on Apollo 24|7 and Apollo Pharmacy",
+        "FITPASS PRO membership and health check-up package",
+        "Apollo Circle benefits built in"
+      ],
+      "color": "#0B3B5C"
+    },
+    {
+      "id": "sbi-google-pay-flex",
+      "name": "Google Pay Flex SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "online"],
+      "perks": [
+        "Stars on eligible spends, multiplied on monthly spend milestones",
+        "Redeem Stars as instant cashback on UPI payments in Google Pay",
+        "Applied for and managed inside the Google Pay app"
+      ],
+      "color": "#909193"
+    },
+    {
+      "id": "sbi-paytm",
+      "name": "Paytm SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["cashback", "online"],
+      "perks": [
+        "3% cashback on Paytm travel bookings",
+        "2% cashback on other Paytm app purchases",
+        "Paytm First membership"
+      ],
+      "color": "#0F4A8A"
+    },
+    {
+      "id": "sbi-paytm-select",
+      "name": "Paytm SBI Card SELECT",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["cashback", "online", "lounge"],
+      "perks": [
+        "5% cashback on Paytm travel, 2% on other Paytm app purchases",
+        "Priority Pass membership",
+        "Paytm First membership"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "sbi-tata-card",
+      "name": "Tata Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards"],
+      "perks": [
+        "Up to 5% value back on spends at Tata outlets",
+        "3X points at departmental and grocery stores"
+      ],
+      "color": "#2A5CAA"
+    },
+    {
+      "id": "sbi-tata-card-select",
+      "name": "Tata Card SELECT",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["shopping", "rewards", "dining"],
+      "perks": [
+        "Up to 5X points on spends at select Tata outlets",
+        "3X points on grocery, dining and international spends",
+        "Gift vouchers linked to annual spends"
+      ],
+      "color": "#1B1B2F"
+    },
+    {
+      "id": "sbi-shaurya",
+      "name": "Shaurya SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "dining", "movies"],
+      "perks": [
+        "For armed forces personnel",
+        "5X reward points on CSD, dining, movies and grocery spends",
+        "Personal accident insurance cover"
+      ],
+      "color": "#4A5D23"
+    },
+    {
+      "id": "sbi-shaurya-select",
+      "name": "Shaurya Select SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "lounge"],
+      "perks": [
+        "For armed forces personnel",
+        "Accelerated reward points on CSD, dining, movies and grocery spends",
+        "Domestic airport lounge access",
+        "Personal accident insurance cover"
+      ],
+      "color": "#2B3A1A"
+    },
+    {
+      "id": "sbi-unnati",
+      "name": "SBI Card Unnati",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards"],
+      "perks": [
+        "Secured card issued against an SBI fixed deposit",
+        "No annual fee for the first four years",
+        "1 reward point per ₹100 spent"
+      ],
+      "color": "#1F6FB5"
+    },
+    {
+      "id": "sbi-doctors",
+      "name": "Doctor's SBI Card",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["rewards", "lounge", "travel"],
+      "perks": [
+        "Professional indemnity insurance cover",
+        "5X reward points on medical supplies, travel and international spends",
+        "Renewal fee reversal on meeting annual spends"
+      ],
+      "color": "#0E7C86"
+    },
+    {
+      "id": "sbi-air-india-platinum",
+      "name": "Air India SBI Platinum",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards"],
+      "perks": [
+        "Reward points convertible to Air India Maharaja Club points",
+        "Accelerated reward points on Air India ticket bookings",
+        "Welcome reward points on joining"
+      ],
+      "color": "#919395"
+    },
+    {
+      "id": "sbi-air-india-signature",
+      "name": "Air India SBI Signature",
+      "issuer": "SBI",
+      "bank": "SBI Card",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "Reward points convertible to Air India Maharaja Club points",
+        "Accelerated reward points on Air India ticket bookings",
+        "Airport lounge access"
+      ],
+      "color": "#8B1A1A"
     },
     {
       "id": "axis-ace",
@@ -223,6 +1298,383 @@
       "color": "#AE275F"
     },
     {
+      "id": "axis-my-zone",
+      "name": "MY Zone",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["movies", "dining", "online", "lounge"],
+      "perks": [
+        "Offers on movie tickets and food delivery",
+        "Complimentary OTT subscription as a welcome benefit",
+        "Domestic airport lounge access"
+      ],
+      "color": "#2A1E4F"
+    },
+    {
+      "id": "axis-rewards",
+      "name": "Rewards",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "shopping", "lounge"],
+      "perks": [
+        "Accelerated EDGE points on apparel and department stores",
+        "Domestic airport lounge access",
+        "Monthly milestone bonus points"
+      ],
+      "color": "#5A1E3A"
+    },
+    {
+      "id": "axis-privilege",
+      "name": "Privilege",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "travel", "shopping"],
+      "perks": [
+        "EDGE reward points on all retail spends",
+        "Milestone points convertible to travel and shopping vouchers"
+      ],
+      "color": "#3B3F54"
+    },
+    {
+      "id": "axis-select",
+      "name": "Select",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "lounge", "shopping", "dining"],
+      "perks": [
+        "Extra EDGE points on retail shopping",
+        "Domestic and international airport lounge access",
+        "Grocery and food delivery discounts with partner apps"
+      ],
+      "color": "#1C2541"
+    },
+    {
+      "id": "axis-horizon",
+      "name": "Horizon",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["travel", "lounge", "rewards"],
+      "perks": [
+        "EDGE Miles on every spend, more on airline sites and Travel EDGE",
+        "Domestic and international airport lounge access",
+        "Miles transferable to airline and hotel partners"
+      ],
+      "color": "#1E4E8C"
+    },
+    {
+      "id": "axis-reserve",
+      "name": "Reserve",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["premium", "travel", "lounge", "dining", "rewards"],
+      "perks": [
+        "Unlimited airport lounge access with Priority Pass",
+        "Concierge, golf rounds and luxury hotel memberships",
+        "Accelerated EDGE points on international spends"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "axis-olympus",
+      "name": "Olympus",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["premium", "travel", "lounge", "rewards"],
+      "perks": [
+        "Unlimited international lounge access via Priority Pass",
+        "EDGE Miles on all spends, transferable to travel partners"
+      ],
+      "color": "#2B2B2B"
+    },
+    {
+      "id": "axis-primus",
+      "name": "Primus",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["premium", "travel", "dining", "lounge"],
+      "perks": [
+        "Invitation-only ultra-premium card for select Axis clients",
+        "Luxury concierge with curated travel, dining and event access"
+      ],
+      "color": "#0B0B0B"
+    },
+    {
+      "id": "axis-burgundy-private",
+      "name": "Burgundy Private",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["premium", "forex", "lounge", "travel", "dining"],
+      "perks": [
+        "Complimentary for Burgundy Private banking clients",
+        "Zero forex markup on international spends",
+        "Airport lounge access, golf and luxury hotel memberships"
+      ],
+      "color": "#5C0F2B"
+    },
+    {
+      "id": "axis-indianoil",
+      "name": "IndianOil Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["fuel", "rewards", "online"],
+      "perks": [
+        "Accelerated value back on fuel at IndianOil outlets",
+        "Fuel surcharge waiver",
+        "Extra reward points on online shopping"
+      ],
+      "color": "#E8651A"
+    },
+    {
+      "id": "axis-indianoil-premium",
+      "name": "IndianOil Axis Premium",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["fuel", "rewards", "lounge"],
+      "perks": [
+        "Accelerated EDGE Miles on fuel at IndianOil outlets",
+        "Bonus rewards on grocery and supermarket spends",
+        "Domestic airport lounge access"
+      ],
+      "color": "#1A2B5C"
+    },
+    {
+      "id": "axis-indigo",
+      "name": "IndiGo Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["travel", "rewards"],
+      "perks": [
+        "Earn IndiGo BluChips on everyday spends",
+        "Accelerated BluChips on IndiGo flight bookings"
+      ],
+      "color": "#1A237E"
+    },
+    {
+      "id": "axis-indigo-premium",
+      "name": "IndiGo Axis Premium",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "Higher IndiGo BluChips earn rate on IndiGo bookings",
+        "Welcome and milestone BluChips vouchers",
+        "Airport lounge access"
+      ],
+      "color": "#0D1440"
+    },
+    {
+      "id": "axis-samsung-signature",
+      "name": "Samsung Axis Signature",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["shopping", "cashback", "rewards", "lounge"],
+      "perks": [
+        "10% cashback on Samsung purchases, including EMI",
+        "Bonus EDGE points with partner online merchants",
+        "Domestic airport lounge access"
+      ],
+      "color": "#1428A0"
+    },
+    {
+      "id": "axis-samsung-infinite",
+      "name": "Samsung Axis Infinite",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["shopping", "cashback", "rewards", "lounge", "premium"],
+      "perks": [
+        "10% cashback on Samsung purchases with a higher cap",
+        "Accelerated EDGE points with partner merchants",
+        "Domestic and international lounge access"
+      ],
+      "color": "#101010"
+    },
+    {
+      "id": "axis-shoppers-stop",
+      "name": "Shoppers Stop Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["shopping", "rewards"],
+      "perks": [
+        "First Citizen reward points on Shoppers Stop purchases",
+        "Points credited straight to the First Citizen loyalty account",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "axis-cashback",
+      "name": "Cashback",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "online"],
+      "perks": [
+        "Higher cashback on online spends",
+        "Flat cashback on offline and other eligible spends"
+      ],
+      "color": "#8E1B4A"
+    },
+    {
+      "id": "axis-fibe",
+      "name": "Fibe Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "online", "lifetime-free", "lounge"],
+      "perks": [
+        "3% cashback on food delivery, entertainment and local commute",
+        "RuPay card that works on UPI",
+        "Domestic airport lounge access"
+      ],
+      "color": "#12352F"
+    },
+    {
+      "id": "axis-kwik",
+      "name": "Kwik",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "lifetime-free", "online"],
+      "perks": ["RuPay credit card built for UPI payments", "EDGE reward points on every spend"],
+      "color": "#97144D"
+    },
+    {
+      "id": "axis-supermoney",
+      "name": "SuperMoney Axis RuPay",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "fuel", "online"],
+      "perks": [
+        "Cashback on UPI payments made with the card",
+        "Issued through the super.money app",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#4A2FBD"
+    },
+    {
+      "id": "axis-google-pay-flex",
+      "name": "Google Pay Flex Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "rewards", "online"],
+      "perks": [
+        "UPI-first RuPay card available only inside Google Pay",
+        "Earn Stars on spends, redeemable instantly as cashback"
+      ],
+      "color": "#202124"
+    },
+    {
+      "id": "axis-scapia",
+      "name": "Scapia Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["travel", "forex", "lounge", "rewards", "lifetime-free"],
+      "perks": [
+        "Zero forex markup on international spends",
+        "Scapia Coins on all spends, more on Scapia app bookings",
+        "Unlimited domestic lounge access on meeting monthly spends"
+      ],
+      "color": "#2B2D6E"
+    },
+    {
+      "id": "axis-lic-platinum",
+      "name": "LIC Axis Platinum",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "fuel", "lifetime-free"],
+      "perks": [
+        "Reward points on LIC premium payments",
+        "Extra points on foreign currency spends",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#1F4E9E"
+    },
+    {
+      "id": "axis-lic-signature",
+      "name": "LIC Axis Signature",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "lounge", "fuel", "lifetime-free"],
+      "perks": [
+        "Reward points on LIC premium payments",
+        "Domestic airport lounge access",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#102A5C"
+    },
+    {
+      "id": "axis-spicejet-voyage",
+      "name": "SpiceJet Axis Voyage",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "SpiceClub points on all spends, more on SpiceJet bookings",
+        "Welcome flight voucher and SpiceClub Silver membership",
+        "Domestic airport lounge access"
+      ],
+      "color": "#D7261E"
+    },
+    {
+      "id": "axis-spicejet-voyage-black",
+      "name": "SpiceJet Axis Voyage Black",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["travel", "rewards", "lounge", "premium"],
+      "perks": [
+        "Higher SpiceClub points earn rate on SpiceJet bookings",
+        "Welcome flight voucher and SpiceClub Gold membership",
+        "Domestic airport lounge access"
+      ],
+      "color": "#151515"
+    },
+    {
+      "id": "axis-pride-platinum",
+      "name": "Pride Platinum",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "fuel", "dining"],
+      "perks": [
+        "Exclusively for defence personnel and government employees",
+        "Reward points on spends and fuel surcharge waiver"
+      ],
+      "color": "#2F5D3A"
+    },
+    {
+      "id": "axis-pride-signature",
+      "name": "Pride Signature",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["rewards", "lounge", "dining", "fuel"],
+      "perks": [
+        "Tricolour card for defence personnel",
+        "Domestic airport lounge access",
+        "Dining discounts at partner restaurants"
+      ],
+      "color": "#D07D22"
+    },
+    {
+      "id": "axis-freecharge",
+      "name": "Freecharge Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "online", "rewards"],
+      "perks": [
+        "Offered by invitation inside the Freecharge app",
+        "Rewards on Freecharge spends plus milestone benefits"
+      ],
+      "color": "#E8541E"
+    },
+    {
+      "id": "axis-freecharge-plus",
+      "name": "Freecharge Plus Axis",
+      "issuer": "Axis",
+      "bank": "Axis Bank",
+      "tags": ["cashback", "online", "travel"],
+      "perks": [
+        "Offered by invitation inside the Freecharge app",
+        "Cashback on Freecharge spends and local commute"
+      ],
+      "color": "#3A2A6B"
+    },
+    {
       "id": "amex-platinum-travel",
       "name": "Platinum Travel",
       "issuer": "Amex",
@@ -259,6 +1711,43 @@
       "color": "#6B7280"
     },
     {
+      "id": "amex-smartearn",
+      "name": "SmartEarn",
+      "issuer": "Amex",
+      "bank": "American Express",
+      "tags": ["rewards", "online", "shopping"],
+      "perks": [
+        "Accelerated Membership Rewards points on popular online brands",
+        "Spend milestone vouchers through the year"
+      ],
+      "color": "#2E77BB"
+    },
+    {
+      "id": "amex-platinum-reserve",
+      "name": "Platinum Reserve",
+      "issuer": "Amex",
+      "bank": "American Express",
+      "tags": ["premium", "lounge", "dining", "travel", "rewards"],
+      "perks": [
+        "Taj Epicure, Accor Plus and EazyDiner Prime memberships",
+        "Domestic and international airport lounge access",
+        "Complimentary golf and monthly spend-based vouchers"
+      ],
+      "color": "#8A8D8F"
+    },
+    {
+      "id": "amex-centurion",
+      "name": "Centurion",
+      "issuer": "Amex",
+      "bank": "American Express",
+      "tags": ["premium", "travel", "lounge", "dining", "rewards"],
+      "perks": [
+        "Invitation-only charge card with a dedicated relationship manager",
+        "Top-tier travel, hotel status and lounge privileges"
+      ],
+      "color": "#0A0A0A"
+    },
+    {
       "id": "kotak-league-platinum",
       "name": "League Platinum",
       "issuer": "Kotak",
@@ -286,6 +1775,288 @@
       "color": "#E5E5E5"
     },
     {
+      "id": "kotak-cashback-plus",
+      "name": "Cashback+",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["cashback", "online", "dining", "fuel"],
+      "perks": [
+        "5% cashback on online food delivery, groceries and entertainment",
+        "3% cashback on fuel with surcharge waiver",
+        "Flat cashback on other eligible spends"
+      ],
+      "color": "#C8102E"
+    },
+    {
+      "id": "kotak-cashback-plus-prime",
+      "name": "Cashback+ Prime",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["cashback", "online", "dining"],
+      "perks": [
+        "5% cashback on food delivery, groceries and entertainment",
+        "5% cashback at auto dealer merchants"
+      ],
+      "color": "#8B0F22"
+    },
+    {
+      "id": "kotak-air",
+      "name": "Air",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "Air Miles on everyday spends, more on Kotak Unbox bookings",
+        "Domestic airport lounge access",
+        "Bonus Air Miles on joining and renewal"
+      ],
+      "color": "#1D4E89"
+    },
+    {
+      "id": "kotak-air-plus",
+      "name": "Air+",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "Accelerated Air Miles on flights and hotels via Kotak Unbox",
+        "Domestic and international lounge access",
+        "Air Miles transferable to airline and hotel partners"
+      ],
+      "color": "#12305C"
+    },
+    {
+      "id": "kotak-air-plus-prime",
+      "name": "Air+ Prime",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "Accelerated Air Miles on travel bookings via Kotak Unbox",
+        "Extra Air Miles at auto dealer merchants",
+        "Domestic and international lounge access"
+      ],
+      "color": "#0C2140"
+    },
+    {
+      "id": "kotak-solitaire",
+      "name": "Solitaire",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["premium", "travel", "lounge", "forex", "rewards"],
+      "perks": [
+        "Invite-only card with zero forex markup",
+        "Unlimited global lounge access for primary and add-on members",
+        "Air Miles on all spends, transferable to airlines and hotels"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "kotak-indigo",
+      "name": "IndiGo Kotak",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["travel", "rewards"],
+      "perks": [
+        "IndiGo BluChips on all spends, more on IndiGo bookings",
+        "Welcome and milestone BluChips"
+      ],
+      "color": "#1A237E"
+    },
+    {
+      "id": "kotak-indigo-premium",
+      "name": "IndiGo Kotak Premium",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["travel", "rewards", "lounge", "dining"],
+      "perks": [
+        "Higher IndiGo BluChips earn rate on IndiGo bookings",
+        "Welcome BluChips and 6E Eats voucher",
+        "Domestic airport lounge access"
+      ],
+      "color": "#0D1440"
+    },
+    {
+      "id": "kotak-indianoil",
+      "name": "IndianOil Kotak",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["fuel", "rewards"],
+      "perks": [
+        "Accelerated savings on fuel at IndianOil pumps",
+        "Reward points on dining and grocery spends",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#F26522"
+    },
+    {
+      "id": "kotak-pvr-inox",
+      "name": "PVR INOX Kotak",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["movies", "dining"],
+      "perks": [
+        "Free PVR INOX movie ticket for every spend milestone reached",
+        "Discounts on tickets and food at PVR INOX cinemas"
+      ],
+      "color": "#1B1B1B"
+    },
+    {
+      "id": "kotak-upi-rupay",
+      "name": "Kotak UPI RuPay",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["lifetime-free", "rewards", "online"],
+      "perks": ["Virtual RuPay credit card for UPI payments", "Reward points on UPI spends"],
+      "color": "#ED1C24"
+    },
+    {
+      "id": "kotak-white",
+      "name": "White",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["premium", "lounge", "shopping", "rewards"],
+      "perks": [
+        "Milestone-based rewards redeemable with premium brands",
+        "Domestic and international lounge access via Priority Pass"
+      ],
+      "color": "#939393"
+    },
+    {
+      "id": "kotak-zen-signature",
+      "name": "Zen Signature",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["shopping", "rewards", "lounge"],
+      "perks": [
+        "Accelerated Zen points on shopping spends",
+        "Domestic and international airport lounge access"
+      ],
+      "color": "#3E2C6B"
+    },
+    {
+      "id": "kotak-811",
+      "name": "Kotak 811",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["rewards", "online"],
+      "perks": ["Double reward points on online spends", "Milestone benefits on annual spends"],
+      "color": "#E31837"
+    },
+    {
+      "id": "kotak-811-dream-different",
+      "name": "811 #DreamDifferent",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["lifetime-free", "rewards", "online"],
+      "perks": [
+        "Secured card issued against a Kotak fixed deposit",
+        "Helps build a credit history with no income proof",
+        "Reward points on online spends"
+      ],
+      "color": "#00A3A1"
+    },
+    {
+      "id": "kotak-nri-royale-signature",
+      "name": "NRI Royale Signature",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["rewards", "lounge", "travel"],
+      "perks": [
+        "For NRIs holding NRE or NRO term deposits with Kotak",
+        "Higher rewards on spends made outside India",
+        "Airport lounge access"
+      ],
+      "color": "#2C2C54"
+    },
+    {
+      "id": "kotak-mojo-platinum",
+      "name": "Mojo Platinum",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["rewards", "online", "lounge"],
+      "perks": [
+        "Mojo points on all spends, more on online purchases",
+        "Domestic airport lounge access"
+      ],
+      "color": "#F05A28"
+    },
+    {
+      "id": "kotak-royale-signature",
+      "name": "Royale Signature",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["rewards", "lounge", "travel", "dining"],
+      "perks": [
+        "Accelerated points on travel, dining and international spends",
+        "Airport lounge access",
+        "Bonus reward points on annual spend milestones"
+      ],
+      "color": "#6B1F2A"
+    },
+    {
+      "id": "kotak-privy-league-signature",
+      "name": "Privy League Signature",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["rewards", "lounge", "movies", "premium"],
+      "perks": [
+        "For Kotak Privy League banking customers",
+        "Accelerated points in chosen categories",
+        "Lounge access and movie ticket benefits"
+      ],
+      "color": "#1F2A44"
+    },
+    {
+      "id": "kotak-urbane-gold",
+      "name": "Urbane Gold",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["rewards", "movies", "shopping"],
+      "perks": [
+        "Reward points on all retail spends",
+        "Free PVR tickets or bonus points on annual spend milestone"
+      ],
+      "color": "#B8860B"
+    },
+    {
+      "id": "kotak-pvr-gold",
+      "name": "PVR Kotak Gold",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["movies", "dining"],
+      "perks": [
+        "Free PVR movie tickets on meeting monthly spends",
+        "Cashback on food and beverages at PVR"
+      ],
+      "color": "#B08E21"
+    },
+    {
+      "id": "kotak-pvr-platinum",
+      "name": "PVR Kotak Platinum",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["movies", "dining"],
+      "perks": [
+        "Free PVR movie tickets on meeting monthly spends",
+        "Cashback on tickets and food at PVR"
+      ],
+      "color": "#6E6E6E"
+    },
+    {
+      "id": "kotak-infinite",
+      "name": "Kotak Infinite",
+      "issuer": "Kotak",
+      "bank": "Kotak Mahindra Bank",
+      "tags": ["premium", "rewards", "lounge"],
+      "perks": [
+        "By-invite card for Kotak Private Banking clients",
+        "Personalised card design with golf privileges",
+        "Airport lounge access"
+      ],
+      "color": "#0F0F0F"
+    },
+    {
       "id": "indusind-legend",
       "name": "Legend",
       "issuer": "IndusInd",
@@ -302,6 +2073,275 @@
       "tags": ["dining", "rewards"],
       "perks": ["EazyDiner Prime membership", "Up to 50% off at partner restaurants"],
       "color": "#C0392B"
+    },
+    {
+      "id": "indusind-pinnacle",
+      "name": "Pinnacle",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "lounge", "movies", "online"],
+      "perks": [
+        "Accelerated reward points on online spends",
+        "Golf privileges and airport lounge access",
+        "Complimentary movie tickets"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "indusind-tiger",
+      "name": "Tiger",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["rewards", "lounge", "forex", "movies", "lifetime-free"],
+      "perks": [
+        "Accelerated reward points that scale with monthly spends",
+        "Reduced forex markup",
+        "Lounge access, golf and movie ticket benefits"
+      ],
+      "color": "#C46A1B"
+    },
+    {
+      "id": "indusind-avios",
+      "name": "Avios Visa Infinite",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["travel", "rewards", "lounge", "forex", "premium"],
+      "perks": [
+        "Earn Avios with British Airways or Qatar Airways programmes",
+        "Reduced forex markup",
+        "Airport lounge access with meet-and-greet service"
+      ],
+      "color": "#5C0632"
+    },
+    {
+      "id": "indusind-platinum-rupay",
+      "name": "Platinum RuPay",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["lifetime-free", "rewards", "fuel", "online"],
+      "perks": ["Double reward points on UPI payments", "Fuel surcharge waiver"],
+      "color": "#2E3A59"
+    },
+    {
+      "id": "indusind-nexxt",
+      "name": "Nexxt",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["rewards", "movies", "fuel"],
+      "perks": [
+        "Buttons on the card to pay by credit, EMI or reward points",
+        "Movie ticket offers and fuel surcharge waiver"
+      ],
+      "color": "#0B0B0B"
+    },
+    {
+      "id": "indusind-samman",
+      "name": "Samman RuPay",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["cashback", "movies", "fuel"],
+      "perks": [
+        "Designed for government employees",
+        "Cashback on retail spends and movie ticket offers",
+        "Fuel and railway surcharge waiver"
+      ],
+      "color": "#1B3A6B"
+    },
+    {
+      "id": "indusind-platinum-aura-edge",
+      "name": "Platinum Aura Edge",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["lifetime-free", "rewards", "fuel", "shopping"],
+      "perks": [
+        "Choose a reward plan that matches your spending pattern",
+        "Accelerated reward points in chosen categories",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#4A4A4A"
+    },
+    {
+      "id": "indusind-platinum",
+      "name": "Platinum",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["lifetime-free", "rewards", "fuel"],
+      "perks": [
+        "Reward points on all retail spends",
+        "Fuel surcharge waiver and travel insurance cover"
+      ],
+      "color": "#7A7A7A"
+    },
+    {
+      "id": "indusind-eazydiner-platinum",
+      "name": "EazyDiner Platinum",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["dining", "lifetime-free", "rewards"],
+      "perks": [
+        "Extra discount on restaurant bills paid through EazyDiner",
+        "Introductory EazyDiner Prime membership"
+      ],
+      "color": "#B5121B"
+    },
+    {
+      "id": "indusind-cred-rupay",
+      "name": "CRED IndusInd RuPay",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["rewards", "online", "cashback"],
+      "perks": [
+        "5% back as CRED reward points on e-commerce and CRED spends",
+        "1% back on other spends, including scan and pay via CRED",
+        "Works on UPI"
+      ],
+      "color": "#0F0F0F"
+    },
+    {
+      "id": "indusind-jio-bp-mobility",
+      "name": "Jio-bp Mobility+",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["fuel", "rewards"],
+      "perks": [
+        "Earn Smiles on fuel at Jio-bp stations",
+        "Redeem Smiles across Jio-bp fuel, EV charging and stores",
+        "RuPay card that works on UPI"
+      ],
+      "color": "#00843D"
+    },
+    {
+      "id": "indusind-celesta",
+      "name": "Celesta",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "lounge", "travel"],
+      "perks": [
+        "Higher reward points on international spends",
+        "Golf games and lessons",
+        "Domestic and international airport lounge access"
+      ],
+      "color": "#1C1C2E"
+    },
+    {
+      "id": "indusind-crest",
+      "name": "Crest",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "lounge", "travel"],
+      "perks": [
+        "Premium rewards with travel and lifestyle privileges",
+        "Golf games and lessons",
+        "Airport lounge access"
+      ],
+      "color": "#2B2B2B"
+    },
+    {
+      "id": "indusind-indulge",
+      "name": "Indulge",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "lounge", "travel"],
+      "perks": [
+        "Card with a 22-karat gold inlay",
+        "Golf privileges and international lounge access"
+      ],
+      "color": "#0A0A0A"
+    },
+    {
+      "id": "indusind-pioneer-heritage",
+      "name": "Pioneer Heritage",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "lounge", "travel", "movies"],
+      "perks": [
+        "For IndusInd PIONEER banking clients",
+        "Reward points on domestic and international spends",
+        "Lounge access, golf and movie benefits"
+      ],
+      "color": "#14213D"
+    },
+    {
+      "id": "indusind-pioneer-legacy",
+      "name": "Pioneer Legacy",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "lounge", "travel"],
+      "perks": [
+        "For IndusInd PIONEER banking clients",
+        "Accelerated rewards on weekend spends",
+        "Lounge access and golf privileges"
+      ],
+      "color": "#3A3A3A"
+    },
+    {
+      "id": "indusind-pioneer-private",
+      "name": "Pioneer Private",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "lounge", "travel", "forex"],
+      "perks": [
+        "Top-tier card for IndusInd PIONEER Private clients",
+        "Airport lounge access with meet-and-greet benefits",
+        "Golf privileges and a free add-on card"
+      ],
+      "color": "#0D0D0D"
+    },
+    {
+      "id": "indusind-solitaire",
+      "name": "Indus Solitaire",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["premium", "rewards", "dining", "lounge"],
+      "perks": [
+        "For clients of Indus Solitaire banking",
+        "EazyDiner Prime membership and dining privileges",
+        "Airport lounge access and concierge"
+      ],
+      "color": "#1F1F1F"
+    },
+    {
+      "id": "indusind-iconia-amex",
+      "name": "Iconia Amex",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["rewards", "lounge", "fuel"],
+      "perks": [
+        "Accelerated reward points on weekend spends",
+        "Access to American Express lounges",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#2D2D2D"
+    },
+    {
+      "id": "indusind-platinum-aura",
+      "name": "Platinum Aura",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["rewards", "fuel", "shopping"],
+      "perks": ["Pick a reward plan suited to your spending pattern", "Fuel surcharge waiver"],
+      "color": "#5A5A5A"
+    },
+    {
+      "id": "indusind-signature",
+      "name": "Signature",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["rewards", "lounge", "movies", "fuel"],
+      "perks": ["Reward points on all spends", "Lounge access and movie ticket offers"],
+      "color": "#23395B"
+    },
+    {
+      "id": "indusind-duo",
+      "name": "Duo",
+      "issuer": "IndusInd",
+      "bank": "IndusInd Bank",
+      "tags": ["rewards", "lounge", "movies"],
+      "perks": [
+        "Credit and debit card combined on a single piece of plastic",
+        "Reward points on both credit and debit spends"
+      ],
+      "color": "#3B2F2F"
     },
     {
       "id": "idfc-first-select",
@@ -322,6 +2362,225 @@
       "color": "#5A1A3B"
     },
     {
+      "id": "idfc-first-millennia",
+      "name": "FIRST Millennia",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "rewards", "online", "shopping", "movies"],
+      "perks": [
+        "10X reward points on spends above a monthly threshold",
+        "Reward points that never expire",
+        "Movie ticket and railway lounge benefits"
+      ],
+      "color": "#7A1F2B"
+    },
+    {
+      "id": "idfc-first-classic",
+      "name": "FIRST Classic",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "rewards", "movies"],
+      "perks": [
+        "10X reward points on spends above a monthly threshold",
+        "Reward points that never expire",
+        "Railway lounge access and movie ticket offer"
+      ],
+      "color": "#1E3A5F"
+    },
+    {
+      "id": "idfc-first-wow",
+      "name": "FIRST WOW!",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "forex", "rewards", "travel"],
+      "perks": [
+        "Issued against a fixed deposit with guaranteed approval",
+        "Zero forex markup on international spends",
+        "Interest-free cash withdrawals for a limited period"
+      ],
+      "color": "#C38800"
+    },
+    {
+      "id": "idfc-first-wow-black",
+      "name": "FIRST WOW! Black",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["forex", "rewards", "travel", "lounge"],
+      "perks": [
+        "Premium FD-backed card with zero forex markup",
+        "Comes paired with a FIRST Digital RuPay card for UPI",
+        "Travel benefits and accelerated rewards"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "idfc-first-earn",
+      "name": "FIRST Earn",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["cashback", "online"],
+      "perks": ["Virtual FD-backed RuPay card built for UPI", "Cashback on UPI spends"],
+      "color": "#9D1D27"
+    },
+    {
+      "id": "idfc-first-swyp",
+      "name": "FIRST SWYP",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["rewards", "online", "shopping"],
+      "perks": [
+        "Convert purchases to EMI without interest, for a flat fee",
+        "Monthly spend-based reward points",
+        "Discounts with partner lifestyle brands"
+      ],
+      "color": "#2E2E8C"
+    },
+    {
+      "id": "idfc-ashva",
+      "name": "Ashva",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["premium", "travel", "lounge", "forex", "rewards"],
+      "perks": [
+        "Metal card with low forex markup",
+        "Domestic and international airport lounge access",
+        "Accelerated reward points and trip cancellation cover"
+      ],
+      "color": "#2A2A2A"
+    },
+    {
+      "id": "idfc-mayura",
+      "name": "Mayura",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["premium", "travel", "lounge", "forex", "rewards"],
+      "perks": [
+        "Metal card with zero forex markup",
+        "Lounge access and golf privileges",
+        "Accelerated reward points and trip cancellation cover"
+      ],
+      "color": "#0F3D3E"
+    },
+    {
+      "id": "idfc-gaj",
+      "name": "Gaj",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["premium", "travel", "lounge", "forex", "rewards"],
+      "perks": [
+        "Invite-only metal card with zero forex markup",
+        "Domestic and international lounge access",
+        "Travel insurance and trip cancellation cover"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "idfc-diamond-reserve",
+      "name": "Diamond Reserve",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["premium", "travel", "lounge", "forex", "rewards"],
+      "perks": [
+        "Zero forex markup on international spends",
+        "Airport and railway lounge access",
+        "Golf privileges and accelerated rewards"
+      ],
+      "color": "#1B263B"
+    },
+    {
+      "id": "idfc-first-private",
+      "name": "FIRST Private",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["premium", "travel", "lounge", "forex", "rewards"],
+      "perks": [
+        "Invitation-only metal card for FIRST Private banking clients",
+        "Airport lounge access and premium travel privileges"
+      ],
+      "color": "#0B0B0B"
+    },
+    {
+      "id": "idfc-quantum-plus",
+      "name": "Quantum+",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "cashback", "online"],
+      "perks": [
+        "FD-backed card with guaranteed approval",
+        "Assured cashback on everyday spends",
+        "Works on UPI"
+      ],
+      "color": "#4B1D6B"
+    },
+    {
+      "id": "idfc-hello-cashback",
+      "name": "Hello Cashback",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["cashback", "online"],
+      "perks": [
+        "Assured cashback on every spend",
+        "FD-backed and UPI-ready, no credit history needed"
+      ],
+      "color": "#D62839"
+    },
+    {
+      "id": "idfc-indigo",
+      "name": "IndiGo IDFC FIRST",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "IndiGo BluChips on every spend, more on IndiGo bookings",
+        "Issued as a pair of cards on two networks",
+        "Milestone benefits and trip cancellation cover"
+      ],
+      "color": "#1A237E"
+    },
+    {
+      "id": "idfc-first-power",
+      "name": "FIRST Power",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["fuel", "rewards", "cashback"],
+      "perks": ["Savings on fuel at HPCL pumps", "Rewards on grocery, utility and FASTag spends"],
+      "color": "#0054A6"
+    },
+    {
+      "id": "idfc-first-power-plus",
+      "name": "FIRST Power+",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["fuel", "rewards", "cashback", "lounge"],
+      "perks": [
+        "Higher savings on fuel at HPCL pumps",
+        "Rewards on grocery, utility and FASTag spends",
+        "Domestic airport lounge access"
+      ],
+      "color": "#E30613"
+    },
+    {
+      "id": "idfc-lic-classic",
+      "name": "LIC Classic",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "rewards"],
+      "perks": ["Reward points on LIC premium payments", "No joining or annual fee"],
+      "color": "#1F4E9E"
+    },
+    {
+      "id": "idfc-lic-select",
+      "name": "LIC Select",
+      "issuer": "IDFC FIRST",
+      "bank": "IDFC FIRST Bank",
+      "tags": ["lifetime-free", "rewards", "lounge"],
+      "perks": [
+        "Higher reward points on LIC premium payments",
+        "Airport and railway lounge access"
+      ],
+      "color": "#102A5C"
+    },
+    {
       "id": "hsbc-live-plus",
       "name": "Live+",
       "issuer": "HSBC",
@@ -338,6 +2597,72 @@
       "tags": ["travel", "lounge", "forex"],
       "perks": ["Points transfer to 20+ airline and hotel partners", "Lounge access"],
       "color": "#2C3E50"
+    },
+    {
+      "id": "hsbc-premier",
+      "name": "Premier",
+      "issuer": "HSBC",
+      "bank": "HSBC",
+      "tags": ["premium", "travel", "lounge", "forex", "rewards", "dining"],
+      "perks": [
+        "Unlimited domestic and international airport lounge access",
+        "Low forex markup on overseas spends",
+        "Points transfer to airline and hotel partners",
+        "For HSBC Premier banking customers"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "hsbc-taj",
+      "name": "HSBC Taj",
+      "issuer": "HSBC",
+      "bank": "HSBC",
+      "tags": ["premium", "travel", "lounge", "dining", "rewards"],
+      "perks": [
+        "Taj InnerCircle Platinum tier via NeuPass",
+        "Accelerated points on stays and dining at Taj hotels",
+        "Unlimited airport lounge access worldwide"
+      ],
+      "color": "#2B2622"
+    },
+    {
+      "id": "hsbc-visa-platinum",
+      "name": "Visa Platinum",
+      "issuer": "HSBC",
+      "bank": "HSBC",
+      "tags": ["lifetime-free", "rewards", "fuel", "dining"],
+      "perks": [
+        "No joining or annual fee",
+        "Reward points on every spend, extra on travel bookings",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#1E7F86"
+    },
+    {
+      "id": "hsbc-rupay-platinum",
+      "name": "RuPay Platinum",
+      "issuer": "HSBC",
+      "bank": "HSBC",
+      "tags": ["lifetime-free", "rewards", "fuel", "online"],
+      "perks": [
+        "No joining or annual fee",
+        "Links to UPI apps and earns points on UPI payments",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#8A8D91"
+    },
+    {
+      "id": "hsbc-rupay-cashback",
+      "name": "RuPay Cashback",
+      "issuer": "HSBC",
+      "bank": "HSBC",
+      "tags": ["cashback", "dining", "lounge", "online"],
+      "perks": [
+        "10% cashback on dining, food delivery and groceries",
+        "Works on UPI apps",
+        "Domestic and international airport lounge visits"
+      ],
+      "color": "#B5121B"
     },
     {
       "id": "sc-ultimate",
@@ -358,6 +2683,111 @@
       "color": "#38A169"
     },
     {
+      "id": "sc-beyond",
+      "name": "Beyond",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["premium", "travel", "lounge", "dining", "rewards"],
+      "perks": [
+        "Invite-only metal card for Priority Banking clients",
+        "Unlimited domestic and international lounge access",
+        "Complimentary golf games and dining discounts",
+        "Cashback at duty-free stores"
+      ],
+      "color": "#1C1C1E"
+    },
+    {
+      "id": "sc-rewards",
+      "name": "Rewards",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["rewards", "lounge", "fuel"],
+      "perks": [
+        "4X reward points on retail spends",
+        "Bonus points once monthly spends cross a threshold",
+        "Domestic airport lounge access"
+      ],
+      "color": "#2E86C1"
+    },
+    {
+      "id": "sc-easemytrip",
+      "name": "EaseMyTrip",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["travel", "rewards", "lounge", "online"],
+      "perks": [
+        "Instant discounts on EaseMyTrip flight and hotel bookings",
+        "10X rewards on standalone airline and hotel bookings",
+        "Domestic airport lounge access"
+      ],
+      "color": "#1B75BC"
+    },
+    {
+      "id": "sc-platinum-rewards",
+      "name": "Platinum Rewards",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["rewards", "dining", "fuel", "lifetime-free"],
+      "perks": [
+        "5X reward points on fine dining and fuel",
+        "No monthly cap on reward points",
+        "No joining or annual fee"
+      ],
+      "color": "#88939F"
+    },
+    {
+      "id": "sc-super-value-titanium",
+      "name": "Super Value Titanium",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["cashback", "fuel"],
+      "perks": [
+        "5% cashback on fuel",
+        "5% cashback on phone and utility bills",
+        "Reward points on other spends"
+      ],
+      "color": "#3A4A5C"
+    },
+    {
+      "id": "sc-manhattan",
+      "name": "Manhattan",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["cashback", "shopping", "rewards"],
+      "perks": [
+        "5% cashback at supermarkets and departmental stores",
+        "3X reward points on other spends"
+      ],
+      "color": "#1B2A41"
+    },
+    {
+      "id": "sc-priority-visa-infinite",
+      "name": "Priority Visa Infinite",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["premium", "lounge", "rewards", "travel"],
+      "perks": [
+        "Complimentary for Priority Banking clients",
+        "Extra points on overseas and fashion spends",
+        "Domestic lounge visits plus Priority Pass",
+        "Overseas travel and medical insurance cover"
+      ],
+      "color": "#14233C"
+    },
+    {
+      "id": "sc-digismart",
+      "name": "DigiSmart",
+      "issuer": "StanChart",
+      "bank": "Standard Chartered",
+      "tags": ["online", "dining", "movies", "shopping", "travel"],
+      "perks": [
+        "Discounts on Blinkit and Zomato orders",
+        "Weekend buy-one-get-one movie tickets at INOX",
+        "Cashback on Ola rides and travel discounts on Yatra"
+      ],
+      "color": "#0F8F7E"
+    },
+    {
       "id": "rbl-shoprite",
       "name": "ShopRite",
       "issuer": "RBL",
@@ -367,6 +2797,177 @@
       "color": "#1E6FB0"
     },
     {
+      "id": "rbl-world-safari",
+      "name": "World Safari",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["travel", "forex", "lounge", "rewards"],
+      "perks": [
+        "Zero forex markup on all foreign-currency spends",
+        "Complimentary travel insurance",
+        "Domestic lounge visits plus Priority Pass membership",
+        "Accelerated points on travel spends"
+      ],
+      "color": "#0E3B5C"
+    },
+    {
+      "id": "rbl-icon",
+      "name": "Icon",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["rewards", "dining", "lounge", "movies", "premium"],
+      "perks": [
+        "Accelerated points on weekend dining and international spends",
+        "Buy-one-get-one movie tickets on BookMyShow",
+        "Domestic airport lounge access and golf benefits"
+      ],
+      "color": "#1B1B1B"
+    },
+    {
+      "id": "rbl-platinum-maxima-plus",
+      "name": "Platinum Maxima Plus",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["rewards", "dining", "movies", "lounge"],
+      "perks": [
+        "10X points on dining, entertainment, grocery and international spends",
+        "Buy-one-get-one movie tickets on BookMyShow",
+        "Domestic airport lounge access"
+      ],
+      "color": "#3C3C3C"
+    },
+    {
+      "id": "rbl-play",
+      "name": "Play",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["movies", "fuel"],
+      "perks": [
+        "Monthly discount on BookMyShow movie and event bookings",
+        "Food and beverage discount with movie tickets",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#C4242B"
+    },
+    {
+      "id": "rbl-indianoil-xtra",
+      "name": "IndianOil RBL XTRA",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["fuel", "rewards"],
+      "perks": [
+        "Up to 8.5% value back at IndianOil fuel stations",
+        "Fuel Points on all other spends",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#E2571E"
+    },
+    {
+      "id": "rbl-irctc",
+      "name": "IRCTC RBL",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["travel", "rewards", "lounge"],
+      "perks": [
+        "Reward points on IRCTC train bookings, redeemable on IRCTC",
+        "Complimentary railway lounge visits",
+        "Train cancellation protection cover"
+      ],
+      "color": "#1F4E9C"
+    },
+    {
+      "id": "rbl-nova",
+      "name": "Nova",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["premium", "travel", "lounge", "rewards"],
+      "perks": [
+        "Metal card with high value back on gift cards, hotels and flights",
+        "Domestic and international airport lounge access",
+        "Complimentary golf rounds and lessons"
+      ],
+      "color": "#2A2A2E"
+    },
+    {
+      "id": "rbl-lumiere",
+      "name": "Lumiere",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["premium", "travel", "lounge"],
+      "perks": [
+        "Invite-only metal card with personalised name etching",
+        "Select Circle concierge service",
+        "Complimentary add-on cards for family"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "rbl-apex",
+      "name": "Apex",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["cashback", "travel", "shopping", "lounge", "movies"],
+      "perks": [
+        "2% unlimited cashback on flights, hotels, shopping and vouchers",
+        "1% cashback on other eligible spends",
+        "Domestic lounge access and BookMyShow movie offer"
+      ],
+      "color": "#1C2D5A"
+    },
+    {
+      "id": "rbl-cookies",
+      "name": "Cookies",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["cashback", "online", "shopping", "movies"],
+      "perks": [
+        "10% cashback on select brands like Zomato, Myntra and Uber",
+        "5X reward points on online purchases",
+        "Monthly BookMyShow discount"
+      ],
+      "color": "#3B2A4F"
+    },
+    {
+      "id": "rbl-insignia",
+      "name": "Insignia Preferred Banking",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["premium", "lounge", "travel", "forex", "dining"],
+      "perks": [
+        "For Insignia Preferred Banking customers",
+        "International airport lounge access",
+        "Reduced forex markup and extra points abroad",
+        "Golf rounds and luxury hotel privileges"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "rbl-shoppers-stop-black",
+      "name": "Shoppers Stop Black RBL",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["shopping", "rewards", "premium"],
+      "perks": [
+        "First Citizen Club Black membership at Shoppers Stop",
+        "Accelerated reward points on Shoppers Stop purchases",
+        "Welcome and milestone shopping vouchers"
+      ],
+      "color": "#101010"
+    },
+    {
+      "id": "rbl-bajaj-finserv-supercard",
+      "name": "Bajaj Finserv RBL SuperCard",
+      "issuer": "RBL",
+      "bank": "RBL Bank",
+      "tags": ["rewards", "shopping", "movies"],
+      "perks": [
+        "Reward points on spends with milestone bonuses",
+        "Interest-free cash withdrawal window",
+        "No new issuance since the co-brand ended; existing cards still work"
+      ],
+      "color": "#0B5CAB"
+    },
+    {
       "id": "yes-marquee",
       "name": "Marquee",
       "issuer": "YES",
@@ -374,6 +2975,143 @@
       "tags": ["premium", "travel", "lounge"],
       "perks": ["Unlimited lounge access", "Low forex markup"],
       "color": "#00204E"
+    },
+    {
+      "id": "yes-reserv",
+      "name": "RESERV",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["premium", "rewards", "lounge", "travel", "forex"],
+      "perks": [
+        "Accelerated YES Rewardz points on online spends",
+        "Domestic and international airport lounge access",
+        "Reduced forex markup"
+      ],
+      "color": "#1C2333"
+    },
+    {
+      "id": "yes-elite-plus",
+      "name": "ELITE+",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["rewards", "lounge", "movies", "online"],
+      "perks": [
+        "YES Rewardz points with extra on online spends",
+        "Airport lounge access and golf programme",
+        "25% discount on movie tickets"
+      ],
+      "color": "#2E3A59"
+    },
+    {
+      "id": "yes-select",
+      "name": "SELECT",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["rewards", "online", "lounge"],
+      "perks": [
+        "Accelerated reward points on online shopping",
+        "Domestic airport lounge access",
+        "Annual fee waived on meeting a spend threshold"
+      ],
+      "color": "#3D4F7D"
+    },
+    {
+      "id": "yes-ace",
+      "name": "ACE",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["rewards", "online", "fuel"],
+      "perks": [
+        "Reward points on online and offline spends",
+        "Fuel surcharge waiver",
+        "Entry-level card with spend-based fee waiver"
+      ],
+      "color": "#1565C0"
+    },
+    {
+      "id": "yes-byoc",
+      "name": "BYOC",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["rewards", "online", "shopping"],
+      "perks": [
+        "Build Your Own Card: pick the benefit plans you want",
+        "Subscription-style plans for shopping, travel and entertainment"
+      ],
+      "color": "#4B3FA7"
+    },
+    {
+      "id": "yes-paisasave",
+      "name": "Paisabazaar PaisaSave",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["cashback", "online", "shopping"],
+      "perks": [
+        "Cashback on online spends, credited as points",
+        "Flat cashback on other spends including UPI on RuPay",
+        "Co-branded with Paisabazaar"
+      ],
+      "color": "#0A6EBD"
+    },
+    {
+      "id": "yes-pop-club",
+      "name": "POP Club",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["rewards", "online", "shopping"],
+      "perks": [
+        "POPcoins on every spend, including UPI on RuPay",
+        "Partner brand memberships and vouchers",
+        "Co-branded with the POP app"
+      ],
+      "color": "#6C3BD1"
+    },
+    {
+      "id": "yes-finbooster",
+      "name": "FinBooster",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["rewards", "dining", "shopping", "lifetime-free"],
+      "perks": [
+        "Co-branded with BankBazaar, with credit score tracking",
+        "Accelerated points on dining, grocery and apparel",
+        "No joining or annual fee"
+      ],
+      "color": "#1E3A8A"
+    },
+    {
+      "id": "yes-private",
+      "name": "YES Private",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["premium", "lounge", "travel", "rewards", "forex"],
+      "perks": [
+        "Invite-only card for YES Private banking clients",
+        "Unlimited airport lounge access",
+        "Premium reward earn rate and low forex markup"
+      ],
+      "color": "#0F0F10"
+    },
+    {
+      "id": "yes-kiwi",
+      "name": "Kiwi YES Bank",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["cashback", "online", "lifetime-free"],
+      "perks": [
+        "Virtual RuPay card for UPI scan-and-pay via the Kiwi app",
+        "Flat cashback on UPI spends, higher with Kiwi Neon membership"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "yes-uni-goldx",
+      "name": "Uni GoldX YES Bank",
+      "issuer": "YES",
+      "bank": "YES Bank",
+      "tags": ["rewards", "forex", "lifetime-free"],
+      "perks": ["1% value back on every spend", "Zero forex markup"],
+      "color": "#B08E21"
     },
     {
       "id": "au-zenith-plus",
@@ -394,6 +3132,132 @@
       "color": "#FF6B35"
     },
     {
+      "id": "au-altura",
+      "name": "Altura",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["cashback", "rewards", "fuel"],
+      "perks": [
+        "Cashback on everyday retail spends",
+        "Railway lounge access",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#9B1C31"
+    },
+    {
+      "id": "au-altura-plus",
+      "name": "Altura Plus",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["cashback", "rewards", "lounge", "fuel"],
+      "perks": [
+        "1.5% cashback on retail spends",
+        "2X reward points on online spends",
+        "Railway lounge access"
+      ],
+      "color": "#1D2F6F"
+    },
+    {
+      "id": "au-vetta",
+      "name": "Vetta",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["rewards", "lounge", "travel", "dining"],
+      "perks": [
+        "Accelerated reward points on lifestyle spends",
+        "Airport and railway lounge access",
+        "Global concierge services"
+      ],
+      "color": "#4A2C7A"
+    },
+    {
+      "id": "au-zenith",
+      "name": "Zenith",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["premium", "rewards", "lounge", "dining", "travel"],
+      "perks": [
+        "Accelerated reward points on dining and international spends",
+        "Domestic and international airport lounge access",
+        "Higher fuel surcharge waiver"
+      ],
+      "color": "#16161A"
+    },
+    {
+      "id": "au-ixigo",
+      "name": "ixigo AU",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["travel", "lifetime-free", "lounge", "forex", "rewards"],
+      "perks": [
+        "Discounts on ixigo flight, hotel and bus bookings",
+        "No payment gateway charges on train bookings via ixigo",
+        "Priority Pass and zero forex markup",
+        "No joining or annual fee"
+      ],
+      "color": "#1F2A5A"
+    },
+    {
+      "id": "au-spont",
+      "name": "SPONT",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["cashback", "online", "lounge", "fuel"],
+      "perks": [
+        "1% cashback on UPI and retail spends",
+        "Coins that never lapse on UPI payments via the AU 0101 app",
+        "Airport and railway lounge access"
+      ],
+      "color": "#5B2D90"
+    },
+    {
+      "id": "au-nomo",
+      "name": "NOMO",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["cashback", "online"],
+      "perks": [
+        "Secured card issued against a fixed deposit",
+        "No income proof or credit history needed",
+        "Cashback on retail spends"
+      ],
+      "color": "#6D2077"
+    },
+    {
+      "id": "au-xcite",
+      "name": "SwipeUp Xcite",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["rewards", "online", "shopping"],
+      "perks": [
+        "Xcite, Xcite Ace and Xcite Ultra tiers via AU SwipeUp",
+        "Reward points on everyday spends",
+        "Monthly fee model with spend-based waiver"
+      ],
+      "color": "#D63A72"
+    },
+    {
+      "id": "au-instapay",
+      "name": "InstaPay",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["online", "cashback"],
+      "perks": ["Virtual RuPay card made for UPI and QR payments", "Instant digital issuance"],
+      "color": "#F26522"
+    },
+    {
+      "id": "au-kiwi",
+      "name": "Kiwi AU",
+      "issuer": "AU",
+      "bank": "AU Small Finance Bank",
+      "tags": ["cashback", "online", "lifetime-free"],
+      "perks": [
+        "Virtual RuPay card for UPI scan-and-pay via the Kiwi app",
+        "Flat cashback on UPI spends, higher with Kiwi Neon membership"
+      ],
+      "color": "#111111"
+    },
+    {
       "id": "onecard-metal",
       "name": "OneCard Metal",
       "issuer": "OneCard",
@@ -412,6 +3276,45 @@
       "color": "#0EA5E9"
     },
     {
+      "id": "federal-celesta",
+      "name": "Celesta",
+      "issuer": "Federal",
+      "bank": "Federal Bank",
+      "tags": ["rewards", "travel", "lounge", "dining", "movies"],
+      "perks": [
+        "3X points on travel and international spends, 2X on dining",
+        "Domestic and international airport lounge access",
+        "Buy-one-get-one movie tickets at INOX"
+      ],
+      "color": "#1B1B1F"
+    },
+    {
+      "id": "federal-imperio",
+      "name": "Imperio",
+      "issuer": "Federal",
+      "bank": "Federal Bank",
+      "tags": ["rewards", "lifetime-free", "lounge", "fuel", "shopping"],
+      "perks": [
+        "3X-2X-1X reward structure geared to family and daily needs",
+        "Domestic airport lounge access",
+        "No joining or annual fee"
+      ],
+      "color": "#1D3A6E"
+    },
+    {
+      "id": "federal-signet",
+      "name": "Signet",
+      "issuer": "Federal",
+      "bank": "Federal Bank",
+      "tags": ["rewards", "lifetime-free", "dining", "shopping", "online"],
+      "perks": [
+        "3X-2X-1X rewards on gadgets, apparel and entertainment",
+        "Available on Visa, Mastercard and RuPay",
+        "No joining or annual fee"
+      ],
+      "color": "#7A1F2B"
+    },
+    {
       "id": "bob-eterna",
       "name": "Eterna",
       "issuer": "BoB",
@@ -419,6 +3322,537 @@
       "tags": ["travel", "lounge", "rewards"],
       "perks": ["15x points on travel, dining, online", "Unlimited domestic lounge"],
       "color": "#F26522"
+    },
+    {
+      "id": "bob-premier",
+      "name": "Premier",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["travel", "rewards", "dining", "lounge", "fuel"],
+      "perks": [
+        "5X reward points on travel, dining and international spends",
+        "Domestic airport lounge access",
+        "Points redeemable as cashback"
+      ],
+      "color": "#1B2B4B"
+    },
+    {
+      "id": "bob-tiara",
+      "name": "Tiara",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["premium", "rewards", "lounge", "dining", "shopping", "forex"],
+      "perks": [
+        "Women-focused premium card with health check packages",
+        "Unlimited domestic airport lounge access",
+        "Accelerated points on dining, travel and international spends",
+        "Reduced forex markup and lifestyle memberships"
+      ],
+      "color": "#B76E79"
+    },
+    {
+      "id": "bob-cashback",
+      "name": "BOBCARD Cashback",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["cashback", "online", "fuel"],
+      "perks": [
+        "5% cashback on domestic online spends",
+        "Unlimited 1% cashback on other spends",
+        "Cashback auto-credited to the statement each month"
+      ],
+      "color": "#F26522"
+    },
+    {
+      "id": "bob-easy",
+      "name": "Easy",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["rewards", "shopping", "movies", "fuel"],
+      "perks": [
+        "5X reward points at department stores and movies",
+        "Fuel surcharge waiver",
+        "Spend-based annual fee waiver"
+      ],
+      "color": "#DE7220"
+    },
+    {
+      "id": "bob-select",
+      "name": "Select",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["rewards", "online", "dining"],
+      "perks": [
+        "5X reward points on online shopping and dining",
+        "Points redeemable as cashback",
+        "Spend-based annual fee waiver"
+      ],
+      "color": "#5A2D82"
+    },
+    {
+      "id": "bob-snapdeal",
+      "name": "Snapdeal BOBCARD",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["cashback", "shopping", "online"],
+      "perks": [
+        "5% unlimited cashback on Snapdeal",
+        "Welcome shopping vouchers",
+        "Reward points on everyday shopping"
+      ],
+      "color": "#E40046"
+    },
+    {
+      "id": "bob-hpcl-energie",
+      "name": "HPCL Energie",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["fuel", "rewards", "movies", "lounge"],
+      "perks": [
+        "Accelerated rewards on HPCL fuel, redeemable for free fuel",
+        "Discount on movie tickets",
+        "Domestic airport lounge access"
+      ],
+      "color": "#0B3D91"
+    },
+    {
+      "id": "bob-irctc",
+      "name": "IRCTC BOBCARD",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["travel", "rewards", "lounge", "shopping"],
+      "perks": [
+        "Up to 10% savings on IRCTC train tickets",
+        "Railway lounge access",
+        "Reward points on grocery and departmental stores"
+      ],
+      "color": "#1C3F94"
+    },
+    {
+      "id": "bob-etihad-guest",
+      "name": "BOBCARD Etihad Guest",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["travel", "forex", "lounge", "rewards"],
+      "perks": [
+        "Earns Etihad Guest Miles on every spend",
+        "1% forex markup",
+        "Domestic and international airport lounge visits"
+      ],
+      "color": "#B09056"
+    },
+    {
+      "id": "bob-etihad-guest-premium",
+      "name": "BOBCARD Etihad Guest Premium",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["travel", "forex", "lounge", "rewards", "premium"],
+      "perks": [
+        "Higher Etihad Guest Miles earn rate and tier benefits",
+        "Low forex markup",
+        "Domestic and international airport lounge visits"
+      ],
+      "color": "#2C2A29"
+    },
+    {
+      "id": "bob-scapia",
+      "name": "Scapia BOBCARD",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["travel", "forex", "lounge", "rewards", "lifetime-free"],
+      "perks": [
+        "Zero forex markup",
+        "Scapia coins on spends, extra on Scapia app travel bookings",
+        "Unlimited domestic lounge access on meeting spends"
+      ],
+      "color": "#1F1F2E"
+    },
+    {
+      "id": "bob-uni-goldx",
+      "name": "Uni GoldX BOBCARD",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["lifetime-free", "forex", "rewards"],
+      "perks": ["1% value back on every spend", "Zero forex markup"],
+      "color": "#B08E21"
+    },
+    {
+      "id": "bob-yoddha",
+      "name": "Indian Army Yoddha",
+      "issuer": "BoB",
+      "bank": "Bank of Baroda",
+      "tags": ["lifetime-free", "lounge", "rewards"],
+      "perks": [
+        "Exclusively for Indian Army personnel",
+        "Domestic airport lounge access",
+        "Complimentary memberships and insurance cover"
+      ],
+      "color": "#4B5320"
+    },
+    {
+      "id": "pnb-rupay-platinum",
+      "name": "RuPay Platinum",
+      "issuer": "PNB",
+      "bank": "Punjab National Bank",
+      "tags": ["rewards", "lounge", "dining"],
+      "perks": [
+        "Annual fee waived when the card is used every quarter",
+        "Cashback on utility bills and dining, plus airport lounge access"
+      ],
+      "color": "#2E4A6B"
+    },
+    {
+      "id": "pnb-rupay-select",
+      "name": "RuPay Select",
+      "issuer": "PNB",
+      "bank": "Punjab National Bank",
+      "tags": ["rewards", "lounge", "shopping"],
+      "perks": [
+        "Double reward points on retail purchases",
+        "Domestic and international airport lounge programme",
+        "24x7 concierge and RuPay insurance cover"
+      ],
+      "color": "#0F5C63"
+    },
+    {
+      "id": "pnb-visa-signature",
+      "name": "Visa Signature",
+      "issuer": "PNB",
+      "bank": "Punjab National Bank",
+      "tags": ["movies", "lounge", "rewards"],
+      "perks": [
+        "Half-price movie tickets on BookMyShow every month",
+        "Domestic airport lounge access and 24x7 concierge"
+      ],
+      "color": "#2B2B2B"
+    },
+    {
+      "id": "pnb-luxura",
+      "name": "Luxura Metal",
+      "issuer": "PNB",
+      "bank": "Punjab National Bank",
+      "tags": ["premium", "travel", "lounge", "dining", "rewards"],
+      "perks": [
+        "Metal card with domestic and international airport lounge access",
+        "Accelerated reward points on travel and dining",
+        "HoteLux Elite Plus membership and ITC hotel stay offers"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "pnb-patanjali-rupay-select",
+      "name": "Patanjali RuPay Select",
+      "issuer": "PNB",
+      "bank": "Punjab National Bank",
+      "tags": ["shopping", "cashback", "lounge", "rewards"],
+      "perks": [
+        "Cashback on purchases at Patanjali stores",
+        "Double reward points on retail spends and airport lounge access"
+      ],
+      "color": "#D77618"
+    },
+    {
+      "id": "pnb-kiwi",
+      "name": "Kiwi PNB",
+      "issuer": "PNB",
+      "bank": "Punjab National Bank",
+      "tags": ["cashback", "online", "lifetime-free"],
+      "perks": [
+        "Virtual RuPay card for UPI scan-and-pay via the Kiwi app",
+        "1.5% cashback as Kiwis on scan-and-pay, lower rate on online spends"
+      ],
+      "color": "#111111"
+    },
+    {
+      "id": "canara-rupay-classic",
+      "name": "RuPay Classic",
+      "issuer": "Canara",
+      "bank": "Canara Bank",
+      "tags": ["rewards", "lifetime-free"],
+      "perks": ["No joining or annual fee", "Reward points on POS and online purchases"],
+      "color": "#1F5FA8"
+    },
+    {
+      "id": "canara-rupay-platinum",
+      "name": "RuPay Platinum",
+      "issuer": "Canara",
+      "bank": "Canara Bank",
+      "tags": ["rewards", "lounge", "lifetime-free"],
+      "perks": [
+        "No joining or annual fee",
+        "Domestic airport lounge access",
+        "Reward points on POS and online purchases"
+      ],
+      "color": "#6E7780"
+    },
+    {
+      "id": "canara-rupay-select",
+      "name": "RuPay Select",
+      "issuer": "Canara",
+      "bank": "Canara Bank",
+      "tags": ["rewards", "lounge", "dining", "cashback"],
+      "perks": [
+        "Domestic and international airport lounge access",
+        "Cashback on utility bills and dining",
+        "24x7 concierge and RuPay insurance cover"
+      ],
+      "color": "#1C1C2E"
+    },
+    {
+      "id": "canara-mastercard-world",
+      "name": "Mastercard World",
+      "issuer": "Canara",
+      "bank": "Canara Bank",
+      "tags": ["rewards", "lounge", "travel", "lifetime-free"],
+      "perks": [
+        "No joining or annual fee",
+        "Domestic and international lounge access, including guests",
+        "Travel, baggage and purchase protection insurance"
+      ],
+      "color": "#202020"
+    },
+    {
+      "id": "union-rupay-select",
+      "name": "RuPay Select",
+      "issuer": "Union Bank",
+      "bank": "Union Bank of India",
+      "tags": ["rewards", "lounge", "fuel"],
+      "perks": [
+        "Domestic and international airport lounge access",
+        "Links to UPI for scan-and-pay merchant payments",
+        "Fuel surcharge waiver and RuPay accident cover"
+      ],
+      "color": "#14213D"
+    },
+    {
+      "id": "union-rupay-platinum",
+      "name": "RuPay Platinum",
+      "issuer": "Union Bank",
+      "bank": "Union Bank of India",
+      "tags": ["rewards", "lounge", "fuel"],
+      "perks": [
+        "Reward points on all spends, redeemable via Union Rewardz",
+        "Complimentary lounge access and UPI linking",
+        "Fuel surcharge waiver"
+      ],
+      "color": "#7A7F87"
+    },
+    {
+      "id": "union-divaa",
+      "name": "Divaa",
+      "issuer": "Union Bank",
+      "bank": "Union Bank of India",
+      "tags": ["shopping", "lounge", "movies", "rewards"],
+      "perks": [
+        "Women-only card with quarterly beauty, fashion and movie vouchers",
+        "Airport lounge access and annual health check-up",
+        "Complimentary Swiggy One membership"
+      ],
+      "color": "#B0266B"
+    },
+    {
+      "id": "union-uni-carbon",
+      "name": "Uni Carbon HPCL",
+      "issuer": "Union Bank",
+      "bank": "Union Bank of India",
+      "tags": ["fuel", "cashback", "rewards"],
+      "perks": [
+        "Up to 6.5% savings on fuel at HPCL outlets",
+        "Reward points on non-fuel spends and UPI linking"
+      ],
+      "color": "#0B3D91"
+    },
+    {
+      "id": "union-visa-signature",
+      "name": "Visa Signature",
+      "issuer": "Union Bank",
+      "bank": "Union Bank of India",
+      "tags": ["rewards", "travel"],
+      "perks": ["Premium Visa card with lifestyle privileges in India and abroad"],
+      "color": "#2A2A2A"
+    },
+    {
+      "id": "boi-rupay-platinum",
+      "name": "RuPay Platinum",
+      "issuer": "BOI",
+      "bank": "Bank of India",
+      "tags": ["rewards", "lounge"],
+      "perks": [
+        "Double reward points on POS and online spends",
+        "Domestic airport lounge access and 24x7 concierge"
+      ],
+      "color": "#5B6470"
+    },
+    {
+      "id": "boi-rupay-select",
+      "name": "RuPay Select",
+      "issuer": "BOI",
+      "bank": "Bank of India",
+      "tags": ["rewards", "lounge"],
+      "perks": [
+        "Domestic and international airport lounge access",
+        "Double reward points on POS and online spends",
+        "Annual health check-up package and RuPay accident cover"
+      ],
+      "color": "#1B2A49"
+    },
+    {
+      "id": "indianbank-visa-platinum",
+      "name": "Visa Platinum",
+      "issuer": "Indian Bank",
+      "bank": "Indian Bank",
+      "tags": ["rewards", "dining", "shopping"],
+      "perks": [
+        "Lifestyle privileges across golf, dining and shopping",
+        "Annual charge waived on meeting a yearly spend threshold"
+      ],
+      "color": "#6B7078"
+    },
+    {
+      "id": "indianbank-rupay-select",
+      "name": "RuPay Select",
+      "issuer": "Indian Bank",
+      "bank": "Indian Bank",
+      "tags": ["rewards"],
+      "perks": [
+        "Top-tier RuPay card from Indian Bank with RuPay Select privileges",
+        "Annual charge waived on meeting a yearly spend threshold"
+      ],
+      "color": "#1D2B4F"
+    },
+    {
+      "id": "indianbank-rupay-platinum",
+      "name": "RuPay Platinum",
+      "issuer": "Indian Bank",
+      "bank": "Indian Bank",
+      "tags": ["rewards"],
+      "perks": [
+        "Mid-tier RuPay card with merchant offers",
+        "Annual charge waived on meeting a yearly spend threshold"
+      ],
+      "color": "#55606B"
+    },
+    {
+      "id": "jkbank-eminent",
+      "name": "Eminent",
+      "issuer": "J&K Bank",
+      "bank": "Jammu & Kashmir Bank",
+      "tags": ["rewards", "lounge", "movies", "travel", "fuel"],
+      "perks": [
+        "Accelerated points on travel, apparel, dining and electronics",
+        "Domestic and international airport lounge access",
+        "Buy-one-get-one movie tickets and golf privileges"
+      ],
+      "color": "#1A1A1A"
+    },
+    {
+      "id": "jkbank-platinum",
+      "name": "Platinum",
+      "issuer": "J&K Bank",
+      "bank": "Jammu & Kashmir Bank",
+      "tags": ["rewards", "online", "fuel", "lounge"],
+      "perks": [
+        "Double points on online, department store, pharmacy and utility spends",
+        "Domestic lounge access and fuel surcharge waiver"
+      ],
+      "color": "#7B8088"
+    },
+    {
+      "id": "dbs-vantage",
+      "name": "Vantage",
+      "issuer": "DBS",
+      "bank": "DBS Bank India",
+      "tags": ["premium", "travel", "lounge", "rewards"],
+      "perks": [
+        "Invite-only premium travel and lifestyle card",
+        "Higher Vantage Points on international spends",
+        "Airport lounge access and luxury hotel membership benefits"
+      ],
+      "color": "#1C1C1C"
+    },
+    {
+      "id": "dbs-spark",
+      "name": "Spark",
+      "issuer": "DBS",
+      "bank": "DBS Bank India",
+      "tags": ["rewards", "lounge", "movies", "fuel"],
+      "perks": [
+        "Cash Points multiply on hitting monthly spend milestones",
+        "Domestic airport lounge access",
+        "BookMyShow second-ticket discount and fuel surcharge waiver"
+      ],
+      "color": "#D6202B"
+    },
+    {
+      "id": "dbs-superx",
+      "name": "SuperX",
+      "issuer": "DBS",
+      "bank": "DBS Bank India",
+      "tags": ["rewards", "shopping", "dining"],
+      "perks": ["Multiplied Cash Points on dining, groceries and online shopping"],
+      "color": "#2B2B2B"
+    },
+    {
+      "id": "csb-jupiter-edge-plus",
+      "name": "Jupiter Edge+ CSB",
+      "issuer": "CSB",
+      "bank": "CSB Bank",
+      "tags": ["cashback", "shopping", "travel", "online", "lifetime-free"],
+      "perks": [
+        "RuPay card that works on UPI through the Jupiter app",
+        "Higher Jewels on shopping and Jupiter flight bookings"
+      ],
+      "color": "#1E3A5F"
+    },
+    {
+      "id": "csb-jupiter-edge",
+      "name": "Jupiter Edge CSB",
+      "issuer": "CSB",
+      "bank": "CSB Bank",
+      "tags": ["cashback", "online", "lifetime-free"],
+      "perks": [
+        "Lifetime-free RuPay card linked to UPI in the Jupiter app",
+        "Earn Jewels on card and UPI spends"
+      ],
+      "color": "#222222"
+    },
+    {
+      "id": "slice-upi-credit-card",
+      "name": "slice UPI Credit Card",
+      "issuer": "slice",
+      "bank": "slice Small Finance Bank",
+      "tags": ["cashback", "forex", "lifetime-free", "online"],
+      "perks": [
+        "Cashback on every UPI scan-and-pay",
+        "No joining or annual charges, zero forex charges",
+        "Split spends into three interest-free instalments"
+      ],
+      "color": "#5B2DBF"
+    },
+    {
+      "id": "utkarsh-supermoney-supercard",
+      "name": "super.money SuperCard Utkarsh",
+      "issuer": "Utkarsh",
+      "bank": "Utkarsh Small Finance Bank",
+      "tags": ["cashback", "shopping", "online", "lifetime-free"],
+      "perks": [
+        "FD-backed secured RuPay card issued via the super.money app",
+        "Cashback on UPI spends, higher at Flipkart and Myntra"
+      ],
+      "color": "#1B1B1B"
+    },
+    {
+      "id": "unity-bharatpe",
+      "name": "BharatPe Unity",
+      "issuer": "Unity",
+      "bank": "Unity Small Finance Bank",
+      "tags": ["rewards", "lounge", "lifetime-free"],
+      "perks": [
+        "RuPay card on UPI that converts monthly spends into EMIs",
+        "Rewards as Zillion coins on EMI-converted spends",
+        "Airport lounge access and preventive health check-ups"
+      ],
+      "color": "#0E7C86"
     }
   ]
 }

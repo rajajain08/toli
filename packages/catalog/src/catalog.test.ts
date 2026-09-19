@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import raw from '../cards.json' with { type: 'json' };
+import sources from '../sources.json' with { type: 'json' };
 import { CATALOG, CATALOG_BANKS, getCatalogCard, searchCatalog } from './index';
 import { FORBIDDEN_FIELD_PATTERN, catalogSchema } from './schema';
 
@@ -38,13 +39,34 @@ describe('catalog', () => {
     expect(CATALOG).toEqual(parsed.cards);
   });
 
+  it('keeps one issuer label per bank, so the bank chips never split a bank in two', () => {
+    const labels = new Map<string, string>();
+    for (const c of raw.cards) {
+      expect(labels.get(c.bank) ?? c.issuer).toBe(c.issuer);
+      labels.set(c.bank, c.issuer);
+    }
+  });
+
+  it('sources.json is a sidecar: every entry points at a catalogue card and an https page', () => {
+    const ids = new Set(raw.cards.map((c) => c.id));
+    for (const [id, source] of Object.entries(sources)) {
+      expect(ids.has(id), id).toBe(true);
+      expect(source.url, id).toMatch(/^https:\/\//);
+      expect(source.verifiedAt, id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+  });
+
   it('looks up by id', () => {
     expect(getCatalogCard('hdfc-millennia')?.name).toBe('Millennia');
     expect(getCatalogCard('nope')).toBeUndefined();
   });
 
   it('searches by name, issuer and tag, case-insensitively', () => {
-    expect(searchCatalog('millennia').map((c) => c.id)).toEqual(['hdfc-millennia']);
+    expect(searchCatalog('millennia').map((c) => c.id)).toEqual([
+      'hdfc-millennia',
+      'idfc-first-millennia',
+    ]);
+    expect(searchCatalog('hdfc millennia').map((c) => c.id)).toEqual(['hdfc-millennia']);
     expect(searchCatalog('AMAZON').map((c) => c.id)).toContain('icici-amazon-pay');
     expect(searchCatalog('', { issuer: 'Amex' }).every((c) => c.issuer === 'Amex')).toBe(true);
     expect(searchCatalog('', { tag: 'fuel' }).map((c) => c.id)).toContain('sbi-bpcl-octane');

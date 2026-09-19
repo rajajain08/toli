@@ -1,0 +1,1628 @@
+{
+  "hdfc-freedom": {
+    "url": "https://www.hdfc.bank.in/credit-cards/freedom-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-phonepe-uno": {
+    "url": "https://www.hdfc.bank.in/credit-cards/phonepe-hdfc-bank-uno-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-phonepe-ultimo": {
+    "url": "https://www.hdfc.bank.in/credit-cards/phonepe-hdfc-bank-ultimo-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-pixel-play": {
+    "url": "https://www.hdfc.bank.in/credit-cards/pixel-play-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-pixel-go": {
+    "url": "https://www.hdfc.bank.in/credit-cards/pixel-go-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-upi-rupay": {
+    "url": "https://www.hdfc.bank.in/credit-cards/hdfc-bank-upi-rupay-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-diners-privilege": {
+    "url": "https://www.hdfc.bank.in/credit-cards/diners-privilege-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-tata-neu-plus": {
+    "url": "https://www.hdfc.bank.in/credit-cards/tata-neu-plus-hdfc-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-swiggy-ornge": {
+    "url": "https://www.hdfc.bank.in/credit-cards/swiggy-ornge-hdfc-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-swiggy-blck": {
+    "url": "https://www.hdfc.bank.in/credit-cards/swiggy-blck-hdfc-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-marriott-bonvoy": {
+    "url": "https://www.hdfc.bank.in/credit-cards/marriott-bonvoy-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-indianoil": {
+    "url": "https://www.hdfc.bank.in/credit-cards/indianoil-hdfc-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-irctc": {
+    "url": "https://www.hdfc.bank.in/credit-cards/irctc-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-shoppers-stop": {
+    "url": "https://www.hdfc.bank.in/credit-cards/shoppers-stop-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-shoppers-stop-black": {
+    "url": "https://www.hdfc.bank.in/credit-cards/shoppers-stop-black-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-paytm": {
+    "url": "https://www.hdfc.bank.in/credit-cards/paytm-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "hdfc-paytm-select": {
+    "url": "https://www.hdfc.bank.in/credit-cards/paytm-select-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "hdfc-harley-davidson-diners": {
+    "url": "https://www.hdfc.bank.in/credit-cards/harley-davidson-diners-club-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hdfc-platinum-times": {
+    "url": "https://www.hdfc.bank.in/credit-cards/platinum-times-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "hdfc-regalia": {
+    "url": "https://www.hdfc.bank.in/credit-cards/regalia-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "hdfc-regalia-first": {
+    "url": "https://www.hdfc.bank.in/credit-cards/regalia-first-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "hdfc-moneyback": {
+    "url": "https://www.hdfc.bank.in/credit-cards/money-back-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "hdfc-diners-clubmiles": {
+    "url": "https://www.hdfc.bank.in/credit-cards/diners-club-miles-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "hdfc-diners-rewardz": {
+    "url": "https://www.hdfc.bank.in/credit-cards/diners-club-rewardz-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "hdfc-bharat": {
+    "url": "https://www.hdfc.bank.in/credit-cards/bharat-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "icici-times-black": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/times-black-icici-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-emeralde": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/emeralde-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-platinum-chip": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/platinum-chip-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-adani-one-signature": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/adani-icici-credit-card/signature-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-adani-one-platinum": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/adani-icici-credit-card/platinum-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-makemytrip": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/makemytrip/makemytrip-icici-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-makemytrip-signature": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/makemytrip/signature-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "icici-makemytrip-platinum": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/makemytrip/platinum-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "icici-emirates-skywards-emeralde": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/emirates-skywards/emirates-emeralde",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-emirates-skywards-sapphiro": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/emirates-skywards/emirates-sapphiro",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-emirates-skywards-rubyx": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/emirates-skywards/emirates-rubyx",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-hpcl-super-saver": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/hpcl-super-saver",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-hpcl-coral": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/hpcl-coral-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-expressions": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/expressions-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-csk": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/csk-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-parakram": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/parakram-cards/parakram",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-parakram-select": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/parakram-cards/parakram-select",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "icici-instant-platinum": {
+    "url": "https://www.icici.bank.in/personal-banking/cards/credit-card/credit-card-against-fixed-deposit",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "icici-manchester-united-signature": {
+    "url": "https://www.icici.bank.in/about-us/news-room/2018/news-icici-bank-announces-partnership-with-manchester-united",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "icici-manchester-united-platinum": {
+    "url": "https://www.icici.bank.in/about-us/news-room/2018/news-icici-bank-announces-partnership-with-manchester-united",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "sbi-prime": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/sbi-card-prime.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-aurum": {
+    "url": "https://www.aurumcreditcard.com/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-pulse": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/sbi-card-pulse.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-miles": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/sbi-card-miles.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-miles-prime": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/sbi-card-miles-prime.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-miles-elite": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/sbi-card-miles-elite.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-irctc-platinum": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/irctc-sbi-platinum-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-irctc-premier": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/irctc-premier-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-reliance": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/reliance-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-reliance-prime": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/reliance-sbi-card-prime.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-titan": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/titan-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-bpcl": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/bpcl-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-tata-neu-plus": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/tata-neu-plus-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-tata-neu-infinity": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/tata-neu-infinity-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-phonepe-purple": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/phonepe-sbi-card-purple.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-phonepe-select-black": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/phonepe-sbi-card-select-black.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-flipkart": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/flipkart-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-indigo": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/indigo-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-indigo-elite": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/indigo-sbi-card-elite.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-krisflyer": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/krisflyer-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-krisflyer-apex": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/krisflyer-sbi-card-apex.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-landmark-rewards": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/landmark-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-landmark-rewards-select": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/landmark-sbi-card-select.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-landmark-rewards-prime": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/landmark-sbi-card-prime.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-apollo": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/apollo-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-apollo-select": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/apollo-sbi-card-select.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-google-pay-flex": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/google-pay-flex-sbicard.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-paytm": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/paytm-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "sbi-paytm-select": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/paytm-sbi-card-select.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "sbi-tata-card": {
+    "url": "https://www.tatacard.com/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "sbi-tata-card-select": {
+    "url": "https://www.tatacard.com/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "sbi-shaurya": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/shaurya-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-shaurya-select": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/shaurya-select-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-unnati": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/sbi-card-unnati.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-doctors": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/doctors-sbi-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sbi-air-india-platinum": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/air-india-sbi-platinum-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "sbi-air-india-signature": {
+    "url": "https://www.sbicard.com/en/personal/credit-cards/air-india-sbi-signature-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "axis-my-zone": {
+    "url": "https://www.axis.bank.in/cards/credit-card/axis-bank-my-zone-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-rewards": {
+    "url": "https://www.axis.bank.in/cards/credit-card/rewards-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-privilege": {
+    "url": "https://www.axis.bank.in/cards/credit-card/privilege-credit-card-with-unlimited-benefits",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-select": {
+    "url": "https://www.axis.bank.in/cards/credit-card/axis-bank-select-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-horizon": {
+    "url": "https://www.axis.bank.in/cards/credit-card/axis-horizon-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-reserve": {
+    "url": "https://www.axis.bank.in/cards/credit-card/reserve-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-olympus": {
+    "url": "https://www.axis.bank.in/docs/default-source/default-document-library/olympus-terms-and-conditions.pdf",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-primus": {
+    "url": "https://www.axis.bank.in/about-us/press-releases/axis-bank-and-visa-unveil-the-ultra-luxury-credit-card-primus-for-indias-elite",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-burgundy-private": {
+    "url": "https://www.axisbank.com/burgundyprivate/creditcard",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "axis-indianoil": {
+    "url": "https://www.axis.bank.in/cards/credit-card/indianoil-axis-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-indianoil-premium": {
+    "url": "https://www.axis.bank.in/cards/credit-card/indianoil-premium-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-indigo": {
+    "url": "https://www.axis.bank.in/cards/credit-card/indigo-axis-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-indigo-premium": {
+    "url": "https://www.axis.bank.in/cards/credit-card/indigo-axis-bank-premium-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-samsung-signature": {
+    "url": "https://www.axis.bank.in/cards/credit-card/samsung-axis-bank-signature-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-samsung-infinite": {
+    "url": "https://www.axis.bank.in/cards/credit-card/samsung-axis-bank-infinite-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-shoppers-stop": {
+    "url": "https://www.axis.bank.in/cards/credit-card/axis-bank-shoppers-stop-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-cashback": {
+    "url": "https://www.axis.bank.in/cards/credit-card/cashback-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-fibe": {
+    "url": "https://www.axis.bank.in/cards/credit-card/fibe-axis-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-kwik": {
+    "url": "https://www.axis.bank.in/cards/credit-card/axis-bank-kwik-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-supermoney": {
+    "url": "https://www.axis.bank.in/cards/credit-card/supermoney-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-google-pay-flex": {
+    "url": "https://www.axis.bank.in/cards/credit-card/google-pay-flex-axis-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-scapia": {
+    "url": "https://www.axis.bank.in/cards/credit-card/scapia-axis-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-lic-platinum": {
+    "url": "https://www.axis.bank.in/cards/credit-card/lic-axis-bank-platinum-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-lic-signature": {
+    "url": "https://www.axis.bank.in/cards/credit-card/lic-axis-bank-signature-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-spicejet-voyage": {
+    "url": "https://www.axis.bank.in/cards/credit-card/spicejet-axis-bank-voyage-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-spicejet-voyage-black": {
+    "url": "https://www.axis.bank.in/cards/credit-card/spicejet-axis-bank-voyage-black-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-pride-platinum": {
+    "url": "https://www.axis.bank.in/cards/credit-card/pride-platinum-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-pride-signature": {
+    "url": "https://www.axis.bank.in/cards/credit-card/pride-signature-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "axis-freecharge": {
+    "url": "https://www.axis.bank.in/cards/credit-card/axis-bank-freecharge-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "axis-freecharge-plus": {
+    "url": "https://www.axis.bank.in/cards/credit-card/axis-bank-freecharge-plus-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "kotak-cashback-plus": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-cashback-plus-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-cashback-plus-prime": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-cashback-plus-prime-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-air": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-air-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-air-plus": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-air-plus-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-air-plus-prime": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-air-plus-prime-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-solitaire": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-solitaire-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-indigo": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/indigo-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-indigo-premium": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/indigo-xl-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-indianoil": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/indian-oil-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-pvr-inox": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/pvr-inox-kotak-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-upi-rupay": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-upi-rupay-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-white": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/white-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-zen-signature": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/zen-signature-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-811": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/kotak-811-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-811-dream-different": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/811-dream-different-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-nri-royale-signature": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/nri-royale-signature-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "kotak-mojo-platinum": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/mojo-platinum-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "kotak-royale-signature": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/royale-signature-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "kotak-privy-league-signature": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/privy-league-signature-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "kotak-urbane-gold": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/urbane-gold-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "kotak-pvr-gold": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/pvr-gold-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "kotak-pvr-platinum": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/pvr-platinum-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "kotak-infinite": {
+    "url": "https://www.kotak.bank.in/en/personal-banking/cards/credit-cards/wealth-management-infinite-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "indusind-pinnacle": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/pinnacle-world-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-tiger": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/tiger-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-avios": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/avios-visa-infinite-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-platinum-rupay": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/platinum-rupay-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-nexxt": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/nexxt-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-samman": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/samman-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-platinum-aura-edge": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/platinum-aura-edge-visa-and-mastercard-credit-card-easy-credit.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-platinum": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/platinum-visa-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-eazydiner-platinum": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/eazydiner-platinum-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-cred-rupay": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/CRED-IndusInd-Bank-ruPay-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-jio-bp-mobility": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/jio-bp-mobility-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-celesta": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/celesta-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-crest": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/crest-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-indulge": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/indulge-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-pioneer-heritage": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/pioneer-heritage-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-pioneer-legacy": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/pioneer-legacy-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-pioneer-private": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/pioneer-private.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-solitaire": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/solitaire-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indusind-iconia-amex": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/iconia-amex-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "indusind-platinum-aura": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/platinum-aura-visa-and-mastercard-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "indusind-signature": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/signature-visa-credit-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "indusind-duo": {
+    "url": "https://www.indusind.bank.in/in/en/personal/cards/credit-card/duo-card.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "closed-to-new"
+  },
+  "idfc-first-millennia": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/millennia",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-classic": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/classic",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-wow": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/wow",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-wow-black": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/wow-black-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-earn": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/secured-rupay-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-swyp": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/swyp-emi-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-ashva": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/ashva",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-mayura": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/mayura",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-gaj": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/metal-credit-card/gaj",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-diamond-reserve": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/diamond-reserve-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-private": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/FIRSTPrivateCreditCard",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-quantum-plus": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/quantum-plus-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-hello-cashback": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/hello-cashback-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-indigo": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/indigo-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-power": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/hpcl-power-fuel-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-first-power-plus": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/hpcl-power-fuel-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-lic-classic": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/lic-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "idfc-lic-select": {
+    "url": "https://www.idfcfirst.bank.in/credit-card/lic-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "amex-smartearn": {
+    "url": "https://www.americanexpress.com/in/credit-cards/smart-earn-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "amex-platinum-reserve": {
+    "url": "https://www.americanexpress.com/in/credit-cards/platinum-reserve-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "amex-centurion": {
+    "url": "https://www.americanexpress.com/content/dam/amex/in/legal/mitc/Centurion_MITC.pdf",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hsbc-premier": {
+    "url": "https://www.hsbc.bank.in/credit-cards/products/premier/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hsbc-taj": {
+    "url": "https://www.hsbc.bank.in/credit-cards/products/taj/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hsbc-visa-platinum": {
+    "url": "https://www.hsbc.bank.in/credit-cards/products/visa-platinum/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hsbc-rupay-platinum": {
+    "url": "https://www.hsbc.bank.in/credit-cards/products/rupay-platinum-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "hsbc-rupay-cashback": {
+    "url": "https://www.hsbc.bank.in/credit-cards/products/rupay-cashback-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-beyond": {
+    "url": "https://www.sc.bank.in/credit-cards/beyond-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-rewards": {
+    "url": "https://www.sc.bank.in/credit-cards/rewards-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-easemytrip": {
+    "url": "https://www.sc.bank.in/credit-cards/easemytrip-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-platinum-rewards": {
+    "url": "https://www.sc.bank.in/credit-cards/platinum-rewards/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-super-value-titanium": {
+    "url": "https://www.sc.bank.in/credit-cards/super-value-titanium/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-manhattan": {
+    "url": "https://www.sc.bank.in/credit-cards/manhattan-platinum/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-priority-visa-infinite": {
+    "url": "https://www.sc.bank.in/credit-cards/priority-banking-visa-infinite/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "sc-digismart": {
+    "url": "https://www.sc.bank.in/credit-cards/digismart-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-world-safari": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/world-safari-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-icon": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/icon-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-platinum-maxima-plus": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/platinum-maxima-plus-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-play": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/rbl-bank-play-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-indianoil-xtra": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/indianoil-rbl-bank-xtra-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-irctc": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/irctc-rbl-bank-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-nova": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/nova-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-lumiere": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/lumiere-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-apex": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/apex-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-cookies": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/cookies-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-insignia": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/insignia-preferred-banking-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-shoppers-stop-black": {
+    "url": "https://www.rbl.bank.in/personal-banking/cards/credit-cards/rbl-bank-shoppers-stop-black-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "rbl-bajaj-finserv-supercard": {
+    "url": "https://webassets.rbl.bank.in/pdfs/CreditCard/SuperCard-faq.pdf",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "yes-reserv": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/reserv-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-elite-plus": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/elite-plus-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-select": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/select-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-ace": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/ace-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-byoc": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/byoc-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-paisasave": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/paisabazaar-rupay-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-pop-club": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/pop-club-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-finbooster": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/finbooster-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-private": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-private-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-altura": {
+    "url": "https://www.au.bank.in/personal-banking/credit-cards/altura-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-altura-plus": {
+    "url": "https://www.au.bank.in/personal-banking/credit-cards/altura-plus-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-vetta": {
+    "url": "https://www.au.bank.in/personal-banking/credit-cards",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-zenith": {
+    "url": "https://www.au.bank.in/personal-banking/credit-cards/zenith-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-ixigo": {
+    "url": "https://www.au.bank.in/personal-banking/credit-cards/ixigo-au-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-spont": {
+    "url": "https://www.au.bank.in/pdf/credit-card/Schedule-of-Charges-CC.pdf",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-nomo": {
+    "url": "https://www.au.bank.in/pdf/credit-card/Schedule-of-Charges-CC.pdf",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-xcite": {
+    "url": "https://www.au.bank.in/pdf/credit-card/Schedule-of-Charges-CC.pdf",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-instapay": {
+    "url": "https://www.au.bank.in/personal-banking/credit-cards/instapay-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "federal-celesta": {
+    "url": "https://www.federal.bank.in/visa-celesta-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "federal-imperio": {
+    "url": "https://www.federal.bank.in/visa-imperio-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "federal-signet": {
+    "url": "https://www.federal.bank.in/visa-signet-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-premier": {
+    "url": "https://www.bobcard.co.in/credit-card-types/premier",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-tiara": {
+    "url": "https://www.bobcard.co.in/credit-card-types/tiara",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-cashback": {
+    "url": "https://www.bobcard.co.in/credit-card-types/bobcard-cashback",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-easy": {
+    "url": "https://www.bobcard.co.in/credit-card-types/easy",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-select": {
+    "url": "https://www.bobcard.co.in/credit-card-types/select",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-snapdeal": {
+    "url": "https://www.bobcard.co.in/credit-card-types/snapdeal-bobcard",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-hpcl-energie": {
+    "url": "https://www.bobcard.co.in/credit-card-types/hpcl-energie",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-irctc": {
+    "url": "https://www.bobcard.co.in/credit-card-types/irctc-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-etihad-guest": {
+    "url": "https://www.bobcard.co.in/credit-card-types/bobcard-etihad-guest",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-etihad-guest-premium": {
+    "url": "https://www.bobcard.co.in/credit-card-types/bobcard-etihad-guest-premium",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "bob-scapia": {
+    "url": "https://www.bobcard.co.in/credit-card-types/bobcard-scapia-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-uni-goldx": {
+    "url": "https://www.bobcard.co.in/credit-card-types/bobcard-uni-goldx",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "bob-yoddha": {
+    "url": "https://www.bobcard.co.in/credit-card-types/indian-army-yoddha",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "pnb-rupay-platinum": {
+    "url": "https://pnbcard.in/types5.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "pnb-rupay-select": {
+    "url": "https://pnbcard.in/types6.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "pnb-visa-signature": {
+    "url": "https://pnbcard.in/types9.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "pnb-luxura": {
+    "url": "https://pnbcard.in/types16.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "pnb-patanjali-rupay-select": {
+    "url": "https://pnbcard.in/types11.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "pnb-kiwi": {
+    "url": "https://pnbcard.in/types18.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "canara-rupay-classic": {
+    "url": "https://www.canarabank.bank.in/rupay-classic-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "canara-rupay-platinum": {
+    "url": "https://www.canarabank.bank.in/rupay-platinum-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "canara-rupay-select": {
+    "url": "https://www.canarabank.bank.in/pages/rupay-select-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "canara-mastercard-world": {
+    "url": "https://www.canarabank.bank.in/mastercard-world-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "union-rupay-select": {
+    "url": "https://www.unionbankofindia.bank.in/en/details/rupay-select-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "union-rupay-platinum": {
+    "url": "https://www.unionbankofindia.bank.in/en/details/rupay-platinum-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "union-divaa": {
+    "url": "https://www.unionbankofindia.bank.in/en/details/divaa-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "union-uni-carbon": {
+    "url": "https://www.unionbankofindia.bank.in/en/details/union-uni-carbon-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "union-visa-signature": {
+    "url": "https://www.unionbankofindia.bank.in/en/details/visa-signature-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "boi-rupay-platinum": {
+    "url": "https://bankofindia.bank.in/credit-card/rupay-platinum-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "boi-rupay-select": {
+    "url": "https://bankofindia.bank.in/credit-card/rupay-select",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "indianbank-visa-platinum": {
+    "url": "https://indianbank.bank.in/departments/credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indianbank-rupay-select": {
+    "url": "https://indianbank.bank.in/departments/credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "indianbank-rupay-platinum": {
+    "url": "https://indianbank.bank.in/departments/credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "jkbank-eminent": {
+    "url": "https://jkb.bank.in/transactions/services/credit-cards",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "jkbank-platinum": {
+    "url": "https://jkb.bank.in/transactions/services/credit-cards",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "dbs-vantage": {
+    "url": "https://www.dbs.bank.in/in/credit-cards/vantage.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "dbs-spark": {
+    "url": "https://www.dbs.bank.in/in/credit-cards/spark.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "dbs-superx": {
+    "url": "https://www.dbs.bank.in/in/credit-cards/default.html",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "closed-to-new"
+  },
+  "csb-jupiter-edge-plus": {
+    "url": "https://jupiter.money/edge-plus-upi-rupay-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "csb-jupiter-edge": {
+    "url": "https://csb.bank.in/pdf/edge-csb-bank-ruPay-credit-card-mitc_2025.pdf",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "slice-upi-credit-card": {
+    "url": "https://slice.bank.in/credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "high",
+    "status": "open"
+  },
+  "utkarsh-supermoney-supercard": {
+    "url": "https://super.money/card-partners",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "unity-bharatpe": {
+    "url": "https://bharatpe.com/co-branded-credit-card/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-kiwi": {
+    "url": "https://gokiwi.in/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "au-kiwi": {
+    "url": "https://gokiwi.in/cards/aubank/",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  },
+  "yes-uni-goldx": {
+    "url": "https://www.yes.bank.in/personal-banking/yes-individual/cards/credit-cards/uni-rupay-credit-card",
+    "verifiedAt": "2026-09-19",
+    "confidence": "medium",
+    "status": "open"
+  }
+}

@@ -25,6 +25,7 @@ toli/
     infra-client/    Firebase client SDK adapters (web)          - implements ports
     infra-admin/     Firebase Admin SDK adapters (functions)     - implements ports
     catalog/         cards.json + validator + types              - shared seed
+                     sources.json: issuer page + verified date per card; never imported by the app
     ui/              design tokens and primitives from the mockups
   apps/
     web/             Next.js 15 PWA (presentation + composition root)
@@ -118,6 +119,8 @@ ratelimits/{uid}                   { joinAttempts: [ts] }
 catalog/{cardId}                   mirror of cards.json, for server-side validation only
 ```
 
+`catalog/**` is written by one thing: `pnpm catalog:sync` (`SyncCatalogMirror` over `AdminCatalogMirror`), run after a catalogue change merges. It is a dry run unless `--write` is passed, talks only to the emulator unless `--project` is passed, writes only the documents that differ, and never deletes: user cards reference catalogue ids, so an id that leaves `cards.json` is reported as orphaned and left in place.
+
 **Write side to read side**
 
 ```mermaid
@@ -189,7 +192,7 @@ Everything behind auth is a client-rendered shell over a local cache; the one se
 **Instant screens**
 
 - Firestore `persistentLocalCache` with multi-tab support: second launch renders from IndexedDB before the network answers.
-- The catalogue is not a Firestore read. `packages/catalog/cards.json` (~40 cards, ~10 KB) ships in the bundle; Add cards search and bank filters run in memory and work offline.
+- The catalogue is not a Firestore read. `packages/catalog/cards.json` (~320 cards, ~18 KB gzipped) ships in the bundle; Add cards search and bank filters run in memory and work offline.
 - Firebase modular imports only; Auth and reCAPTCHA load lazily on the OTP route; the Functions client loads lazily.
 - `packages/ui` holds the tokens (role-named palette: paper, ink, accent; type scale, card gradient, three elevation levels) and the primitives from the canvas: `CardTile`, `Chip`, `Toggle`, `AvatarRow`, `TabBar`. Screens compose these; nothing styles itself ad hoc.
 - `joinByInvite` and `createAudience` sit on the user's critical path, so they run with `minInstances: 1` in prod; projection and delete can cold-start.

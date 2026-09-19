@@ -51,6 +51,8 @@ Done when usable as a single-player app.
 - [x] In-memory catalogue search and bank chips; zod moved to `@toli/catalog/schema` so the validator never ships to the browser (routes 100–125 KB gz)
 - [x] Playwright: sign up, add two cards via bank chip and search, remove one, reload; suite passes 3× with retries off (test phones are random so parallel workers never share an OTP)
 - [x] GA4 `card_added`
+- [x] Catalogue backfill: v2, 45 to 316 cards across 27 issuers, each new card researched against the issuer's own site and recorded in `packages/catalog/sources.json` (url, verified date, confidence, open or closed-to-new). No existing id changed
+- [x] `catalog/{cardId}` mirror: `SyncCatalogMirror` + `AdminCatalogMirror`, `pnpm catalog:sync` (dry run by default, emulator unless `--project`, never deletes); 6 in-memory tests, 3 emulator tests
 - [ ] Visibility toggles on My cards arrive with audiences in milestone 4 (the use case is already in)
 
 ## Milestone 4 — Audiences (`m4-audiences`)
@@ -95,4 +97,5 @@ Done when the friend group is on it.
 - `toli-app-dev` fully provisioned. `toli-prod` waits for milestone 6
 - reCAPTCHA Enterprise site key for App Check
 - Production font choice for the serif display and sans body
-- Card catalogue review before M3 ships
+- Card catalogue review before M3 ships: spot-check the 49 `confidence: medium` rows in `sources.json` (YES Bank and AU block automated reads), and decide on the existing cards whose products have moved on: `kotak-myntra` (co-brand ended July 2025), `hdfc-swiggy` (closed to new; Swiggy Ornge and BLCK added), `hdfc-diners-black` / `hdfc-infinia` (now sold as Metal Edition). Ids stay either way
+- `pnpm catalog:sync --project toli-app-dev --write` after the catalogue PR merges (needs `gcloud auth application-default login`)

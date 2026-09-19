@@ -2,6 +2,7 @@ import type {
   Audience,
   ContactRecord,
   CardId,
+  CatalogCard,
   GroupId,
   Invite,
   InviteCode,
@@ -13,6 +14,7 @@ import type {
 } from '@toli/domain';
 import type {
   AudienceRepository,
+  CatalogMirror,
   Clock,
   ContactRepository,
   GroupCardReadModel,
@@ -201,5 +203,20 @@ export class InMemoryContactRepository implements ContactRepository {
   }
   async remove(userId: UserId): Promise<void> {
     this.contacts.delete(userId);
+  }
+}
+
+export class InMemoryCatalogMirror implements CatalogMirror {
+  readonly docs = new Map<CardId, CatalogCard>();
+  /** Documents written so far; tests reset it to prove a run wrote nothing. */
+  writes = 0;
+  async list(): Promise<CatalogCard[]> {
+    return [...this.docs.values()];
+  }
+  async upsert(cards: readonly CatalogCard[]): Promise<void> {
+    for (const c of cards) {
+      this.docs.set(c.id, c);
+      this.writes += 1;
+    }
   }
 }

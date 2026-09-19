@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "node build.mjs",
+    "catalog:sync": "node sync-catalog.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint src"
   },

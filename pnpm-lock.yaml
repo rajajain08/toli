@@ -20,6 +20,9 @@ importers:
       '@toli/domain':
         specifier: workspace:*
         version: link:packages/domain
+      '@toli/infra-admin':
+        specifier: workspace:*
+        version: link:packages/infra-admin
       '@toli/infra-client':
         specifier: workspace:*
         version: link:packages/infra-client

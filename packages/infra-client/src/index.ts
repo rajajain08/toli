@@ -6,3 +6,4 @@ export * from './user-card-repository';
 export * from './user-repository';
 export * from './system';
 export * from './queries';
+export * from './audience-reader';

@@ -10,9 +10,12 @@ import {
   Panel,
   PerkChip,
   SectionLabel,
+  Toggle,
+  ToggleRow,
 } from '@toli/ui';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useMyGroups, useSetVisibility } from '@/lib/useGroups';
 import { useMyCards, useRemoveCard } from '@/lib/useMyCards';
 
 const CARD_W = 290;
@@ -21,6 +24,9 @@ const GAP = 12;
 export function MyCards() {
   const { data: cards } = useMyCards();
   const remove = useRemoveCard();
+  const { data: memberships } = useMyGroups();
+  const setVisibility = useSetVisibility();
+  const groups = (memberships ?? []).filter((g) => g.type === 'group');
   const [selected, setSelected] = useState(0);
   const [confirming, setConfirming] = useState(false);
 
@@ -152,9 +158,34 @@ export function MyCards() {
 
               <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <SectionLabel>Who can see this card</SectionLabel>
-                <Panel>
-                  Only you, for now. Join or create a group and you can switch this card on for it.
-                </Panel>
+                {groups.length === 0 ? (
+                  <Panel>
+                    Only you, for now. Join or create a group and you can switch this card on for
+                    it.
+                  </Panel>
+                ) : (
+                  <Panel>
+                    {groups.map((g, i) => {
+                      const on = current.isVisibleTo(g.audienceId);
+                      const name = g.name ?? 'Group';
+                      return (
+                        <ToggleRow key={g.audienceId} label={name} last={i === groups.length - 1}>
+                          <Toggle
+                            on={on}
+                            label={`${on ? 'Visible to' : 'Hidden from'} ${name}`}
+                            onChange={(visible) =>
+                              setVisibility.mutate({
+                                cardId: current.id,
+                                audienceId: g.audienceId,
+                                visible,
+                              })
+                            }
+                          />
+                        </ToggleRow>
+                      );
+                    })}
+                  </Panel>
+                )}
               </section>
 
               <div>

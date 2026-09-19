@@ -2,6 +2,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // The Admin SDK is used by one server route (/join/[code]) and must never be bundled.
+  serverExternalPackages: ['firebase-admin'],
   allowedDevOrigins: ['127.0.0.1'],
   transpilePackages: [
     '@toli/domain',
@@ -9,6 +11,7 @@ const nextConfig: NextConfig = {
     '@toli/catalog',
     '@toli/ui',
     '@toli/infra-client',
+    '@toli/infra-admin',
   ],
   experimental: {
     optimizePackageImports: ['firebase/firestore', 'firebase/auth', 'firebase/functions'],

@@ -23,6 +23,9 @@ export default defineConfig({
       NEXT_PUBLIC_FIREBASE_APP_ID: '1:demo:web:demo',
       NEXT_PUBLIC_USE_EMULATORS: '1',
       NEXT_PUBLIC_EMULATOR_HOST: '127.0.0.1',
+      // The /join/[code] server route reads the invite preview through the Admin SDK.
+      FIRESTORE_EMULATOR_HOST: '127.0.0.1:8080',
+      GCLOUD_PROJECT: 'demo-toli',
     },
   },
 });

@@ -58,3 +58,26 @@ export async function completeSignUp(
   await page.getByRole('button', { name: 'Continue' }).click();
   return phone;
 }
+
+/**
+ * A real touch swipe through Chrome's input pipeline (not a scripted scroll), so it fails if the element
+ * cannot be dragged by a finger. Negative distance swipes left, towards the next item.
+ */
+export async function swipe(
+  page: Page,
+  locator: ReturnType<Page['locator']>,
+  xDistance: number,
+): Promise<void> {
+  const box = await locator.boundingBox();
+  if (!box) throw new Error('nothing to swipe');
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('Input.synthesizeScrollGesture', {
+    x: box.x + box.width / 2,
+    y: box.y + box.height / 2,
+    xDistance,
+    yDistance: 0,
+    gestureSourceType: 'touch',
+    speed: 1200,
+  });
+  await cdp.detach();
+}

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { signUp } from './helpers';
+import { signUp, swipe } from './helpers';
 
 test('single-player: add two cards, see them in My cards, remove one, survive a reload', async ({
   page,
@@ -41,6 +41,25 @@ test('single-player: add two cards, see them in My cards, remove one, survive a 
   await expect(page.getByText('Private — only you').first()).toBeVisible();
 
   // Newest first: Millennia is selected, its perks show.
+  await expect(page.getByText('5% cashback on Amazon, Flipkart, Swiggy')).toBeVisible();
+
+  // Swiping the card itself moves the wallet: the next card becomes the selected one, its perks show,
+  // the dots follow. Then back again.
+  await swipe(page, wallet, -300);
+  await expect(wallet.getByRole('button', { name: 'Select Atlas' })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
+  await expect(page.getByText('EDGE Miles on travel spends')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Show Atlas' })).toHaveAttribute(
+    'aria-current',
+    'true',
+  );
+  await swipe(page, wallet, 300);
+  await expect(wallet.getByRole('button', { name: 'Select Millennia' })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
   await expect(page.getByText('5% cashback on Amazon, Flipkart, Swiggy')).toBeVisible();
 
   await page.getByRole('button', { name: 'Remove this card' }).click();

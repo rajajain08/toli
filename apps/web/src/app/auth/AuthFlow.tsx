@@ -23,9 +23,17 @@ const messageOf = (err: unknown): string => {
     if (code.includes('too-many-requests'))
       return 'Too many attempts. Wait a few minutes and try again.';
     if (code.includes('invalid-phone-number')) return 'Enter a valid phone number.';
+    if (code.includes('code-expired')) return 'That code expired. Ask for a new one.';
+    if (code.includes('network-request-failed'))
+      return 'No connection. Check your network and try again.';
+    // Phone provider off, or the number's country is not in the project's SMS region policy.
+    if (code.includes('operation-not-allowed'))
+      return 'We cannot text this number yet. Try again later.';
     if (code.includes('invalid-argument') && 'message' in err)
       return String((err as { message: unknown }).message);
   }
+  // The generic line hides the cause from the person, so keep it for whoever opens the console.
+  console.error('auth failed', err);
   return 'Something went wrong. Try again.';
 };
 
@@ -81,8 +89,12 @@ export function AuthFlow() {
       ]);
       if (usingEmulators()) auth.settings.appVerificationDisabledForTesting = true;
       const verifier = new RecaptchaVerifier(auth, RECAPTCHA_ID, { size: 'invisible' });
-      confirmation.current = await signInWithPhoneNumber(auth, parsed, verifier);
-      verifier.clear();
+      try {
+        confirmation.current = await signInWithPhoneNumber(auth, parsed, verifier);
+      } finally {
+        // Clear on failure too, or the retry cannot render into the same element.
+        verifier.clear();
+      }
       setPhone(parsed);
       setStep('code');
     } catch (err) {

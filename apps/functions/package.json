@@ -11,7 +11,8 @@
     "build": "node build.mjs",
     "catalog:sync": "node sync-catalog.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "marketing:export": "node export-marketing.mjs"
   },
   "dependencies": {
     "firebase-admin": "^14.4.0",

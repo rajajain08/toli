@@ -112,6 +112,8 @@ export interface ContactRepository {
   get(userId: UserId): Promise<ContactRecord | undefined>;
   upsert(record: ContactRecord): Promise<void>;
   remove(userId: UserId): Promise<void>;
+  /** Everyone who has said yes to marketing messages. The only listing of contacts there is; there is no listAll. */
+  listOptedIn(): Promise<ContactRecord[]>;
 }
 
 /** Catalogue lookup for the projection. Backed by packages/catalog on both sides; no network. */

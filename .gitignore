@@ -49,3 +49,6 @@ apps/web/.env.local
 
 # lighthouse ci reports
 .lighthouseci/
+
+# marketing exports hold phone numbers; never commit one
+*.marketing.csv

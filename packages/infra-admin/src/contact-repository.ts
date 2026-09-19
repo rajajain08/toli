@@ -36,6 +36,24 @@ export class AdminContactRepository implements ContactRepository {
     );
   }
 
+  async listOptedIn(): Promise<ContactRecord[]> {
+    const snap = await this.db.collection('contacts').where('marketingOptIn', '==', true).get();
+    return snap.docs.flatMap((d) => {
+      const x = d.data();
+      return typeof x['phone'] === 'string'
+        ? [
+            {
+              userId: UserId(d.id),
+              phone: x['phone'] as PhoneNumber,
+              marketingOptIn: true,
+              marketingOptInAt: toDate(x['marketingOptInAt']),
+              updatedAt: toDate(x['updatedAt']) ?? new Date(0),
+            },
+          ]
+        : [];
+    });
+  }
+
   async remove(userId: UserId): Promise<void> {
     await this.db.doc(adminPaths.contact(userId)).delete();
   }

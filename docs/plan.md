@@ -90,7 +90,7 @@ Done when the friend group is on it.
 - [x] Settings screen: name, last two digits of the phone, one switch for marketing messages (`getMyAccount`, `setMarketingOptIn`), privacy link, sign out. Switches show when a change is saved, not just flipped
 - [x] The auth gate opens from a local profile snapshot and refreshes from Firestore in the background, so a reload no longer waits on the IndexedDB lease
 - [x] E2E runs against a production build, not `next dev`
-- [ ] Marketing export job: `contacts where marketingOptIn == true` joined to name and cards, Admin SDK or BigQuery only
+- [x] Marketing export: `pnpm marketing:export --project <id> --out <file>.marketing.csv`. Only people who opted in, joined to name and card names; leaves out contacts with no profile or an older consent text and says how many. Read-only, `--out` required, file readable by the owner only, refuses a path inside a repository unless git-ignored, prints counts and never rows; names are defused against spreadsheet formulas
 - [x] Privacy page links to delete, says the phone goes too, and shows the grievance contact from `NEXT_PUBLIC_GRIEVANCE_EMAIL`
 - [ ] Raja: choose the grievance officer email and set it for dev and prod
 - [x] PWA: hand-written service worker (build assets cache-first, navigations network-first with a cached copy, then `/offline.html`), install prompt on Groups (Android event, iOS hint, "Not now" for a month); icons were already in place. E2E opens the app with the network off

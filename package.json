@@ -20,7 +20,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:lighthouse": "lhci autorun --config apps/web/lighthouserc.json",
-    "test:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm test:rules && pnpm test:functions && pnpm test:e2e"
+    "test:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm test:rules && pnpm test:functions && pnpm test:e2e",
+    "marketing:export": "pnpm --filter @toli/functions marketing:export"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^5.0.2",

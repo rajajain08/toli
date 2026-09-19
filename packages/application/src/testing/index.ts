@@ -233,6 +233,9 @@ export class InMemoryContactRepository implements ContactRepository {
   async remove(userId: UserId): Promise<void> {
     this.contacts.delete(userId);
   }
+  async listOptedIn(): Promise<ContactRecord[]> {
+    return [...this.contacts.values()].filter((c) => c.marketingOptIn);
+  }
 }
 
 export class InMemoryCatalogMirror implements CatalogMirror {

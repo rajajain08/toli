@@ -71,4 +71,10 @@ test('the privacy page points at delete account', async ({ page }) => {
     'href',
     '/settings/delete',
   );
+  // The DPDP grievance contact comes from configuration and is a working mail link.
+  await expect(page.getByText('Write to our grievance officer at')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'grievance@example.test' })).toHaveAttribute(
+    'href',
+    'mailto:grievance@example.test',
+  );
 });

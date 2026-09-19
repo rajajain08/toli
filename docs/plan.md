@@ -92,7 +92,7 @@ Done when the friend group is on it.
 - [x] E2E runs against a production build, not `next dev`
 - [x] Marketing export: `pnpm marketing:export --project <id> --out <file>.marketing.csv`. Only people who opted in, joined to name and card names; leaves out contacts with no profile or an older consent text and says how many. Read-only, `--out` required, file readable by the owner only, refuses a path inside a repository unless git-ignored, prints counts and never rows; names are defused against spreadsheet formulas
 - [x] Privacy page links to delete, says the phone goes too, and shows the grievance contact from `NEXT_PUBLIC_GRIEVANCE_EMAIL`
-- [ ] Raja: choose the grievance officer email and set it for dev and prod
+- [x] Grievance officer contact set for dev and prod (`rajajain08@gmail.com`); the e2e checks the Privacy page renders it as a mail link
 - [x] PWA: hand-written service worker (build assets cache-first, navigations network-first with a cached copy, then `/offline.html`), install prompt on Groups (Android event, iOS hint, "Not now" for a month); icons were already in place. E2E opens the app with the network off
 - [x] Firebase Performance Monitoring, loaded lazily and never on the emulators; every use case already writes one structured log line and errors reach Error Reporting through the functions logger
 - [x] Lighthouse CI on `/auth` and `/privacy`, applied slow-4G and 4x CPU throttling, median of three: LCP <= 2.5 s, CLS <= 0.01. It found `/auth` at 2.5 s because `useSearchParams` made the whole form wait for JavaScript; the form is now in the server HTML (1.97 s) and the auth provider loads Firebase after first paint
@@ -100,7 +100,7 @@ Done when the friend group is on it.
 - [x] `deploy-prod.yml`: a `vX.Y.Z` tag deploys rules, indexes, functions and App Hosting together, only if the tag is on `main` and CI passed for that commit, then syncs the catalogue mirror
 - [x] Blaze billing linked to `toli-app-prod` (2026-09-19)
 - [x] Prod provisioned: Auth with the phone provider and India-only SMS, a fresh `PHONE_HASH_SECRET`, all ten functions in `asia-south1` with no warm instances (ADR-0014), App Hosting backend `toli-web` in `asia-southeast1` with environment `prod`, catalogue mirror synced (316 cards). First deploys on a new project need one retry: service agents and Eventarc permissions take a few minutes to exist
-- [ ] Raja: App Check → APIs → Cloud Firestore → Enforce, on `toli-app-prod` (the API call is blocked for me, as it was on dev)
+- [x] App Check enforced on Firestore for `toli-app-prod` (2026-09-19)
 - [ ] Raja: repository variable `DEPLOY_PROD=true`, secret `FIREBASE_SERVICE_ACCOUNT_PROD`, required reviewers on the `prod` environment
 
 ## Open items needing Raja

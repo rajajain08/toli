@@ -23,7 +23,10 @@ export function JoinPanel({ code, groupName }: { code: string; groupName: string
     setError(undefined);
     try {
       const res = await callJoinByInvite({ code });
-      router.replace(`/groups/${res.audienceId}`);
+      // Fresh members are asked which cards this group may see; returning members go straight in.
+      router.replace(
+        res.alreadyMember ? `/groups/${res.audienceId}` : `/groups/${res.audienceId}/share`,
+      );
     } catch (err) {
       setError(callableMessage(err));
       setBusy(false);

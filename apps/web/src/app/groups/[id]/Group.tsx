@@ -169,7 +169,7 @@ export function Group({ id }: { id: string }) {
         <Panel>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ flexGrow: 1 }}>You’re not sharing any cards here yet.</div>
-            <Link href="/cards" style={{ textDecoration: 'none' }}>
+            <Link href={`/groups/${id}/share`} style={{ textDecoration: 'none' }}>
               <Button size="small" tabIndex={-1}>
                 Choose cards
               </Button>

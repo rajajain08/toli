@@ -58,3 +58,35 @@ export async function completeSignUp(
   await page.getByRole('button', { name: 'Continue' }).click();
   return phone;
 }
+
+/**
+ * A real finger drag through Chrome's input pipeline: touch start, stepped moves, touch end. Not a scripted
+ * scroll, so it fails if the element cannot be dragged. Stepped rather than one synthetic fling, because
+ * fling physics differ between platforms and CI must see the same gesture a laptop does.
+ * Negative distance drags left, towards the next item.
+ */
+export async function swipe(
+  page: Page,
+  locator: ReturnType<Page['locator']>,
+  xDistance: number,
+): Promise<void> {
+  const box = await locator.boundingBox();
+  if (!box) throw new Error('nothing to swipe');
+  const y = box.y + box.height / 2;
+  const startX = xDistance < 0 ? box.x + box.width - 40 : box.x + 40;
+  const cdp = await page.context().newCDPSession(page);
+  const steps = 12;
+  await cdp.send('Input.dispatchTouchEvent', {
+    type: 'touchStart',
+    touchPoints: [{ x: startX, y }],
+  });
+  for (let i = 1; i <= steps; i++) {
+    await cdp.send('Input.dispatchTouchEvent', {
+      type: 'touchMove',
+      touchPoints: [{ x: startX + (xDistance * i) / steps, y }],
+    });
+    await page.waitForTimeout(16);
+  }
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await cdp.detach();
+}

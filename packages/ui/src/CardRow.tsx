@@ -11,6 +11,8 @@ export interface CardRowProps {
   /** Add/remove round button on the right. Omit for a read-only row (group screen). */
   selected?: boolean | undefined;
   onToggle?: (() => void) | undefined;
+  /** Accessible names for the round button. Default: "Remove {name}" when on, "Add {name}" when off. */
+  toggleLabels?: { on: string; off: string } | undefined;
   trailing?: ReactNode;
 }
 
@@ -24,6 +26,7 @@ export function CardRow({
   selected = false,
   onToggle,
   trailing,
+  toggleLabels,
 }: CardRowProps) {
   return (
     <div
@@ -91,7 +94,9 @@ export function CardRow({
         <button
           type="button"
           aria-pressed={selected}
-          aria-label={selected ? `Remove ${name}` : `Add ${name}`}
+          aria-label={
+            selected ? (toggleLabels?.on ?? `Remove ${name}`) : (toggleLabels?.off ?? `Add ${name}`)
+          }
           onClick={onToggle}
           style={{
             width: 44,

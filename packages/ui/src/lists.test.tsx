@@ -26,6 +26,22 @@ describe('CardRow', () => {
       'true',
     );
   });
+  it('can name its button for another meaning, such as sharing', () => {
+    render(
+      <CardRow
+        name="Atlas"
+        issuer="Axis"
+        tint="#262624"
+        selected
+        onToggle={() => {}}
+        toggleLabels={{ on: 'Stop sharing Atlas', off: 'Share Atlas' }}
+      />,
+    );
+    expect(screen.getByRole('button', { name: 'Stop sharing Atlas' })).toHaveAttribute(
+      'aria-pressed',
+      'true',
+    );
+  });
   it('is read-only without onToggle and shows tags', () => {
     render(<CardRow name="Atlas" issuer="Axis" tint="#262624" tags={['Travel', 'Lounge']} />);
     expect(screen.queryByRole('button')).toBeNull();

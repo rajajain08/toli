@@ -29,12 +29,23 @@ test('a friend opens an invite, signs up, adds two cards and both people see the
   const code = new URL(rahul.url()).searchParams.get('invite')!;
   const groupUrl = rahul.url().split('?')[0]!;
 
+  // The nudge leads to the share step. "Not now" shares nothing.
   await rahul.getByRole('link', { name: 'Choose cards' }).click();
-  await rahul.getByRole('switch', { name: 'Hidden from Weekend Crew' }).click();
-  await expect(rahul.getByRole('switch', { name: 'Visible to Weekend Crew' })).toBeVisible();
-  await expect(rahul.getByText('Visible to 1 group')).toBeVisible();
+  await expect(
+    rahul.getByRole('heading', { name: 'Share your cards with Weekend Crew?' }),
+  ).toBeVisible();
+  await rahul.getByRole('button', { name: 'Not now' }).click();
+  await expect(rahul).toHaveURL(new RegExp(`${new URL(groupUrl).pathname}$`));
+  await expect(rahul.getByText('You’re not sharing any cards here yet.')).toBeVisible();
 
-  await rahul.goto(groupUrl);
+  // Second time he shares: everything is ticked to begin with.
+  await rahul.getByRole('link', { name: 'Choose cards' }).click();
+  await expect(rahul.getByRole('button', { name: /share Atlas/ })).toHaveAttribute(
+    'aria-pressed',
+    'true',
+  );
+  await rahul.getByRole('button', { name: 'Share 1 card' }).click();
+  await expect(rahul).toHaveURL(new RegExp(`${new URL(groupUrl).pathname}$`));
   const rahulsOwn = rahul.getByRole('region', { name: 'You' });
   await expect(rahulsOwn.getByText('Atlas')).toBeVisible();
   await expect(rahul.getByText('1 member · 1 card')).toBeVisible();
@@ -71,21 +82,30 @@ test('a friend opens an invite, signs up, adds two cards and both people see the
 
   await expect(priya).toHaveURL(new RegExp(`/join/${code}$`));
   await priya.getByRole('button', { name: 'Join Weekend Crew' }).click();
+
+  // Joining through an invite asks straight away which cards this group may see.
+  await expect(priya).toHaveURL(new RegExp(`${new URL(groupUrl).pathname}/share$`));
+  await expect(
+    priya.getByRole('heading', { name: 'Share your cards with Weekend Crew?' }),
+  ).toBeVisible();
+  await expect(priya.getByRole('button', { name: 'Share 2 cards' })).toBeVisible();
+  // She holds one back.
+  await priya.getByRole('button', { name: /share Cashback SBI/ }).click();
+  await priya.getByRole('button', { name: 'Share 1 card' }).click();
   await expect(priya).toHaveURL(new RegExp(`${new URL(groupUrl).pathname}$`));
 
-  // She sees Rahul's card at once, and a nudge that she shares nothing yet.
-  await expect(priya.getByRole('region', { name: 'Rahul' }).getByText('Atlas')).toBeVisible();
-  await expect(priya.getByText('You’re not sharing any cards here yet.')).toBeVisible();
-
-  await priya.getByRole('link', { name: 'Choose cards' }).click();
-  await priya.getByRole('switch', { name: 'Hidden from Weekend Crew' }).click();
-  await expect(priya.getByRole('switch', { name: 'Visible to Weekend Crew' })).toBeVisible();
-  await priya.getByRole('button', { name: 'Show Millennia' }).click();
-  await priya.getByRole('switch', { name: 'Hidden from Weekend Crew' }).click();
-  await expect(priya.getByRole('switch', { name: 'Visible to Weekend Crew' })).toBeVisible();
-
-  await priya.goto(groupUrl);
   const priyasOwn = priya.getByRole('region', { name: 'You' });
+  await expect(priya.getByRole('region', { name: 'Rahul' }).getByText('Atlas')).toBeVisible();
+  await expect(priyasOwn.getByText('Millennia')).toBeVisible();
+  await expect(priyasOwn.getByText('Cashback SBI')).toHaveCount(0);
+  await expect(priya.getByText('2 members · 2 cards')).toBeVisible();
+
+  // Later she switches the other one on from My cards; it is the newest, so it is the selected card.
+  await priya.goto('/cards');
+  await expect(priya.getByText('5% cashback on online spends')).toBeVisible();
+  await priya.getByRole('switch', { name: 'Hidden from Weekend Crew' }).click();
+  await expect(priya.getByRole('switch', { name: 'Visible to Weekend Crew' })).toBeVisible();
+  await priya.goto(groupUrl);
   await expect(priyasOwn.getByText('Millennia')).toBeVisible();
   await expect(priyasOwn.getByText('Cashback SBI')).toBeVisible();
   await expect(priya.getByText('2 members · 3 cards')).toBeVisible();

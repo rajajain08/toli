@@ -14,7 +14,7 @@ import {
   ToggleRow,
 } from '@toli/ui';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useMyGroups, useSetVisibility } from '@/lib/useGroups';
 import { useMyCards, useRemoveCard } from '@/lib/useMyCards';
 
@@ -28,6 +28,21 @@ export function MyCards() {
   const setVisibility = useSetVisibility();
   const groups = (memberships ?? []).filter((g) => g.type === 'group');
   const [selected, setSelected] = useState(0);
+  // A native scroll-snap track: a finger swipe scrolls it, the browser snaps it, and the selected card
+  // is whichever one the scroll position has settled on. Taps and dots just scroll the track.
+  const track = useRef<HTMLDivElement>(null);
+  const frame = useRef(0);
+  const onScroll = useCallback(() => {
+    cancelAnimationFrame(frame.current);
+    frame.current = requestAnimationFrame(() => {
+      const el = track.current;
+      if (!el) return;
+      setSelected(Math.max(0, Math.round(el.scrollLeft / (CARD_W + GAP))));
+    });
+  }, []);
+  const goTo = useCallback((i: number) => {
+    track.current?.scrollTo({ left: i * (CARD_W + GAP), behavior: 'smooth' });
+  }, []);
   const [confirming, setConfirming] = useState(false);
 
   const count = cards?.length ?? 0;
@@ -103,42 +118,54 @@ export function MyCards() {
       ) : (
         <>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <div style={{ overflow: 'hidden', padding: '8px 24px 18px' }}>
+            <div>
               <div
+                ref={track}
+                onScroll={onScroll}
                 role="group"
                 aria-label="Your cards"
+                className="toli-no-scrollbar"
                 style={{
                   display: 'flex',
                   gap: GAP,
-                  transform: `translateX(-${selected * (CARD_W + GAP)}px)`,
-                  transition: 'transform 250ms ease',
+                  overflowX: 'auto',
+                  overscrollBehaviorX: 'contain',
+                  scrollSnapType: 'x mandatory',
+                  scrollPaddingLeft: 24,
+                  // No right padding: the trailing spacer below does that job exactly.
+                  padding: '8px 0 18px 24px',
                 }}
               >
                 {cards.map((c, i) => {
                   const cat = getCatalogCard(c.cardId);
                   return (
-                    <CardTile
-                      key={c.id}
-                      variant="wallet"
-                      name={cat?.name ?? c.cardId}
-                      issuer={cat?.issuer ?? ''}
-                      tint={cat?.color ?? '#3D3D3A'}
-                      selected={i === selected}
-                      onClick={() => setSelected(i)}
-                      footer={
-                        c.visibleTo.size === 0
-                          ? 'Private — only you'
-                          : `Visible to ${c.visibleTo.size} group${c.visibleTo.size === 1 ? '' : 's'}`
-                      }
-                    />
+                    <div key={c.id} style={{ scrollSnapAlign: 'start', flexShrink: 0 }}>
+                      <CardTile
+                        variant="wallet"
+                        name={cat?.name ?? c.cardId}
+                        issuer={cat?.issuer ?? ''}
+                        tint={cat?.color ?? '#3D3D3A'}
+                        selected={i === selected}
+                        onClick={() => goTo(i)}
+                        footer={
+                          c.visibleTo.size === 0
+                            ? 'Private — only you'
+                            : `Visible to ${c.visibleTo.size} group${c.visibleTo.size === 1 ? '' : 's'}`
+                        }
+                      />
+                    </div>
                   );
                 })}
+                {/* Lets the last card reach the same snap line as the first: the content box is the track minus
+                    its 24 px left padding, and the last card needs a full track width from its own left edge,
+                    so the spacer is the content box minus one card and one gap. */}
+                <div aria-hidden style={{ flex: `0 0 calc(100% - ${CARD_W + GAP}px)` }} />
               </div>
             </div>
             <PageDots
               count={count}
               active={selected}
-              onSelect={setSelected}
+              onSelect={goTo}
               labelFor={(i) => `Show ${getCatalogCard(cards[i]!.cardId)?.name ?? 'card'}`}
             />
           </div>

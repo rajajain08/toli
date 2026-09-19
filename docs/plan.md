@@ -67,6 +67,8 @@ Done when the friend group is on it.
 - [x] Functions emulator tests (15): projection add, withdraw and delete with counters, stranger-group injection refused, join idempotency, expiry, rate limit, invite minting by members only. The cap is covered by the in-memory tier
 - [x] Playwright golden path in two browsers: open invite, OTP, add two cards, join, share, both people see them, Rahul’s open screen updates live, a withdrawn card disappears; suite passes 3× with retries off
 - [x] GA4 `invite_opened`, `group_joined`, `visibility_changed`
+- [x] After joining through an invite, and from the group's "Choose cards" nudge, a share step asks which cards the group may see: all ticked to begin with, nothing shared until the button, "Not now" shares nothing
+- [x] The My cards wallet is a native scroll-snap track, so it swipes; e2e drives a real touch swipe
 - [ ] Not in this milestone: leave group, rename group, remove a member, the "Just look for now" signed-out peek from the mockup, Nudge
 
 ## Milestone 5 — Direct shares and Find (`m5-share-find`)

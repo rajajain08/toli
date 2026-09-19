@@ -16,9 +16,11 @@
     "@toli/application": "workspace:*",
     "@toli/catalog": "workspace:*",
     "@toli/domain": "workspace:*",
+    "@toli/infra-admin": "workspace:*",
     "@toli/infra-client": "workspace:*",
     "@toli/ui": "workspace:*",
     "firebase": "^12.19.0",
+    "firebase-admin": "^14.4.0",
     "next": "15.5.25",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"

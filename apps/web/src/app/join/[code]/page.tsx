@@ -1,9 +1,20 @@
-import { Wordmark } from '@toli/ui';
+import { Heading, Lede, Notice, Panel, Wordmark } from '@toli/ui';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { JoinPanel } from './JoinPanel';
+import { invitePreview } from './preview';
+
+export const dynamic = 'force-dynamic';
+
+const friends = (n: number) => `${n} friend${n === 1 ? ' has' : 's have'}`;
+const cardsLine = (members: number, cards: number) =>
+  cards === 0
+    ? `${friends(members)} joined. Add your cards and you’ll all know whose card to use next time.`
+    : `${friends(members)} added ${cards} card${cards === 1 ? '' : 's'}. Add yours and you’ll all know whose card to use next time.`;
 
 /**
- * The one server-rendered route. In milestone 4 it reads a public preview through infra-admin and
- * renders Open Graph tags so the link unfurls in WhatsApp. For now it renders a static preview.
+ * The one server-rendered route: WhatsApp link previews depend on these Open Graph tags. It shows the
+ * group's name, who started it and two counts. Never member names, never cards.
  */
 export async function generateMetadata({
   params,
@@ -11,36 +22,67 @@ export async function generateMetadata({
   params: Promise<{ code: string }>;
 }): Promise<Metadata> {
   const { code } = await params;
+  const preview = await invitePreview(code);
+  const title = preview
+    ? `${preview.inviterName} invited you to ${preview.groupName} on Toli`
+    : 'This Toli invite has expired';
+  const description = preview
+    ? cardsLine(preview.memberCount, preview.cardCount)
+    : 'Ask your friend for a fresh link. Invites last seven days.';
   return {
-    title: 'You’re invited to a group on Toli',
-    description: 'See which cards your friends hold. Names and perks only, never numbers.',
-    openGraph: {
-      title: 'Join a group on Toli',
-      description: `Invite ${code}`,
-      type: 'website',
-      images: ['/og.png'],
-    },
+    title,
+    description,
+    robots: { index: false, follow: false },
+    openGraph: { title, description, type: 'website', siteName: 'Toli', images: ['/og.png'] },
   };
 }
 
 export default async function JoinPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
+  const preview = await invitePreview(code);
   return (
-    <main style={{ padding: '52px 24px', maxWidth: 480, margin: '0 auto' }}>
+    <main
+      style={{
+        minHeight: '100dvh',
+        maxWidth: 480,
+        margin: '0 auto',
+        padding: '52px 24px 32px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 24,
+        backgroundImage: 'var(--toli-hero-glow)',
+      }}
+    >
       <Wordmark height={28} />
-      <h1
-        style={{
-          margin: '28px 0 0',
-          fontFamily: 'var(--toli-font-serif)',
-          fontWeight: 500,
-          fontSize: 28,
-        }}
-      >
-        You’re invited
-      </h1>
-      <p style={{ color: 'var(--toli-ink-3)', fontSize: 15 }}>
-        Invite code {code}. Joining arrives in milestone 4.
-      </p>
+      {preview ? (
+        <>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <Heading>
+              {preview.inviterName} invited you to {preview.groupName}
+            </Heading>
+            <Lede>{cardsLine(preview.memberCount, preview.cardCount)}</Lede>
+          </div>
+          <JoinPanel code={code} groupName={preview.groupName} />
+          <Notice>
+            We only store card names. Never card numbers, CVV, limits or balances.{' '}
+            <Link href="/privacy" style={{ fontWeight: 600 }}>
+              See exactly what friends see
+            </Link>
+          </Notice>
+        </>
+      ) : (
+        <>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            <Heading>This invite has expired</Heading>
+            <Lede>Invites last seven days. Ask your friend to send a fresh link.</Lede>
+          </div>
+          <Panel>
+            <Link href="/groups" style={{ fontWeight: 600 }}>
+              Go to your groups
+            </Link>
+          </Panel>
+        </>
+      )}
     </main>
   );
 }

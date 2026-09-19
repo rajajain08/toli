@@ -45,8 +45,16 @@ export class SequentialIds implements IdGenerator {
     this.n += 1;
     return `${this.prefix}${this.n}`;
   }
+  private r = 0;
+  /** Deterministic and distinct per call: the call number written in base `bound`, left-padded with zeros. */
   randomIndices(count: number, bound: number): number[] {
-    return Array.from({ length: count }, (_, i) => (this.n + i) % bound);
+    let v = this.r++;
+    const out = new Array<number>(count).fill(0);
+    for (let i = count - 1; i >= 0 && v > 0; i--) {
+      out[i] = v % bound;
+      v = Math.floor(v / bound);
+    }
+    return out;
   }
 }
 
@@ -99,16 +107,17 @@ export class InMemoryAudienceRepository implements AudienceRepository {
   async get(id: GroupId): Promise<Audience | undefined> {
     return this.audiences.get(id);
   }
-  async create(audience: Audience, owner: Membership): Promise<void> {
+  async create(audience: Audience, owner: Membership, ownerName: string): Promise<void> {
     if (this.audiences.has(audience.id)) throw new Error(`audience ${audience.id} exists`);
     this.audiences.set(audience.id, audience.withCounts({ memberCount: 1 }));
-    this.members.set(audience.id, new Map([[owner.userId, { ...owner, name: '' }]]));
+    this.members.set(audience.id, new Map([[owner.userId, { ...owner, name: ownerName }]]));
   }
   async addMember(membership: Membership, memberName: string): Promise<void> {
     const a = this.audiences.get(membership.audienceId);
     if (!a) throw new Error('audience missing');
     const m = this.members.get(membership.audienceId)!;
     if (m.has(membership.userId)) return;
+    a.assertCanAccept(m.size);
     m.set(membership.userId, { ...membership, name: memberName });
     this.audiences.set(a.id, a.withCounts({ memberCount: m.size }));
   }
@@ -145,6 +154,11 @@ export class InMemoryInviteRepository implements InviteRepository {
 
 export class InMemoryGroupCardReadModel implements GroupCardReadModel {
   readonly rows = new Map<string, GroupCardRow>();
+  /** cardCount per audience, maintained here the way the Firestore adapter maintains it. */
+  readonly counts = new Map<GroupId, number>();
+  private bump(audienceId: GroupId, by: number): void {
+    this.counts.set(audienceId, Math.max(0, (this.counts.get(audienceId) ?? 0) + by));
+  }
   private key(audienceId: GroupId, userCardId: UserCardId): string {
     return `${audienceId}/${userCardId}`;
   }
@@ -156,10 +170,15 @@ export class InMemoryGroupCardReadModel implements GroupCardReadModel {
     return [...this.rows.values()].filter((r) => set.has(r.audienceId) && r.cardId === cardId);
   }
   async project(rows: readonly GroupCardRow[]): Promise<void> {
-    for (const r of rows) this.rows.set(this.key(r.audienceId, r.userCardId), r);
+    for (const r of rows) {
+      const k = this.key(r.audienceId, r.userCardId);
+      if (!this.rows.has(k)) this.bump(r.audienceId, 1);
+      this.rows.set(k, r);
+    }
   }
   async unproject(refs: readonly { audienceId: GroupId; userCardId: UserCardId }[]): Promise<void> {
-    for (const r of refs) this.rows.delete(this.key(r.audienceId, r.userCardId));
+    for (const r of refs)
+      if (this.rows.delete(this.key(r.audienceId, r.userCardId))) this.bump(r.audienceId, -1);
   }
 }
 

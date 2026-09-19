@@ -15,3 +15,4 @@ export * from './CardRow';
 export * from './TrayChip';
 export * from './Bits';
 export * from './Wordmark';
+export * from './GroupTile';

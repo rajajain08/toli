@@ -120,6 +120,7 @@ describe('SetCardVisibility', () => {
     await s.audiences.create(
       Audience.createGroup({ id: g1, name: 'Crew', createdBy: me, now }),
       createMembership({ audienceId: g1, userId: me, role: 'owner', now }),
+      'Me',
     );
     const card = await s.add.execute({ actor: me, cardId: CardId('axis-atlas') });
     return { ...s, card };

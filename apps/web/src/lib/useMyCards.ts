@@ -2,16 +2,12 @@
 import { CardId, UserCard, UserCardId, UserId } from '@toli/domain';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { track } from './analytics';
-import { useAuth } from './auth';
 import { getContainer } from './container';
+import { useUid } from './useGroups';
 import { useLiveCollection } from './useLiveCollection';
 
 const keyFor = (uid: string | undefined) => ['my-cards', uid ?? 'signed-out'] as const;
 
-const useUid = (): string | undefined => {
-  const { state } = useAuth();
-  return state.status === 'signedIn' ? state.user.uid : undefined;
-};
 
 /** The signed-in user's wallet, live from Firestore (and from IndexedDB before the network answers). */
 export function useMyCards() {

@@ -1,6 +1,8 @@
 import {
   onSnapshot,
   type DocumentData,
+  type DocumentReference,
+  type DocumentSnapshot,
   type Query,
   type QueryDocumentSnapshot,
 } from 'firebase/firestore';
@@ -20,4 +22,14 @@ export function subscribeCollection<T>(
     (snap) => onData(snap.docs.map(convert), { fromCache: snap.metadata.fromCache }),
     onError,
   );
+}
+
+/** Live subscription to one document; `null` when it does not exist (or the reader lost access). */
+export function subscribeDocument<T>(
+  ref: DocumentReference<DocumentData>,
+  convert: (snap: DocumentSnapshot<DocumentData>) => T | null,
+  onData: (value: T | null) => void,
+  onError: (error: Error) => void = () => {},
+): () => void {
+  return onSnapshot(ref, (snap) => onData(convert(snap)), onError);
 }

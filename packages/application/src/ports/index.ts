@@ -42,7 +42,9 @@ export interface UserCardRepository {
 
 export interface AudienceRepository {
   get(id: GroupId): Promise<Audience | undefined>;
-  create(audience: Audience, owner: Membership): Promise<void>;
+  /** Creates the audience with its first member. `ownerName` is denormalised onto the member row. */
+  create(audience: Audience, owner: Membership, ownerName: string): Promise<void>;
+  /** Idempotent. Must enforce the member cap atomically and keep `memberCount` and the user's membership list in step. */
   addMember(membership: Membership, memberName: string): Promise<void>;
   removeMember(audienceId: GroupId, userId: UserId): Promise<void>;
   isMember(audienceId: GroupId, userId: UserId): Promise<boolean>;
@@ -70,6 +72,11 @@ export interface GroupCardRow {
   readonly addedAt: Date;
 }
 
+/**
+ * The read side. `project` and `unproject` are idempotent (triggers are at-least-once) and own the
+ * audience's `cardCount`: a row that already exists is not counted twice, a row already gone is not
+ * subtracted twice.
+ */
 export interface GroupCardReadModel {
   listByAudience(audienceId: GroupId): Promise<GroupCardRow[]>;
   findHolders(audienceIds: readonly GroupId[], cardId: CardId): Promise<GroupCardRow[]>;
@@ -87,4 +94,11 @@ export interface ContactRepository {
   get(userId: UserId): Promise<ContactRecord | undefined>;
   upsert(record: ContactRecord): Promise<void>;
   remove(userId: UserId): Promise<void>;
+}
+
+/** Catalogue lookup for the projection. Backed by packages/catalog on both sides; no network. */
+export interface CardCatalogReader {
+  get(
+    cardId: CardId,
+  ): { name: string; issuer: string; color: string; tags: readonly string[] } | undefined;
 }

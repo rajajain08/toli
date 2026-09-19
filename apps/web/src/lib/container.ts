@@ -1,5 +1,5 @@
 'use client';
-import { AddUserCard, ListMyCards, RemoveUserCard } from '@toli/application';
+import { AddUserCard, ListMyCards, RemoveUserCard, SetCardVisibility } from '@toli/application';
 import { getCatalogCard } from '@toli/catalog';
 import { loadFirebase, type Loaded } from './firebase';
 
@@ -7,6 +7,7 @@ import { loadFirebase, type Loaded } from './firebase';
 function build({ infra, fb }: Loaded) {
   const cards = new infra.FirestoreUserCardRepository(fb.db);
   const users = new infra.FirestoreUserRepository(fb.db);
+  const audiences = new infra.FirestoreAudienceReader(fb.db);
   const clock = new infra.BrowserClock();
   const ids = new infra.BrowserIdGenerator();
   const catalog = { has: (id: string) => getCatalogCard(id) !== undefined };
@@ -15,9 +16,11 @@ function build({ infra, fb }: Loaded) {
     ids,
     users,
     cards,
+    audiences,
     listMyCards: new ListMyCards(cards),
     addUserCard: new AddUserCard(cards, catalog, ids, clock),
     removeUserCard: new RemoveUserCard(cards),
+    setCardVisibility: new SetCardVisibility(cards, audiences),
   };
 }
 

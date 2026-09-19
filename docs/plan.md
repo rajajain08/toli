@@ -27,7 +27,7 @@ Done when a PR runs all four test tiers green.
 
 ## Milestone 2 — Identity (`m2-identity`)
 
-Done when a fresh phone signs up on the dev URL. The project id `toli-dev` was taken, so dev is `toli-app-dev` (created 2026-09-18, Firestore in `asia-south1`, web app registered, rules deployed). Still needed in the console: Blaze billing, Phone sign-in provider, App Check reCAPTCHA Enterprise key, `PHONE_HASH_SECRET` in Secret Manager, App Hosting backend with rootDir `apps/web`.
+Done when a fresh phone signs up on the dev URL. The project id `toli-dev` was taken, so dev is `toli-app-dev` (created 2026-09-18, Firestore in `asia-south1`, web app registered, rules deployed). Blaze enabled 2026-09-19; `PHONE_HASH_SECRET` in Secret Manager; `ping` and `completeSignup` deployed to `asia-south1`. App Hosting backend `toli-web` (asia-southeast1, nearest region offered) serves https://toli-web--toli-app-dev.asia-southeast1.hosted.app. Still needed in the console: Phone sign-in provider, App Check reCAPTCHA Enterprise key.
 
 - [x] `CompleteSignup` use case: name, consent timestamp, phoneHash via a `PhoneHasher` port; 4 tests with in-memory ports; `parsePhone` value object in domain
 - [x] Callable `completeSignup` writes `users/{uid}`; phone read from the ID token, HMAC-SHA256 with `PHONE_HASH_SECRET`; emulator test covers consent, hash, idempotency, unauthenticated
@@ -38,7 +38,7 @@ Done when a fresh phone signs up on the dev URL. The project id `toli-dev` was t
 - [x] `track()` helper (no-op without a measurement id); `otp_completed` fired after OTP
 - [x] `deploy-dev.yml` deploys rules and functions on merge when `DEPLOY_DEV=true` and the service-account secret exist; `apps/web/apphosting.yaml` for App Hosting
 - [x] Playwright golden path: fresh phone, OTP from the Auth emulator, name, consent, lands on `/groups`; wrong code and bad phone stay in place
-- [ ] Console steps above, then a real phone signs up on the dev URL
+- [ ] Console: Phone provider on, App Check key; then a real phone signs up on the dev URL
 
 ## Milestone 3 — My cards (`m3-my-cards`)
 
@@ -86,7 +86,7 @@ Done when the friend group is on it.
 
 ## Open items needing Raja
 
-- `toli-app-dev` exists. Blaze billing on it (2nd gen functions need it), Phone provider on, App Check key. `toli-prod` waits for milestone 6
+- `toli-app-dev` on Blaze with functions deployed. Still: Phone provider on, App Check key. `toli-prod` waits for milestone 6
 - reCAPTCHA Enterprise site key for App Check
 - Production font choice for the serif display and sans body
 - Card catalogue review before M3 ships

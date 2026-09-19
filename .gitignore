@@ -35,7 +35,7 @@ test-results/
 playwright-report/
 
 # functions bundle
-apps/functions/lib/
+apps/functions/deploy/
 
 # emulator export
 tests/seed/*

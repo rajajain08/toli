@@ -1,4 +1,6 @@
-# Firebase App Hosting. rootDir is set to apps/web in the console; pnpm is detected from packageManager.
+# Firebase App Hosting backend "toli-web" (asia-southeast1, rootDir apps/web). The web config values
+# are public by design; App Check and rules protect the backend. Deploy from local source with
+#   pnpm exec firebase deploy --only apphosting --project dev
 runConfig:
   minInstances: 0
   maxInstances: 4
@@ -14,14 +16,14 @@ env:
     value: toli-app-dev.firebaseapp.com
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
-    secret: WEB_API_KEY
+    value: AIzaSyA2XetanjTy21ICrky8ILO01lJ18sbfTD8
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_FIREBASE_APP_ID
-    secret: WEB_APP_ID
-    availability: [BUILD, RUNTIME]
-  - variable: NEXT_PUBLIC_APPCHECK_SITE_KEY
-    secret: APPCHECK_SITE_KEY
+    value: '1:319596181148:web:de29d2c6283055e5145f59'
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_USE_EMULATORS
     value: '0'
     availability: [BUILD, RUNTIME]
+  - variable: NEXT_TELEMETRY_DISABLED
+    value: '1'
+    availability: [BUILD]

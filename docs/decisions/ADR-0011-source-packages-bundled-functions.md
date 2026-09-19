@@ -9,7 +9,7 @@
 
 ## Decision
 
-Every workspace package exports its TypeScript source directly (`"exports": { ".": "./src/index.ts" }`) and has no build step; each host compiles it. Next.js lists them in `transpilePackages`. `apps/functions` bundles `src/index.ts` with esbuild into a single `lib/index.js`, inlining the workspace packages and leaving only `firebase-admin` and `firebase-functions` external, so the deployed artefact has no workspace dependencies. Relative imports inside packages carry no extension and every package uses `moduleResolution: "Bundler"`.
+Every workspace package exports its TypeScript source directly (`"exports": { ".": "./src/index.ts" }`) and has no build step; each host compiles it. Next.js lists them in `transpilePackages`. `apps/functions` bundles `src/index.ts` with esbuild into a self-contained `deploy/` directory (one `index.js` plus a package.json listing only the Firebase SDKs), inlining the workspace packages and leaving only `firebase-admin` and `firebase-functions` external, so the deployed artefact has no workspace dependencies. Relative imports inside packages carry no extension and every package uses `moduleResolution: "Bundler"`.
 
 ## Consequences
 

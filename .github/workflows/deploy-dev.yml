@@ -1,9 +1,9 @@
 name: deploy dev
 
-# Merge to main deploys rules and functions to toli-app-dev. The Next app deploys through App Hosting's
-# own GitHub connection (rootDir apps/web). Enable by setting the repository variable DEPLOY_DEV=true
-# and the secret FIREBASE_SERVICE_ACCOUNT_DEV (a service-account JSON with Firebase Admin + Cloud
-# Functions Developer + Secret Manager Secret Accessor).
+# Merge to main deploys rules, indexes, functions and the App Hosting backend to toli-app-dev.
+# Enable by setting the repository variable DEPLOY_DEV=true and the secret
+# FIREBASE_SERVICE_ACCOUNT_DEV (a service-account JSON with Firebase Admin, Cloud Functions
+# Developer, Secret Manager Secret Accessor and Firebase App Hosting Admin).
 
 on:
   push:
@@ -22,9 +22,8 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @toli/functions build
       - name: write credentials
         run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}' > "$RUNNER_TEMP/sa.json"
-      - run: pnpm exec firebase deploy --only firestore:rules,firestore:indexes,functions --project toli-app-dev --non-interactive --force
+      - run: pnpm exec firebase deploy --only firestore,functions,apphosting --project toli-app-dev --non-interactive --force
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json

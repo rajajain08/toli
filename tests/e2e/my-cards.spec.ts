@@ -46,6 +46,8 @@ test('single-player: add two cards, see them in My cards, remove one, survive a 
   // Swiping the card itself moves the wallet: the next card becomes the selected one, its perks show,
   // the dots follow. Then back again.
   await swipe(page, wallet, -300);
+  // The track itself moved under the finger, and snapped to the second card.
+  await expect.poll(() => wallet.evaluate((el) => Math.round(el.scrollLeft))).toBe(302);
   await expect(wallet.getByRole('button', { name: 'Select Atlas' })).toHaveAttribute(
     'aria-pressed',
     'true',
@@ -56,6 +58,7 @@ test('single-player: add two cards, see them in My cards, remove one, survive a 
     'true',
   );
   await swipe(page, wallet, 300);
+  await expect.poll(() => wallet.evaluate((el) => Math.round(el.scrollLeft))).toBe(0);
   await expect(wallet.getByRole('button', { name: 'Select Millennia' })).toHaveAttribute(
     'aria-pressed',
     'true',

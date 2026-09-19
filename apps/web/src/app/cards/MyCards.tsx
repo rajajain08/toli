@@ -132,7 +132,8 @@ export function MyCards() {
                   overscrollBehaviorX: 'contain',
                   scrollSnapType: 'x mandatory',
                   scrollPaddingLeft: 24,
-                  padding: '8px 24px 18px',
+                  // No right padding: the trailing spacer below does that job exactly.
+                  padding: '8px 0 18px 24px',
                 }}
               >
                 {cards.map((c, i) => {
@@ -155,8 +156,10 @@ export function MyCards() {
                     </div>
                   );
                 })}
-                {/* Lets the last card snap to the same left edge as the first. */}
-                <div aria-hidden style={{ flex: `0 0 calc(100% - ${CARD_W + 24}px)` }} />
+                {/* Lets the last card reach the same snap line as the first: the content box is the track minus
+                    its 24 px left padding, and the last card needs a full track width from its own left edge,
+                    so the spacer is the content box minus one card and one gap. */}
+                <div aria-hidden style={{ flex: `0 0 calc(100% - ${CARD_W + GAP}px)` }} />
               </div>
             </div>
             <PageDots

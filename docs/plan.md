@@ -61,7 +61,7 @@ Done when the friend group is on it.
 
 - [x] Use cases `CreateAudience`, `CreateInvite`, `JoinByInvite` (rate limited before any lookup, idempotent), `GetInvitePreview`, `ListAudienceCards`, `ProjectUserCard`; 18 in-memory tests incl. redelivery, the 50-member cap and refusing a group id the owner is not in
 - [x] Admin adapters: `AdminAudienceRepository` (cap enforced in a transaction), `AdminInviteRepository`, `AdminGroupCardReadModel` (owns `cardCount`, so redelivery never double counts), `FirestoreRateLimiter`
-- [x] Callables `createAudience` (returns the first invite too), `joinByInvite`, `createInvite`; `minInstances: 1` on the first two in `toli-app-prod` only, since a warm instance costs money
+- [x] Callables `createAudience` (returns the first invite too), `joinByInvite`, `createInvite`; no warm instances anywhere at launch (ADR-0014)
 - [x] Trigger `onUserCardWritten` → `ProjectUserCard`; one small transaction per row instead of one batch, which is what makes the counters safe under redelivery
 - [x] `/join/[code]` server component with real OG tags via `GetInvitePreview`; shows group name, who started it and two counts, never members or cards
 - [x] Screens: Groups home + first run with paste-an-invite, Start a group, Group (people and category filters, live), visibility switches on My cards (optimistic with rollback)

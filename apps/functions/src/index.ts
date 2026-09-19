@@ -15,11 +15,13 @@ const phoneHashSecret = defineSecret('PHONE_HASH_SECRET');
 /** App Check is enforced everywhere except the emulator, which has no App Check service. */
 const isEmulator = process.env['FUNCTIONS_EMULATOR'] === 'true';
 const enforceAppCheck = !isEmulator;
-/** joinByInvite and createAudience sit on the critical path; they stay warm in prod only (it costs money). */
-const criticalPath = {
-  enforceAppCheck,
-  minInstances: process.env['GCLOUD_PROJECT'] === 'toli-app-prod' ? 1 : 0,
-};
+/**
+ * joinByInvite and createAudience sit on the critical path. They scale to zero for now (ADR-0014): a warm
+ * instance is a fixed monthly cost with nobody to serve yet, and the price is a cold start of a second or
+ * two on the first call after a quiet spell. Raise WARM_INSTANCES when real traffic makes that matter.
+ */
+const WARM_INSTANCES = 0;
+const criticalPath = { enforceAppCheck, minInstances: WARM_INSTANCES };
 
 let core: Core | undefined;
 const c = () => (core ??= buildCore());

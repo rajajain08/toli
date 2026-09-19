@@ -2,8 +2,9 @@
 # (App Hosting → toli-web → Settings → Environment). The web config values are public by design; App Check
 # and the security rules protect the backend.
 runConfig:
-  # The invite landing page is server-rendered and is the first thing a new person sees, so keep one warm.
-  minInstances: 1
+  # Scales to zero for now (ADR-0014). The invite landing page is server-rendered, so its first open after a
+  # quiet spell pays a cold start; set this to 1 when real traffic makes that matter.
+  minInstances: 0
   maxInstances: 10
 
 env:

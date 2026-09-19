@@ -195,7 +195,7 @@ Everything behind auth is a client-rendered shell over a local cache; the one se
 - The catalogue is not a Firestore read. `packages/catalog/cards.json` (~320 cards, ~18 KB gzipped) ships in the bundle; Add cards search and bank filters run in memory and work offline.
 - Firebase modular imports only; Auth and reCAPTCHA load lazily on the OTP route; the Functions client loads lazily.
 - `packages/ui` holds the tokens (role-named palette: paper, ink, accent; type scale, card gradient, three elevation levels) and the primitives from the canvas: `CardTile`, `Chip`, `Toggle`, `AvatarRow`, `TabBar`. Screens compose these; nothing styles itself ad hoc.
-- `joinByInvite` and `createAudience` sit on the user's critical path, so they run with `minInstances: 1` in prod; projection and delete can cold-start.
+- `joinByInvite` and `createAudience` sit on the user's critical path. They scale to zero at launch (ADR-0014) and get `minInstances: 1` when traffic justifies the fixed cost, as the growth path below already says; projection and delete can always cold-start.
 
 **Budgets, enforced in CI**
 
@@ -276,3 +276,4 @@ One row per architectural decision; add a row and an ADR file under `docs/decisi
 | 0011 | Packages ship TypeScript source; functions bundled by esbuild | no dist/ drift, one-file functions artefact without workspace deps |
 | 0012 | Cool palette (Frost, Midnight, Iris) with role-named tokens; Fraunces display face | the app gets its own character; the next repaint is a one-file change |
 | 0013 | Verified phone stored server-only in `contacts/{uid}`, with a separate marketing opt-in | the business can reach its users; DPDP needs purpose-specific consent |
+| 0014 | No warm instances at launch: functions and the web backend scale to zero | a fixed monthly cost with nobody to serve; a cold start on the first call after a quiet spell is the price |

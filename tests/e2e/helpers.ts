@@ -122,3 +122,7 @@ export async function makeLegacyAccount(request: APIRequestContext, uid: string)
 export async function contactExists(request: APIRequestContext, uid: string): Promise<boolean> {
   return (await request.get(`${FIRESTORE}/contacts/${uid}`, { headers: ADMIN })).ok();
 }
+
+export async function docExists(request: APIRequestContext, path: string): Promise<boolean> {
+  return (await request.get(`${FIRESTORE}/${path}`, { headers: ADMIN })).ok();
+}

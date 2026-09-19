@@ -3,6 +3,9 @@ import Link from 'next/link';
 
 export const metadata = { title: 'What friends can see · Toli' };
 
+/** DPDP grievance contact. Set NEXT_PUBLIC_GRIEVANCE_EMAIL; the line is left out rather than shown blank. */
+const GRIEVANCE_EMAIL = process.env.NEXT_PUBLIC_GRIEVANCE_EMAIL ?? '';
+
 const NEVER = [
   'Card number',
   'Expiry & CVV',
@@ -65,7 +68,22 @@ export default function PrivacyPage() {
         Toli keeps your phone number to run your account. Friends never see it, and we only message
         you about Toli if you ticked the optional box at sign-up.
       </Lede>
-      <Lede>Delete your account and every card you added goes with it, immediately.</Lede>
+      <Lede>
+        Delete your account and every card you added goes with it, immediately, along with your
+        phone number.{' '}
+        <Link href="/settings/delete" style={{ fontWeight: 600 }}>
+          Delete my account
+        </Link>
+      </Lede>
+      {GRIEVANCE_EMAIL ? (
+        <Lede>
+          Questions or a complaint about your data? Write to our grievance officer at{' '}
+          <a href={`mailto:${GRIEVANCE_EMAIL}`} style={{ fontWeight: 600 }}>
+            {GRIEVANCE_EMAIL}
+          </a>
+          .
+        </Lede>
+      ) : null}
 
       <Link href="/cards" style={{ fontWeight: 600 }}>
         Got it

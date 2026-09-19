@@ -41,6 +41,7 @@ export function AuthFlow() {
   const { state, refreshProfile } = useAuth();
   const router = useRouter();
   const params = useSearchParams();
+  const justDeleted = params.get('deleted') === '1';
   const next =
     params.get('next') && params.get('next')!.startsWith('/') ? params.get('next')! : '/groups';
 
@@ -164,6 +165,11 @@ export function AuthFlow() {
       {step === 'phone' ? (
         <form onSubmit={sendCode} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {justDeleted ? (
+              <div role="status" style={{ fontSize: 14, color: 'var(--toli-ink-3)' }}>
+                Your account and everything in it has been deleted.
+              </div>
+            ) : null}
             <Heading>Know whose card to use before the bill comes</Heading>
             <Lede>Sign in with your phone. We text you a code; nothing to remember.</Lede>
           </div>

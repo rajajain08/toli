@@ -85,13 +85,14 @@ Done when the friend group is on it.
 
 ## Milestone 6 — Launch (`m6-launch`)
 
-- [ ] `DeleteAccount` cascade: memberships, read-model rows, invites created, `contacts/{uid}` (ADR-0013), auth user; only path that deletes `users/{uid}`
+- [x] `DeleteAccount`: read-model rows, memberships (a 1:1 share is removed for both people, a group left empty is removed with its invites), wallet, `contacts/{uid}`, rate-limit rows, profile, then the auth user. Safe to re-run after a partial failure. Needs the typed word and a sign-in from the last ten minutes. Settings → Delete my account; the device's offline copy is wiped afterwards
 - [x] Consent versioning: `consentVersion` on the profile (missing reads as 1), the gate sends anyone on an older text back through the consent step with the reason, and `CompleteSignup` re-dates consent and captures the phone. Rules stop a client from bumping its own version
 - [x] Settings screen: name, last two digits of the phone, one switch for marketing messages (`getMyAccount`, `setMarketingOptIn`), privacy link, sign out. Switches show when a change is saved, not just flipped
 - [x] The auth gate opens from a local profile snapshot and refreshes from Firestore in the background, so a reload no longer waits on the IndexedDB lease
 - [x] E2E runs against a production build, not `next dev`
 - [ ] Marketing export job: `contacts where marketingOptIn == true` joined to name and cards, Admin SDK or BigQuery only
-- [ ] Privacy page with grievance contact; DPDP consent copy
+- [x] Privacy page links to delete, says the phone goes too, and shows the grievance contact from `NEXT_PUBLIC_GRIEVANCE_EMAIL`
+- [ ] Raja: choose the grievance officer email and set it for dev and prod
 - [ ] PWA install prompt, icons, offline fallback
 - [ ] Performance Monitoring, Error Reporting, structured logs per use case
 - [ ] Lighthouse CI budgets (LCP 2.5 s, CLS 0)

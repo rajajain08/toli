@@ -34,6 +34,10 @@ export const callGetMyAccount = () => call<Record<string, never>, MyAccount>('ge
 export const callSetMarketingOptIn = (input: { optIn: boolean }) =>
   call<typeof input, { marketingOptIn: boolean }>('setMarketingOptIn', input);
 
+/** The server also checks for a sign-in in the last ten minutes. */
+export const callDeleteAccount = () =>
+  call<{ confirm: 'DELETE' }, { ok: true; cardsRemoved: number }>('deleteAccount', { confirm: 'DELETE' });
+
 /** Callable errors carry a Firebase code like "functions/resource-exhausted"; turn them into one plain line. */
 export const callableMessage = (err: unknown): string => {
   const code = err && typeof err === 'object' && 'code' in err ? String((err as { code: unknown }).code) : '';

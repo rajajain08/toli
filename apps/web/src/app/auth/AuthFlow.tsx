@@ -3,7 +3,7 @@ import { DomainError, maskPhone, parsePhone, type PhoneNumber } from '@toli/doma
 import { Button, Checkbox, Heading, Lede, Notice, TextField, Wordmark } from '@toli/ui';
 import type { ConfirmationResult } from 'firebase/auth';
 import Link from 'next/link';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { track } from '@/lib/analytics';
 import { callCompleteSignup } from '@/lib/api';
@@ -40,10 +40,16 @@ const messageOf = (err: unknown): string => {
 export function AuthFlow() {
   const { state, refreshProfile } = useAuth();
   const router = useRouter();
-  const params = useSearchParams();
-  const justDeleted = params.get('deleted') === '1';
-  const next =
-    params.get('next') && params.get('next')!.startsWith('/') ? params.get('next')! : '/groups';
+  // Read from the address bar after mount, not with useSearchParams: that hook opts the whole screen out
+  // of server rendering, and this is the first screen a new person sees on a slow phone.
+  const [next, setNext] = useState('/groups');
+  const [justDeleted, setJustDeleted] = useState(false);
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const n = q.get('next');
+    if (n && n.startsWith('/') && !n.startsWith('//')) setNext(n);
+    setJustDeleted(q.get('deleted') === '1');
+  }, []);
 
   const [step, setStep] = useState<Step>('phone');
   const [phoneInput, setPhoneInput] = useState('');
@@ -165,11 +171,6 @@ export function AuthFlow() {
       {step === 'phone' ? (
         <form onSubmit={sendCode} style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            {justDeleted ? (
-              <div role="status" style={{ fontSize: 14, color: 'var(--toli-ink-3)' }}>
-                Your account and everything in it has been deleted.
-              </div>
-            ) : null}
             <Heading>Know whose card to use before the bill comes</Heading>
             <Lede>Sign in with your phone. We text you a code; nothing to remember.</Lede>
           </div>
@@ -196,6 +197,9 @@ export function AuthFlow() {
               See exactly what friends see
             </Link>
           </Notice>
+          <div role="status" style={{ minHeight: 20, fontSize: 14, color: 'var(--toli-ink-3)' }}>
+            {justDeleted ? 'Your account and everything in it has been deleted.' : null}
+          </div>
         </form>
       ) : null}
 

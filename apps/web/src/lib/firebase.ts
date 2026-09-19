@@ -1,6 +1,7 @@
 'use client';
 import type { ToliFirebase } from '@toli/infra-client';
 import { startAppCheck } from './appcheck';
+import { startPerformance } from './perf';
 
 /**
  * The only door to Firebase from the web app. Everything Firebase is behind one dynamic import so the
@@ -56,6 +57,7 @@ export function loadFirebase(): Promise<Loaded> {
       },
     );
     void startAppCheck(fb.app);
+    void startPerformance(fb.app);
     return { infra, fb };
   })());
 }

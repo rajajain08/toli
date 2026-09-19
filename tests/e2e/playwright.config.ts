@@ -16,7 +16,9 @@ export default defineConfig({
     // routes on demand under several parallel workers made first hits slow enough to time out.
     command: 'pnpm --filter @toli/web build && pnpm --filter @toli/web start',
     url: 'http://127.0.0.1:3000/groups',
-    reuseExistingServer: !process.env['CI'],
+    // Never reuse: a server left over from an earlier run serves an old build, and the suite would test that
+    // without saying so. If the port is taken, Playwright fails loudly instead.
+    reuseExistingServer: false,
     timeout: 240_000,
     env: {
       NEXT_PUBLIC_FIREBASE_API_KEY: 'demo-key',

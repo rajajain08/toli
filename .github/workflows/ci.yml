@@ -91,5 +91,11 @@ jobs:
       - run: pnpm test:e2e
       # Same build: every route's initial JS against the 180 KB budget.
       - run: pnpm --filter @toli/web size
+      # Same build again: LCP <= 2.5 s and no layout shift on the public pages, under applied slow-4G and
+      # 4x CPU throttling (a mid-range Android), median of three runs.
+      - name: lighthouse budgets
+        run: |
+          export CHROME_PATH="$(node -e "console.log(require('@playwright/test').chromium.executablePath())")"
+          pnpm exec lhci autorun --config apps/web/lighthouserc.json
         env:
           CI: 'true'

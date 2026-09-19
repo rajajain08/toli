@@ -18,6 +18,14 @@ const nextConfig: NextConfig = {
   },
   headers: async () => [
     {
+      // The worker must never be served stale, or a broken one could pin itself.
+      source: '/sw.js',
+      headers: [
+        { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+        { key: 'Service-Worker-Allowed', value: '/' },
+      ],
+    },
+    {
       source: '/(.*)',
       headers: [
         { key: 'X-Content-Type-Options', value: 'nosniff' },

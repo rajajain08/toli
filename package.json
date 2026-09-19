@@ -19,10 +19,12 @@
     "catalog:sync": "pnpm --filter @toli/functions catalog:sync",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "test:lighthouse": "lhci autorun --config apps/web/lighthouserc.json",
     "test:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm test:rules && pnpm test:functions && pnpm test:e2e"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^5.0.2",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.63.0",
     "@toli/application": "workspace:*",
     "@toli/domain": "workspace:*",

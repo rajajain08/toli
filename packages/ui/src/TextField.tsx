@@ -1,6 +1,9 @@
 import type { InputHTMLAttributes, ReactNode } from 'react';
 import { color, font } from './tokens';
 
+/** Height of the hint / error line under a field. Reserved even when empty. */
+export const MESSAGE_LINE = 18;
+
 export interface TextFieldProps extends Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'style' | 'id' | 'prefix'
@@ -69,19 +72,25 @@ export function TextField({ id, label, prefix, hint, error, ...rest }: TextField
           {...rest}
         />
       </div>
-      {error ? (
-        <div
-          id={`${id}-error`}
-          role="alert"
-          style={{ fontFamily: font.sans, fontSize: 13, color: color.danger }}
-        >
-          {error}
-        </div>
-      ) : hint ? (
-        <div id={`${id}-hint`} style={{ fontFamily: font.sans, fontSize: 13, color: color.ink3 }}>
-          {hint}
-        </div>
-      ) : null}
+      {/* The message line is always reserved, so an error appearing never moves what is below (CLS 0). */}
+      <div
+        style={{
+          minHeight: MESSAGE_LINE,
+          fontFamily: font.sans,
+          fontSize: 13,
+          lineHeight: `${MESSAGE_LINE}px`,
+        }}
+      >
+        {error ? (
+          <div id={`${id}-error`} role="alert" style={{ color: color.danger }}>
+            {error}
+          </div>
+        ) : hint ? (
+          <div id={`${id}-hint`} style={{ color: color.ink3 }}>
+            {hint}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

@@ -6,10 +6,20 @@ export interface CheckboxProps {
   checked: boolean;
   onChange: (next: boolean) => void;
   children: ReactNode;
+  /** Marks the box itself when it is the thing that needs attention. */
+  invalid?: boolean | undefined;
+  describedBy?: string | undefined;
 }
 
 /** Consent-style checkbox: 22 px box with an Iris fill when checked, label wraps beside it. */
-export function Checkbox({ id, checked, onChange, children }: CheckboxProps) {
+export function Checkbox({
+  id,
+  checked,
+  onChange,
+  children,
+  invalid = false,
+  describedBy,
+}: CheckboxProps) {
   return (
     <label
       htmlFor={id}
@@ -21,6 +31,8 @@ export function Checkbox({ id, checked, onChange, children }: CheckboxProps) {
           type="checkbox"
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
+          aria-invalid={invalid ? true : undefined}
+          aria-describedby={describedBy}
           style={{
             position: 'absolute',
             inset: 0,
@@ -41,7 +53,11 @@ export function Checkbox({ id, checked, onChange, children }: CheckboxProps) {
             height: 22,
             borderRadius: 6,
             boxSizing: 'border-box',
-            border: checked ? `1px solid ${color.accent}` : `1px solid ${color.hairlineStrong}`,
+            border: checked
+              ? `1px solid ${color.accent}`
+              : invalid
+                ? `1.5px solid ${color.danger}`
+                : `1px solid ${color.hairlineStrong}`,
             background: checked ? color.accent : color.white,
             transition: 'background 150ms ease',
           }}

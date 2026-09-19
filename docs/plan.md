@@ -38,7 +38,7 @@ Done when a fresh phone signs up on the dev URL. The project id `toli-dev` was t
 - [x] `track()` helper (no-op without a measurement id); `otp_completed` fired after OTP
 - [x] `deploy-dev.yml` deploys rules and functions on merge when `DEPLOY_DEV=true` and the service-account secret exist; `apps/web/apphosting.yaml` for App Hosting
 - [x] Playwright golden path: fresh phone, OTP from the Auth emulator, name, consent, lands on `/groups`; wrong code and bad phone stay in place
-- [ ] A real phone signs up on the dev URL
+- [x] A real phone signs up on the dev URL (2026-09-19: OTP by SMS, profile, contact record with opt-in)
 
 ## Milestone 3 — My cards (`m3-my-cards`)
 
@@ -71,6 +71,7 @@ Done when the friend group is on it.
 - [x] GA4 `invite_opened`, `group_joined`, `visibility_changed`
 - [x] After joining through an invite, and from the group's "Choose cards" nudge, a share step asks which cards the group may see: all ticked to begin with, nothing shared until the button, "Not now" shares nothing
 - [x] The My cards wallet is a native scroll-snap track, so it swipes; e2e drives a real touch swipe
+- [x] Verified on `toli-app-dev` with real phones (2026-09-19): create group, invite, join, share; `memberCount` and `cardCount` match their rows
 - [ ] Not in this milestone: leave group, rename group, remove a member, the "Just look for now" signed-out peek from the mockup, Nudge
 
 ## Milestone 5 — Direct shares and Find (`m5-share-find`)
@@ -84,6 +85,7 @@ Done when the friend group is on it.
 ## Milestone 6 — Launch (`m6-launch`)
 
 - [ ] `DeleteAccount` cascade: memberships, read-model rows, invites created, `contacts/{uid}` (ADR-0013), auth user; only path that deletes `users/{uid}`
+- [ ] Consent versioning: store `consentVersion` on the profile and show the consent step again when it is older than the current text. Accounts created before ADR-0013 agreed to "a hash of my phone number" and have no `contacts/{uid}`; they must re-consent, not be backfilled from Auth
 - [ ] Settings toggle to withdraw the marketing opt-in; owed before any campaign is sent
 - [ ] Marketing export job: `contacts where marketingOptIn == true` joined to name and cards, Admin SDK or BigQuery only
 - [ ] Privacy page with grievance contact; DPDP consent copy

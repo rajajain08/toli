@@ -7,6 +7,9 @@ export const paths = {
   audience: (aid: string) => `audiences/${aid}`,
   audienceMembers: (aid: string) => `audiences/${aid}/members`,
   audienceCards: (aid: string) => `audiences/${aid}/cards`,
+  audienceMember: (aid: string, uid: string) => `audiences/${aid}/members/${uid}`,
+  audienceCard: (aid: string, ucId: string) => `audiences/${aid}/cards/${ucId}`,
+  membership: (uid: string, aid: string) => `users/${uid}/memberships/${aid}`,
   catalog: 'catalog',
 } as const;
 export const adminPaths = {

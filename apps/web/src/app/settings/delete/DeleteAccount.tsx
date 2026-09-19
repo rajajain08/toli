@@ -2,6 +2,7 @@
 import { Button, Checkbox, FactRow, Heading, IconCircle, Lede, Panel } from '@toli/ui';
 import Link from 'next/link';
 import { useState } from 'react';
+import { ButtonLink } from '@/components/ButtonLink';
 import { callableMessage, callDeleteAccount } from '@/lib/api';
 import { loadFirebase } from '@/lib/firebase';
 
@@ -126,14 +127,12 @@ export function DeleteAccount() {
             >
               {error}
             </div>
-            <Button full onClick={remove} disabled={!understood || busy}>
+            <Button variant="danger" full onClick={remove} disabled={!understood || busy}>
               {busy ? 'Deleting…' : 'Delete my account'}
             </Button>
-            <Link href="/settings" style={{ textDecoration: 'none' }}>
-              <Button variant="ghost" size="small" full tabIndex={-1}>
-                Keep my account
-              </Button>
-            </Link>
+            <ButtonLink href="/settings" variant="tonal" full>
+              Keep my account
+            </ButtonLink>
           </div>
         </>
       )}

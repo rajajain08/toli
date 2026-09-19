@@ -159,7 +159,7 @@ export function ShareWithGroup({ id }: { id: string }) {
                 : `Share ${n} card${n === 1 ? '' : 's'}`}
           </Button>
           <Button
-            variant="ghost"
+            variant="tonal"
             size="small"
             full
             onClick={() => router.replace(groupUrl)}

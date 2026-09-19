@@ -16,6 +16,7 @@ import {
 } from '@toli/ui';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { ButtonLink } from '@/components/ButtonLink';
 import { useFlag } from '@/lib/flags';
 import { useMyGroups, useSetVisibility } from '@/lib/useGroups';
 import { useMyCards, useRemoveCard } from '@/lib/useMyCards';
@@ -91,11 +92,11 @@ export function MyCards() {
           <Lede>
             {cards === undefined ? 'Loading…' : `${count} card${count === 1 ? '' : 's'}`} ·{' '}
             <Link href="/privacy" style={{ fontWeight: 600 }}>
-              what friends see
+              What friends see
             </Link>{' '}
             ·{' '}
             <Link href="/settings" style={{ fontWeight: 600 }}>
-              settings
+              Settings
             </Link>
           </Lede>
         </div>
@@ -134,11 +135,9 @@ export function MyCards() {
           <Panel dashed>
             No cards yet. Add the ones you carry, by name only. We never ask for the number.
           </Panel>
-          <Link href="/cards/add" style={{ textDecoration: 'none' }}>
-            <Button full tabIndex={-1}>
-              Add your cards
-            </Button>
-          </Link>
+          <ButtonLink href="/cards/add" full>
+            Add your cards
+          </ButtonLink>
         </div>
       ) : (
         <>
@@ -283,12 +282,12 @@ export function MyCards() {
                     <Button variant="secondary" size="small" onClick={() => setConfirming(false)}>
                       Keep it
                     </Button>
-                    <Button size="small" onClick={() => remove.mutate(current.id)}>
+                    <Button variant="danger" size="small" onClick={() => remove.mutate(current.id)}>
                       Remove {info?.name ?? 'card'}
                     </Button>
                   </div>
                 ) : (
-                  <Button variant="ghost" size="small" onClick={() => setConfirming(true)}>
+                  <Button variant="tonal" size="small" onClick={() => setConfirming(true)}>
                     Remove this card
                   </Button>
                 )}

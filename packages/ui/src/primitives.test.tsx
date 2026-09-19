@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { AvatarRow } from './AvatarRow';
-import { Button } from './Button';
+import { Button, buttonStyle } from './Button';
 import { CardTile } from './CardTile';
 import { Chip } from './Chip';
 import { TabBar } from './TabBar';
@@ -116,5 +116,22 @@ describe('Button', () => {
   it('renders a pill button', () => {
     render(<Button>Continue</Button>);
     expect(screen.getByRole('button', { name: 'Continue' })).toBeInTheDocument();
+  });
+  it('gives every variant a visible surface, so no action reads as a text link', () => {
+    for (const variant of ['primary', 'secondary', 'tonal', 'danger'] as const) {
+      const { background } = buttonStyle({ variant });
+      expect(background, variant).toBeTruthy();
+      expect(background, variant).not.toBe('transparent');
+    }
+  });
+  it('shows a disabled button as a flat, quiet surface', () => {
+    render(<Button disabled>Continue</Button>);
+    const button = screen.getByRole('button', { name: 'Continue' });
+    expect(button).toBeDisabled();
+    expect(button.style.boxShadow).toBe('');
+    expect(button.style.cursor).toBe('not-allowed');
+  });
+  it('lends its look to a link without nesting a button in it', () => {
+    expect(buttonStyle({ full: true })).toMatchObject({ width: '100%', textDecoration: 'none' });
   });
 });

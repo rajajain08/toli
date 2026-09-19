@@ -13,6 +13,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { ButtonLink } from '@/components/ButtonLink';
 import {
   callableMessage,
   callGetMyAccount,
@@ -143,19 +144,16 @@ export function Settings() {
 
       <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         <SectionLabel>Privacy</SectionLabel>
-        <Link href="/privacy" style={{ fontWeight: 600 }}>
+        <ButtonLink href="/privacy" variant="secondary" full>
           What friends can see
-        </Link>
+        </ButtonLink>
       </section>
 
       <section style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
         <SectionLabel>Account</SectionLabel>
-        <Link
-          href="/settings/delete"
-          style={{ fontWeight: 600, color: 'var(--toli-danger, #C42B4B)' }}
-        >
+        <ButtonLink href="/settings/delete" variant="danger" full>
           Delete my account
-        </Link>
+        </ButtonLink>
       </section>
 
       <Button

@@ -1,5 +1,6 @@
 import { CardRow, FactRow, Heading, Lede, Panel, SectionLabel } from '@toli/ui';
 import Link from 'next/link';
+import { BackButton } from '@/components/BackButton';
 
 export const metadata = { title: 'What friends can see · Toli' };
 
@@ -8,7 +9,7 @@ const GRIEVANCE_EMAIL = process.env.NEXT_PUBLIC_GRIEVANCE_EMAIL ?? '';
 
 const NEVER = [
   'Card number',
-  'Expiry & CVV',
+  'Expiry and CVV',
   'Credit limit',
   'What you spend',
   'Statements',
@@ -85,9 +86,9 @@ export default function PrivacyPage() {
         </Lede>
       ) : null}
 
-      <Link href="/cards" style={{ fontWeight: 600 }}>
+      <BackButton fallback="/cards" full>
         Got it
-      </Link>
+      </BackButton>
     </main>
   );
 }

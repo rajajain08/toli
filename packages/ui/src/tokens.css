@@ -35,11 +35,39 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Links are for going somewhere inside a sentence. Anything that does something is a button. */
 a {
   color: var(--toli-ink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 a:hover {
   color: var(--toli-accent);
+}
+
+/* Button feedback (Button and anything wearing buttonStyle). Inline styles cannot express states. */
+.toli-btn {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition:
+    transform 120ms ease,
+    filter 120ms ease;
+}
+.toli-btn:not(:disabled):hover {
+  filter: brightness(0.97);
+}
+.toli-btn:not(:disabled):active {
+  transform: scale(0.98);
+  filter: brightness(0.93);
+}
+@media (prefers-reduced-motion: reduce) {
+  .toli-btn {
+    transition: none;
+  }
+  .toli-btn:not(:disabled):active {
+    transform: none;
+  }
 }
 button {
   font-family: inherit;

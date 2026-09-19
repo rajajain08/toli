@@ -1,6 +1,7 @@
-import { Heading, Lede, Notice, Panel, Wordmark } from '@toli/ui';
+import { Heading, Lede, Notice, Wordmark } from '@toli/ui';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ButtonLink } from '@/components/ButtonLink';
 import { JoinPanel } from './JoinPanel';
 import { invitePreview } from './preview';
 
@@ -76,11 +77,9 @@ export default async function JoinPage({ params }: { params: Promise<{ code: str
             <Heading>This invite has expired</Heading>
             <Lede>Invites last seven days. Ask your friend to send a fresh link.</Lede>
           </div>
-          <Panel>
-            <Link href="/groups" style={{ fontWeight: 600 }}>
-              Go to your groups
-            </Link>
-          </Panel>
+          <ButtonLink href="/groups" variant="secondary" full>
+            Go to your groups
+          </ButtonLink>
         </>
       )}
     </main>

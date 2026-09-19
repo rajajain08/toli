@@ -227,8 +227,8 @@ export function AuthFlow() {
             {busy ? 'Checking…' : 'Continue'}
           </Button>
           <Button
-            variant="ghost"
-            size="small"
+            variant="secondary"
+            full
             onClick={() => {
               setStep('phone');
               setCode('');

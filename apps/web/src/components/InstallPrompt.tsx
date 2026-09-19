@@ -90,7 +90,7 @@ export function InstallPrompt() {
               Install
             </Button>
           ) : null}
-          <Button variant="ghost" size="small" onClick={dismiss}>
+          <Button variant="tonal" size="small" onClick={dismiss}>
             Not now
           </Button>
         </div>

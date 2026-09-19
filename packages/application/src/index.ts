@@ -10,3 +10,4 @@ export * from './use-cases/join-by-invite';
 export * from './use-cases/get-invite-preview';
 export * from './use-cases/project-user-card';
 export * from './use-cases/list-audience-cards';
+export * from './use-cases/sync-catalog-mirror';

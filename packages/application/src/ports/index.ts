@@ -2,6 +2,7 @@ import type {
   Audience,
   ContactRecord,
   CardId,
+  CatalogCard,
   GroupId,
   Invite,
   InviteCode,
@@ -101,4 +102,14 @@ export interface CardCatalogReader {
   get(
     cardId: CardId,
   ): { name: string; issuer: string; color: string; tags: readonly string[] } | undefined;
+}
+
+/**
+ * catalog/{cardId}, the Firestore mirror of packages/catalog/cards.json. The JSON is the source of truth
+ * (ADR-0006); the mirror exists for server-side validation and is written only by the sync script.
+ * Deliberately has no delete: user cards reference catalogue ids, so an id is never taken away.
+ */
+export interface CatalogMirror {
+  list(): Promise<CatalogCard[]>;
+  upsert(cards: readonly CatalogCard[]): Promise<void>;
 }

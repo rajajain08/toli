@@ -16,6 +16,7 @@
     "test:functions": "pnpm --filter @toli/functions build && firebase emulators:exec --only auth,firestore,functions --project demo-toli \"vitest run --config tests/functions/vitest.config.ts\"",
     "test:e2e": "pnpm --filter @toli/functions build && firebase emulators:exec --only auth,firestore,functions --project demo-toli \"playwright test -c tests/e2e/playwright.config.ts\"",
     "emulators": "firebase emulators:start --project demo-toli --import=./tests/seed --export-on-exit",
+    "catalog:sync": "pnpm --filter @toli/functions catalog:sync",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:all": "pnpm lint && pnpm typecheck && pnpm test && pnpm test:rules && pnpm test:functions && pnpm test:e2e"
@@ -25,6 +26,7 @@
     "@playwright/test": "^1.63.0",
     "@toli/application": "workspace:*",
     "@toli/domain": "workspace:*",
+    "@toli/infra-admin": "workspace:*",
     "@toli/infra-client": "workspace:*",
     "@types/node": "^24.0.0",
     "eslint": "^10.10.0",

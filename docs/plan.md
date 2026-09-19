@@ -78,7 +78,9 @@ Done when the friend group is on it.
 
 ## Milestone 6 — Launch (`m6-launch`)
 
-- [ ] `DeleteAccount` cascade: memberships, read-model rows, invites created, auth user; only path that deletes `users/{uid}`
+- [ ] `DeleteAccount` cascade: memberships, read-model rows, invites created, `contacts/{uid}` (ADR-0013), auth user; only path that deletes `users/{uid}`
+- [ ] Settings toggle to withdraw the marketing opt-in; owed before any campaign is sent
+- [ ] Marketing export job: `contacts where marketingOptIn == true` joined to name and cards, Admin SDK or BigQuery only
 - [ ] Privacy page with grievance contact; DPDP consent copy
 - [ ] PWA install prompt, icons, offline fallback
 - [ ] Performance Monitoring, Error Reporting, structured logs per use case

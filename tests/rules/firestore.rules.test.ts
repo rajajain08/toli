@@ -62,6 +62,11 @@ beforeEach(async () => {
       uses: 0,
       maxUses: 50,
     });
+    await setDoc(doc(db, 'contacts/alice'), {
+      phone: '+919876543210',
+      marketingOptIn: true,
+      updatedAt: new Date(),
+    });
     await setDoc(doc(db, 'catalog/hdfc-millennia'), { name: 'Millennia' });
     await setDoc(doc(db, `users/${ALICE}/memberships/${AID}`), {
       type: 'group',
@@ -192,6 +197,16 @@ describe('invites, ratelimits, catalog', () => {
     await assertFails(getDoc(doc(as(ALICE), 'invites/ABCDEFGH')));
     await assertFails(getDocs(collection(as(ALICE), 'invites')));
     await assertFails(setDoc(doc(as(ALICE), 'invites/ZZZZZZZZ'), { audienceId: AID }));
+  });
+  it('contacts are server-only: nobody reads a phone number, not even their own', async () => {
+    await assertFails(getDoc(doc(as(ALICE), 'contacts/alice')));
+    await assertFails(getDoc(doc(as(BOB), 'contacts/alice')));
+    await assertFails(getDocs(collection(as(ALICE), 'contacts')));
+    await assertFails(
+      setDoc(doc(as(ALICE), 'contacts/alice'), { phone: '+910000000000', marketingOptIn: true }),
+    );
+    await assertFails(updateDoc(doc(as(ALICE), 'contacts/alice'), { marketingOptIn: false }));
+    await assertFails(deleteDoc(doc(as(ALICE), 'contacts/alice')));
   });
   it('ratelimits are server-only', async () => {
     await assertFails(getDoc(doc(as(ALICE), 'ratelimits/alice')));

@@ -19,8 +19,11 @@ test('a fresh phone signs up with OTP, a name and consent, then lands in the app
   await expect(page.getByRole('heading', { name: 'What should friends call you?' })).toBeVisible();
   await page.getByLabel('Your name').fill('Raja');
   await page.getByRole('button', { name: 'Continue' }).click();
-  await expect(page.locator('#name-error')).toContainText('Tick the box');
+  await expect(page.locator('#name-error')).toContainText('Tick the first box');
 
+  // Marketing consent is separate and never pre-ticked.
+  await expect(page.getByLabel(/Optional: send me occasional updates/)).not.toBeChecked();
+  await page.getByLabel(/Optional: send me occasional updates/).check();
   await page.getByLabel(/I agree that Toli stores my name/).check();
   await page.getByRole('button', { name: 'Continue' }).click();
 

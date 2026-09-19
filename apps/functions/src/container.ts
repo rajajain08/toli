@@ -1,5 +1,6 @@
 import { CompleteSignup } from '@toli/application';
 import {
+  AdminContactRepository,
   AdminUserRepository,
   CryptoIdGenerator,
   getAdminDb,
@@ -13,13 +14,15 @@ export function buildContainer(secrets: { phoneHashSecret: string }) {
   const clock = new SystemClock();
   const ids = new CryptoIdGenerator();
   const users = new AdminUserRepository(db);
+  const contacts = new AdminContactRepository(db);
   const hasher = new HmacPhoneHasher(secrets.phoneHashSecret);
   return {
     db,
     clock,
     ids,
     users,
-    completeSignup: new CompleteSignup(users, hasher, clock),
+    contacts,
+    completeSignup: new CompleteSignup(users, contacts, hasher, clock),
   };
 }
 

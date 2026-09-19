@@ -61,6 +61,10 @@ export default function PrivacyPage() {
         Only people you&apos;ve added — a group or a person — can see a card. Hide it from any of
         them, anytime.
       </Lede>
+      <Lede>
+        Toli keeps your phone number to run your account. Friends never see it, and we only message
+        you about Toli if you ticked the optional box at sign-up.
+      </Lede>
       <Lede>Delete your account and every card you added goes with it, immediately.</Lede>
 
       <Link href="/cards" style={{ fontWeight: 600 }}>

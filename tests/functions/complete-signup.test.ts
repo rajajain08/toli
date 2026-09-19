@@ -27,7 +27,7 @@ connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
 const fns = getFunctions(app, 'asia-south1');
 connectFunctionsEmulator(fns, '127.0.0.1', 5001);
 
-type Input = { name?: string; consent?: boolean };
+type Input = { name?: string; consent?: boolean; marketingOptIn?: boolean };
 type Output = { ok: true; name: string; consentAt: string };
 const completeSignup = httpsCallable<Input, Output>(fns, 'completeSignup');
 const codeOf = (p: Promise<unknown>) =>
@@ -65,6 +65,7 @@ describe('completeSignup', () => {
       'functions/invalid-argument',
     );
     expect((await adminFirestore(admin).doc(`users/${uid}`).get()).exists).toBe(false);
+    expect((await adminFirestore(admin).doc(`contacts/${uid}`).get()).exists).toBe(false);
   });
 
   it('writes users/{uid} with the HMAC of the verified phone and never the phone itself', async () => {
@@ -80,6 +81,28 @@ describe('completeSignup', () => {
     expect(data['createdAt']).toBeTruthy();
     expect(JSON.stringify(data)).not.toContain('9876543210');
     expect(Object.keys(data).sort()).toEqual(['consentAt', 'createdAt', 'name', 'phoneHash']);
+  });
+
+  it('keeps the verified phone in contacts/{uid}, opted out unless the box was ticked', async () => {
+    const contact = (await adminFirestore(admin).doc(`contacts/${uid}`).get()).data()!;
+    expect(contact['phone']).toBe(PHONE);
+    expect(contact['marketingOptIn']).toBe(false);
+    expect(contact['marketingOptInAt']).toBeUndefined();
+
+    await completeSignup({ name: 'Raja Jain', consent: true, marketingOptIn: true });
+    const optedIn = (await adminFirestore(admin).doc(`contacts/${uid}`).get()).data()!;
+    expect(optedIn['marketingOptIn']).toBe(true);
+    expect(optedIn['marketingOptInAt']).toBeTruthy();
+
+    // A truthy non-boolean is not consent.
+    await completeSignup({
+      name: 'Raja Jain',
+      consent: true,
+      marketingOptIn: 'yes' as unknown as boolean,
+    });
+    expect(
+      (await adminFirestore(admin).doc(`contacts/${uid}`).get()).data()!['marketingOptIn'],
+    ).toBe(false);
   });
 
   it('is idempotent on redelivery: keeps consentAt, refreshes the name', async () => {

@@ -65,7 +65,7 @@ Invariants live on the entities as methods so they cannot be skipped:
 - `Audience.canAccept(memberCount)` - 50 members per audience for MVP.
 - `Audience.directId(a, b)` - deterministic `direct_<min>_<max>`, so a 1:1 share can never exist twice.
 - `Invite.isValidAt(now)` - 8 characters, 7-day expiry, `maxUses`.
-- No entity holds a phone number, card number, limit or spend. There is no field for them.
+- `User` holds no phone number; the verified number lives in the separate, server-only `ContactRecord` (ADR-0013). No entity holds a card number, limit or spend. There is no field for them.
 
 ## Application layer
 
@@ -113,6 +113,7 @@ audiences/{aid}                    { type, name, createdBy, memberCount, cardCou
 audiences/{aid}/members/{uid}      { joinedAt, role, name }
 audiences/{aid}/cards/{ucId}       { ownerId, ownerName, cardId, name, issuer, color, tags[], addedAt }  <- read side
 invites/{code}                     { audienceId, expiresAt, uses, maxUses }
+contacts/{uid}                     { phone, marketingOptIn, marketingOptInAt?, updatedAt }   <- server-only, ADR-0013
 ratelimits/{uid}                   { joinAttempts: [ts] }
 catalog/{cardId}                   mirror of cards.json, for server-side validation only
 ```
@@ -159,13 +160,14 @@ match /audiences/{aid} {
   match /{sub=**}/{id} { allow read: if <same exists check>; allow write: if false; }
 }
 match /invites/{c}   { allow read, write: if false; }
+match /contacts/{u}  { allow read, write: if false; }
 match /catalog/{c}   { allow read: if request.auth != null; allow write: if false; }
 ```
 
 - **App Check** (reCAPTCHA Enterprise) required on every callable and on Firestore from day one; phone auth without it gets abused.
 - **Rate limits** inside `JoinByInvite` and `ShareWith`: per-uid sliding window in `ratelimits/{uid}`.
 - **Invite codes**: 8 characters from a 32-character alphabet, 7-day expiry, `maxUses`; never readable by clients, so nobody can enumerate them.
-- **Phone numbers** stored only as HMAC-SHA256 with a server-side secret; needed for "is this person on Toli", never displayed.
+- **Phone numbers** (ADR-0013): the verified number lives in `contacts/{uid}`, server-only, with a separate opt-in flag for marketing; no client can read it, the owner included. `users/{uid}` keeps only the HMAC-SHA256 for "is this person on Toli". Never displayed to anyone.
 - **DPDP**: consent timestamp recorded at signup, privacy page with a grievance contact, and `DeleteAccount` cascades through memberships, read-model rows and the auth user. It is the only path that deletes `users/{uid}`.
 - **Never stored, no field exists**: card number, expiry, CVV, limit, spend, statements.
 
@@ -270,3 +272,4 @@ One row per architectural decision; add a row and an ADR file under `docs/decisi
 | 0010 | Phone OTP by SMS for MVP; WhatsApp OTP in phase 2 | not a Firebase provider; needs MSG91 plus custom tokens |
 | 0011 | Packages ship TypeScript source; functions bundled by esbuild | no dist/ drift, one-file functions artefact without workspace deps |
 | 0012 | Cool palette (Frost, Midnight, Iris) with role-named tokens; Fraunces display face | the app gets its own character; the next repaint is a one-file change |
+| 0013 | Verified phone stored server-only in `contacts/{uid}`, with a separate marketing opt-in | the business can reach its users; DPDP needs purpose-specific consent |

@@ -42,6 +42,8 @@ export function AuthFlow() {
   const [code, setCode] = useState('');
   const [name, setName] = useState('');
   const [consent, setConsent] = useState(false);
+  // Separate and unticked by default: marketing consent is never bundled with the consent to use Toli.
+  const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | undefined>();
   const confirmation = useRef<ConfirmationResult | null>(null);
@@ -110,11 +112,11 @@ export function AuthFlow() {
     setError(undefined);
     if (!consent)
       return setError(
-        'Tick the box to continue. Toli stores your name and card names, nothing else.',
+        'Tick the first box to continue. Toli stores your name, your phone number and the names of your cards.',
       );
     setBusy(true);
     try {
-      await callCompleteSignup({ name, consent });
+      await callCompleteSignup({ name, consent, marketingOptIn });
       onboarding.current = true;
       await refreshProfile();
       // New people go straight to adding cards, then on to wherever they were headed.
@@ -228,11 +230,15 @@ export function AuthFlow() {
             autoFocus
           />
           <Checkbox id="consent" checked={consent} onChange={setConsent}>
-            I agree that Toli stores my name, a hash of my phone number and the names of cards I
-            add, and shares card names with the groups I choose.{' '}
+            I agree that Toli stores my name, my phone number and the names of cards I add, and
+            shares card names with the groups I choose. Friends never see my number.{' '}
             <Link href="/privacy" style={{ fontWeight: 600 }}>
               Privacy
             </Link>
+          </Checkbox>
+          <Checkbox id="marketing" checked={marketingOptIn} onChange={setMarketingOptIn}>
+            Optional: send me occasional updates and offers from Toli on this number. I can turn
+            this off anytime.
           </Checkbox>
           <Button type="submit" full disabled={busy || name.trim().length === 0}>
             {busy ? 'Saving…' : 'Continue'}

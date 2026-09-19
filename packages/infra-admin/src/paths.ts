@@ -12,4 +12,5 @@ export const paths = {
 export const adminPaths = {
   invite: (code: string) => `invites/${code}`,
   ratelimit: (uid: string) => `ratelimits/${uid}`,
+  contact: (uid: string) => `contacts/${uid}`,
 } as const;

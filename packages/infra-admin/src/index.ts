@@ -3,3 +3,4 @@ export * from './paths';
 export * from './system';
 export * from './user-repository';
 export * from './phone-hasher';
+export * from './contact-repository';

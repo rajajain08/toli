@@ -68,6 +68,11 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    // Verified phone numbers and marketing consent (ADR-0013). Server-only, like invites.
+    match /contacts/{uid} {
+      allow read, write: if false;
+    }
+
     match /ratelimits/{uid} {
       allow read, write: if false;
     }

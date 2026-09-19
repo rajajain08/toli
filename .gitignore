@@ -43,3 +43,6 @@ tests/seed/*
 
 # local env (web)
 apps/web/.env.local
+
+# typescript incremental build info (generated)
+*.tsbuildinfo

@@ -29,7 +29,7 @@ describe('User', () => {
     ).toThrow(InvalidArgument);
   });
 
-  it('has no field for a phone number, card number, limit or spend', () => {
+  it('has no field for a phone number, card number, limit or spend (the phone lives in ContactRecord, server-only)', () => {
     const u = createUser({ id: UserId('u1'), name: 'Raja', phoneHash: hash, consentAt: now, now });
     expect(Object.keys(u).sort()).toEqual(['consentAt', 'createdAt', 'id', 'name', 'phoneHash']);
   });

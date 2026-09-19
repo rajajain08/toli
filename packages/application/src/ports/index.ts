@@ -1,5 +1,6 @@
 import type {
   Audience,
+  ContactRecord,
   CardId,
   GroupId,
   Invite,
@@ -79,4 +80,11 @@ export interface GroupCardReadModel {
 /** HMAC-SHA256 of an E.164 phone with a server-side secret. Only the server holds the secret. */
 export interface PhoneHasher {
   hash(phone: string): string;
+}
+
+/** Server-only store of verified phone numbers and marketing consent (ADR-0013). Never implemented on the client. */
+export interface ContactRepository {
+  get(userId: UserId): Promise<ContactRecord | undefined>;
+  upsert(record: ContactRecord): Promise<void>;
+  remove(userId: UserId): Promise<void>;
 }

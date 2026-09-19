@@ -26,6 +26,7 @@ export const ping = onCall({ enforceAppCheck: false }, (request) => ({
 /**
  * Called once after phone OTP. Reads the verified phone from the ID token, never from the client,
  * hashes it with the server secret and writes users/{uid}. The client cannot write phoneHash (rules).
+ * The number itself and the separate marketing choice go to contacts/{uid}, which no client can read.
  */
 export const completeSignup = onCall(guarded, async (request) => {
   const auth = request.auth;
@@ -33,13 +34,19 @@ export const completeSignup = onCall(guarded, async (request) => {
   const rawPhone = auth.token['phone_number'];
   if (typeof rawPhone !== 'string')
     throw new HttpsError('failed-precondition', 'phone sign-in required');
-  const body = (request.data ?? {}) as { name?: unknown; consent?: unknown };
+  const body = (request.data ?? {}) as {
+    name?: unknown;
+    consent?: unknown;
+    marketingOptIn?: unknown;
+  };
   try {
     const user = await c().completeSignup.execute({
       actor: UserId(auth.uid),
       phone: parsePhone(rawPhone),
       name: typeof body.name === 'string' ? body.name : '',
       consent: body.consent === true,
+      // Strictly opt-in: anything but a literal true is a no.
+      marketingOptIn: body.marketingOptIn === true,
     });
     logger.info('completeSignup', { uid: auth.uid });
     return { ok: true, name: user.name, consentAt: user.consentAt.toISOString() };

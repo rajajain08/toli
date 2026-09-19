@@ -1,5 +1,6 @@
 import type {
   Audience,
+  ContactRecord,
   CardId,
   GroupId,
   Invite,
@@ -13,6 +14,7 @@ import type {
 import type {
   AudienceRepository,
   Clock,
+  ContactRepository,
   GroupCardReadModel,
   GroupCardRow,
   IdGenerator,
@@ -167,5 +169,18 @@ export class FakePhoneHasher implements PhoneHasher {
   }
   hash(phone: string): string {
     return FakePhoneHasher.hashOf(phone);
+  }
+}
+
+export class InMemoryContactRepository implements ContactRepository {
+  readonly contacts = new Map<UserId, ContactRecord>();
+  async get(userId: UserId): Promise<ContactRecord | undefined> {
+    return this.contacts.get(userId);
+  }
+  async upsert(record: ContactRecord): Promise<void> {
+    this.contacts.set(record.userId, record);
+  }
+  async remove(userId: UserId): Promise<void> {
+    this.contacts.delete(userId);
   }
 }

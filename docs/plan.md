@@ -98,8 +98,9 @@ Done when the friend group is on it.
 - [x] Lighthouse CI on `/auth` and `/privacy`, applied slow-4G and 4x CPU throttling, median of three: LCP <= 2.5 s, CLS <= 0.01. It found `/auth` at 2.5 s because `useSearchParams` made the whole form wait for JavaScript; the form is now in the server HTML (1.97 s) and the auth provider loads Firebase after first paint
 - [x] `toli-app-prod` created 2026-09-19: Firestore in `asia-south1` with rules and indexes, web app registered, App Check key registered, `apphosting.prod.yaml`, `prod` alias
 - [x] `deploy-prod.yml`: a `vX.Y.Z` tag deploys rules, indexes, functions and App Hosting together, only if the tag is on `main` and CI passed for that commit, then syncs the catalogue mirror
-- [ ] Raja: link Blaze billing to `toli-app-prod` (phone auth cannot even be initialised without it)
-- [ ] After billing: initialise Auth with the phone provider and India-only SMS, `PHONE_HASH_SECRET` (a new value, not dev's), first functions deploy, App Hosting backend `toli-web` with environment name `prod`, enforce App Check on Firestore
+- [x] Blaze billing linked to `toli-app-prod` (2026-09-19)
+- [x] Prod provisioned: Auth with the phone provider and India-only SMS, a fresh `PHONE_HASH_SECRET`, all ten functions in `asia-south1` with no warm instances (ADR-0014), App Hosting backend `toli-web` in `asia-southeast1` with environment `prod`, catalogue mirror synced (316 cards). First deploys on a new project need one retry: service agents and Eventarc permissions take a few minutes to exist
+- [ ] Raja: App Check → APIs → Cloud Firestore → Enforce, on `toli-app-prod` (the API call is blocked for me, as it was on dev)
 - [ ] Raja: repository variable `DEPLOY_PROD=true`, secret `FIREBASE_SERVICE_ACCOUNT_PROD`, required reviewers on the `prod` environment
 
 ## Open items needing Raja
